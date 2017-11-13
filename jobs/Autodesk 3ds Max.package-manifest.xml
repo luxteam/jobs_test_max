@@ -14,6 +14,6 @@
 
     <variable name="CWD" value="\..\jobs"/>
     <variable name="ResourcesDir" value = "{CWD}\Resources"/>
-    <variable name="ScenesDir" value="c:\TestResources\MaxAssets"/>
+    <variable name="ScenesDir" value="C:\TestResources\MaxAssets\scenes"/> 
     
 </package-manifest>
