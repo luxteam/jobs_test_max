@@ -12,7 +12,8 @@
         <!--</configuration>-->
     </option>
 
+    <variable name="CWD" value="\..\jobs"/>
     <variable name="ResourcesDir" value = "{CWD}\Resources"/>
-    <variable name="ScenesDir" value="{CWD}\..\..\..\assets\Max\scenes"/>
-
+    <variable name="ScenesDir" value="c:\TestResources\MaxAssets"/>
+    
 </package-manifest>
