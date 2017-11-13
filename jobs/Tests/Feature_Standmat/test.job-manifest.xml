@@ -7,12 +7,12 @@
         </configuration>
     </option>
     <option name="render_mode">
-        <configuration name="GPU">
+<!--         <configuration name="GPU">
             <Path>GPU</Path>
+        </configuration> -->
+        <configuration name="CPU">
+            <Path>CPU</Path>
         </configuration>
-        <!--<configuration name="CPU">-->
-            <!--<Path>CPU</Path>-->
-        <!--</configuration>-->
         <!--<configuration name="DUAL">-->
             <!--<Path>DUAL</Path>-->
         <!--</configuration>-->
