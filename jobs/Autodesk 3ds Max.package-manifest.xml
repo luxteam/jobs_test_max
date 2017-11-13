@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<package-manifest name="Autodesk 3ds Max">
+    <option name='Max'>
+        <!--<configuration name="2016">-->
+            <!--<Path>C:\Program Files\Autodesk\3ds Max 2016\3dsmax.exe</Path>-->
+        <!--</configuration>-->
+        <configuration name="2017">
+            <Path>C:\Program Files\Autodesk\3ds Max 2017\3dsmax.exe</Path>
+        </configuration>
+        <!--<configuration name="2018">-->
+            <!--<Path>C:\Program Files\Autodesk\3ds Max 2018\3dsmax.exe</Path>-->
+        <!--</configuration>-->
+    </option>
+
+    <variable name="ResourcesDir" value = "{CWD}\Resources"/>
+    <variable name="ScenesDir" value="{CWD}\..\..\..\assets\Max\scenes"/>
+
+</package-manifest>

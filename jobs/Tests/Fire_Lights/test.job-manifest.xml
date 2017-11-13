@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<job-manifest enable="False">
+    <outpath value="{OutputDir}"/>
+
+    <option name="Template">
+        <configuration name="Fire_Lights">
+            <Path>{ResourcesDir}\Templates\fire_lights.ms</Path>
+        </configuration>
+    </option>
+    <option name="render_mode">
+        <configuration name="GPU">
+            <Path>GPU</Path>
+        </configuration>
+        <!--<configuration name="CPU">-->
+            <!--<Path>CPU</Path>-->
+        <!--</configuration>-->
+        <!--<configuration name="DUAL">-->
+            <!--<Path>DUAL</Path>-->
+        <!--</configuration>-->
+    </option>
+    <execute command='python "{ResourcesDir}\Common\scripts\SimpleRender\simpleRender.py"' stage="stage1">
+        <argument>--stage_report stage1.json</argument>
+        <argument>--tool "{Max[Path]}"</argument>
+        <argument>--template "{Template[Path]}"</argument>
+        <argument>--output "{OutputDir}\\"</argument>
+        <argument>--pass_limit 20</argument>
+        <argument>--render_size 512</argument>
+        <argument>--file_extension ".png"</argument>
+        <argument>--scene_list "{ResourcesDir}\Templates\lights.txt"</argument>
+        <argument>--package_name "Feature"</argument>
+        <argument>--render_mode "{render_mode[Path]}"</argument>
+        <argument>--res_path "{ScenesDir}"</argument>
+    </execute>
+</job-manifest>
+
+
