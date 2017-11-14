@@ -18,7 +18,7 @@
             <!--<Path>DUAL</Path>-->
         <!--</configuration>-->
     </option>
-    <execute command='python "{ResourcesDir}\Common\scripts\SimpleRender\simpleRender.py"' stage="stage1">
+    <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Max[Path]}"</argument>
         <argument>--template "{Template[Path]}"</argument>

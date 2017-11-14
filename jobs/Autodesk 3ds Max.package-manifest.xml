@@ -13,7 +13,7 @@
     </option>
 
     <variable name="CWD" value="\..\jobs"/>
-    <variable name="ResourcesDir" value = "{CWD}\Resources"/>
+    <variable name="ResourcesDir" value = "{CWD}\Scripts"/>
     <variable name="ScenesDir" value="C:\TestResources\MaxAssets\scenes"/> 
     
 </package-manifest>
