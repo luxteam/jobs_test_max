@@ -137,29 +137,36 @@ def main():
         f.write(cmdRun_ForBat)
         f.closed
 
-    child = subprocess.Popen(cmdRun, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    print("start cmdRun time: ", time.time())
+    #child = subprocess.Popen(cmdRun, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
-    real_rc = multiprocessing.Value('i', 0)
-    monitor = multiprocessing.Process(target=_late_kill, args=(child.pid, 90, real_rc))
-    monitor.start()
+    p = psutil.Popen(cmdRun, stdout=subprocess.PIPE)
+    rc = p.wait(timeout=2000)
+
+    #real_rc = multiprocessing.Value('i', 0)
+    #monitor = multiprocessing.Process(target=_late_kill, args=(child.pid, 10, real_rc))
+    #print("start monitor time: ", time.time())
+    #monitor.start()
 
     sub_skip = 0
+    #proc = psutil.Process(child.pid)
+    #rc= proc.wait()
+#    while True:
+#        output = child.stdout.readline()
+#        if output == b'' and child.poll() != None:
+#            break
+#        if output != b'' and output != b'\r\n':
+#            output = output.decode("UTF-8")
+#            output_noeol = str(output).replace('\r', '')
+#            output_noeol = str(output_noeol).replace('\n', '')
+#            #print(output_noeol)
+#            if "not recognized as an internal or external command" in output_noeol:
+#                sub_skip = 1
+#            if "The system cannot find the path specified" in output_noeol:
+#                sub_skip = 1
 
-    while True:
-        output = child.stdout.readline()
-        if output == b'' and child.poll() != None:
-            break
-        if output != b'' and output != b'\r\n':
-            output = output.decode("UTF-8")
-            output_noeol = str(output).replace('\r', '')
-            output_noeol = str(output_noeol).replace('\n', '')
-            print(output_noeol)
-            if "not recognized as an internal or external command" in output_noeol:
-                sub_skip = 1
-            if "The system cannot find the path specified" in output_noeol:
-                sub_skip = 1
-
-    rc = ctypes.c_long(child.poll()).value
+    print("finished child.pull time: ", time.time())
+    #rc = ctypes.c_long(child.poll()).value
 
     if sub_skip:
         rc = 2
@@ -175,12 +182,13 @@ def main():
         stage_report[0]['status'] = 'FAILED'
         stage_report[1]['log'].append('subprocess FAILED')
 
-    monitor.terminate()
+    #monitor.terminate()
+    print("monitor terminated time: ", time.time())
 
-    if real_rc.value != 0:
-        rc = real_rc.value
-        stage_report[0]['status'] = 'FAILED'
-        stage_report[1]['log'].append('subprocess was terminated by monitor')
+#    if real_rc.value != 0:
+#        rc = real_rc.value
+#        stage_report[0]['status'] = 'FAILED'
+#        stage_report[1]['log'].append('subprocess was terminated by monitor')
 
     with open(os.path.join(args.output, args.stage_report), 'w') as file:
         json.dump(stage_report, file, indent=' ')
@@ -214,7 +222,8 @@ def check_count():
 
 if __name__ == "__main__":
     rc = main()
-    os.remove("tahoe.log")
-    os.rmdir("cache")
+    #os.remove("tahoe.log")
+    #os.rmdir("cache")
+    print("start check_count time: ", time.time())
     check_count()
     exit(rc)
