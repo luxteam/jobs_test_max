@@ -1,0 +1,15 @@
+// copy to 'C:\RenderConfig'
+// customize file according your hardware
+{
+    "CPU": "CPU",
+    "WX7100": "GPU",
+    "HD7900": "GPU",
+
+    "CPU+WX7100": "DUAL",
+    "CPU+HD7900": "DUAL",
+    "CPU+WX7100+HD7900": "DUAL",
+    "CPU+HD7900+WX7100": "DUAL",
+
+    "WX7100+HD7900": "DUAL",
+    "HD7900+WX7100": "DUAL"
+}

@@ -1,0 +1,8 @@
+"\\RPR_Production_ModeDirect.max",
+"\\RPR_Production_ModeDirectNoShadows.max",
+"\\RPR__Production_ModeWireFrame.max",
+"\\RPR_Production_ModePosition.max",
+"\\RPR_Production_ModeNormal.max",
+"\\RPR__Production_ModeTexCoords.max",
+"\\RPR_Production_ModeAmbOcc.max",
+"\\RPR_Production_DOF.max"

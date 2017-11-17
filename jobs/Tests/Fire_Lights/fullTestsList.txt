@@ -1,0 +1,11 @@
+"\\RPR_Production_IBL.max",
+"\\RPR_Production_Sun and Sky.max",
+"\\RPR_Production_IBL_PhTargetLight.max",
+"\\RPR_Production_PhotoTargetLight.max",
+"\\RPR_Production_PhotoFreeLight.max",
+"\RPR_Production_StandTargetDirectLight.max",
+"\\RPR_Production_StandTargetSpotLight.max",
+"\\RPR_Production_StandFreeDirectLight.max",
+"\\RPR_Production_StandFreeSpotLight.max",
+"\\RPR_Production_StandFreeOmniLight.max",
+"\\RPR_Production_StandFreeSkyLight.max"

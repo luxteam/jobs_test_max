@@ -4,7 +4,7 @@ import os
 import subprocess
 import psutil
 import json
-# TODO: create
+# TODO: create external Max log
 
 
 def main():

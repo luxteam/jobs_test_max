@@ -1,36 +1,22 @@
 <?xml version="1.0" ?>
 <job-manifest enable="False">
+
     <outpath value="{OutputDir}"/>
 
-    <option name="Template">
-        <configuration name="Material_Test">
-            <Path>{ResourcesDir}\Templates\material_test.ms</Path>
-        </configuration>
-    </option>
-    <option name="render_mode">
-        <!-- <configuration name="GPU"> -->
-            <!-- <Path>GPU</Path> -->
-        <!-- </configuration> -->
-        <configuration name="CPU">
-            <Path>CPU</Path>
-        </configuration>
-        <!--<configuration name="DUAL">-->
-            <!--<Path>DUAL</Path>-->
-        <!--</configuration>-->
-    </option>
     <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
-        <argument>--tool "{Max[Path]}"</argument>
-        <argument>--template "{Template[Path]}"</argument>
+        <argument>--tool "{Tool[path]}"</argument>
+        <argument>--template "{ResourcesDir}\Templates\material_test.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit 20</argument>
         <argument>--render_size 512</argument>
         <argument>--file_extension ".png"</argument>
-        <argument>--scene_list "{ResourcesDir}\Templates\materials.txt"</argument>
+        <argument>--scene_list "{Root}\Tests\Material_Test\{TestsFilter[filter]}TestsList.txt"</argument>
         <argument>--package_name "Feature"</argument>
-        <argument>--render_mode "{render_mode[Path]}"</argument>
+        <argument>--render_mode "{RenderDevice[device]}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
+
 </job-manifest>
 
 

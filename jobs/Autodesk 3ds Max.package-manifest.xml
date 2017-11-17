@@ -1,18 +1,44 @@
 <?xml version="1.0" ?>
 <package-manifest name="Autodesk 3ds Max">
-    <option name='Max'>
-        <!--<configuration name="2016">-->
-            <!--<Path>C:\Program Files\Autodesk\3ds Max 2016\3dsmax.exe</Path>-->
-        <!--</configuration>-->
-        <configuration name="2017">
-            <Path>C:\Program Files\Autodesk\3ds Max 2017\3dsmax.exe</Path>
-        </configuration>
-        <!--<configuration name="2018">-->
-            <!--<Path>C:\Program Files\Autodesk\3ds Max 2018\3dsmax.exe</Path>-->
-        <!--</configuration>-->
+
+    <option name="RenderDevice" type="exec">
+import os
+import collections
+import json
+
+hwprofiles = os.getenv('HWProfiles').split(';')
+
+with open('c:\\RenderConfig\\Max.config.json', 'r') as file:
+    config_parse = file.read()
+    config_parse = json.loads(config_parse)
+
+for hwprofile in hwprofiles:
+    config_name = hwprofile
+    configurations[config_name] = collections.OrderedDict()
+    configurations[config_name]['device'] = config_parse[hwprofile]
     </option>
 
-    <variable name="CWD" value="\..\jobs"/>
+    <option name="TestsFilter" type="exec">
+import os
+import collections
+filters = os.getenv('TestsFilter').split(';')
+for filter in filters:
+    config_name = filter
+    configurations[config_name] = collections.OrderedDict()
+    configurations[config_name]['filter'] = filter
+    </option>
+
+    <option name="Tool" type="exec">
+import os
+import collections
+tools = os.getenv('Tool').split(';')
+for tool in tools:
+    config_name = tool
+    configurations[config_name] = collections.OrderedDict()
+    configurations[config_name]['path'] = "C:\Program Files\Autodesk\\3ds Max {}\\3dsmax.exe".format(tool)
+    </option>
+
+    <variable name="Root" value="{CWD}"/>
     <variable name="ResourcesDir" value = "{CWD}\Scripts"/>
     <variable name="ScenesDir" value="C:\TestResources\MaxAssets\scenes"/> 
     

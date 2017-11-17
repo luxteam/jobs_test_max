@@ -1,0 +1,2 @@
+"\\RPR Diffuse Material.max",
+"\\RPR Diffuse_Refraction.max"
