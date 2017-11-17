@@ -17,6 +17,24 @@
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
+    <execute command='python "{CommonDir}\scripts\checkExpected.py"' stage="stage2">
+        <argument>--stage_report stage2.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+        <argument>--report_name expected.json</argument>
+        <argument>--result_name not_rendered.json</argument>
+    </execute>
+
+    <!--<execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">-->
+        <!--<argument>&#45;&#45;stage_report stage3.json</argument>-->
+        <!--<argument>&#45;&#45;work_dir "{OutputDir}"</argument>-->
+        <!--<argument>&#45;&#45;base_dir "{BaselineDir}"</argument>-->
+        <!--<argument>&#45;&#45;report_name report.json</argument>-->
+        <!--<argument>&#45;&#45;result_name report_compare.json</argument>-->
+        <!--<argument>&#45;&#45;tool_name Max</argument>-->
+        <!--<argument>&#45;&#45;render_mode {render_mode[Path]}</argument>-->
+        <!--<argument>&#45;&#45;test_name Feature_Firemat</argument>-->
+    <!--</execute>-->
+
 </job-manifest>
 
 

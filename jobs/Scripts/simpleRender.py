@@ -4,7 +4,30 @@ import os
 import subprocess
 import psutil
 import json
+import ctypes
 # TODO: create external Max log
+
+
+def get_windows_titles():
+    EnumWindows = ctypes.windll.user32.EnumWindows
+    EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))
+    GetWindowText = ctypes.windll.user32.GetWindowTextW
+    GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
+    IsWindowVisible = ctypes.windll.user32.IsWindowVisible
+
+    titles = []
+
+    def foreach_window(hwnd, lParam):
+        if IsWindowVisible(hwnd):
+            length = GetWindowTextLength(hwnd)
+            buff = ctypes.create_unicode_buffer(length + 1)
+            GetWindowText(hwnd, buff, length + 1)
+            titles.append(buff.value)
+        return True
+
+    EnumWindows(EnumWindowsProc(foreach_window), 0)
+
+    return titles
 
 
 def main():
@@ -44,11 +67,9 @@ def main():
     template = args.template
     with open(os.path.join(os.path.dirname(sys.argv[0]), template)) as f:
         max_script_template = f.read()
-        f.closed
 
     with open(os.path.join(os.path.dirname(sys.argv[0]), args.scene_list)) as f:
         scene_list = f.read()
-        f.closed
 
     global work_dir
 
@@ -82,22 +103,22 @@ def main():
     os.chdir(work_dir)
 
     p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE)
-    try:
-        rc = p.wait(timeout=2000)
-    except psutil.TimeoutExpired as err:
-        sub_skip = -1
-        for child in reversed(p.children(recursive=True)):
-            child.terminate()
-        p.terminate()
+    rc = -1
 
-    sub_skip = 0
+    while True:
+        try:
+            rc = p.wait(timeout=20)
+        except psutil.TimeoutExpired as err:
+            if "Radeon ProRender" in get_windows_titles():
+                rc = -1
+                for child in reversed(p.children(recursive=True)):
+                    child.terminate()
+                p.terminate()
+                break
+        else:
+            break
 
-    if sub_skip:
-        rc = 2
-        print('skipped')
-        stage_report[0]['status'] = 'FAILED'
-        stage_report[1]['log'].append('subprocess SKIPPED')
-    elif rc == 0:
+    if rc == 0:
         print('passed')
         stage_report[0]['status'] = 'OK'
         stage_report[1]['log'].append('subprocess PASSED')
@@ -112,30 +133,6 @@ def main():
     return rc
 
 
-def check_count():
-    files = os.listdir(work_dir + "\\images\\")
-    res = [x for x in files if x.endswith('.png')]
-    # print (res)
-
-    path_name = work_dir + "image_list.txt"
-    with open(os.path.join(os.path.dirname(sys.argv[0]), path_name)) as f:
-        images = f.read()
-
-    image_list = images.split("\n")
-    # print (image_list)
-    result = list(set(image_list) - set(res))
-    # print (result)
-
-    if len(result) == 0:
-        status = "All tests successfully completed: " + str(len(res)) + "/" + str(len(image_list))
-    else:
-        status = "There are some problems. Completed: " + str(len(res)) + "/" + str(
-            len(image_list)) + "\nNot rendered: " + str(result)
-    print(status)
-    return status
-
-
 if __name__ == "__main__":
     rc = main()
-    check_count()
     exit(rc)

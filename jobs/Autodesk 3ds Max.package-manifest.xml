@@ -40,6 +40,7 @@ for tool in tools:
 
     <variable name="Root" value="{CWD}"/>
     <variable name="ResourcesDir" value = "{CWD}\Scripts"/>
-    <variable name="ScenesDir" value="C:\TestResources\MaxAssets\scenes"/> 
+    <variable name="ScenesDir" value="C:\TestResources\MaxAssets\scenes"/>
+    <variable name="CommonDir" value="..\..\jobs_launcher\common"/>
     
 </package-manifest>

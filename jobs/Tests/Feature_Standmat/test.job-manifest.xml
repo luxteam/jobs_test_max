@@ -17,6 +17,13 @@
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
+    <execute command='python "{CommonDir}\scripts\checkExpected.py"' stage="stage2">
+        <argument>--stage_report stage2.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+        <argument>--report_name expected.json</argument>
+        <argument>--result_name not_rendered.json</argument>
+    </execute>
+
 </job-manifest>
 
 
