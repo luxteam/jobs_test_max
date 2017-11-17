@@ -84,36 +84,32 @@ function createCatalog = (
             scene_json = filterString (filesToRender[fi]) "\\"
             if fi != filesToRender.count do (
                 if fra != 100 do(
-                    temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + scene_json[scene_json.count] + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (relapsed as string) + "\n }},\n"
+                    temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +    "\",\n    \"renderDevice\": \""+"{render_mode}"+"\",\n    \"PassLimit\": " + (fr.passLimit as string) + ",\n    \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + scene_json[scene_json.count] + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (relapsed as string) + "\n }},\n"
                     format "%" temp_line to:a
                     )
                 if fra == 100 do(
-                    temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + scene_json[scene_json.count] + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (relapsed as string) + "\n }},\n"
+                    temp_line = " {{\n    \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +    "\",\n    \"renderDevice\": \""+"{render_mode}"+"\",\n    \"PassLimit\": " + (fr.passLimit as string) + ",\n    \"RenderSize\": " + (RENDER_SIZE as string) + ",\n    \"scene\": \"" + scene_json[scene_json.count] + "\",\n    \"frame\": " + (fra as string) + ",\n    \"Start_Time\": \"" + (localtime as String) + "\",\n    \"file_name\": \"" + mfilename + "\",\n    \"Render_Time\": " + (relapsed as string) + "\n }},\n"
                     format "%" temp_line to:a
                     )
                 )
             if fi == filesToRender.count do(
                 if fra != 100 do(
-                    temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + scene_json[scene_json.count] + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (relapsed as string) + "\n }},\n"
+                    temp_line = " {{\n    \"Test\": \"" + "{package_name}" + "\",\n    \"Tool\": \"" + ver_max[ver_max.count] +    "\",\n    \"renderDevice\": \""+"{render_mode}"+"\",\n    \"PassLimit\": " + (fr.passLimit as string) + ",\n    \"RenderSize\": " + (RENDER_SIZE as string) + ",\n    \"scene\": \"" + scene_json[scene_json.count] + "\",\n    \"frame\": " + (fra as string) + ",\n    \"Start_Time\": \"" + (localtime as String) + "\",\n    \"file_name\": \"" + mfilename + "\",\n    \"Render_Time\": " + (relapsed as string) + "\n }},\n"
                     format "%" temp_line to:a
                     )                                                     
                 if fra == 100 do(
-                    temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + scene_json[scene_json.count] + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (relapsed as string) + "\n }}\n"
+                    temp_line = " {{\n    \"Test\": \"" + "{package_name}" + "\",\n    \"Tool\": \"" + ver_max[ver_max.count] +    "\",\n    \"renderDevice\": \""+"{render_mode}"+"\",\n    \"PassLimit\": " + (fr.passLimit as string) + ",\n    \"RenderSize\": " + (RENDER_SIZE as string) + ",\n    \"scene\": \"" + scene_json[scene_json.count] + "\",\n    \"frame\": " + (fra as string) + ",\n    \"Start_Time\": \"" + (localtime as String) + "\",\n    \"file_name\": \"" + mfilename + "\",\n    \"Render_Time\": " + (relapsed as string) + "\n }}\n"
                     format "%" temp_line to:a
                     )
                 )
-
-
-            )   
+            )
         )
 
     e_line = "]"
     format "%" e_line to:a
     flush a
     close a 
-
     )
-
 
 createCatalog()
 resetMaxFile #noPrompt

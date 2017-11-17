@@ -6,7 +6,7 @@
     <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool[path]}"</argument>
-        <argument>--template "{ResourcesDir}\Templates\fire_lights.ms"</argument>
+        <argument>--template "{ResourcesDir}\Templates\fire.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit 20</argument>
         <argument>--render_size 512</argument>
