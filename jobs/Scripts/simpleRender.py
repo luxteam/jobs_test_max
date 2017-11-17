@@ -5,6 +5,7 @@ import subprocess
 import psutil
 import json
 import ctypes
+import pyscreenshot
 # TODO: create external Max log
 
 
@@ -111,6 +112,8 @@ def main():
         except psutil.TimeoutExpired as err:
             if "Radeon ProRender" in get_windows_titles():
                 rc = -1
+                error_screen = pyscreenshot.grab()
+                error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
                 for child in reversed(p.children(recursive=True)):
                     child.terminate()
                 p.terminate()
