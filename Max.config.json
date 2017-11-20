@@ -1,5 +1,3 @@
-// copy to 'C:\RenderConfig'
-// customize file according your hardware
 {
     "CPU": "CPU",
     "WX7100": "GPU",
