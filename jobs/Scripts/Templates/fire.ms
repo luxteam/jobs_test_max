@@ -38,19 +38,16 @@ function createCatalog = (
         loadMaxFile assetsFile quiet:true
         for fra in framesToRender do (
             if fi != filesToRender.count do(
---                 mfilename = maxFileName + "_" + (fra as string)  + FILE_EXTENSION +"\n"
                 mfilename = " {{\"file_name\": \"" + maxFileName + "_" + (fra as string)    + FILE_EXTENSION +"\"}},\n"
                 format "%" mfilename to:t
             )
             
             if fi == filesToRender.count do(
                 if fra != 100 do (
---                     mfilename = maxFileName + "_" + (fra as string)  + FILE_EXTENSION +"\n"
                     mfilename = " {{\"file_name\": \"" + maxFileName + "_" + (fra as string)    + FILE_EXTENSION +"\"}},\n"
                     format "%" mfilename to:t
                 ) 
                 if fra == 100 do (
---                     mfilename = maxFileName + "_" + (fra as string)  + FILE_EXTENSION
                     mfilename = " {{\"file_name\": \"" + maxFileName + "_" + (fra as string)    + FILE_EXTENSION +"\"}}\n"
                     format "%" mfilename to:t
                 )
@@ -84,11 +81,11 @@ function createCatalog = (
             scene_json = filterString (filesToRender[fi]) "\\"
             if fi != filesToRender.count do (
                 if fra != 100 do(
-                    temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +    "\",\n    \"renderDevice\": \""+"{render_mode}"+"\",\n    \"PassLimit\": " + (fr.passLimit as string) + ",\n    \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + scene_json[scene_json.count] + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (relapsed as string) + "\n }},\n"
+                    temp_line = " {{\n    \"Test\": \"" + "{package_name}" + "\",\n    \"Tool\": \"" + ver_max[ver_max.count] +    "\",\n    \"renderDevice\": \""+"{render_mode}"+"\",\n    \"PassLimit\": " + (fr.passLimit as string) + ",\n    \"RenderSize\": " + (RENDER_SIZE as string) + ",\n    \"scene\": \"" + scene_json[scene_json.count] + "\",\n    \"frame\": " + (fra as string) + ",\n    \"Start_Time\": \"" + (localtime as String) + "\",\n    \"file_name\": \"" + mfilename + "\",\n    \"Render_Time\": " + (relapsed as string) + "\n }},\n"
                     format "%" temp_line to:a
                     )
                 if fra == 100 do(
-                    temp_line = " {{\n    \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +    "\",\n    \"renderDevice\": \""+"{render_mode}"+"\",\n    \"PassLimit\": " + (fr.passLimit as string) + ",\n    \"RenderSize\": " + (RENDER_SIZE as string) + ",\n    \"scene\": \"" + scene_json[scene_json.count] + "\",\n    \"frame\": " + (fra as string) + ",\n    \"Start_Time\": \"" + (localtime as String) + "\",\n    \"file_name\": \"" + mfilename + "\",\n    \"Render_Time\": " + (relapsed as string) + "\n }},\n"
+                    temp_line = " {{\n    \"Test\": \"" + "{package_name}" + "\",\n    \"Tool\": \"" + ver_max[ver_max.count] +    "\",\n    \"renderDevice\": \""+"{render_mode}"+"\",\n    \"PassLimit\": " + (fr.passLimit as string) + ",\n    \"RenderSize\": " + (RENDER_SIZE as string) + ",\n    \"scene\": \"" + scene_json[scene_json.count] + "\",\n    \"frame\": " + (fra as string) + ",\n    \"Start_Time\": \"" + (localtime as String) + "\",\n    \"file_name\": \"" + mfilename + "\",\n    \"Render_Time\": " + (relapsed as string) + "\n }},\n"
                     format "%" temp_line to:a
                     )
                 )

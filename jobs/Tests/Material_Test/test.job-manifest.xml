@@ -24,6 +24,19 @@
         <argument>--result_name not_rendered.json</argument>
     </execute>
 
+    <execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">
+        <argument>--stage_report stage3.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+        <argument>--base_dir "{BaselineDir}"</argument>
+        <argument>--report_name report.json</argument>
+        <argument>--result_name report_compare.json</argument>
+    </execute>
+
+    <execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"' stage="stage4">
+        <argument>--stage_report stage4.json</argument>
+        <argument>--work_dir "{OutputDir}"</argument>
+    </execute>
+
 </job-manifest>
 
 
