@@ -8,7 +8,7 @@ import json
 
 hwprofiles = os.getenv('HWProfiles').split(';')
 
-with open('c:\\RenderConfig\\Max.config.json', 'r') as file:
+with open(os.getenv('ConfigPath'), 'r') as file:
     config_parse = file.read()
     config_parse = json.loads(config_parse)
 
