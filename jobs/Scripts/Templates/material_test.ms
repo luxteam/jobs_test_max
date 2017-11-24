@@ -57,7 +57,7 @@ function createCatalog = (
     fr = renderers.current
     fr.renderLimit = 1
     fr.passLimit = PASS_LIMIT
-    {ren_mode}
+    fr.renderDevice = {ren_mode}
 
     count_file = OUT_DIR + "\\expected.json"
     t = (createFile count_file mode:"w")
@@ -73,18 +73,15 @@ function createCatalog = (
         lib = loadTempMaterialLibrary (matfilename + MATLIBS[fi].fname)
         for m=1 to lib.count do (
             if fi!=MATLIBS.count do (
---                 mfilename = (safeFilename lib[m].name) + FILE_EXTENSION +"\n"
                 mfilename = "{{\"file_name\": \"" + (safeFilename lib[m].name) + FILE_EXTENSION + "\"}},\n"
                 format "%" mfilename to:t
             ) 
             if fi == MATLIBS.count do (
                 if m != lib.count do (
---                     mfilename = (safeFilename lib[m].name) + FILE_EXTENSION +"\n"
                     mfilename = "{{\"file_name\": \"" + (safeFilename lib[m].name) + FILE_EXTENSION + "\"}},\n"
                     format "%" mfilename to:t
                 )
                 if m== lib.count do (
---                     mfilename = (safeFilename lib[m].name) + FILE_EXTENSION
                     mfilename = "{{\"file_name\": \"" + (safeFilename lib[m].name) + FILE_EXTENSION + "\"}}\n"
                     format "%" mfilename to:t
                 )

@@ -51,16 +51,16 @@ def main():
 
     tool = args.tool
 
-    ren_mode = args.render_mode
-    if (ren_mode) == 'GPU':
-        render_mode = 'GPU'
-        ren_mode = 'fr.renderDevice = 2'
-    if (ren_mode) == 'CPU':
-        render_mode = 'CPU'
-        ren_mode = 'fr.renderDevice = 1'
-    if (ren_mode) == 'DUAL':
-        render_mode = 'DUAL'
-        ren_mode = 'fr.renderDevice = 3'
+    # ren_mode = args.render_mode
+    # if (ren_mode) == 'GPU':
+    #     render_mode = 'GPU'
+    #     ren_mode = 'fr.renderDevice = 2'
+    # if (ren_mode) == 'CPU':
+    #     render_mode = 'CPU'
+    #     ren_mode = 'fr.renderDevice = 1'
+    # if (ren_mode) == 'DUAL':
+    #     render_mode = 'DUAL'
+    #     ren_mode = 'fr.renderDevice = 3'
 
     global pack
     pack = args.package_name
@@ -82,8 +82,8 @@ def main():
     maxScript = max_script_template.format(pass_limit=args.pass_limit, render_size=args.render_size,
                                            file_extension=args.file_extension,
                                            work_dir=work_dir,
-                                           package_name=args.package_name, ren_mode=ren_mode,
-                                           render_mode=render_mode, res_path=res_path, scene_list=scene_list)
+                                           package_name=args.package_name, ren_mode=args.render_mode,
+                                           render_mode=args.render_mode, res_path=res_path, scene_list=scene_list)
 
     try:
         os.makedirs(work_dir)
@@ -108,7 +108,7 @@ def main():
 
     while True:
         try:
-            rc = p.wait(timeout=20)
+            rc = p.wait(timeout=5)
         except psutil.TimeoutExpired as err:
             if "Radeon ProRender" in get_windows_titles():
                 rc = -1

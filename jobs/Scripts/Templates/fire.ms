@@ -16,7 +16,7 @@ function createCatalog = (
     fr = renderers.current
     fr.renderLimit = 1
     fr.passLimit = PASS_LIMIT
-    {ren_mode}
+    fr.renderDevice = {ren_mode}
 
     result = OUT_DIR + "report.json" 
     a = (createFile result mode:"w")
@@ -67,7 +67,7 @@ function createCatalog = (
         loadMaxFile assetsFile quiet:true
         fr = renderers.current
         fr.passLimit = PASS_LIMIT
-        {ren_mode}
+        fr.renderDevice = {ren_mode}
         local framesToRender = #(20,40,60,80,90,100)
 
         for fra in framesToRender do (

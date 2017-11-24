@@ -5,15 +5,15 @@
 
     <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
-        <argument>--tool "{Tool[path]}"</argument>
+        <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\fire.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit 20</argument>
         <argument>--render_size 512</argument>
         <argument>--file_extension ".png"</argument>
-        <argument>--scene_list "{Root}\Tests\Fire_Lights\{TestsFilter[filter]}TestsList.txt"</argument>
+        <argument>--scene_list "{Root}\Tests\Fire_Lights\{TestsFilter}TestsList.txt"</argument>
         <argument>--package_name "Feature"</argument>
-        <argument>--render_mode "{RenderDevice[device]}"</argument>
+        <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
