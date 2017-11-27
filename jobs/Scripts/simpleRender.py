@@ -62,9 +62,6 @@ def main():
     #     render_mode = 'DUAL'
     #     ren_mode = 'fr.renderDevice = 3'
 
-    global pack
-    pack = args.package_name
-
     template = args.template
     with open(os.path.join(os.path.dirname(sys.argv[0]), template)) as f:
         max_script_template = f.read()
