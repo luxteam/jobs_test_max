@@ -6,7 +6,6 @@ import psutil
 import json
 import ctypes
 import pyscreenshot
-# TODO: create external Max log
 
 
 def get_windows_titles():
@@ -50,17 +49,6 @@ def main():
     args = parser.parse_args()
 
     tool = args.tool
-
-    # ren_mode = args.render_mode
-    # if (ren_mode) == 'GPU':
-    #     render_mode = 'GPU'
-    #     ren_mode = 'fr.renderDevice = 2'
-    # if (ren_mode) == 'CPU':
-    #     render_mode = 'CPU'
-    #     ren_mode = 'fr.renderDevice = 1'
-    # if (ren_mode) == 'DUAL':
-    #     render_mode = 'DUAL'
-    #     ren_mode = 'fr.renderDevice = 3'
 
     template = args.template
     with open(os.path.join(os.path.dirname(sys.argv[0]), template)) as f:
@@ -107,7 +95,8 @@ def main():
         try:
             rc = p.wait(timeout=5)
         except psutil.TimeoutExpired as err:
-            if "Radeon ProRender" in get_windows_titles():
+            fatal_errors_titles = ['Radeon ProRender']
+            if set(fatal_errors_titles).intersection(get_windows_titles()):
                 rc = -1
                 error_screen = pyscreenshot.grab()
                 error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
