@@ -45,11 +45,6 @@ function createCatalog = (
 
     lastModel = "Orb"
 
-    result = OUT_DIR + "report.json" 
-    a = (createFile result mode:"w")
-    line = "[\n"
-    format "%" line to:a
-
     assetsFile = res_path + "\\CAT_Objects.max"
     loadMaxFile assetsFile quiet:true
 
@@ -96,6 +91,11 @@ function createCatalog = (
 
     IMAGE_DIR = OUT_DIR + "\\images\\"
     makeDir IMAGE_DIR 
+
+    result = OUT_DIR + "report.json"
+    a = (createFile result mode:"w")
+    line = "["
+    format "%" line to:a
 
     for matf=1 to MATLIBS.count do (
         basePath= "C:\\Users\\"
@@ -201,25 +201,25 @@ function createCatalog = (
             ver_max = filterString (getdir #maxroot) "\\"
             fra = 0
             if matf!=MATLIBS.count do (
-                temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (elapsed as string) + "\n }},\n"
+                temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (elapsed as string) + "\n }},"
                 format "%" temp_line to:a                               
                 )
             if  matf==MATLIBS.count do(
                 local materialsOnly = for i in lib where isKindOf i Material collect i
                 if m!=materialsOnly[materialsOnly.count] do (
-                    temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (elapsed as string) + "\n }},\n"
+                    temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (elapsed as string) + "\n }},"
                     format "%" temp_line to:a
                 )
                 if m==materialsOnly[materialsOnly.count]  do (
 
-                    temp_line = " {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (elapsed as string) + "\n }}\n"
+                    temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"Tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"renderDevice\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"Start_Time\": \"" + (localtime as String) + "\",\n  \"file_name\": \"" + mfilename + "\",\n  \"Render_Time\": " + (elapsed as string) + "\n }}"
                     format "%" temp_line to:a
                 )
             )
         )
     )
 
-    e_line = "]"
+    e_line = "\n]"
     format "%" e_line to:a
     flush a
     close a

@@ -38,7 +38,4 @@
         <argument>--template_name template_max.html</argument>
     </execute>
 
-
 </job-manifest>
-
-

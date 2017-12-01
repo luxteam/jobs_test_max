@@ -1,2 +1,2 @@
-"\\RPR_Production_ModeDirect.max",
-"\\RPR_Production_ModeDirectNoShadows.max"
+"RPR_Production_ModeDirect.max",
+"RPR_Production_ModeDirectNoShadows.max"

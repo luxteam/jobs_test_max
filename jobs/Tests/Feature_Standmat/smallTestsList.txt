@@ -1,2 +1,2 @@
-"\\Standard Checker.max",
-"\\Standard Color Correction.max"
+"Standard Checker.max",
+"Standard Color Correction.max"
