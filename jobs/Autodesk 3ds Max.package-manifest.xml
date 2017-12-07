@@ -4,7 +4,7 @@
     <variable name="Root" value="{CWD}"/>
     <variable name="ResourcesDir" value = "{CWD}\Scripts"/>
     <variable name="ScenesDir" value="C:\TestResources\MaxAssets\scenes"/>
-    <variable name="CommonDir" value="..\..\jobs_launcher\common"/>
+    <variable name="CommonDir" value="\..\jobs_launcher\common"/>
     <variable name="BaselineDir" value="{CWD}\..\..\Baseline"/>
     
 </package-manifest>

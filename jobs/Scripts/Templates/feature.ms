@@ -49,7 +49,7 @@ function createCatalog = (
     flush t
     close t
 
-    IMAGE_DIR = OUT_DIR + "\\images\\"
+    IMAGE_DIR = OUT_DIR + "\\Color\\"
     makeDir IMAGE_DIR
 
     result = "{work_dir}" + "report.json"
