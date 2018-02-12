@@ -1,0 +1,1 @@
+logsystem.logName "max.log"

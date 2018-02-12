@@ -6,6 +6,7 @@ import psutil
 import json
 import ctypes
 import pyscreenshot
+from shutil import copyfile
 
 
 def get_windows_titles():
@@ -78,6 +79,9 @@ def main():
     maxScriptPath = os.path.join(work_dir, 'script.ms')
     with open(maxScriptPath, 'w') as f:
         f.write(maxScript)
+
+    copyfile(os.path.join(os.path.dirname(__file__), 'Templates', 'common.ms'),
+             os.path.join(work_dir, 'common.ms'))
 
     cmdRun = '"{tool}" -U MAXScript "{job_script}" -silent' \
         .format(tool=tool, job_script=maxScriptPath)
