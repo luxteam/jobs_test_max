@@ -202,18 +202,18 @@ function createCatalog = (
             ver_max = filterString (getdir #maxroot) "\\"
             fra = 0
             if matf!=MATLIBS.count do (
-                temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"render_device\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene_name\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"date_time\": \"" + (localtime as String) + "\",\n  \"render_color_path\": \"" + mfilename + "\",\n  \"render_time\": " + (elapsed as string) + "\n }},"
+                temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"render_device\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene_name\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"date_time\": \"" + (localtime as String) + "\",\n  \"render_color_path\": \"Color/" + mfilename + "\",\n  \"render_time\": " + (elapsed as string) + "\n }},"
                 format "%" temp_line to:a                               
                 )
             if  matf==MATLIBS.count do(
                 local materialsOnly = for i in lib where isKindOf i Material collect i
                 if m!=materialsOnly[materialsOnly.count] do (
-                    temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"render_device\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene_name\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"date_time\": \"" + (localtime as String) + "\",\n  \"render_color_path\": \"" + mfilename + "\",\n  \"render_time\": " + (elapsed as string) + "\n }},"
+                    temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"render_device\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene_name\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"date_time\": \"" + (localtime as String) + "\",\n  \"render_color_path\": \"Color/" + mfilename + "\",\n  \"render_time\": " + (elapsed as string) + "\n }},"
                     format "%" temp_line to:a
                 )
                 if m==materialsOnly[materialsOnly.count]  do (
 
-                    temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"render_device\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene_name\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"date_time\": \"" + (localtime as String) + "\",\n  \"render_color_path\": \"" + mfilename + "\",\n  \"render_time\": " + (elapsed as string) + "\n }}"
+                    temp_line = "\n {{\n  \"Test\": \"" + "{package_name}" + "\",\n  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n  \"render_device\": \""+"{render_mode}"+"\",\n  \"PassLimit\": " + (fr.passLimit as string) + ",\n  \"RenderSize\": " + (RENDER_SIZE as string) + ",\n  \"scene_name\": \"" + "CAT_Objects.max" + "\",\n  \"frame\": " + (fra as string) + ",\n  \"date_time\": \"" + (localtime as String) + "\",\n  \"render_color_path\": \"Color/" + mfilename + "\",\n  \"render_time\": " + (elapsed as string) + "\n }}"
                     format "%" temp_line to:a
                 )
             )
