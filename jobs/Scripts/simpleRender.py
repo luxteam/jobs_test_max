@@ -99,7 +99,7 @@ def main():
         try:
             rc = p.wait(timeout=5)
         except psutil.TimeoutExpired as err:
-            fatal_errors_titles = ['Radeon ProRender']
+            fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert']
             if set(fatal_errors_titles).intersection(get_windows_titles()):
                 rc = -1
                 error_screen = pyscreenshot.grab()
