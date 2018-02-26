@@ -102,8 +102,11 @@ def main():
             fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert']
             if set(fatal_errors_titles).intersection(get_windows_titles()):
                 rc = -1
-                error_screen = pyscreenshot.grab()
-                error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
+                try:
+                    error_screen = pyscreenshot.grab()
+                    error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
+                except:
+                    pass
                 for child in reversed(p.children(recursive=True)):
                     child.terminate()
                 p.terminate()
