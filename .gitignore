@@ -1,7 +1,6 @@
 /Results/*
 *.pyc
-tahoe.log
+*.log
 run_dev.bat
 /Work/*
-top-level.log
 .idea/*
