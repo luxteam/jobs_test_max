@@ -1,2 +1,4 @@
 "RPR Diffuse Material.max",
-"RPR Diffuse_Refraction.max"
+"RPR Diffuse_Refraction.max",
+"RPR Diffuse Material Bitmap.max",
+"RPR Emissive.max"

@@ -6,22 +6,18 @@
     <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--template "{ResourcesDir}\Templates\fire.ms"</argument>
+        <argument>--template "{ResourcesDir}\Templates\feature.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit 20</argument>
-        <argument>--render_size 512</argument>
-        <argument>--file_extension ".png"</argument>
         <argument>--scene_list "{Root}\Tests\Fire_Lights\{TestsFilter}TestsList.txt"</argument>
         <argument>--package_name "Feature"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}\scripts\checkExpected.py"' stage="stage2">
+    <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">
         <argument>--stage_report stage2.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
-        <argument>--report_name expected.json</argument>
-        <argument>--result_name not_rendered.json</argument>
     </execute>
 
     <execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">

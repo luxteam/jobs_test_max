@@ -38,8 +38,6 @@ def main():
     parser.add_argument('--stage_report', required=True)
     parser.add_argument('--tool', required=True, metavar="<path>")
     parser.add_argument('--pass_limit', required=True, type=int)
-    parser.add_argument('--render_size', required=True, type=int)
-    parser.add_argument('--file_extension', required=True)
     parser.add_argument('--package_name', required=True)
     parser.add_argument('--render_mode', required=True)
     parser.add_argument('--template', required=True)
@@ -54,6 +52,8 @@ def main():
     template = args.template
     with open(os.path.join(os.path.dirname(sys.argv[0]), template)) as f:
         max_script_template = f.read()
+    with open(os.path.join(os.path.dirname(sys.argv[0]), "Templates", "base_function.ms")) as f:
+        base = f.read()
 
     with open(os.path.join(os.path.dirname(sys.argv[0]), args.scene_list)) as f:
         scene_list = f.read()
@@ -65,8 +65,8 @@ def main():
     res_path = args.res_path
     res_path = res_path.replace("\\", "\\\\")
 
-    maxScript = max_script_template.format(pass_limit=args.pass_limit, render_size=args.render_size,
-                                           file_extension=args.file_extension,
+    max_script_template = base + max_script_template
+    maxScript = max_script_template.format(pass_limit=args.pass_limit,
                                            work_dir=work_dir,
                                            package_name=args.package_name, ren_mode=args.render_mode,
                                            render_mode=args.render_mode, res_path=res_path, scene_list=scene_list)
@@ -79,9 +79,6 @@ def main():
     maxScriptPath = os.path.join(work_dir, 'script.ms')
     with open(maxScriptPath, 'w') as f:
         f.write(maxScript)
-
-    copyfile(os.path.join(os.path.dirname(__file__), 'Templates', 'common.ms'),
-             os.path.join(work_dir, 'common.ms'))
 
     cmdRun = '"{tool}" -U MAXScript "{job_script}" -silent' \
         .format(tool=tool, job_script=maxScriptPath)

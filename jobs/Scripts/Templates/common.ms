@@ -1,1 +1,0 @@
-logsystem.logName "max.log"
