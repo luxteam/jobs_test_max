@@ -5,6 +5,6 @@ set TEST_PACKAGE=%3
 if "%RENDER_DEVICE%" EQU "" set RENDER_DEVICE=2
 if "%TESTS_FILTER%" EQU "" set TESTS_FILTER=small
 
-python ..\jobs_launcher\executeTests.py --test_package --tests_root ..\jobs --work_root ..\Work\Results --work_dir Max --cmd_variables Tool "C:\Program Files\Autodesk\3ds Max 2017\3dsmax.exe" RenderDevice %RENDER_DEVICE% TestsFilter %TESTS_FILTER% ResPath "C:\TestResources\MaxAssets\scenes"
+python ..\jobs_launcher\executeTests.py --test_package Anti_Aliasing_Test --tests_root ..\jobs --work_root ..\Work\Results --work_dir Max --cmd_variables Tool "C:\Program Files\Autodesk\3ds Max 2017\3dsmax.exe" RenderDevice %RENDER_DEVICE% TestsFilter %TESTS_FILTER% ResPath "C:\TestResources\MaxAssets\scenes"
 
 pause
