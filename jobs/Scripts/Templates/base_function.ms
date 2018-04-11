@@ -15,7 +15,7 @@ function save_render test_name = (
     a = (createFile json_path mode:"w")
     format "%" "[" to:a
 
-    filename = maxFileName + ".png"
+    filename = test_name + ".jpg"
     image_path = image_path + filename
 
     rstart = timeStamp()

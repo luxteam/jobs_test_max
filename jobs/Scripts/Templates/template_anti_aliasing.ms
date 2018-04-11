@@ -1,13 +1,13 @@
 
-function config test_name mode samples = (
+function config test_name filter samples = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
 
-    renderers.current.renderMode = mode
+    renderers.current.imageFilter = filter
     renderers.current.aaSampleCount = samples
 
-    img_name = test_name + "_" + mode as string + "_" + samples as string
+    img_name = test_name + "_" + filter as string + "_" + samples as string
     save_render img_name
 )
 
@@ -56,5 +56,5 @@ function main = (
 )
 
 main()
---resetMaxFile #noPrompt
+resetMaxFile #noPrompt
 quitMax #noPrompt
