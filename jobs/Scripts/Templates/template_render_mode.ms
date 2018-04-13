@@ -1,13 +1,12 @@
 
-function config test_name mode = (
+function prerender test_case mode = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
 
     renderers.current.renderMode = mode
 
-    img_name = test_name + "_" + mode as string + "_" + samples as string
-    save_render img_name
+    rpr_render test_case
 )
 
 function main = (
@@ -17,18 +16,18 @@ function main = (
     )
     
     for fi=1 to filesToRender.count do (
-        assetsFile = "{res_path}" + "\\" + filesToRender[fi]
+        assetsFile = "{res_path}" + "\\" + "MAX_RS_AA_001"
         loadMaxFile assetsFile quiet:true
 
-        config filesToRender[fi] 1
-        config filesToRender[fi] 2
-        config filesToRender[fi] 3
-        config filesToRender[fi] 4
-        config filesToRender[fi] 5
-        config filesToRender[fi] 6
-        config filesToRender[fi] 7
-        config filesToRender[fi] 8 
-        config filesToRender[fi] 9 
+        prerender "MAX_RS_RM_001" 1
+        prerender "MAX_RS_RM_002" 2
+        prerender "MAX_RS_RM_003" 3
+        prerender "MAX_RS_RM_004" 4
+        prerender "MAX_RS_RM_005" 5
+        prerender "MAX_RS_RM_006" 6
+        prerender "MAX_RS_RM_007" 7
+        prerender "MAX_RS_RM_008" 8 
+        prerender "MAX_RS_RM_009" 9 
        
     )
 )

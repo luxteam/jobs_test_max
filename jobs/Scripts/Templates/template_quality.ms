@@ -1,9 +1,11 @@
 
-function prerender test_case pass_limit = (
+function prerender test_case quality = (
     
     renderers.current = Radeon_ProRender()
-    renderers.current.passLimit = pass_limit
-    
+    renderers.current.passLimit = {pass_limit}
+
+    renderers.current.qualityPreset = quality
+
     rpr_render test_case
 )
 
@@ -17,11 +19,9 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile quiet:true
 
-        prerender "MAX_RS_PS_001" 100
-        prerender "MAX_RS_PS_002" 500
-        prerender "MAX_RS_PS_003" 1000
-        prerender "MAX_RS_PS_004" 5000
-        prerender "MAX_RS_PS_005" 10000
+        prerender "MAX_RS_QP_001" 1
+        prerender "MAX_RS_QP_002" 2
+        prerender "MAX_RS_QP_003" 3
        
     )
 )

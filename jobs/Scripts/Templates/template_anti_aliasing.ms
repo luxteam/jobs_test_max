@@ -1,5 +1,5 @@
 
-function config test_name filter samples = (
+function prerender test_case filter samples = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
@@ -7,8 +7,7 @@ function config test_name filter samples = (
     renderers.current.imageFilter = filter
     renderers.current.aaSampleCount = samples
 
-    img_name = test_name + "_" + filter as string + "_" + samples as string
-    save_render img_name
+    rpr_render test_case
 )
 
 function main = (
@@ -21,36 +20,41 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile quiet:true
 
-        config filesToRender[fi] 1 1
-        config filesToRender[fi] 1 5
-        config filesToRender[fi] 1 15
-        config filesToRender[fi] 1 23
-        config filesToRender[fi] 1 32
-        config filesToRender[fi] 2 1
-        config filesToRender[fi] 2 5
-        config filesToRender[fi] 2 15
-        config filesToRender[fi] 2 23
-        config filesToRender[fi] 2 32
-        config filesToRender[fi] 3 1
-        config filesToRender[fi] 3 5
-        config filesToRender[fi] 3 15
-        config filesToRender[fi] 3 23
-        config filesToRender[fi] 3 32
-        config filesToRender[fi] 4 1
-        config filesToRender[fi] 4 5
-        config filesToRender[fi] 4 15
-        config filesToRender[fi] 4 23
-        config filesToRender[fi] 4 32
-        config filesToRender[fi] 5 1
-        config filesToRender[fi] 5 5
-        config filesToRender[fi] 5 15
-        config filesToRender[fi] 5 23
-        config filesToRender[fi] 5 32
-        config filesToRender[fi] 6 1
-        config filesToRender[fi] 6 5
-        config filesToRender[fi] 6 15
-        config filesToRender[fi] 6 23
-        config filesToRender[fi] 6 32
+        prerender "MAX_RS_AA_001" 1 1
+        prerender "MAX_RS_AA_002" 1 5
+        prerender "MAX_RS_AA_003" 1 15
+        prerender "MAX_RS_AA_004" 1 23
+        prerender "MAX_RS_AA_005" 1 32
+
+        prerender "MAX_RS_AA_006" 2 1
+        prerender "MAX_RS_AA_007" 2 5
+        prerender "MAX_RS_AA_008" 2 15
+        prerender "MAX_RS_AA_009" 2 23
+        prerender "MAX_RS_AA_010" 2 32
+
+        prerender "MAX_RS_AA_011" 3 1
+        prerender "MAX_RS_AA_012" 3 5
+        prerender "MAX_RS_AA_013" 3 15
+        prerender "MAX_RS_AA_014" 3 23
+        prerender "MAX_RS_AA_015" 3 32
+
+        prerender "MAX_RS_AA_016" 4 1
+        prerender "MAX_RS_AA_017" 4 5
+        prerender "MAX_RS_AA_018" 4 15
+        prerender "MAX_RS_AA_019" 4 23
+        prerender "MAX_RS_AA_020" 4 32
+
+        prerender "MAX_RS_AA_021" 5 1
+        prerender "MAX_RS_AA_022" 5 5
+        prerender "MAX_RS_AA_023" 5 15
+        prerender "MAX_RS_AA_024" 5 23
+        prerender "MAX_RS_AA_025" 5 32
+
+        prerender "MAX_RS_AA_026" 6 1
+        prerender "MAX_RS_AA_027" 6 5
+        prerender "MAX_RS_AA_028" 6 15
+        prerender "MAX_RS_AA_029" 6 23
+        prerender "MAX_RS_AA_030" 6 32
        
     )
 )
