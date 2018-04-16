@@ -1,10 +1,10 @@
 
-function config test_name = (
+function prerender test_name = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
 
-    save_render(test_name)
+    rpr_render "jpg" test_name 
 )
 
 function main = (
@@ -17,10 +17,10 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile quiet:true
 
-        config(filesToRender[fi])
+        prerender filesToRender[fi]
     )
 )
 
 main()
---resetMaxFile #noPrompt
+resetMaxFile #noPrompt
 quitMax #noPrompt
