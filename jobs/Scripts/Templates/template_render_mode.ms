@@ -6,7 +6,7 @@ function prerender test_case mode = (
 
     renderers.current.renderMode = mode
 
-    rpr_render test_case
+    rpr_render "jpg" test_case
 )
 
 function main = (

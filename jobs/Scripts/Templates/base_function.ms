@@ -3,7 +3,7 @@ SetQuietMode true
 logsystem.logName "log"
 units.SystemType = #Meters
 
-function rpr_render test_case = (
+function rpr_render image_format test_case = (
 	
     renderers.current.renderDevice = {ren_mode}
     renderers.current.renderLimit = 1
@@ -11,7 +11,7 @@ function rpr_render test_case = (
     image_path = "{work_dir}" + "Color\\"
     makeDir image_path
 
-    filename = test_case + ".jpg"
+    filename = test_case + "." + image_format as string
     image_path = image_path + filename
 
     rstart = timeStamp()

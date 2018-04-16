@@ -7,7 +7,7 @@ function prerender test_case render_stamp = (
     renderers.current.enableRenderStamp = True
     renderers.current.renderStamp = render_stamp
 
-    rpr_render test_case
+    rpr_render "jpg" test_case
 )
 
 function main = (

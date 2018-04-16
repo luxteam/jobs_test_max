@@ -6,7 +6,7 @@ function prerender test_case quality = (
 
     renderers.current.qualityPreset = quality
 
-    rpr_render test_case
+    rpr_render "jpg" test_case
 )
 
 function main = (

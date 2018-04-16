@@ -6,7 +6,7 @@ function prerender test_case camera_type = (
 
     renderers.current.cameraType = camera_type
 
-    rpr_render test_case
+    rpr_render "jpg" test_case
 )
 
 function main = (

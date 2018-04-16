@@ -7,7 +7,7 @@ function prerender test_case filter samples = (
     renderers.current.imageFilter = filter
     renderers.current.aaSampleCount = samples
 
-    rpr_render test_case
+    rpr_render "jpg" test_case
 )
 
 function main = (

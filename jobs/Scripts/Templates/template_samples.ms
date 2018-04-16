@@ -4,7 +4,7 @@ function prerender test_case pass_limit = (
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = pass_limit
     
-    rpr_render test_case
+    rpr_render "jpg" test_case
 )
 
 function main = (

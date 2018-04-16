@@ -9,7 +9,7 @@ function prerender test_case width height aperture_width image_aspect_ration pix
     renderPixelAspect = pixel_aspect
     rendImageAspectRatio = image_aspect_ration
 
-    rpr_render test_case
+    rpr_render "jpg" test_case
 )
 
 function main = (

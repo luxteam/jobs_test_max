@@ -32,7 +32,7 @@ function prerender test_case type_sun_sky param1 param2 location = (
 		renderers.current.backgroundSkyMinutes = param2
     )
 			
-    rpr_render test_case
+    rpr_render "jpg" test_case
 )
 
 function main = (
