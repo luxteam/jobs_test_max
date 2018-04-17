@@ -1,4 +1,3 @@
-include "common.ms"
 resetMaxFile #noPrompt
 SetQuietMode true
 

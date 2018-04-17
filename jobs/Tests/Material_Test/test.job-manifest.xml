@@ -6,13 +6,11 @@
     <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--template "{ResourcesDir}\Templates\material_test.ms"</argument>
+        <argument>--template "{ResourcesDir}\Templates\template_material.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit 20</argument>
-        <argument>--render_size 512</argument>
-        <argument>--file_extension ".png"</argument>
         <argument>--scene_list "{Root}\Tests\Material_Test\{TestsFilter}TestsList.txt"</argument>
-        <argument>--package_name "Feature"</argument>
+        <argument>--package_name "Material Library"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
