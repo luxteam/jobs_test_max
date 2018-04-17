@@ -17,11 +17,14 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile quiet:true
 
-        prerender "MAX_RS_PS_001" 100
-        prerender "MAX_RS_PS_002" 500
-        prerender "MAX_RS_PS_003" 1000
-        prerender "MAX_RS_PS_004" 5000
-        prerender "MAX_RS_PS_005" 10000
+        if (filesToRender[fi] == "RPR Diffuse Material Wood.max") do (
+            prerender "MAX_RS_PS_001" 1
+            prerender "MAX_RS_PS_002" 100
+            prerender "MAX_RS_PS_003" 500
+            prerender "MAX_RS_PS_004" 1000
+            prerender "MAX_RS_PS_005" 5000
+            prerender "MAX_RS_PS_006" 10000
+        ) 
        
     )
 )
