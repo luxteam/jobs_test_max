@@ -38,6 +38,8 @@ def main():
     parser.add_argument('--stage_report', required=True)
     parser.add_argument('--tool', required=True, metavar="<path>")
     parser.add_argument('--pass_limit', required=True, type=int)
+    parser.add_argument('--resolution_x', required=True, type=int)
+    parser.add_argument('--resolution_y', required=True, type=int)
     parser.add_argument('--package_name', required=True)
     parser.add_argument('--render_mode', required=True)
     parser.add_argument('--template', required=True)
@@ -69,7 +71,8 @@ def main():
     maxScript = max_script_template.format(pass_limit=args.pass_limit,
                                            work_dir=work_dir,
                                            package_name=args.package_name, ren_mode=args.render_mode,
-                                           render_mode=args.render_mode, res_path=res_path, scene_list=scene_list)
+                                           render_mode=args.render_mode, res_path=res_path, scene_list=scene_list, resolution_y = args.resolution_y,
+                                           resolution_x = args.resolution_x)
 
     try:
         os.makedirs(work_dir)

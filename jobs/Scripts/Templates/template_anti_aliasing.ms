@@ -4,6 +4,9 @@ function prerender test_case filter samples = (
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
 
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
+    
     renderers.current.imageFilter = filter
     renderers.current.aaSampleCount = samples
 

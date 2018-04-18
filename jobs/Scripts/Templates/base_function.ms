@@ -37,10 +37,10 @@ function rpr_render image_format test_case = (
     json_line = "  \"render_device\": \"" + "{render_mode}" + "\",\n"
     format "%" json_line to:a
 
-    json_line = "  \"PassLimit\": " + (renderers.current.passLimit as string) + ",\n"
+    json_line = "  \"pass_limit\": " + (renderers.current.passLimit as string) + ",\n"
     format "%" json_line to:a
 
-    json_line = "  \"scene_name\": \"" + "fix" + "\",\n"
+    json_line = "  \"scene_name\": \"" + maxFileName + "\",\n"
     format "%" json_line to:a
 
     json_line = "  \"date_time\": \"" + (localtime as String) + "\",\n"
@@ -56,6 +56,18 @@ function rpr_render image_format test_case = (
     format "%" json_line to:a    
 
     json_line = "  \"render_time\": " + (relapsed as string) + "\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"plugin_version\": " + "0" + "\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"core_version\": " + "0" + "\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"resolution_x\": " + (renderWidth as string) + "\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"resolution_x\": " + (renderHeight as string) + "\n"
     format "%" json_line to:a 
 
     json_line = " }}\n"

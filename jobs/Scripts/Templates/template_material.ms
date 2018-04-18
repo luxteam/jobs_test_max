@@ -3,6 +3,8 @@ function prerender test_case model lib_material = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     lastModel = model
 

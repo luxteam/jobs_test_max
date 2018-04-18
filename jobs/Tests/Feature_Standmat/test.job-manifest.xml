@@ -9,6 +9,8 @@
         <argument>--template "{ResourcesDir}\Templates\feature.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit 20</argument>
+	<argument>--resolution_x 1080</argument>
+	<argument>--resolution_y 720</argument>
         <argument>--scene_list "{Root}\Tests\Feature_Standmat\{TestsFilter}TestsList.txt"</argument>
         <argument>--package_name "Feature"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>

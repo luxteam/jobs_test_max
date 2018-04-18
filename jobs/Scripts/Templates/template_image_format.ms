@@ -3,6 +3,8 @@ function prerender test_case image_format = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     rpr_render image_format test_case
 )

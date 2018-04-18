@@ -3,6 +3,8 @@ function prerender test_case render_stamp = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     renderers.current.enableRenderStamp = True
     renderers.current.renderStamp = render_stamp

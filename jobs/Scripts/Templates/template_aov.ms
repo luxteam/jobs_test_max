@@ -3,6 +3,8 @@ function prerender test_case aov = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     re = maxOps.GetCurRenderElementMgr()
     re.removeallrenderelements()

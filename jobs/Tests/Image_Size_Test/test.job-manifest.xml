@@ -9,6 +9,8 @@
         <argument>--template "{ResourcesDir}\Templates\template_image_size.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit 20</argument>
+	<argument>--resolution_x 1080</argument>
+	<argument>--resolution_y 720</argument>
         <argument>--scene_list "{Root}\Tests\Image_Size_Test\{TestsFilter}TestsList.txt"</argument>
         <argument>--package_name "Image Size"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>

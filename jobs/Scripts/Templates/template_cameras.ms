@@ -3,6 +3,8 @@ function prerender test_case camera_type = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     renderers.current.cameraType = camera_type
 

@@ -3,6 +3,8 @@ function prerender test_case type_sun_sky param1 param2 location = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     renderers.current.backgroundOverride = True
     renderers.current.backgroundType = 1

@@ -3,6 +3,8 @@ function prerender test_case intensity map = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     renderers.current.backgroundOverride = True
     renderers.current.backgroundType = 0

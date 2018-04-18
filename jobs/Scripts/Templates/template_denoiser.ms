@@ -3,6 +3,8 @@ function prerender_aov test_case aov denoiser = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     renderers.current.enableDenoiser = True
     renderers.current.denoiserType = denoiser

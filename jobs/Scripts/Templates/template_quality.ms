@@ -3,6 +3,8 @@ function prerender test_case quality = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    renderHeight = {resolution_y}
+    renderWidth = {resolution_x}
 
     renderers.current.qualityPreset = quality
 
