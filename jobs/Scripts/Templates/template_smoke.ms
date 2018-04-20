@@ -22,7 +22,7 @@ function import_obj = (
 function test_Uber2 = (
     meditMaterials[1] = RPR_Uber_Material()
     meditMaterials[1].diffuseColor = color 163 178 1
-    p0 = getnodebyname "shader_ball" exact:true
+    p0 = getnodebyname "default" exact:true
     p0.material = meditMaterials[1]
 )
 
