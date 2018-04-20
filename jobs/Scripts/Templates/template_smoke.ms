@@ -99,8 +99,8 @@ function main = (
             test_base_light()
             prerender "MAX_SM_011" 50 "[\"Testing base light\", \"Pass Limit: 50\"]" 
 
-            test_IES() 
-            prerender "MAX_SM_012" 50 "[\"Testing IES light\", \"Pass Limit: 50\"]" 
+            --test_IES() 
+            --prerender "MAX_SM_012" 50 "[\"Testing IES light\", \"Pass Limit: 50\"]" 
 
             test_Sun_Sky()
             prerender "MAX_SM_013" 50 "[\"Testing Sun and Sky System\", \"Pass Limit: 50\"]" 
