@@ -1,1 +1,3 @@
-"RPR Diffuse Material.max"
+"RPR Diffuse Material Wood.max"
+
+
