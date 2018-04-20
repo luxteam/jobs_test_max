@@ -1,10 +1,12 @@
 
-function prerender test_case type_sun_sky param1 param2 location = (
+function prerender test_case type_sun_sky param1 param2 location script_info = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
-    renderHeight = {resolution_y}
-    renderWidth = {resolution_x}
+    if ({resolution_y} != 0 and {resolution_x} != 0) do (
+        renderHeight = {resolution_y}
+        renderWidth = {resolution_x}
+    )
 
     renderers.current.backgroundOverride = True
     renderers.current.backgroundType = 1
@@ -34,7 +36,7 @@ function prerender test_case type_sun_sky param1 param2 location = (
 		renderers.current.backgroundSkyMinutes = param2
     )
 			
-    rpr_render "jpg" test_case
+    rpr_render "jpg" test_case script_info
 )
 
 function main = (
@@ -47,36 +49,36 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile quiet:true
 
-        prerender "MAX_RS_SS_001" 0 0 0 "None"
-        prerender "MAX_RS_SS_002" 0 0 45 "None"
-        prerender "MAX_RS_SS_003" 0 0 90 "None"
-        prerender "MAX_RS_SS_004" 0 90 0 "None"
-        prerender "MAX_RS_SS_005" 0 90 45 "None"
-        prerender "MAX_RS_SS_006" 0 90 90 "None"
-        prerender "MAX_RS_SS_007" 0 180 0 "None"
-        prerender "MAX_RS_SS_008" 0 180 45 "None"
-        prerender "MAX_RS_SS_009" 0 180 90 "None"
-        prerender "MAX_RS_SS_010" 0 270 0 "None"
-        prerender "MAX_RS_SS_011" 0 270 45 "None"
-        prerender "MAX_RS_SS_012" 0 270 90 "None"
-        prerender "MAX_RS_SS_013" 0 360 0 "None"
-        prerender "MAX_RS_SS_014" 0 360 45 "None"
-        prerender "MAX_RS_SS_015" 0 360 90 "None"
+        prerender "MAX_RS_SS_001" 0 0 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 0\"]"
+        prerender "MAX_RS_SS_002" 0 0 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 45\"]"
+        prerender "MAX_RS_SS_003" 0 0 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 90\"]"
+        prerender "MAX_RS_SS_004" 0 90 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 0\"]"
+        prerender "MAX_RS_SS_005" 0 90 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 45\"]"
+        prerender "MAX_RS_SS_006" 0 90 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 90\"]"
+        prerender "MAX_RS_SS_007" 0 180 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 0\"]"
+        prerender "MAX_RS_SS_008" 0 180 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 45\"]"
+        prerender "MAX_RS_SS_009" 0 180 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 90\"]"
+        prerender "MAX_RS_SS_010" 0 270 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 0\"]"
+        prerender "MAX_RS_SS_011" 0 270 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 45\"]"
+        prerender "MAX_RS_SS_012" 0 270 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 90\"]"
+        prerender "MAX_RS_SS_013" 0 360 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 0\"]"
+        prerender "MAX_RS_SS_014" 0 360 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 45\"]"
+        prerender "MAX_RS_SS_015" 0 360 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 90\"]"
 
-        prerender "MAX_RS_SS_016" 1 0 0 "Moscow"
-        prerender "MAX_RS_SS_017" 1 6 0 "Moscow"
-        prerender "MAX_RS_SS_018" 1 12 0 "Moscow"
-        prerender "MAX_RS_SS_019" 1 18 0 "Moscow"
-        prerender "MAX_RS_SS_020" 1 24 0 "Moscow"
+        prerender "MAX_RS_SS_016" 1 0 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 0\"]"
+        prerender "MAX_RS_SS_017" 1 6 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 6\"]"
+        prerender "MAX_RS_SS_018" 1 12 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 12\"]"
+        prerender "MAX_RS_SS_019" 1 18 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 18\"]"
+        prerender "MAX_RS_SS_020" 1 24 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 24\"]"
 
-        prerender "MAX_RS_SS_021" 1 0 0 "Miami_Beach"
-        prerender "MAX_RS_SS_022" 1 12 0 "Miami_Beach"
-        prerender "MAX_RS_SS_023" 1 24 0 "Miami_Beach"
+        prerender "MAX_RS_SS_021" 1 0 0 "Miami_Beach" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 0\"]"
+        prerender "MAX_RS_SS_022" 1 12 0 "Miami_Beach" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 12\"]"
+        prerender "MAX_RS_SS_023" 1 24 0 "Miami_Beach" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 24\"]"
 
-        prerender "MAX_RS_SS_024" 1 0 0 "Canberra"
-        prerender "MAX_RS_SS_025" 1 12 0 "Canberra"
-        prerender "MAX_RS_SS_026" 1 24 0 "Canberra"
-
+        prerender "MAX_RS_SS_024" 1 0 0 "Canberra" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 0\"]"
+        prerender "MAX_RS_SS_025" 1 12 0 "Canberra" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 12\"]"
+        prerender "MAX_RS_SS_026" 1 24 0 "Canberra" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 24\"]"
+ 
     )
 )
 

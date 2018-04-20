@@ -1,12 +1,14 @@
 
-function prerender test_name = (
+function prerender test_name script_info = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
-    renderHeight = {resolution_y}
-    renderWidth = {resolution_x}
+    if ({resolution_y} != 0 and {resolution_x} != 0) do (
+        renderHeight = {resolution_y}
+        renderWidth = {resolution_x}
+    )
 
-    rpr_render "jpg" test_name 
+    rpr_render "jpg" test_name script_info
 )
 
 function main = (
@@ -19,7 +21,7 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile quiet:true
 
-        prerender filesToRender[fi]
+        prerender filesToRender[fi] "[\"Will add later\"]"
     )
 )
 
