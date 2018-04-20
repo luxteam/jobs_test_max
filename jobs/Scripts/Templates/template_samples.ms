@@ -24,10 +24,10 @@ function main = (
         if (filesToRender[fi] == "RPR Diffuse Material Wood.max") do (
             prerender "MAX_RS_PS_001" 1 "[\"Iterations: 1\"]"
             prerender "MAX_RS_PS_002" 100 "[\"Iterations: 100\"]"
-            --prerender "MAX_RS_PS_003" 500 "[\"Iterations: 500\"]"
-            --prerender "MAX_RS_PS_004" 1000 "[\"Iterations: 1000\"]"
-            --prerender "MAX_RS_PS_005" 5000 "[\"Iterations: 5000\"]"
-            --prerender "MAX_RS_PS_006" 10000 "[\"Iterations: 10000\"]"
+            prerender "MAX_RS_PS_003" 500 "[\"Iterations: 500\"]"
+            prerender "MAX_RS_PS_004" 1000 "[\"Iterations: 1000\"]"
+            prerender "MAX_RS_PS_005" 5000 "[\"Iterations: 5000\"]"
+            prerender "MAX_RS_PS_006" 10000 "[\"Iterations: 10000\"]"
         ) 
        
     )
