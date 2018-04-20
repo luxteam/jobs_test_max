@@ -77,15 +77,15 @@ function main = (
         prerender "MAX_RS_IS_043" 1536 1024 34.2 1.5 1 "[\"Preset: 35mm (24mm X 36mm) (slide)\", \"Resolution: 1536x1024\"]"
         prerender "MAX_RS_IS_044" 4096 2731 34.2 1.5 1 "[\"Preset: 35mm (24mm X 36mm) (slide)\", \"Resolution: 4096x2731\"]"
 
-        prerender "MAX_RS_IS_045" 256 256 51.6 1 1 "[\"Preset: 6cm X 6cm (2 1/4\" X 2 1/4\") (slide)\", \"Resolution: 256x256\"]"
-        prerender "MAX_RS_IS_046" 1024 1024 51.6 1 1 "[\"Preset: 6cm X 6cm (2 1/4\" X 2 1/4\") (slide)\", \"Resolution: 1024x1024\"]"
-        prerender "MAX_RS_IS_047" 1536 1536 51.6 1 1 "[\"Preset: 6cm X 6cm (2 1/4\" X 2 1/4\") (slide)\", \"Resolution: 1536x1536\"]"
-        prerender "MAX_RS_IS_048" 4096 4096 51.6 1 1 "[\"Preset: 6cm X 6cm (2 1/4\" X 2 1/4\") (slide)\", \"Resolution: 4096x4096\"]"
+        prerender "MAX_RS_IS_045" 256 256 51.6 1 1 "[\"Preset: 6cm X 6cm (slide)\", \"Resolution: 256x256\"]"
+        prerender "MAX_RS_IS_046" 1024 1024 51.6 1 1 "[\"Preset: 6cm X 6cm (slide)\", \"Resolution: 1024x1024\"]"
+        prerender "MAX_RS_IS_047" 1536 1536 51.6 1 1 "[\"Preset: 6cm X 6cm (slide)\", \"Resolution: 1536x1536\"]"
+        prerender "MAX_RS_IS_048" 4096 4096 51.6 1 1 "[\"Preset: 6cm X 6cm (slide)\", \"Resolution: 4096x4096\"]"
 
-        prerender "MAX_RS_IS_049" 512 410 88.9 1.25 1 "[\"Preset: 4\" X 5\" or 8\" X 10\" (slide)\", \"Resolution: 512x410\"]"
-        prerender "MAX_RS_IS_050" 1024 819 88.9 1.25 1 "[\"Preset: 4\" X 5\" or 8\" X 10\" (slide)\", \"Resolution: 1024x819\"]"
-        prerender "MAX_RS_IS_051" 1536 1229 88.9 1.25 1 "[\"Preset: 4\" X 5\" or 8\" X 10\" (slide)\", \"Resolution: 1536x1229\"]"
-        prerender "MAX_RS_IS_052" 4096 3277 88.9 1.25 1 "[\"Preset: 4\" X 5\" or 8\" X 10\" (slide)\", \"Resolution: 4096x3277\"]"
+        prerender "MAX_RS_IS_049" 512 410 88.9 1.25 1 "[\"Preset: 4 X 5 or 8 X 10 (slide)\", \"Resolution: 512x410\"]"
+        prerender "MAX_RS_IS_050" 1024 819 88.9 1.25 1 "[\"Preset: 4 X 5 or 8 X 10 (slide)\", \"Resolution: 1024x819\"]"
+        prerender "MAX_RS_IS_051" 1536 1229 88.9 1.25 1 "[\"Preset: 4 X 5 or 8 X 10 (slide)\", \"Resolution: 1536x1229\"]"
+        prerender "MAX_RS_IS_052" 4096 3277 88.9 1.25 1 "[\"Preset: 4 X 5 or 8 X 10 (slide)\", \"Resolution: 4096x3277\"]"
 
         prerender "MAX_RS_IS_053" 720 486 20.12 1.333 0.9 "[\"Preset: NTSC D-1 (video)\", \"Resolution: 720x486\"]"
         prerender "MAX_RS_IS_054" 200 135 20.12 1.333 0.9 "[\"Preset: NTSC D-1 (video)\", \"Resolution: 200x135\"]"
