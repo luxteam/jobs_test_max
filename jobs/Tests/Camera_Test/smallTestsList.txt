@@ -1,1 +1,1 @@
-"RPR Diffuse Material.max"
+"max_scene.chr"

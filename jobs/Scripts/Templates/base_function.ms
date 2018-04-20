@@ -3,7 +3,7 @@ SetQuietMode true
 logsystem.logName "log"
 units.SystemType = #Meters
 
-function rpr_render image_format test_case = (
+function rpr_render image_format test_case script_info = (
 	
     renderers.current.renderDevice = {ren_mode}
     renderers.current.renderLimit = 1
@@ -55,19 +55,22 @@ function rpr_render image_format test_case = (
     json_line = "  \"difference_color\": \"not compare yet\",\n"
     format "%" json_line to:a    
 
-    json_line = "  \"render_time\": " + (relapsed as string) + "\n"
+    json_line = "  \"render_time\": " + (relapsed as string) + ",\n"
     format "%" json_line to:a 
 
-    json_line = "  \"plugin_version\": " + "0" + "\n"
+    json_line = "  \"plugin_version\": " + "0" + ",\n"
     format "%" json_line to:a 
 
-    json_line = "  \"core_version\": " + "0" + "\n"
+    json_line = "  \"core_version\": " + "0" + ",\n"
     format "%" json_line to:a 
 
-    json_line = "  \"resolution_x\": " + (renderWidth as string) + "\n"
+    json_line = "  \"resolution_x\": " + (renderWidth as string) + ",\n"
     format "%" json_line to:a 
 
-    json_line = "  \"resolution_x\": " + (renderHeight as string) + "\n"
+    json_line = "  \"resolution_x\": " + (renderHeight as string) + ",\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"script_info\": " + script_info + "\n"
     format "%" json_line to:a 
 
     json_line = " }}\n"
