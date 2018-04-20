@@ -49,7 +49,7 @@ function main = (
         prerender "MAX_RS_IF_026" "vst" "[\"Image Format: vst\"]"
         prerender "MAX_RS_IF_027" "tif" "[\"Image Format: tif\"]"
         prerender "MAX_RS_IF_028" "tiff" "[\"Image Format: tiff\"]"
-        prerender "MAX_RS_IF_029" "dds" "[\"Image Format: dds\"]"
+        --prerender "MAX_RS_IF_029" "dds" "[\"Image Format: dds\"]"
 
     )
 )
