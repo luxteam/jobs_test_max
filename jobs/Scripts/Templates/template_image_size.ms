@@ -49,7 +49,7 @@ function main = (
        
         prerender "MAX_RS_IS_021" 256 109 42.57 2.35 1 "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 256x109\"]"
         prerender "MAX_RS_IS_022" 1024 436 42.57 2.35 1 "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 1024x436\"]"
-        prerender "MAX_RS_IS_023" 1828 778.57 2.35 1 "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 1828x778\"]"
+        prerender "MAX_RS_IS_023" 1828 778 42.57 2.35 1 "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 1828x778\"]"
         prerender "MAX_RS_IS_024" 4096 1743 42.57 2.35 1 "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 4096x1743\"]"
 
         prerender "MAX_RS_IS_025" 256 218 42.57 2.35 2 "[\"Preset: 35mm Anamorphic (2.35:1) (Squeezed)\", \"Resolution: 256x218\"]"
