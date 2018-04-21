@@ -25,7 +25,7 @@ function main = (
         prerender "MAX_RS_CAM_001" 1 "[\"RPR Camera Type: Spherical panorama\"]"
         prerender "MAX_RS_CAM_002" 2 "[\"RPR Camera Type: Stereo spherical panorama\"]"
         prerender "MAX_RS_CAM_003" 3 "[\"RPR Camera Type: Cubemap\"]"
-        prerender "MAX_RS_CAM_004" 4 "[\"RPR Camera Type: Spherical panorama\"]"
+        prerender "MAX_RS_CAM_004" 4 "[\"RPR Camera Type: Stereo cubemap\"]"
        
     )
 )
