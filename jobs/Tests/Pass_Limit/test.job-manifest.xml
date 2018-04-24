@@ -6,13 +6,13 @@
     <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
-        <argument>--template "{ResourcesDir}\Templates\template_image_size.ms"</argument>
+        <argument>--template "{ResourcesDir}\Templates\template_pass_limit.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit {PassLimit}</argument>
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
-        <argument>--scene_list "{Root}\Tests\Image_Size_Test\{TestsFilter}TestsList.txt"</argument>
-        <argument>--package_name "Image Size"</argument>
+        <argument>--scene_list "{Root}\Tests\Pass_Limit\{TestsFilter}TestsList.txt"</argument>
+        <argument>--package_name "Iterations"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
@@ -23,17 +23,12 @@
     </execute>
 
     <execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">
-        <argument>--stage_report stage3.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
-        <argument>--report_name report.json</argument>
-        <argument>--result_name report_compare.json</argument>
     </execute>
 
     <execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"' stage="stage4">
-        <argument>--stage_report stage4.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
-        <argument>--template_name template_max.html</argument>
     </execute>
 
 </job-manifest>
