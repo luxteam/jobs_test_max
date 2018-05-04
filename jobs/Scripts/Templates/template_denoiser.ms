@@ -100,8 +100,8 @@ function main = (
 
         prerender_bilateral "MAX_RS_DEN_001" 1 "[\"Filter type: Bilateral\", \"Radius: 1\"]"
         prerender_bilateral "MAX_RS_DEN_002" 3 "[\"Filter type: Bilateral\", \"Radius: 3\"]"
-        --prerender_bilateral "MAX_RS_DEN_003" 6 "[\"Filter type: Bilateral\", \"Radius: 6\"]"
-        --prerender_bilateral "MAX_RS_DEN_004" 10 "[\"Filter type: Bilateral\", \"Radius: 10\"]"
+        prerender_bilateral "MAX_RS_DEN_003" 6 "[\"Filter type: Bilateral\", \"Radius: 6\"]"
+        prerender_bilateral "MAX_RS_DEN_004" 10 "[\"Filter type: Bilateral\", \"Radius: 10\"]"
 
         prerender_lwr "MAX_RS_DEN_005" 1 0.1 "[\"Filter type: Local Weighted Regression\", \"Samples: 1\", \"Filter radius: 1\", \"Bandwidth: 0.1\"]"
         prerender_lwr "MAX_RS_DEN_006" 5 0.5 "[\"Filter type: Local Weighted Regression\", \"Samples: 5\", \"Filter radius: 5\", \"Bandwidth: 0.5\"]"

@@ -50,7 +50,10 @@ function rpr_render image_format test_case script_info = (
     format "%" json_line to:a
 
     json_line = "  \"file_name\": \"" + filename + "\",\n"
-    format "%" json_line to:a    
+    format "%" json_line to:a  
+
+    json_line = "  \"test_case\": \"" + test_case + "\",\n"
+    format "%" json_line to:a      
 
     json_line = "  \"difference_color\": \"not compare yet\",\n"
     format "%" json_line to:a    
