@@ -47,7 +47,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         prerender "MAX_RS_SS_001" 0 0 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 0\"]"
         prerender "MAX_RS_SS_002" 0 0 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 45\"]"

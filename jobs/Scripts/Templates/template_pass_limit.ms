@@ -19,7 +19,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         if (filesToRender[fi] == "RPR Diffuse Material Wood.max") do (
             prerender "MAX_RS_PS_001" 1 "[\"Pass Limit: 1\"]"

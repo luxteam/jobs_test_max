@@ -1,3 +1,3 @@
-"RPR Diffuse Material Wood.max"
+"base_scene.max""RPR Diffuse Material Wood.max"
 
 

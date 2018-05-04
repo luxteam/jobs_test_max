@@ -21,7 +21,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         prerender "MAX_RS_RM_001" 1 "[\"Render mode: Global Illumination\"]"
         prerender "MAX_RS_RM_002" 2 "[\"Render mode: Direct\"]"

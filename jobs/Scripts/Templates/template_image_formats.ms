@@ -19,7 +19,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         prerender "MAX_RS_IF_001" "avi" "[\"Image Format: avi\"]"
         prerender "MAX_RS_IF_002" "bmp" "[\"Image Format: bmp\"]"

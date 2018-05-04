@@ -37,7 +37,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         prerender "MAX_RS_IBL_001" 0 "color" "[\"Type: Color\", \"Intensity: 0\"]"
         prerender "MAX_RS_IBL_002" 1 "color" "[\"Type: Color\", \"Intensity: 1\"]"

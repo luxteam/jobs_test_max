@@ -22,7 +22,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         prerender "MAX_RS_AA_001" 1 1 "[\"AA filter: Box\", \"AA samples: 1\"]"
         prerender "MAX_RS_AA_002" 1 5 "[\"AA filter: Box\", \"AA samples: 5\"]"

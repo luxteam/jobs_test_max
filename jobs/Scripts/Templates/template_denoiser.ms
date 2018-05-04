@@ -96,7 +96,7 @@ function main = (
 
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         prerender_bilateral "MAX_RS_DEN_001" 1 "[\"Filter type: Bilateral\", \"Radius: 1\"]"
         prerender_bilateral "MAX_RS_DEN_002" 3 "[\"Filter type: Bilateral\", \"Radius: 3\"]"

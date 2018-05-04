@@ -21,7 +21,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         prerender "MAX_RS_QP_001" 1 "[\"Quality preset: Low\"]"
         prerender "MAX_RS_QP_002" 2 "[\"Quality preset: Medium\"]"

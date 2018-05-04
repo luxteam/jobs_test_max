@@ -106,7 +106,7 @@ function main = (
 
     for m=1 to matlib.count do (
         assetsFile = "{res_path}" + "\\CAT_Objects.max"
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         lib = loadTempMaterialLibrary (matPath +  matlib[m].fname)
 

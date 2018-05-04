@@ -20,7 +20,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaXFile assetsFile quiet:true
+        loadMaXFile assetsFile useFileUnits:true quiet:true
 
         prerender "MAX_RS_IS_001" 512 389 24 1.316 1 "[\"Preset: 35mm 1.316:1 Full Aperture (cine)\", \"Resolution: 512x389\"]"
         prerender "MAX_RS_IS_002" 1536 1167 24 1.316 1 "[\"Preset: 35mm 1.316:1 Full Aperture (cine)\", \"Resolution: 1536x1167\"]"

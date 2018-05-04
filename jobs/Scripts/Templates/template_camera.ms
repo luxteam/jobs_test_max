@@ -20,7 +20,7 @@ function main = (
     
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile quiet:true
+        loadMaxFile assetsFile useFileUnits:true quiet:true
 
         prerender "MAX_RS_CAM_001" 1 "[\"RPR Camera Type: Spherical panorama\"]"
         prerender "MAX_RS_CAM_002" 2 "[\"RPR Camera Type: Stereo spherical panorama\"]"
