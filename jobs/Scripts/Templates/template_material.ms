@@ -90,6 +90,8 @@ function prerender test_case model lib_material script_info = (
     rpr_render "jpg" test_case  script_info
 )
 
+fn existFile fname = (getfiles fname).count != 0
+
 function main = (
     
     struct LibEntry (fname, model="Orb")
@@ -102,35 +104,37 @@ function main = (
     userName = sysInfo.username 
     matPath = basePath + userName + chainPath 
 
-    test_case = 1
+    if (existFile(matPath + "\RPR_CarPaints.mat")) do (
 
-    for m=1 to matlib.count do (
-        assetsFile = "{res_path}" + "\\CAT_Objects.max"
-        loadMaxFile assetsFile useFileUnits:true quiet:true
+        test_case = 1
 
-        lib = loadTempMaterialLibrary (matPath +  matlib[m].fname)
+        for m=1 to matlib.count do (
+            assetsFile = "{res_path}" + "\\CAT_Objects.max"
+            loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        lastModel = "Orb"
+            lib = loadTempMaterialLibrary (matPath +  matlib[m].fname)
 
-        if (lastModel != matlib[m].model) do (
-            layer = LayerManager.getLayerFromName lastModel
-            layer.on = false
-            lastModel = matlib[m].model
-            layer = LayerManager.getLayerFromName lastModel
-            layer.on = true
-        )
+            lastModel = "Orb"
 
-        for n=1 to lib.count do (  
-            if (test_case < 10) then (
-                prerender ("MAX_MAT_LIB_00" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
-            ) else if (test_case < 100) then (
-                prerender ("MAX_MAT_LIB_0" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
-            ) else (
-                prerender ("MAX_MAT_LIB_" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
+            if (lastModel != matlib[m].model) do (
+                layer = LayerManager.getLayerFromName lastModel
+                layer.on = false
+                lastModel = matlib[m].model
+                layer = LayerManager.getLayerFromName lastModel
+                layer.on = true
             )
-            test_case += 1
-        )
 
+            for n=1 to lib.count do (  
+                if (test_case < 10) then (
+                    prerender ("MAX_MAT_LIB_00" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
+                ) else if (test_case < 100) then (
+                    prerender ("MAX_MAT_LIB_0" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
+                ) else (
+                    prerender ("MAX_MAT_LIB_" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
+                )
+                test_case += 1
+            )
+        )
         
     )
 
