@@ -61,13 +61,13 @@ function rpr_render image_format test_case script_info = (
     json_line = "  \"render_time\": " + (relapsed as string) + ",\n"
     format "%" json_line to:a 
 
-    json_line = "  \"plugin_version\": " + "0" + ",\n"
+    json_line = "  \"render_version\": " + "0" + ",\n"
     format "%" json_line to:a 
 
     json_line = "  \"core_version\": " + "0" + ",\n"
     format "%" json_line to:a 
     
-    json_line = "  \"test_status\": " + "pass" + ",\n"
+    json_line = "  \"test_status\": \"passed\",\n"
     format "%" json_line to:a 
 
     json_line = "  \"resolution_x\": " + (renderWidth as string) + ",\n"
