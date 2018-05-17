@@ -15,7 +15,7 @@ function prerender test_list = (
     rpr_render "jpg" test_list[1] test_list[2]
 
     if (test_list[3] == "pass") do (
-        copyFile ("{work_dir}/Color/" + test_list[1] + ".jpg") ("{work_dir}" + "/../../../../jobs/Tests/pass.jpg")
+        copyFile ("{work_dir}\\Color\\" + test_list[1] + ".jpg") ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\pass.jpg")
     )
 )
 

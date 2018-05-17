@@ -89,3 +89,85 @@ function rpr_render image_format test_case script_info = (
 
 )
 
+function create_failed_report test_case script_info pic = (
+    
+    renderers.current = Radeon_ProRender()
+    renderers.current.renderDevice = {ren_mode}
+    renderers.current.renderLimit = 1
+    renderers.current.passLimit = {pass_limit}
+
+    image_path = "{work_dir}" + "Color\\"
+    makeDir image_path
+
+    copyFile ("{work_dir}\\Color\\" + test_case + ".jpg") ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\" + pic + ".jpg")
+
+    ver_max = filterString (getdir #maxroot) "\\"
+
+    json_path = "{work_dir}" + test_case + "_RPR.json"
+    a = (createFile json_path mode:"w")
+    format "%" "[\n" to:a
+
+    json_line = " {{\n" 
+    format "%" json_line to:a
+
+    json_line = "  \"test_name\": \"" + "{package_name}" + "\",\n"
+    format "%" json_line to:a
+
+    json_line = "  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n"
+    format "%" json_line to:a
+
+    json_line = "  \"render_device\": \"" + "{render_mode}" + "\",\n"
+    format "%" json_line to:a
+
+    json_line = "  \"pass_limit\": " + (renderers.current.passLimit as string) + ",\n"
+    format "%" json_line to:a
+
+    json_line = "  \"scene_name\": \"" + maxFileName + "\",\n"
+    format "%" json_line to:a
+
+    json_line = "  \"date_time\": \"" + (localtime as String) + "\",\n"
+    format "%" json_line to:a
+
+    json_line = "  \"render_color_path\": \"Color/" + filename + "\",\n"
+    format "%" json_line to:a
+
+    json_line = "  \"file_name\": \"" + filename + "\",\n"
+    format "%" json_line to:a  
+
+    json_line = "  \"test_case\": \"" + test_case + "\",\n"
+    format "%" json_line to:a      
+
+    json_line = "  \"difference_color\": \"not compare yet\",\n"
+    format "%" json_line to:a    
+
+    json_line = "  \"render_time\": " + (0 as string) + ",\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"render_version\": " + "0" + ",\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"core_version\": " + "0" + ",\n"
+    format "%" json_line to:a 
+    
+    json_line = "  \"test_status\": \"" + pic + "\",\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"resolution_x\": " + (renderWidth as string) + ",\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"resolution_x\": " + (renderHeight as string) + ",\n"
+    format "%" json_line to:a 
+
+    json_line = "  \"script_info\": " + script_info + "\n"
+    format "%" json_line to:a 
+
+    json_line = " }}\n"
+    format "%" json_line to:a 
+
+    json_line = "]"
+    format "%" json_line to:a
+    flush a
+    close a 
+
+)
+

@@ -119,5 +119,41 @@ def main():
 
 
 if __name__ == "__main__":
-	rc = main()
-	exit(rc)
+	
+	args = createArgsParser().parse_args()
+
+	status = 0
+	json_files = 0
+
+	with open(os.path.join(os.path.dirname(__file__), "..", "Tests", args.testType, "expected.txt")) as f:
+		expected = int(f.read())
+	
+	try:
+		os.makedirs(args.output)
+	except OSError as e:
+		pass
+
+	rc = main(0)
+
+	if rc != 0:
+		for i in range(expected):
+
+			with open(os.path.join(args.output, "status.txt"), 'a') as f:
+				f.write(str(status) + "\n")
+				f.write(str(json_files) + "\n")
+
+			if json_files == list(filter(lambda x: x.endswith('RPR.json'), args.output)):
+				status -= 1
+			else:
+				status = 0
+
+			if status == -3:
+				sys.exit()
+
+			json_files = list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output)))
+
+			rc = main(len(json_files) + 1)
+		
+			if rc == 0:
+				exit(rc)
+

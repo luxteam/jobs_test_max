@@ -15,7 +15,7 @@ function prerender test_list = (
     rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function main = (
+function main sf = (
     
     list_tests = #(
         #("MAX_RS_AA_001", "[\"AA filter: Box\", \"AA samples: 1\"]", 1, 1),
@@ -62,6 +62,10 @@ function main = (
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
+
+        if (sf != 0) {{
+                create_failed_report(list_tests[sf-1][1], list_tests[$sf-1][2], "failed");
+            }}
 
         for sf=1 to list_tests.count do (
                 prerender list_tests[sf]
