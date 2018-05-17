@@ -4,13 +4,12 @@
     <outpath value="{OutputDir}"/>
 
     <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
-        <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_render_stamp.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit {PassLimit}</argument>
-	<argument>--resolution_x {rx}</argument>
-	<argument>--resolution_y {ry}</argument>
+    	<argument>--resolution_x {rx}</argument>
+    	<argument>--resolution_y {ry}</argument>
         <argument>--scene_list "{Root}\Tests\Render_Stamp\{TestsFilter}TestsList.txt"</argument>
         <argument>--package_name "Render Stamp"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
@@ -18,7 +17,6 @@
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">
-        <argument>--stage_report stage2.json</argument>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 
