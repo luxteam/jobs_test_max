@@ -98,7 +98,7 @@ function prerender_eaw test_list = (
     rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function main = (
+function main sf = (
     
     list_tests = #(
         #("MAX_RS_DEN_001", "[\"Filter type: Bilateral\", \"Radius: 1\"]", 1),
@@ -188,6 +188,10 @@ function main = (
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
+
+        if (sf != 1) (
+            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        )
 
         for sf=1 to 4 do (
             prerender_bilateral list_tests[sf]

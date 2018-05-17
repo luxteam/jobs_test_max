@@ -63,9 +63,9 @@ function main sf = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        if (sf != 0) {{
-                create_failed_report(list_tests[sf-1][1], list_tests[$sf-1][2], "failed");
-            }}
+        if (sf != 1) (
+            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        )
 
         for sf=1 to list_tests.count do (
                 prerender list_tests[sf]

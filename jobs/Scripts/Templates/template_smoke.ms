@@ -80,7 +80,7 @@ function test_IES = (
 
 fn empty = (print "OK")
 
-function main = (
+function main sf = (
     
     list_tests = #(
         #("MAX_SM_001", "["Install RPR"]", "pass", 1),
@@ -114,45 +114,21 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
+        if (sf != 1) (
+            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        )
+
         if (filesToRender[fi] == "default.max") then (
-            prerender "MAX_SM_003" 50 "[\"Render empty scene\", \"Pass Limit: 50\"]" 
+
+            for sf=1 to 3 do (
+                prerender list_tests[sf]
+            )
+
         ) else if (filesToRender[fi] == "rpr_default.max") then (
 
-            prerender "MAX_SM_005" 50 "[\"Render empty scene with RPR parameters\", \"Pass Limit: 50\"]" 
-
-            import_fbx()
-            prerender "MAX_SM_006" 50 "[\"Import FBX\", \"Pass Limit: 50\"]" 
-
-            import_obj()
-            prerender "MAX_SM_007" 50 "[\"Import OBJ\", \"Pass Limit: 50\"]" 
-
-            test_Uber2()
-            prerender "MAX_SM_010" 50 "[\"Testing Uber material\", \"Pass Limit: 50\"]" 
-
-            test_base_light()
-            prerender "MAX_SM_011" 50 "[\"Testing base light\", \"Pass Limit: 50\"]" 
-
-            --test_IES() 
-            --prerender "MAX_SM_012" 50 "[\"Testing IES light\", \"Pass Limit: 50\"]" 
-
-            test_Sun_Sky()
-            prerender "MAX_SM_013" 50 "[\"Testing Sun and Sky System\", \"Pass Limit: 50\"]" 
-
-            test_IBL_on()
-            prerender "MAX_SM_014" 50 "[\"Testing IBL\", \"Pass Limit: 50\"]" 
-
-            test_IBL_hdr()
-            prerender "MAX_SM_015" 50 "[\"Testing IBL with hdr\", \"Pass Limit: 50\"]" 
-
-            test_IBL_exr()
-            prerender "MAX_SM_016" 50 "[\"Testing IBL with exr\", \"Pass Limit: 50\"]" 
-
-            prerender "MAX_SM_017" 1 "[\"Iteration test\", \"Pass Limit: 1\"]" 
-            prerender "MAX_SM_018" 30 "[\"Iteration test\", \"Pass Limit: 30\"]" 
-            prerender "MAX_SM_019" 100 "[\"Iteration test\", \"Pass Limit: 100\"]" 
-            prerender "MAX_SM_020" 500 "[\"Iteration test\", \"Pass Limit: 500\"]" 
-            prerender "MAX_SM_021" 1000 "[\"Iteration test\", \"Pass Limit: 1000\"]" 
-
+            for sf=4 to list_tests.count do (
+                prerender list_tests[sf]
+            )
 
         )
     )
