@@ -1,20 +1,27 @@
 
-function prerender test_case quality script_info = (
+function prerender test_list = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
     )
 
-    renderers.current.qualityPreset = quality
+    renderers.current.qualityPreset = test_list[3]
 
-    rpr_render "jpg" test_case  script_info
+    rpr_render "jpg" test_list[1]  test_list[2]
 )
 
 function main = (
     
+    list_tests = #(
+        #("MAX_RS_QP_001", "[\"Quality preset: Low\"]", 1),
+        #("MAX_RS_QP_002", "[\"Quality preset: Medium\"]", 2),
+        #("MAX_RS_QP_003", "[\"Quality preset: High\"]", 3)
+    )
+
     filesToRender = #(
         {scene_list}
     )
@@ -23,9 +30,9 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        prerender "MAX_RS_QP_001" 1 "[\"Quality preset: Low\"]"
-        prerender "MAX_RS_QP_002" 2 "[\"Quality preset: Medium\"]"
-        prerender "MAX_RS_QP_003" 3 "[\"Quality preset: High\"]"
+        for sf=1 to list_tests.count do (
+                prerender list_tests[sf]
+        )
        
     )
 )

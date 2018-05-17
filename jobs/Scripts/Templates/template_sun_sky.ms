@@ -1,8 +1,9 @@
 
-function prerender test_case type_sun_sky param1 param2 location script_info = (
+function prerender test_list = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
@@ -11,36 +12,78 @@ function prerender test_case type_sun_sky param1 param2 location script_info = (
     renderers.current.backgroundOverride = True
     renderers.current.backgroundType = 1
 
-    renderers.current.backgroundSkyType = type_sun_sky
+    renderers.current.backgroundSkyType = test_list[3]
 
-    if (type_sun_sky == 0) then (
-    	renderers.current.backgroundSkyAzimuth = param1
-    	renderers.current.backgroundSkyAltitude = param2
-    ) else if (type_sun_sky == 1) then (
-    	if (location == "Moscow") then (
+    if (test_list[3] == 0) then (
+
+    	renderers.current.backgroundSkyAzimuth = test_list[4]
+    	renderers.current.backgroundSkyAltitude = test_list[5]
+
+    ) else if (test_list[3] == 1) then (
+
+    	if (test_list[6] == "Moscow") then (
+
     		renderers.current.backgroundSkyTimezone = 3
     		renderers.current.backgroundSkyLatitude = 55.752
     		renderers.current.backgroundSkyLongitude = 37.616
+
     	)
-    	if (location == "Canberra") then (
+    	if (test_list[6] == "Canberra") then (
+
     		renderers.current.backgroundSkyTimezone = 11
     		renderers.current.backgroundSkyLatitude = -35.283
     		renderers.current.backgroundSkyLongitude = 149.128
+
     	)
-    	if (location == "Miami_Beach") then (
+    	if (test_list[6] == "Miami_Beach") then (
+
     		renderers.current.backgroundSkyTimezone = -5
     		renderers.current.backgroundSkyLatitude = 25.791
     		renderers.current.backgroundSkyLongitude = -80.13
+
     	)
-    	renderers.current.backgroundSkyHours = param1
-		renderers.current.backgroundSkyMinutes = param2
+
+    	renderers.current.backgroundSkyHours = test_list[4]
+		renderers.current.backgroundSkyMinutes = test_list[5]
     )
 			
-    rpr_render "jpg" test_case script_info
+    rpr_render "jpg" test_list[1] test_list[2]
 )
 
 function main = (
     
+    list_tests = #(
+        #("MAX_RS_SS_001", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 0\"]", 0, 0, 0, "None"), 
+        #("MAX_RS_SS_002", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 45\"]", 0, 0, 45, "None"),
+        #("MAX_RS_SS_003", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 90\"]", 0, 0, 90, "None"),
+        #("MAX_RS_SS_004", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 0\"]", 0, 90 ,0 ",None"),
+        #("MAX_RS_SS_005", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 45\"]", 0, 90, 45, "None"),
+        #("MAX_RS_SS_006", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 90\"]", 0, 90, 90, "None"),
+        #("MAX_RS_SS_007", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 0\"]", 0, 180, 0, "None"),
+        #("MAX_RS_SS_008", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 45\"]", 0, 180, 45, "None"),
+        #("MAX_RS_SS_009", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 90\"]", 0, 180, 90, "None"),
+        #("MAX_RS_SS_010", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 0\"]", 0, 270, 0, "None"),
+        #("MAX_RS_SS_011", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 45\"]", 0, 270, 45, "None"),
+        #("MAX_RS_SS_012", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 90\"]", 0, 270, 90, "None"),
+        #("MAX_RS_SS_013", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 0\"]", 0, 360, 0, "None"),
+        #("MAX_RS_SS_014", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 45\"]", 0, 360, 45, "None"),
+        #("MAX_RS_SS_015", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 90\"]", 0, 360, 90, "None"),
+
+        #("MAX_RS_SS_016", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 0\"]", 1, 0, 0, "Moscow"),
+        #("MAX_RS_SS_017", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 6\"]", 1, 6, 0, "Moscow"),
+        #("MAX_RS_SS_018", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 12\"]", 1, 12, 0, "Moscow"),
+        #("MAX_RS_SS_019", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 18\"]", 1, 18, 0, "Moscow"),
+        #("MAX_RS_SS_020", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 24\"]", 1, 24, 0, "Moscow"),
+
+        #("MAX_RS_SS_021", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 0\"]", 1, 0, 0, "Miami_Beach"),
+        #("MAX_RS_SS_022", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 12\"]", 1, 12, 0, "Miami_Beach"),
+        #("MAX_RS_SS_023", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 24\"]", 1, 24, 0, "Miami_Beach"),
+
+        #("MAX_RS_SS_024", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 0\"]", 1, 0, 0, "Canberra"),
+        #("MAX_RS_SS_025", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 12\"]", 1, 12, 0, "Canberra"),
+        #("MAX_RS_SS_026", "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 24\"]", 1, 24, 0, "Canberra")
+    )
+
     filesToRender = #(
         {scene_list}
     )
@@ -49,35 +92,9 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        prerender "MAX_RS_SS_001" 0 0 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 0\"]"
-        prerender "MAX_RS_SS_002" 0 0 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 45\"]"
-        prerender "MAX_RS_SS_003" 0 0 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 90\"]"
-        prerender "MAX_RS_SS_004" 0 90 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 0\"]"
-        prerender "MAX_RS_SS_005" 0 90 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 45\"]"
-        prerender "MAX_RS_SS_006" 0 90 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 90\"]"
-        prerender "MAX_RS_SS_007" 0 180 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 0\"]"
-        prerender "MAX_RS_SS_008" 0 180 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 45\"]"
-        prerender "MAX_RS_SS_009" 0 180 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 90\"]"
-        prerender "MAX_RS_SS_010" 0 270 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 0\"]"
-        prerender "MAX_RS_SS_011" 0 270 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 45\"]"
-        prerender "MAX_RS_SS_012" 0 270 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 270\", \"Altitude: 90\"]"
-        prerender "MAX_RS_SS_013" 0 360 0 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 0\"]"
-        prerender "MAX_RS_SS_014" 0 360 45 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 45\"]"
-        prerender "MAX_RS_SS_015" 0 360 90 "None" "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 360\", \"Altitude: 90\"]"
-
-        prerender "MAX_RS_SS_016" 1 0 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 0\"]"
-        prerender "MAX_RS_SS_017" 1 6 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 6\"]"
-        prerender "MAX_RS_SS_018" 1 12 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 12\"]"
-        prerender "MAX_RS_SS_019" 1 18 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 18\"]"
-        prerender "MAX_RS_SS_020" 1 24 0 "Moscow" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Moscow\", \"Hour: 24\"]"
-
-        prerender "MAX_RS_SS_021" 1 0 0 "Miami_Beach" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 0\"]"
-        prerender "MAX_RS_SS_022" 1 12 0 "Miami_Beach" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 12\"]"
-        prerender "MAX_RS_SS_023" 1 24 0 "Miami_Beach" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Miami Beach\", \"Hour: 24\"]"
-
-        prerender "MAX_RS_SS_024" 1 0 0 "Canberra" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 0\"]"
-        prerender "MAX_RS_SS_025" 1 12 0 "Canberra" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 12\"]"
-        prerender "MAX_RS_SS_026" 1 24 0 "Canberra" "[\"Sun&Sky System: Date, Time and Location\", \"Location: Canberra\", \"Hour: 24\"]"
+        for sf=1 to list_tests.count do (
+                prerender list_tests[sf]
+        )
  
     )
 )

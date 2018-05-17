@@ -1,19 +1,27 @@
 
-function prerender test_case camera_type script_info = (
+function prerender test_list = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+    
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
     )
 
-    renderers.current.cameraType = camera_type
-    rpr_render "jpg" test_case script_info
+    renderers.current.cameraType = test_list[3]
+    rpr_render "jpg" test_list[1] test_list[2]
 )
 
 function main = (
     
+    list_tests = #(
+        #("MAX_RS_CAM_001", "[\"RPR Camera Type: Spherical panorama\"]", 1),
+        #("MAX_RS_CAM_002", "[\"RPR Camera Type: Stereo spherical panorama\"]", 2),
+        #("MAX_RS_CAM_003", "[\"RPR Camera Type: Cubemap\"]", 3),
+        #("MAX_RS_CAM_004", "[\"RPR Camera Type: Stereo cubemap\"]", 4)
+    )
+
     filesToRender = #(
         {scene_list}
     )
@@ -22,10 +30,9 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        prerender "MAX_RS_CAM_001" 1 "[\"RPR Camera Type: Spherical panorama\"]"
-        prerender "MAX_RS_CAM_002" 2 "[\"RPR Camera Type: Stereo spherical panorama\"]"
-        prerender "MAX_RS_CAM_003" 3 "[\"RPR Camera Type: Cubemap\"]"
-        prerender "MAX_RS_CAM_004" 4 "[\"RPR Camera Type: Stereo cubemap\"]"
+        for sf=1 to list_tests.count do (
+            prerender list_tests[sf]
+        )
        
     )
 )

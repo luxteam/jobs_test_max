@@ -1,41 +1,49 @@
 
-function prerender_aov test_case aov denoiser_type script_info = (
+function prerender_aov test_list = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
     )
 
     renderers.current.enableDenoiser = True
-    renderers.current.denoiserType = denoiser_type
+    renderers.current.denoiserType = test_list[4]
 
-    if (denoiser_type == 1) then (
-    renderers.current.bilateralRadius = 3
-    ) else if (denoiser_type == 2) then (
-    renderers.current.lwrSamples = 4
-    renderers.current.lwrRadius = 4
-    renderers.current.lwrBandwidth = 0.1
-    ) else if (denoiser_type == 3) then (
-    renderers.current.eawColor = 0.1
-    renderers.current.eawNormal = 0.1
-    renderers.current.eawDepth = 0.1
-    renderers.current.eawObjectId = 0.1
+    if (test_list[4] == 1) then (
+
+        renderers.current.bilateralRadius = 3
+
+    ) else if (test_list[4] == 2) then (
+
+        renderers.current.lwrSamples = 4
+        renderers.current.lwrRadius = 4
+        renderers.current.lwrBandwidth = 0.1
+
+    ) else if (test_list[4] == 3) then (
+
+        renderers.current.eawColor = 0.1
+        renderers.current.eawNormal = 0.1
+        renderers.current.eawDepth = 0.1
+        renderers.current.eawObjectId = 0.1
+
     )
 
     re = maxOps.GetCurRenderElementMgr()
     re.removeallrenderelements()
 
-    re.addrenderelement (aov elementname:(aov as string))
+    re.addrenderelement (test_list[3] elementname:(test_list[3] as string))
 
-    rpr_render "jpg" test_case script_info
+    rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function prerender_bilateral test_case param1 script_info = (
+function prerender_bilateral test_list = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
@@ -44,15 +52,16 @@ function prerender_bilateral test_case param1 script_info = (
     renderers.current.enableDenoiser = True
     renderers.current.denoiserType = 1
 
-    renderers.current.bilateralRadius = param1
+    renderers.current.bilateralRadius = test_list[3]
 
-    rpr_render "jpg" test_case script_info
+    rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function prerender_lwr test_case param1 param2 script_info = (
+function prerender_lwr test_list = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
@@ -61,17 +70,18 @@ function prerender_lwr test_case param1 param2 script_info = (
     renderers.current.enableDenoiser = True
     renderers.current.denoiserType = 2
 
-    renderers.current.lwrSamples = param1
-    renderers.current.lwrRadius = param1
-    renderers.current.lwrBandwidth = param2
+    renderers.current.lwrSamples = test_list[3]
+    renderers.current.lwrRadius = test_list[3]
+    renderers.current.lwrBandwidth = test_list[4]
 
-    rpr_render "jpg" test_case script_info
+    rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function prerender_eaw test_case param1 script_info = (
+function prerender_eaw test_list = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
+
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
@@ -80,16 +90,97 @@ function prerender_eaw test_case param1 script_info = (
     renderers.current.enableDenoiser = True
     renderers.current.denoiserType = 3
 
-    renderers.current.eawColor = param1
-    renderers.current.eawNormal = param1
-    renderers.current.eawDepth = param1
-    renderers.current.eawObjectId = param1
+    renderers.current.eawColor = test_list[3]
+    renderers.current.eawNormal = test_list[3]
+    renderers.current.eawDepth = test_list[3]
+    renderers.current.eawObjectId = test_list[3]
 
-    rpr_render "jpg" test_case script_info
+    rpr_render "jpg" test_list[1] test_list[2]
 )
 
 function main = (
     
+    list_tests = #(
+        #("MAX_RS_DEN_001", "[\"Filter type: Bilateral\", \"Radius: 1\"]", 1),
+        #("MAX_RS_DEN_002", "[\"Filter type: Bilateral\", \"Radius: 3\"]", 3),
+        #("MAX_RS_DEN_003", "[\"Filter type: Bilateral\", \"Radius: 6\"]", 6),
+        #("MAX_RS_DEN_004", "[\"Filter type: Bilateral\", \"Radius: 10\"]", 10),
+
+        #("MAX_RS_DEN_005", "[\"Filter type: Local Weighted Regression\", \"Samples: 1\", \"Filter radius: 1\", \"Bandwidth: 0.1\"]", 1, 0.1),
+        #("MAX_RS_DEN_006", "[\"Filter type: Local Weighted Regression\", \"Samples: 5\", \"Filter radius: 5\", \"Bandwidth: 0.5\"]", 5, 0.5),
+        #("MAX_RS_DEN_007", "[\"Filter type: Local Weighted Regression\", \"Samples: 10\", \"Filter radius: 10\", \"Bandwidth: 1.0\"]", 10, 1),
+
+        #("MAX_RS_DEN_008", "[\"Filter type: Edge Avoiding Wavelets\", \"Color: 0.1\", \"Depth: 0.1\", \"Normal: 0.1\", \"Object ID: 0.1\"]", 0.1),
+        #("MAX_RS_DEN_009", "[\"Filter type: Edge Avoiding Wavelets\", \"Color: 0.5\", \"Depth: 0.5\", \"Normal: 0.5\", \"Object ID: 0.5\"]", 0.5),
+        #("MAX_RS_DEN_010", "[\"Filter type: Edge Avoiding Wavelets\", \"Color: 1.0\", \"Depth: 1.0\", \"Normal: 1.0\", \"Object ID: 1.0\"]", 1),
+
+        #("MAX_RS_DEN_011", "[\"AOV: Opacity\", \"Filter type: Bilateral\"]", RprOpacity, 1),
+        #("MAX_RS_DEN_012", "[\"AOV: World Coordinate\", \"Filter type: Bilateral\"]", RprWorldCoordinate, 1),
+        #("MAX_RS_DEN_013", "[\"AOV: UV\", \"Filter type: Bilateral\"]", RprUV, 1),
+        #("MAX_RS_DEN_014", "[\"AOV: Material Index\", \"Filter type: Bilateral\"]", RprMaterialIdx, 1),
+        #("MAX_RS_DEN_015", "[\"AOV: Geometric Normal\", \"Filter type: Bilateral\"]", RprGeometricNormal, 1),
+        #("MAX_RS_DEN_016", "[\"AOV: Shading Normal\", \"Filter type: Bilateral\"]", RprShadingNormal, 1), 
+        #("MAX_RS_DEN_017", "[\"AOV: Depth\", \"Filter type: Bilateral\"]", RprDepth, 1),
+        #("MAX_RS_DEN_018", "[\"AOV: Object ID\", \"Filter type: Bilateral\"]", RprObjectId, 1), 
+        #("MAX_RS_DEN_019", "[\"AOV: Object Group ID\", \"Filter type: Bilateral\"]", RprObjectGroupId, 1),
+        #("MAX_RS_DEN_020", "[\"AOV: Background\", \"Filter type: Bilateral\"]", RprBackground, 1), 
+        #("MAX_RS_DEN_021", "[\"AOV: Emission\", \"Filter type: Bilateral\"]", RprEmission, 1), 
+        #("MAX_RS_DEN_022", "[\"AOV: Velocity\", \"Filter type: Bilateral\"]", RprVelocity, 1), 
+        #("MAX_RS_DEN_023", "[\"AOV: Direct Illumination\", \"Filter type: Bilateral\"]", RprDirectIllumination, 1),
+        #("MAX_RS_DEN_024", "[\"AOV: Indirect Illumination\", \"Filter type: Bilateral\"]", RprIndirectIllumination, 1),
+        #("MAX_RS_DEN_025", "[\"AOV: AO\", \"Filter type: Bilateral\"]", RprAO, 1),
+        #("MAX_RS_DEN_026", "[\"AOV: Direct Diffuse\", \"Filter type: Bilateral\"]", RprDirectDiffuse, 1),
+        #("MAX_RS_DEN_027", "[\"AOV: Direct Reflect\", \"Filter type: Bilateral\"]", RprDirectReflect, 1),
+        #("MAX_RS_DEN_028", "[\"AOV: Indirect Diffuse\", \"Filter type: Bilateral\"]", RprIndirectDiffuse, 1),
+        #("MAX_RS_DEN_029", "[\"AOV: Indirect Reflect\", \"Filter type: Bilateral\"]", RprIndirectReflect, 1),
+        #("MAX_RS_DEN_030", "[\"AOV: Refract\", \"Filter type: Bilateral\"]", RprRefract, 1),
+        #("MAX_RS_DEN_031", "[\"AOV: Volume\", \"Filter type: Bilateral\"]", RprVolume, 1),
+
+        #("MAX_RS_DEN_032", "[\"AOV: Opacity\", \"Filter type: Local Weighted Regression\"]", RprOpacity, 2),
+        #("MAX_RS_DEN_033", "[\"AOV: World Coordinate\", \"Filter type: Local Weighted Regression\"]", RprWorldCoordinate, 2),
+        #("MAX_RS_DEN_034", "[\"AOV: UV\", \"Filter type: Local Weighted Regression\"]", RprUV, 2),
+        #("MAX_RS_DEN_035", "[\"AOV: Material Index\", \"Filter type: Local Weighted Regression\"]", RprMaterialIdx, 2),
+        #("MAX_RS_DEN_036", "[\"AOV: Geometric Normal\", \"Filter type: Local Weighted Regression\"]", RprGeometricNormal, 2),
+        #("MAX_RS_DEN_037", "[\"AOV: Shading Normal\", \"Filter type: Local Weighted Regression\"]", RprShadingNormal, 2),
+        #("MAX_RS_DEN_038", "[\"AOV: Depth\", \"Filter type: Local Weighted Regression\"]", RprDepth, 2),
+        #("MAX_RS_DEN_039", "[\"AOV: Object ID\", \"Filter type: Local Weighted Regression\"]", RprObjectId, 2),
+        #("MAX_RS_DEN_040", "[\"AOV: Object Group ID\", \"Filter type: Local Weighted Regression\"]", RprObjectGroupId, 2),
+        #("MAX_RS_DEN_041", "[\"AOV: Background\", \"Filter type: Local Weighted Regression\"]", RprBackground, 2),
+        #("MAX_RS_DEN_042", "[\"AOV: Emission\", \"Filter type: Local Weighted Regression\"]", RprEmission, 2),
+        #("MAX_RS_DEN_043", "[\"AOV: Velocity\", \"Filter type: Local Weighted Regression\"]", RprVelocity, 2),
+        #("MAX_RS_DEN_044", "[\"AOV: Direct Illumination\", \"Filter type: Local Weighted Regression\"]", RprDirectIllumination, 2),
+        #("MAX_RS_DEN_045", "[\"AOV: Indirect Illumination\", \"Filter type: Local Weighted Regression\"]", RprIndirectIllumination, 2),
+        #("MAX_RS_DEN_046", "[\"AOV: AO\", \"Filter type: Local Weighted Regression\"]", RprAO, 2),
+        #("MAX_RS_DEN_047", "[\"AOV: Direct Diffuse\", \"Filter type: Local Weighted Regression\"]", RprDirectDiffuse, 2),
+        #("MAX_RS_DEN_048", "[\"AOV: Direct Reflect\", \"Filter type: Local Weighted Regression\"]", RprDirectReflect, 2),
+        #("MAX_RS_DEN_049", "[\"AOV: Indirect Diffuse\", \"Filter type: Local Weighted Regression\"]", RprIndirectDiffuse, 2),
+        #("MAX_RS_DEN_050", "[\"AOV: Indirect Reflect\", \"Filter type: Local Weighted Regression\"]", RprIndirectReflect, 2),
+        #("MAX_RS_DEN_051", "[\"AOV: Refract\", \"Filter type: Local Weighted Regression\"]", RprRefract, 2),
+        #("MAX_RS_DEN_052", "[\"AOV: Volume\", \"Filter type: Local Weighted Regression\"]", RprVolume, 2),
+
+        #("MAX_RS_DEN_053", "[\"AOV: Opacity\", \"Filter type: Edge Avoiding Wavelets\"]", RprOpacity, 3),
+        #("MAX_RS_DEN_054", "[\"AOV: World Coordinate\", \"Filter type: Edge Avoiding Wavelets\"]", RprWorldCoordinate, 3),
+        #("MAX_RS_DEN_055", "[\"AOV: UV\", \"Filter type: Edge Avoiding Wavelets\"]", RprUV, 3),
+        #("MAX_RS_DEN_056", "[\"AOV: Material Index\", \"Filter type: Edge Avoiding Wavelets\"]", RprMaterialIdx, 3),
+        #("MAX_RS_DEN_057", "[\"AOV: Geometric Normal\", \"Filter type: Edge Avoiding Wavelets\"]", RprGeometricNormal, 3),
+        #("MAX_RS_DEN_058", "[\"AOV: Shading Normal\", \"Filter type: Edge Avoiding Wavelets\"]", RprShadingNormal, 3),
+        #("MAX_RS_DEN_059", "[\"AOV: Depth\", \"Filter type: Edge Avoiding Wavelets\"]", RprDepth, 3 ),
+        #("MAX_RS_DEN_060", "[\"AOV: Object ID\", \"Filter type: Edge Avoiding Wavelets\"]", RprObjectId, 3),
+        #("MAX_RS_DEN_061", "[\"AOV: Object Group ID\", \"Filter type: Edge Avoiding Wavelets\"]", RprObjectGroupId, 3),
+        #("MAX_RS_DEN_062", "[\"AOV: Background\", \"Filter type: Edge Avoiding Wavelets\"]", RprBackground, 3),
+        #("MAX_RS_DEN_063", "[\"AOV: Emission\", \"Filter type: Edge Avoiding Wavelets\"]", RprEmission, 3),
+        #("MAX_RS_DEN_064", "[\"AOV: Velocity\", \"Filter type: Edge Avoiding Wavelets\"]", RprVelocity, 3),
+        #("MAX_RS_DEN_065", "[\"AOV: Direct Illumination\", \"Filter type: Edge Avoiding Wavelets\"]", RprDirectIllumination, 3),
+        #("MAX_RS_DEN_066", "[\"AOV: Indirect Illumination\", \"Filter type: Edge Avoiding Wavelets\"]", RprIndirectIllumination, 3),
+        #("MAX_RS_DEN_067", "[\"AOV: AO\", \"Filter type: Edge Avoiding Wavelets\"]", RprAO, 3),
+        #("MAX_RS_DEN_068", "[\"AOV: Direct Diffuse\", \"Filter type: Edge Avoiding Wavelets\"]", RprDirectDiffuse, 3),
+        #("MAX_RS_DEN_069", "[\"AOV: Direct Reflect\", \"Filter type: Edge Avoiding Wavelets\"]", RprDirectReflect, 3),
+        #("MAX_RS_DEN_070", "[\"AOV: Indirect Diffuse\", \"Filter type: Edge Avoiding Wavelets\"]", RprIndirectDiffuse, 3),
+        #("MAX_RS_DEN_071", "[\"AOV: Indirect Reflect\", \"Filter type: Edge Avoiding Wavelets\"]", RprIndirectReflect, 3),
+        #("MAX_RS_DEN_072", "[\"AOV: Refract\", \"Filter type: Edge Avoiding Wavelets\"]", RprRefract, 3),
+        #("MAX_RS_DEN_073", "[\"AOV: Volume\", \"Filter type: Edge Avoiding Wavelets\"]", RprVolume, 3)
+    )
+
     filesToRender = #(
         {scene_list}
     )
@@ -98,84 +189,21 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        prerender_bilateral "MAX_RS_DEN_001" 1 "[\"Filter type: Bilateral\", \"Radius: 1\"]"
-        prerender_bilateral "MAX_RS_DEN_002" 3 "[\"Filter type: Bilateral\", \"Radius: 3\"]"
-        prerender_bilateral "MAX_RS_DEN_003" 6 "[\"Filter type: Bilateral\", \"Radius: 6\"]"
-        prerender_bilateral "MAX_RS_DEN_004" 10 "[\"Filter type: Bilateral\", \"Radius: 10\"]"
+        for sf=1 to 4 do (
+            prerender_bilateral list_tests[sf]
+        )
 
-        prerender_lwr "MAX_RS_DEN_005" 1 0.1 "[\"Filter type: Local Weighted Regression\", \"Samples: 1\", \"Filter radius: 1\", \"Bandwidth: 0.1\"]"
-        prerender_lwr "MAX_RS_DEN_006" 5 0.5 "[\"Filter type: Local Weighted Regression\", \"Samples: 5\", \"Filter radius: 5\", \"Bandwidth: 0.5\"]"
-        prerender_lwr "MAX_RS_DEN_007" 10 1 "[\"Filter type: Local Weighted Regression\", \"Samples: 10\", \"Filter radius: 10\", \"Bandwidth: 1.0\"]"
+        for sf=5 to 7 do (
+            prerender_lwr list_tests[sf]
+        )
 
-        prerender_eaw "MAX_RS_DEN_008" 0.1 "[\"Filter type: Edge Avoiding Wavelets\", \"Color: 0.1\", \"Depth: 0.1\", \"Normal: 0.1\", \"Object ID: 0.1\"]"
-        prerender_eaw "MAX_RS_DEN_009" 0.5 "[\"Filter type: Edge Avoiding Wavelets\", \"Color: 0.5\", \"Depth: 0.5\", \"Normal: 0.5\", \"Object ID: 0.5\"]"
-        prerender_eaw "MAX_RS_DEN_010" 1 "[\"Filter type: Edge Avoiding Wavelets\", \"Color: 1.0\", \"Depth: 1.0\", \"Normal: 1.0\", \"Object ID: 1.0\"]"
+        for sf=8 to 10 do (
+            prerender_eaw list_tests[sf]
+        )
 
-        prerender_aov "MAX_RS_DEN_011" RprOpacity 1 "[\"AOV: Opacity\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_012" RprWorldCoordinate 1 "[\"AOV: World Coordinate\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_013" RprUV 1 "[\"AOV: UV\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_014" RprMaterialIdx 1 "[\"AOV: Material Index\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_015" RprGeometricNormal 1 "[\"AOV: Geometric Normal\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_016" RprShadingNormal 1 "[\"AOV: Shading Normal\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_017" RprDepth 1 "[\"AOV: Depth\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_018" RprObjectId 1 "[\"AOV: Object ID\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_019" RprObjectGroupId 1 "[\"AOV: Object Group ID\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_020" RprBackground 1 "[\"AOV: Background\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_021" RprEmission 1 "[\"AOV: Emission\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_022" RprVelocity 1 "[\"AOV: Velocity\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_023" RprDirectIllumination 1 "[\"AOV: Direct Illumination\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_024" RprIndirectIllumination 1 "[\"AOV: Indirect Illumination\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_025" RprAO 1 "[\"AOV: AO\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_026" RprDirectDiffuse 1 "[\"AOV: Direct Diffuse\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_027" RprDirectReflect 1 "[\"AOV: Direct Reflect\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_028" RprIndirectDiffuse 1 "[\"AOV: Indirect Diffuse\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_029" RprIndirectReflect 1 "[\"AOV: Indirect Reflect\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_030" RprRefract 1 "[\"AOV: Refract\", \"Filter type: Bilateral\"]"
-        prerender_aov "MAX_RS_DEN_031" RprVolume 1 "[\"AOV: Volume\", \"Filter type: Bilateral\"]"
-
-        prerender_aov "MAX_RS_DEN_032" RprOpacity 2 "[\"AOV: Opacity\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_033" RprWorldCoordinate 2 "[\"AOV: World Coordinate\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_034" RprUV 2 "[\"AOV: UV\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_035" RprMaterialIdx 2 "[\"AOV: Material Index\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_036" RprGeometricNormal 2 "[\"AOV: Geometric Normal\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_037" RprShadingNormal 2 "[\"AOV: Shading Normal\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_038" RprDepth 2 "[\"AOV: Depth\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_039" RprObjectId 2 "[\"AOV: Object ID\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_040" RprObjectGroupId 2 "[\"AOV: Object Group ID\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_041" RprBackground 2 "[\"AOV: Background\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_042" RprEmission 2 "[\"AOV: Emission\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_043" RprVelocity 2 "[\"AOV: Velocity\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_044" RprDirectIllumination 2 "[\"AOV: Direct Illumination\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_045" RprIndirectIllumination 2 "[\"AOV: Indirect Illumination\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_046" RprAO 2 "[\"AOV: AO\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_047" RprDirectDiffuse 2 "[\"AOV: Direct Diffuse\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_048" RprDirectReflect 2 "[\"AOV: Direct Reflect\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_049" RprIndirectDiffuse 2 "[\"AOV: Indirect Diffuse\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_050" RprIndirectReflect 2 "[\"AOV: Indirect Reflect\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_051" RprRefract 2 "[\"AOV: Refract\", \"Filter type: Local Weighted Regression\"]"
-        prerender_aov "MAX_RS_DEN_052" RprVolume 2 "[\"AOV: Volume\", \"Filter type: Local Weighted Regression\"]"
-
-        prerender_aov "MAX_RS_DEN_053" RprOpacity 3 "[\"AOV: Opacity\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_054" RprWorldCoordinate 3 "[\"AOV: World Coordinate\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_055" RprUV 3 "[\"AOV: UV\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_056" RprMaterialIdx 3 "[\"AOV: Material Index\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_057" RprGeometricNormal 3 "[\"AOV: Geometric Normal\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_058" RprShadingNormal 3 "[\"AOV: Shading Normal\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_059" RprDepth 3 "[\"AOV: Depth\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_060" RprObjectId 3 "[\"AOV: Object ID\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_061" RprObjectGroupId 3 "[\"AOV: Object Group ID\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_062" RprBackground 3 "[\"AOV: Background\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_063" RprEmission 3 "[\"AOV: Emission\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_064" RprVelocity 3 "[\"AOV: Velocity\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_065" RprDirectIllumination 3 "[\"AOV: Direct Illumination\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_066" RprIndirectIllumination 3 "[\"AOV: Indirect Illumination\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_067" RprAO 3 "[\"AOV: AO\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_068" RprDirectDiffuse 3 "[\"AOV: Direct Diffuse\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_069" RprDirectReflect 3 "[\"AOV: Direct Reflect\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_070" RprIndirectDiffuse 3 "[\"AOV: Indirect Diffuse\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_071" RprIndirectReflect 3 "[\"AOV: Indirect Reflect\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_072" RprRefract 3 "[\"AOV: Refract\", \"Filter type: Edge Avoiding Wavelets\"]"
-        prerender_aov "MAX_RS_DEN_073" RprVolume 3 "[\"AOV: Volume\", \"Filter type: Edge Avoiding Wavelets\"]"
+        for sf=11 to list_tests.count do (
+            prerender_aov list_tests[sf]
+        )
 
     )
 )

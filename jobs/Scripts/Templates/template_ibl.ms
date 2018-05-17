@@ -1,5 +1,5 @@
 
-function prerender test_case intensity map script_info = (
+function prerender test_list = (
     
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = {pass_limit}
@@ -11,26 +11,52 @@ function prerender test_case intensity map script_info = (
     renderers.current.backgroundOverride = True
     renderers.current.backgroundType = 0
 
-    renderers.current.backgroundIntensity = intensity
-    if (map == "color") then (
+    renderers.current.backgroundIntensity = test_list[3]
+    if (test_list[4] == "color") then (
     	renderers.current.useBackgroundMap = False
-    ) else if (map == "hdr") then (
+    ) else if (test_list[4] == "hdr") then (
     	renderers.current.useBackgroundMap = True
     	hdr_path = "{res_path}" + "\\res\\Hdri\\Tropical_Beach_3k.hdr"
     	hdr = bitmaptexture filename:hdr_path
     	renderers.current.backgroundMap = hdr
-    ) else if (map == "exr") then (
+    ) else if (test_list[4] == "exr") then (
     	renderers.current.useBackgroundMap = True
     	exr_path = "{res_path}" + "\\res\\Hdri\\over_the_clouds.exr"
     	exr = bitmaptexture filename:exr_path
     	renderers.current.backgroundMap = exr
     )
 
-    rpr_render "jpg" test_case script_info
+    rpr_render "jpg" test_list[1] test_list[2]
 )
 
 function main = (
     
+    list_tests = #(
+       #("MAX_RS_IBL_001", "[\"Type: Color\", \"Intensity: 0\"]", 0, "color"),
+       #("MAX_RS_IBL_002", "[\"Type: Color\", \"Intensity: 1\"]", 1, "color"),
+       #("MAX_RS_IBL_003", "[\"Type: Color\", \"Intensity: 2\"]", 2, "color"),
+       #("MAX_RS_IBL_004", "[\"Type: Color\", \"Intensity: 3\"]", 3, "color"),
+       #("MAX_RS_IBL_005", "[\"Type: Color\", \"Intensity: 5\"]", 5, "color"),
+       #("MAX_RS_IBL_006", "[\"Type: Color\", \"Intensity: 7\"]", 7, "color"),
+       #("MAX_RS_IBL_007", "[\"Type: Color\", \"Intensity: 10\"]", 10, "color"), 
+
+       #("MAX_RS_IBL_008", "[\"Type: IBL with hdr map\", \"Intensity: 0\"]", 0, "hdr"),
+       #("MAX_RS_IBL_009", "[\"Type: IBL with hdr map\", \"Intensity: 1\"]", 1, "hdr"),
+       #("MAX_RS_IBL_010", "[\"Type: IBL with hdr map\", \"Intensity: 2\"]", 2, "hdr"),
+       #("MAX_RS_IBL_011", "[\"Type: IBL with hdr map\", \"Intensity: 3\"]", 3, "hdr"),
+       #("MAX_RS_IBL_012", "[\"Type: IBL with hdr map\", \"Intensity: 5\"]", 5, "hdr"),
+       #("MAX_RS_IBL_013", "[\"Type: IBL with hdr map\", \"Intensity: 7\"]", 7, "hdr"), 
+       #("MAX_RS_IBL_014", "[\"Type: IBL with hdr map\", \"Intensity: 10\"]", 10, "hdr"),
+
+       #("MAX_RS_IBL_015", "[\"Type: IBL with exr map\", \"Intensity: 0\"]", 0, "exr"), 
+       #("MAX_RS_IBL_016", "[\"Type: IBL with exr map\", \"Intensity: 1\"]", 1, "exr"), 
+       #("MAX_RS_IBL_017", "[\"Type: IBL with exr map\", \"Intensity: 2\"]", 2, "exr"), 
+       #("MAX_RS_IBL_018", "[\"Type: IBL with exr map\", \"Intensity: 3\"]", 3, "exr"), 
+       #("MAX_RS_IBL_019", "[\"Type: IBL with exr map\", \"Intensity: 5\"]", 5, "exr"), 
+       #("MAX_RS_IBL_020", "[\"Type: IBL with exr map\", \"Intensity: 7\"]", 7, "exr"), 
+       #("MAX_RS_IBL_021", "[\"Type: IBL with exr map\", \"Intensity: 10\"]", 10, "exr")
+    )
+
     filesToRender = #(
         {scene_list}
     )
@@ -39,32 +65,10 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        prerender "MAX_RS_IBL_001" 0 "color" "[\"Type: Color\", \"Intensity: 0\"]"
-        prerender "MAX_RS_IBL_002" 1 "color" "[\"Type: Color\", \"Intensity: 1\"]"
-        prerender "MAX_RS_IBL_003" 2 "color" "[\"Type: Color\", \"Intensity: 2\"]"
-        prerender "MAX_RS_IBL_004" 3 "color" "[\"Type: Color\", \"Intensity: 3\"]"
-        prerender "MAX_RS_IBL_005" 5 "color" "[\"Type: Color\", \"Intensity: 5\"]"
-        prerender "MAX_RS_IBL_006" 7 "color" "[\"Type: Color\", \"Intensity: 7\"]"
-        prerender "MAX_RS_IBL_007" 10 "color" "[\"Type: Color\", \"Intensity: 10\"]"
+        for sf=1 to list_tests.count do (
+            prerender list_tests[sf]
+        )
 
-        prerender "MAX_RS_IBL_008" 0 "hdr" "[\"Type: IBL with hdr map\", \"Intensity: 0\"]"
-        prerender "MAX_RS_IBL_009" 1 "hdr" "[\"Type: IBL with hdr map\", \"Intensity: 1\"]"
-        prerender "MAX_RS_IBL_010" 2 "hdr" "[\"Type: IBL with hdr map\", \"Intensity: 2\"]"
-        prerender "MAX_RS_IBL_011" 3 "hdr" "[\"Type: IBL with hdr map\", \"Intensity: 3\"]"
-        prerender "MAX_RS_IBL_012" 5 "hdr" "[\"Type: IBL with hdr map\", \"Intensity: 5\"]"
-        prerender "MAX_RS_IBL_013" 7 "hdr" "[\"Type: IBL with hdr map\", \"Intensity: 7\"]"
-        prerender "MAX_RS_IBL_014" 10 "hdr" "[\"Type: IBL with hdr map\", \"Intensity: 10\"]"
-
-        prerender "MAX_RS_IBL_015" 0 "exr" "[\"Type: IBL with exr map\", \"Intensity: 0\"]"
-        prerender "MAX_RS_IBL_016" 1 "exr" "[\"Type: IBL with exr map\", \"Intensity: 1\"]"
-        prerender "MAX_RS_IBL_017" 2 "exr" "[\"Type: IBL with exr map\", \"Intensity: 2\"]"
-        prerender "MAX_RS_IBL_018" 3 "exr" "[\"Type: IBL with exr map\", \"Intensity: 3\"]"
-        prerender "MAX_RS_IBL_019" 5 "exr" "[\"Type: IBL with exr map\", \"Intensity: 5\"]"
-        prerender "MAX_RS_IBL_020" 7 "exr" "[\"Type: IBL with exr map\", \"Intensity: 7\"]"
-        prerender "MAX_RS_IBL_021" 10 "exr" "[\"Type: IBL with exr map\", \"Intensity: 10\"]"
-
-
-       
     )
 )
 

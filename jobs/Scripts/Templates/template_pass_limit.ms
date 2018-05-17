@@ -1,18 +1,40 @@
 
-function prerender test_case pass_limit script_info = (
+function prerender test_list = (
     
     renderers.current = Radeon_ProRender()
-    renderers.current.passLimit = pass_limit
+    renderers.current.passLimit = test_list[3]
+
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
     )
     
-    rpr_render "jpg" test_case  script_info
+    rpr_render "jpg" test_list[1] test_list[2]
 )
 
 function main = (
     
+    list_tests = #(
+        #("MAX_RS_PS_001", "[\"Pass Limit: 1\"]", 1),
+        #("MAX_RS_PS_002", "[\"Pass Limit: 100\"]", 100),
+        #("MAX_RS_PS_003", "[\"Pass Limit: 500\"]", 500),
+        #("MAX_RS_PS_004", "[\"Pass Limit: 1000\"]", 1000),
+        #("MAX_RS_PS_005", "[\"Pass Limit: 5000\"]", 5000),
+        #("MAX_RS_PS_006", "[\"Pass Limit: 10000\"]", 10000),
+        #("MAX_RS_PS_007", "[\"Pass Limit: 1\"]", 1),
+        #("MAX_RS_PS_008", "[\"Pass Limit: 100\"]", 100),
+        #("MAX_RS_PS_009", "[\"Pass Limit: 500\"]", 500),
+        #("MAX_RS_PS_010", "[\"Pass Limit: 1000\"]", 1000),
+        #("MAX_RS_PS_011", "[\"Pass Limit: 5000\"]", 5000),
+        #("MAX_RS_PS_012", "[\"Pass Limit: 10000\"]", 10000),
+        #("MAX_RS_PS_013", "[\"Pass Limit: 1\"]", 1),
+        #("MAX_RS_PS_014", "[\"Pass Limit: 100\"]", 100),
+        #("MAX_RS_PS_015", "[\"Pass Limit: 500\"]", 500),
+        #("MAX_RS_PS_016", "[\"Pass Limit: 1000\"]", 1000),
+        #("MAX_RS_PS_017", "[\"Pass Limit: 5000\"]", 5000),
+        #("MAX_RS_PS_018", "[\"Pass Limit: 10000\"]", 10000)
+    )
+
     filesToRender = #(
         {scene_list}
     )
@@ -22,28 +44,21 @@ function main = (
         loadMaxFile assetsFile useFileUnits:true quiet:true
 				
         if (filesToRender[fi] == "base_scene.max") do (
-            prerender "MAX_RS_PS_001" 1 "[\"Pass Limit: 1\"]"
-            prerender "MAX_RS_PS_002" 100 "[\"Pass Limit: 100\"]"
-            prerender "MAX_RS_PS_003" 500 "[\"Pass Limit: 500\"]"
-            prerender "MAX_RS_PS_004" 1000 "[\"Pass Limit: 1000\"]"
-            prerender "MAX_RS_PS_005" 5000 "[\"Pass Limit: 5000\"]"
-            prerender "MAX_RS_PS_006" 10000 "[\"Pass Limit: 10000\"]"
+            for sf=1 to 6 do (
+                prerender list_tests[sf]
+            )
         ) 
+
 		if (filesToRender[fi] == "ironman.max") do (
-            prerender "MAX_RS_PS_007" 1 "[\"Pass Limit: 1\"]"
-            prerender "MAX_RS_PS_008" 100 "[\"Pass Limit: 100\"]"
-            prerender "MAX_RS_PS_009" 500 "[\"Pass Limit: 500\"]"
-            prerender "MAX_RS_PS_010" 1000 "[\"Pass Limit: 1000\"]"
-            prerender "MAX_RS_PS_011" 5000 "[\"Pass Limit: 5000\"]"
-            prerender "MAX_RS_PS_012" 10000 "[\"Pass Limit: 10000\"]"
-        ) 
+            for sf=7 to 12 do (
+                prerender list_tests[sf]
+            )
+        )  
+
 		if (filesToRender[fi] == "default.max") do (
-            prerender "MAX_RS_PS_013" 1 "[\"Pass Limit: 1\"]"
-            prerender "MAX_RS_PS_014" 100 "[\"Pass Limit: 100\"]"
-            prerender "MAX_RS_PS_015" 500 "[\"Pass Limit: 500\"]"
-            prerender "MAX_RS_PS_016" 1000 "[\"Pass Limit: 1000\"]"
-            prerender "MAX_RS_PS_017" 5000 "[\"Pass Limit: 5000\"]"
-            prerender "MAX_RS_PS_018" 10000 "[\"Pass Limit: 10000\"]"
+            for sf=13 to list_tests.count do (
+                prerender list_tests[sf]
+            )
         ) 
        
     )
