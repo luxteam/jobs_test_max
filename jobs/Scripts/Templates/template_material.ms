@@ -124,7 +124,7 @@ function main = (
                 layer.on = true
             )
 
-            for n=1 to lib.count do (  
+            for n=1 to lib.count do (
                 if (test_case < 10) then (
                     prerender ("MAX_MAT_LIB_00" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
                 ) else if (test_case < 100) then (

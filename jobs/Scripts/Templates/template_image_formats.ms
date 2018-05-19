@@ -60,6 +60,7 @@ function main = (
 
         if (sf != 1) do (
             create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
+            sf += 1
         )
 
         for i=sf to list_tests.count do (
