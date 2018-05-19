@@ -29,8 +29,10 @@ function prerender test_list = (
     rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function main sf = (
+function main = (
     
+    sf = {start_from}
+
     list_tests = #(
        #("MAX_RS_IBL_001", "[\"Type: Color\", \"Intensity: 0\"]", 0, "color"),
        #("MAX_RS_IBL_002", "[\"Type: Color\", \"Intensity: 1\"]", 1, "color"),
@@ -65,12 +67,12 @@ function main sf = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        if (sf != 1) (
-            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        if (sf != 1) do (
+            create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
         )
         
-        for sf=1 to list_tests.count do (
-            prerender list_tests[sf]
+        for i=sf to list_tests.count do (
+            prerender list_tests[i]
         )
 
     )

@@ -12,8 +12,10 @@ function prerender test_list = (
     rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function main sf = (
+function main = (
     
+    sf = {start_from}
+
     list_tests = #(
         #("MAX_RS_PS_001", "[\"Pass Limit: 1\"]", 1),
         #("MAX_RS_PS_002", "[\"Pass Limit: 100\"]", 100),
@@ -43,25 +45,28 @@ function main sf = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 			
-        if (sf != 1) (
-            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        if (sf != 1) do (
+            create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
         )	
 
         if (filesToRender[fi] == "base_scene.max") do (
-            for sf=1 to 6 do (
-                prerender list_tests[sf]
+            for i=sf to 6 do (
+                prerender list_tests[i]
+                sf += 1
             )
         ) 
 
 		if (filesToRender[fi] == "ironman.max") do (
-            for sf=7 to 12 do (
-                prerender list_tests[sf]
+            for i=sf to 12 do (
+                prerender list_tests[i]
+                sf += 1
             )
         )  
 
 		if (filesToRender[fi] == "default.max") do (
-            for sf=13 to list_tests.count do (
-                prerender list_tests[sf]
+            for i=sf to list_tests.count do (
+                prerender list_tests[i]
+                sf += 1
             )
         ) 
        

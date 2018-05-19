@@ -98,8 +98,10 @@ function prerender_eaw test_list = (
     rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function main sf = (
+function main = (
     
+    sf = {start_from}
+
     list_tests = #(
         #("MAX_RS_DEN_001", "[\"Filter type: Bilateral\", \"Radius: 1\"]", 1),
         #("MAX_RS_DEN_002", "[\"Filter type: Bilateral\", \"Radius: 3\"]", 3),
@@ -189,24 +191,28 @@ function main sf = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        if (sf != 1) (
-            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        if (sf != 1) do (
+            create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
         )
 
-        for sf=1 to 4 do (
+        for i=sf to 4 do (
             prerender_bilateral list_tests[sf]
+            sf += 1
         )
 
-        for sf=5 to 7 do (
+        for i=sf to 7 do (
             prerender_lwr list_tests[sf]
+            sf += 1
         )
 
-        for sf=8 to 10 do (
+        for i=sf to 10 do (
             prerender_eaw list_tests[sf]
+            sf += 1
         )
 
-        for sf=11 to list_tests.count do (
+        for i=sf to list_tests.count do (
             prerender_aov list_tests[sf]
+            sf += 1
         )
 
     )

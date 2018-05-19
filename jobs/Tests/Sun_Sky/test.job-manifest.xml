@@ -11,7 +11,7 @@
     	<argument>--resolution_x {rx}</argument>
     	<argument>--resolution_y {ry}</argument>
         <argument>--scene_list "{Root}\Tests\Sun_Sky\{TestsFilter}TestsList.txt"</argument>
-        <argument>--package_name "Sun Sky"</argument>
+        <argument>--package_name "Sun_Sky"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>

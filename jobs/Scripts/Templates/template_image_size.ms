@@ -13,8 +13,10 @@ function prerender test_list = (
     rpr_render "jpg" test_list[1] test_list[2]
 )
 
-function main sf = (
+function main = (
     
+    sf = {start_from}
+
     list_tests = #(
         #("MAX_RS_IS_001", "[\"Preset: 35mm 1.316:1 Full Aperture (cine)\", \"Resolution: 512x389\"]", 512, 389, 24, 1.316, 1),
         #("MAX_RS_IS_002", "[\"Preset: 35mm 1.316:1 Full Aperture (cine)\", \"Resolution: 1536x1167\"]", 1536, 1167, 24, 1.316, 1),
@@ -129,12 +131,12 @@ function main sf = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaXFile assetsFile useFileUnits:true quiet:true
 
-        if (sf != 1) (
-            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        if (sf != 1) do (
+            create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
         )
 
-        for sf=1 to list_tests.count do (
-            prerender list_tests[sf]
+        for i=sf to list_tests.count do (
+            prerender list_tests[i]
         )
     )
 )

@@ -80,8 +80,10 @@ function test_IES = (
 
 fn empty = (print "OK")
 
-function main sf = (
+function main = (
     
+    sf = {start_from}
+
     list_tests = #(
         #("MAX_SM_001", "["Install RPR"]", "pass", 1),
         #("MAX_SM_002", "["Open empty scene"]", "pass", 1),
@@ -114,20 +116,22 @@ function main sf = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        if (sf != 1) (
-            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        if (sf != 1) do (
+            create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
         )
 
         if (filesToRender[fi] == "default.max") then (
 
-            for sf=1 to 3 do (
-                prerender list_tests[sf]
+            for i=sf to 3 do (
+                prerender list_tests[i]
+                sf += 1
             )
 
         ) else if (filesToRender[fi] == "rpr_default.max") then (
 
-            for sf=4 to list_tests.count do (
-                prerender list_tests[sf]
+            for i=sf to list_tests.count do (
+                prerender list_tests[i]
+                sf += 1
             )
 
         )

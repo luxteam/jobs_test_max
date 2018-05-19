@@ -14,8 +14,10 @@ function prerender test_list = (
     copyFile ("{work_dir}\\Color\\" + test_list[1] + ".jpg") ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\pass.jpg")
 )
 
-function main sf = (
+function main = (
     
+    sf = {start_from}
+
     list_tests = #(
         #("MAX_RS_IF_001", "[\"Image Format: avi\"]", "avi"),
         #("MAX_RS_IF_002", "[\"Image Format: bmp\"]", "bmp"),
@@ -56,12 +58,12 @@ function main sf = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        if (sf != 1) (
-            create_failed_report list_tests[sf-1][1] list_tests[$sf-1][2] "failed"
+        if (sf != 1) do (
+            create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
         )
 
-        for sf=1 to list_tests.count do (
-            prerender list_tests[sf]
+        for i=sf to list_tests.count do (
+            prerender list_tests[i]
         )
 
     )

@@ -30,8 +30,7 @@ def get_windows_titles():
 
 	return titles
 
-
-def main():
+def createArgsParser():
 	parser = argparse.ArgumentParser()
 
 	parser.add_argument('--tool', required=True, metavar="<path>")
@@ -44,8 +43,11 @@ def main():
 	parser.add_argument('--output', required=True)
 	parser.add_argument('--res_path', required=True)
 	parser.add_argument('--scene_list', required=True)
+	return parser
 
-	args = parser.parse_args()
+def main(start_from):
+
+	args = createArgsParser().parse_args()
 
 	tool = args.tool
 
@@ -70,7 +72,7 @@ def main():
 										   work_dir=work_dir,
 										   package_name=args.package_name, ren_mode=args.render_mode,
 										   render_mode=args.render_mode, res_path=res_path, scene_list=scene_list, resolution_y = args.resolution_y,
-										   resolution_x = args.resolution_x)
+										   resolution_x = args.resolution_x, start_from=start_from)
 
 	try:
 		os.makedirs(work_dir)
@@ -80,6 +82,9 @@ def main():
 	maxScriptPath = os.path.join(work_dir, 'script.ms')
 	with open(maxScriptPath, 'w') as f:
 		f.write(maxScript)
+
+	#cmdRun = '"{tool}" -mxs "global launch_number = {start_from};filein \"{job_script}\"" -silent' \
+	#	.format(tool=tool, start_from=start_from, job_script=maxScriptPath)
 
 	cmdRun = '"{tool}" -U MAXScript "{job_script}" -silent' \
 		.format(tool=tool, job_script=maxScriptPath)
@@ -99,8 +104,9 @@ def main():
 		try:
 			rc = p.wait(timeout=5)
 		except psutil.TimeoutExpired as err:
-			fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert']#,\
-			#maxScriptPath + ' - MAXScript']
+			fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert',\
+			maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
+			'3ds Max Error Report']
 			if set(fatal_errors_titles).intersection(get_windows_titles()):
 				rc = -1
 				try:
@@ -125,7 +131,7 @@ if __name__ == "__main__":
 	status = 0
 	json_files = 0
 
-	with open(os.path.join(os.path.dirname(__file__), "..", "Tests", args.testType, "expected.txt")) as f:
+	with open(os.path.join(os.path.dirname(__file__), "..", "Tests", args.package_name, "expected.txt")) as f:
 		expected = int(f.read())
 	
 	try:
@@ -133,7 +139,7 @@ if __name__ == "__main__":
 	except OSError as e:
 		pass
 
-	rc = main(0)
+	rc = main(1)
 
 	if rc != 0:
 		for i in range(expected):
