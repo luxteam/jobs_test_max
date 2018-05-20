@@ -58,7 +58,7 @@ function main = (
         #("MAX_RS_SS_001", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 0\"]", 0, 0, 0, "None"), 
         #("MAX_RS_SS_002", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 45\"]", 0, 0, 45, "None"),
         #("MAX_RS_SS_003", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 0\", \"Altitude: 90\"]", 0, 0, 90, "None"),
-        #("MAX_RS_SS_004", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 0\"]", 0, 90 ,0 ",None"),
+        #("MAX_RS_SS_004", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 0\"]", 0, 90, 0, "None"),
         #("MAX_RS_SS_005", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 45\"]", 0, 90, 45, "None"),
         #("MAX_RS_SS_006", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 90\", \"Altitude: 90\"]", 0, 90, 90, "None"),
         #("MAX_RS_SS_007", "[\"Sun&Sky System: Analytical sky\", \"Azimuth: 180\", \"Altitude: 0\"]", 0, 180, 0, "None"),

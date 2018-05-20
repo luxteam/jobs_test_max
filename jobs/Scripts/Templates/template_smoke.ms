@@ -78,7 +78,9 @@ function test_IES = (
     ies_light.profile = "2.ies"
 )
 
-fn empty = (print "OK")
+function pass = (
+    print "OK"
+)
 
 function main = (
     
@@ -87,9 +89,9 @@ function main = (
     list_tests = #(
         #("MAX_SM_001", "["Install RPR"]", "pass", 1),
         #("MAX_SM_002", "["Open empty scene"]", "pass", 1),
-        #("MAX_SM_003", "["Render empty scene", "Pass Limit: 50"]", empty, 50],
+        #("MAX_SM_003", "["Render empty scene", "Pass Limit: 50"]", pass, 50),
         #("MAX_SM_004", "["Open rpr empty scene"]", "pass", 1),
-        #("MAX_SM_005", "["Render empty scene with RPR parameters", "Pass Limit: 50"]", empty, 50),
+        #("MAX_SM_005", "["Render empty scene with RPR parameters", "Pass Limit: 50"]", pass, 50),
         #("MAX_SM_006", "["Import FBX", "Pass Limit: 50"]", import_fbx_test, 50),
         #("MAX_SM_007", "["Import OBJ", "Pass Limit: 50"]", import_obj_test, 50),
         #("MAX_SM_008", "["Open Mat edit"]", "pass", 1),
@@ -101,11 +103,11 @@ function main = (
         #("MAX_SM_014", "["Testing IBL", "Pass Limit: 50"]", test_IBL_on, 50),
         #("MAX_SM_015", "["Testing IBL with hdr", "Pass Limit: 50"]", test_IBL_hdr, 50),
         #("MAX_SM_016", "["Testing IBL with exr", "Pass Limit: 50"]", test_IBL_exr, 50),
-        #("MAX_SM_017", "["Pass Limit test", "Pass Limit: 1"]", empty, 1),
-        #("MAX_SM_018", "["Pass Limit test", "Pass Limit: 30"]", empty, 30),
-        #("MAX_SM_019", "["Pass Limit test", "Pass Limit: 100"]", empty, 100),
-        #("MAX_SM_020", "["Pass Limit test", "Pass Limit: 500"]", empty, 500),
-        #("MAX_SM_021", "["Pass Limit test", "Pass Limit: 1000"]", empty, 1000)
+        #("MAX_SM_017", "["Pass Limit test", "Pass Limit: 1"]", pass, 1),
+        #("MAX_SM_018", "["Pass Limit test", "Pass Limit: 30"]", pass, 30),
+        #("MAX_SM_019", "["Pass Limit test", "Pass Limit: 100"]", pass, 100),
+        #("MAX_SM_020", "["Pass Limit test", "Pass Limit: 500"]", pass, 500),
+        #("MAX_SM_021", "["Pass Limit test", "Pass Limit: 1000"]", pass, 1000)
     )
 
     filesToRender = #(

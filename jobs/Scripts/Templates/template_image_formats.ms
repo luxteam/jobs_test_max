@@ -11,7 +11,7 @@ function prerender test_list = (
 
     rpr_render test_list[3] test_list[1] test_list[2]
 
-    copyFile ("{work_dir}\\Color\\" + test_list[1] + ".jpg") ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\pass.jpg")
+    copyFile ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\pass.jpg") ("{work_dir}\\Color\\" + test_list[1] + ".jpg") 
 )
 
 function main = (
