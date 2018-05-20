@@ -21,6 +21,8 @@ function rpr_render image_format test_case script_info = (
 
     ver_max = filterString (getdir #maxroot) "\\"
 
+    filename = test_case + ".jpg"
+
     json_path = "{work_dir}" + test_case + "_RPR.json"
     a = (createFile json_path mode:"w")
     format "%" "[\n" to:a

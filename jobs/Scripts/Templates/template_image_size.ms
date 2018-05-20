@@ -46,12 +46,12 @@ function main = (
         #("MAX_RS_IS_021", "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 256x109\"]", 256, 109, 42.57, 2.35, 1),
         #("MAX_RS_IS_022", "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 1024x436\"]", 1024, 436, 42.57, 2.35, 1),
         #("MAX_RS_IS_023", "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 1828x778\"]", 1828, 778, 42.57, 2.35, 1),
-        #("MAX_RS_IS_024", "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 4096x1743\"]", 4096, 1743, 42.57, 2.35, 1)
+        #("MAX_RS_IS_024", "[\"Preset: 35mm Anamorphic (2.35:1)\", \"Resolution: 4096x1743\"]", 4096, 1743, 42.57, 2.35, 1),
 
         #("MAX_RS_IS_025", "[\"Preset: 35mm Anamorphic (2.35:1) (Squeezed)\", \"Resolution: 256x218\"]", 256, 218, 42.57, 2.35, 2),
         #("MAX_RS_IS_026", "[\"Preset: 35mm Anamorphic (2.35:1) (Squeezed)\", \"Resolution: 1024x871\"]", 1024, 871, 42.57, 2.35, 2),
-        #("MAX_RS_IS_027", "[\"Preset: 35mm Anamorphic (2.35:1) (Squeezed)\", \"Resolution: 1828x1556\"]", 1828, 1556, 42.57, 2.35, 2)
-        #("MAX_RS_IS_028", "[\"Preset: 35mm Anamorphic (2.35:1) (Squeezed)\", \"Resolution: 4096x3486\"]", 4096, 3486, 42.57, 2.35, 2)
+        #("MAX_RS_IS_027", "[\"Preset: 35mm Anamorphic (2.35:1) (Squeezed)\", \"Resolution: 1828x1556\"]", 1828, 1556, 42.57, 2.35, 2),
+        #("MAX_RS_IS_028", "[\"Preset: 35mm Anamorphic (2.35:1) (Squeezed)\", \"Resolution: 4096x3486\"]", 4096, 3486, 42.57, 2.35, 2),
 
         #("MAX_RS_IS_029", "[\"Preset: 70mm Panavision (cine)\", \"Resolution: 440x200\"]", 440, 200, 48.59, 2.2, 2),
         #("MAX_RS_IS_030", "[\"Preset: 70mm Panavision (cine)\", \"Resolution: 1024x465\"]", 1024, 465, 48.59, 2.2, 2),
