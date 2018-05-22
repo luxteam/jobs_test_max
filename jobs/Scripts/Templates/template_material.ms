@@ -126,11 +126,11 @@ function main = (
 
             for n=1 to lib.count do (
                 if (test_case < 10) then (
-                    prerender ("MAX_MAT_LIB_00" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
+                    prerender ("MAX_MAT_LIB_00" + test_case as string) matlib[m].model lib[n] "[\"MatLib test\"]"
                 ) else if (test_case < 100) then (
-                    prerender ("MAX_MAT_LIB_0" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
+                    prerender ("MAX_MAT_LIB_0" + test_case as string) matlib[m].model lib[n] "[\"MatLib test\"]"
                 ) else (
-                    prerender ("MAX_MAT_LIB_" + test_case as string) matlib[m].model lib[n] "[\"Will add later\"]"
+                    prerender ("MAX_MAT_LIB_" + test_case as string) matlib[m].model lib[n] "[\"MatLib test\"]"
                 )
                 test_case += 1
             )

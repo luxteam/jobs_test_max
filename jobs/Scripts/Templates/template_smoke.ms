@@ -1,24 +1,4 @@
 
-function prerender test_list = (
-    
-    renderers.current = Radeon_ProRender()
-    renderers.current.passLimit = test_list[4]
-
-    if ({resolution_y} != 0 and {resolution_x} != 0) do (
-        renderHeight = {resolution_y}
-        renderWidth = {resolution_x}
-    )
-
-    if (test_list[3] != "pass") do (
-        test_list[3]()
-    )
-    rpr_render "jpg" test_list[1] test_list[2]
-
-    if (test_list[3] == "pass") do (
-        copyFile ("{work_dir}\\Color\\" + test_list[1] + ".jpg") ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\pass.jpg")
-    )
-)
-
 function import_fbx = (
     importfile ("{res_path}" + "\\res\\park_bench1.fbx") #noPrompt using:FBXIMP
 )
@@ -78,8 +58,35 @@ function test_IES = (
     ies_light.profile = "2.ies"
 )
 
-function pass = (
-    print "OK"
+function prerender test_list = (
+    
+    renderers.current = Radeon_ProRender()
+    renderers.current.passLimit = test_list[3]
+
+    if ({resolution_y} != 0 and {resolution_x} != 0) do (
+        renderHeight = {resolution_y}
+        renderWidth = {resolution_x}
+    )
+
+    case test_list[1] of (
+
+        "MAX_SM_006": import_fbx()
+        "MAX_SM_007": import_obj()
+        "MAX_SM_010": test_Uber2()
+        "MAX_SM_011": test_base_light()
+        "MAX_SM_012": test_IES()
+        "MAX_SM_013": test_Sun_Sky()
+        "MAX_SM_014": test_IBL_on()
+        "MAX_SM_015": test_IBL_hdr()
+        "MAX_SM_016": test_IBL_exr()
+    )
+
+    rpr_render "jpg" test_list[1] test_list[2]
+
+    if (test_list[1] == "MAX_SM_001" or test_list[1] == "MAX_SM_002" or test_list[1] == "MAX_SM_004" or test_list[1] == "MAX_SM_008" or test_list[1] == "MAX_SM_009") do (
+        copyFile ("{work_dir}\\Color\\" + test_list[1] + ".jpg") ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\pass.jpg")
+    )
+
 )
 
 function main = (
@@ -87,27 +94,27 @@ function main = (
     sf = {start_from}
 
     list_tests = #(
-        #("MAX_SM_001", "["Install RPR"]", "pass", 1),
-        #("MAX_SM_002", "["Open empty scene"]", "pass", 1),
-        #("MAX_SM_003", "["Render empty scene", "Pass Limit: 50"]", pass, 50),
-        #("MAX_SM_004", "["Open rpr empty scene"]", "pass", 1),
-        #("MAX_SM_005", "["Render empty scene with RPR parameters", "Pass Limit: 50"]", pass, 50),
-        #("MAX_SM_006", "["Import FBX", "Pass Limit: 50"]", import_fbx_test, 50),
-        #("MAX_SM_007", "["Import OBJ", "Pass Limit: 50"]", import_obj_test, 50),
-        #("MAX_SM_008", "["Open Mat edit"]", "pass", 1),
-        #("MAX_SM_009", "["Create an Uber material"]", "pass", "rpr_default.blend", 1),
-        #("MAX_SM_010", "["Assign Uber material", "Pass Limit: 50"]", test_Uber2, 50),
-        #("MAX_SM_011", "["Testing base light", "Pass Limit: 50"]", test_base_light, 50),
-        #("MAX_SM_012", "["Testing IES light", "Pass Limit: 50"]", test_IES, 50),
-        #("MAX_SM_013", "["Testing Sun and Sky System", "Pass Limit: 50"]", test_Sun_Sky, 50),
-        #("MAX_SM_014", "["Testing IBL", "Pass Limit: 50"]", test_IBL_on, 50),
-        #("MAX_SM_015", "["Testing IBL with hdr", "Pass Limit: 50"]", test_IBL_hdr, 50),
-        #("MAX_SM_016", "["Testing IBL with exr", "Pass Limit: 50"]", test_IBL_exr, 50),
-        #("MAX_SM_017", "["Pass Limit test", "Pass Limit: 1"]", pass, 1),
-        #("MAX_SM_018", "["Pass Limit test", "Pass Limit: 30"]", pass, 30),
-        #("MAX_SM_019", "["Pass Limit test", "Pass Limit: 100"]", pass, 100),
-        #("MAX_SM_020", "["Pass Limit test", "Pass Limit: 500"]", pass, 500),
-        #("MAX_SM_021", "["Pass Limit test", "Pass Limit: 1000"]", pass, 1000)
+        #("MAX_SM_001", "[\"Install RPR\"]", 1),
+        #("MAX_SM_002", "[\"Open empty scene\"]", 1),
+        #("MAX_SM_003", "[\"Render empty scene\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_004", "[\"Open rpr empty scene\"]", 1),
+        #("MAX_SM_005", "[\"Render empty scene with RPR parameters\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_006", "[\"Import FBX\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_007", "[\"Import OBJ\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_008", "[\"Open Mat edit\"]", 1),
+        #("MAX_SM_009", "[\"Create an Uber material\"]", 1),
+        #("MAX_SM_010", "[\"Assign Uber material\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_011", "[\"Testing base light\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_012", "[\"Testing IES light\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_013", "[\"Testing Sun and Sky System\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_014", "[\"Testing IBL\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_015", "[\"Testing IBL with hdr\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_016", "[\"Testing IBL with exr\", \"Pass Limit: 50\"]", 50),
+        #("MAX_SM_017", "[\"Pass Limit test\", \"Pass Limit: 1\"]", 1),
+        #("MAX_SM_018", "[\"Pass Limit test\", \"Pass Limit: 30\"]", 30),
+        #("MAX_SM_019", "[\"Pass Limit test\", \"Pass Limit: 100\"]", 100),
+        #("MAX_SM_020", "[\"Pass Limit test\", \"Pass Limit: 500\"]", 500),
+        #("MAX_SM_021", "[\"Pass Limit test\", \"Pass Limit: 1000\"]", 1000)
     )
 
     filesToRender = #(

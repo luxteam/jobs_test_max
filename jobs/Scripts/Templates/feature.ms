@@ -21,7 +21,7 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        prerender filesToRender[fi] "[\"Will add later\"]"
+        prerender filesToRender[fi] "[\"No info\"]"
     )
 )
 
