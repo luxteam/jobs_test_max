@@ -102,7 +102,7 @@ def main(start_from):
 
 	while True:
 		try:
-			rc = p.wait(timeout=50000)
+			rc = p.wait(timeout=5)
 		except psutil.TimeoutExpired as err:
 			fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert',\
 			maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
