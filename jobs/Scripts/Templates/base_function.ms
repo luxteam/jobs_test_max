@@ -101,7 +101,7 @@ function create_failed_report test_case script_info pic = (
     image_path = "{work_dir}" + "Color\\"
     makeDir image_path
 
-    filename = test_case + "." + image_format as string
+    filename = test_case + "." + ".jpg"
     copyFile ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\" + pic + ".jpg") ("{work_dir}\\Color\\" + test_case + ".jpg") 
 
     ver_max = filterString (getdir #maxroot) "\\"
