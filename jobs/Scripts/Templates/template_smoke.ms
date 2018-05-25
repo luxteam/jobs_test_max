@@ -74,7 +74,7 @@ function prerender test_list = (
         "MAX_SM_007": import_obj()
         "MAX_SM_010": test_Uber2()
         "MAX_SM_011": test_base_light()
-        --"MAX_SM_012": test_IES()
+        "MAX_SM_012": test_IES()
         "MAX_SM_013": test_Sun_Sky()
         "MAX_SM_014": test_IBL_on()
         "MAX_SM_015": test_IBL_hdr()
@@ -90,6 +90,8 @@ function prerender test_list = (
 )
 
 function main = (
+
+    sf = {start_from}
 
     list_tests = #(
         #("MAX_SM_001", "[\"Install RPR\"]", 1),
@@ -122,6 +124,16 @@ function main = (
     for fi=1 to filesToRender.count do (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
+
+        if (sf != 1) do (
+            create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
+            sf += 1
+            for i=sf to list_tests.count do (
+                create_failed_report list_tests[i][1] list_tests[i][2] "skipped"
+            )
+            resetMaxFile #noPrompt
+            quitMax #noPrompt
+        )
 
         if (filesToRender[fi] == "default.max") then (
 

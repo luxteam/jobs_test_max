@@ -108,6 +108,8 @@ def main(start_from):
 			maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
 			'3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error', 'Image I/O Error']
 			if set(fatal_errors_titles).intersection(get_windows_titles()):
+				with open(os.path.join(args.output, "status.txt"), 'a') as f:
+					f.write(str(set(fatal_errors_titles).intersection(get_windows_titles())))
 				rc = -1
 				try:
 					error_screen = pyscreenshot.grab()
@@ -143,10 +145,6 @@ if __name__ == "__main__":
 
 	if rc != 0:
 		for i in range(expected):
-
-			with open(os.path.join(args.output, "status.txt"), 'a') as f:
-				f.write(str(status) + "\n")
-				f.write(str(json_files) + "\n")
 
 			if json_files == list(filter(lambda x: x.endswith('RPR.json'), args.output)):
 				status -= 1
