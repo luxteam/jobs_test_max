@@ -74,7 +74,7 @@ function prerender test_list = (
         "MAX_SM_007": import_obj()
         "MAX_SM_010": test_Uber2()
         "MAX_SM_011": test_base_light()
-        "MAX_SM_012": test_IES()
+        --"MAX_SM_012": test_IES()
         "MAX_SM_013": test_Sun_Sky()
         "MAX_SM_014": test_IBL_on()
         "MAX_SM_015": test_IBL_hdr()
@@ -84,14 +84,12 @@ function prerender test_list = (
     rpr_render "jpg" test_list[1] test_list[2]
 
     if (test_list[1] == "MAX_SM_001" or test_list[1] == "MAX_SM_002" or test_list[1] == "MAX_SM_004" or test_list[1] == "MAX_SM_008" or test_list[1] == "MAX_SM_009") do (
-        copyFile ("{work_dir}\\Color\\" + test_list[1] + ".jpg") ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\pass.jpg")
+        copyFile ("{work_dir}" + "\\..\\..\\..\\..\\jobs\\Tests\\pass.jpg") ("{work_dir}\\Color\\" + test_list[1] + ".jpg") 
     )
 
 )
 
 function main = (
-    
-    sf = {start_from}
 
     list_tests = #(
         #("MAX_SM_001", "[\"Install RPR\"]", 1),
@@ -125,23 +123,16 @@ function main = (
         assetsFile = "{res_path}" + "\\" + filesToRender[fi]
         loadMaxFile assetsFile useFileUnits:true quiet:true
 
-        if (sf != 1) do (
-            create_failed_report list_tests[sf][1] list_tests[sf][2] "failed"
-            sf += 1
-        )
-
         if (filesToRender[fi] == "default.max") then (
 
-            for i=sf to 3 do (
+            for i=1 to 3 do (
                 prerender list_tests[i]
-                sf += 1
             )
 
         ) else if (filesToRender[fi] == "rpr_default.max") then (
 
-            for i=sf to list_tests.count do (
+            for i=4 to list_tests.count do (
                 prerender list_tests[i]
-                sf += 1
             )
 
         )
