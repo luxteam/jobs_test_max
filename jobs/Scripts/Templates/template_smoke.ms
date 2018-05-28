@@ -74,7 +74,7 @@ function prerender test_list = (
         "MAX_SM_007": import_obj()
         "MAX_SM_010": test_Uber2()
         "MAX_SM_011": test_base_light()
-        "MAX_SM_012": test_IES()
+        --"MAX_SM_012": test_IES()
         "MAX_SM_013": test_Sun_Sky()
         "MAX_SM_014": test_IBL_on()
         "MAX_SM_015": test_IBL_hdr()
