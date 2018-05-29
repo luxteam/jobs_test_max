@@ -161,7 +161,10 @@ function create_failed_report test_case script_info pic = (
     json_line = "  \"resolution_x\": " + (renderHeight as string) + ",\n"
     format "%" json_line to:a 
 
-    json_line = "  \"script_info\": " + script_info + "\n"
+    json_line = "  \"script_info\": " + script_info + ",\n"
+    format "%" json_line to:a
+
+    json_line = "  \"error_title\": " + "\"{error_title}\"" + "\n"
     format "%" json_line to:a 
 
     json_line = " }}\n"

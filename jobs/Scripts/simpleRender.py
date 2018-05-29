@@ -45,7 +45,7 @@ def createArgsParser():
 	parser.add_argument('--scene_list', required=True)
 	return parser
 
-def main(start_from):
+def main(start_from, error_title):
 
 	args = createArgsParser().parse_args()
 
@@ -72,7 +72,7 @@ def main(start_from):
 										   work_dir=work_dir,
 										   package_name=args.package_name, ren_mode=args.render_mode,
 										   render_mode=args.render_mode, res_path=res_path, scene_list=scene_list, resolution_y = args.resolution_y,
-										   resolution_x = args.resolution_x, start_from=start_from)
+										   resolution_x = args.resolution_x, start_from=start_from, error_title = error_title)
 
 	try:
 		os.makedirs(work_dir)
@@ -108,8 +108,13 @@ def main(start_from):
 			maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
 			'3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error', 'Image I/O Error']
 			if set(fatal_errors_titles).intersection(get_windows_titles()):
+
 				with open(os.path.join(args.output, "status.txt"), 'a') as f:
 					f.write(str(set(fatal_errors_titles).intersection(get_windows_titles())))
+				error_title = str(set(fatal_errors_titles).intersection(get_windows_titles()))
+				if (error_title.find("MAXScript")):
+					error_title = str({"MAXScript Error"})
+				error_title = error_title[2:-2]
 				rc = -1
 				try:
 					error_screen = pyscreenshot.grab()
@@ -123,7 +128,7 @@ def main(start_from):
 		else:
 			break
 
-	return rc
+	return rc, error_title
 
 
 if __name__ == "__main__":
@@ -141,12 +146,12 @@ if __name__ == "__main__":
 	except OSError as e:
 		pass
 
-	rc = main(1)
+	rc, error_title = main(1, '')
 
 	if rc != 0:
 		for i in range(expected):
 
-			if json_files == list(filter(lambda x: x.endswith('RPR.json'), args.output)):
+			if json_files == list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output))):
 				status -= 1
 			else:
 				status = 0
@@ -156,8 +161,11 @@ if __name__ == "__main__":
 
 			json_files = list(filter(lambda x: x.endswith('RPR.json'), os.listdir(args.output)))
 
-			rc = main(len(json_files) + 1)
+			if (len(json_files) == expected):
+				exit(0)
+
+			rc = main(len(json_files) + 1, error_title)
 		
 			if rc == 0:
-				exit(rc)
+				exit(0)
 
