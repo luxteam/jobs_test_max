@@ -1,6 +1,6 @@
 resetMaxFile #noPrompt
 SetQuietMode true
-logsystem.logName "log"
+logsystem.logName "renderTool.log"
 units.SystemType = #Meters
 
 function rpr_render image_format test_case script_info = (
