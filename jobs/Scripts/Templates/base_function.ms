@@ -28,7 +28,7 @@ function rpr_render image_format test_case script_info = (
     json_line = " {{\n" 
     format "%" json_line to:a
 
-    json_line = "  \"test_name\": \"" + "{package_name}" + "\",\n"
+    json_line = "  \"test_group\": \"" + "{package_name}" + "\",\n"
     format "%" json_line to:a
 
     json_line = "  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n"
