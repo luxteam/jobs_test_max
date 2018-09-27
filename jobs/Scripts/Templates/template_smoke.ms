@@ -114,7 +114,7 @@ function main = (
             test_IBL_exr()
             prerender "MAX_SM_016" 50 "[\"Testing IBL with exr\", \"Pass Limit: 50\"]" 
 
-            prerender "MAX_SM_017" 1 "[\"Iteration test\", \"Pass Limit: 1\"]" 
+            --prerender "MAX_SM_017" 1 "[\"Iteration test\", \"Pass Limit: 1\"]" 
             prerender "MAX_SM_018" 30 "[\"Iteration test\", \"Pass Limit: 30\"]" 
             prerender "MAX_SM_019" 100 "[\"Iteration test\", \"Pass Limit: 100\"]" 
             prerender "MAX_SM_020" 500 "[\"Iteration test\", \"Pass Limit: 500\"]" 
