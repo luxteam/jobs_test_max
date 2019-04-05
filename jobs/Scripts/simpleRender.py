@@ -94,13 +94,13 @@ def main():
 
 	maxScriptPath = maxScriptPath.replace("\\\\", "\\")
 
-	p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE)
+	p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	rc = -1
 
 	while True:
 		try:
-			rc = p.wait(timeout=5)
-		except psutil.TimeoutExpired as err:
+			rc = p.communicate(timeout=5)
+		except (subprocess.TimeoutExpired, psutil.TimeoutExpired) as err:
 			fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert',\
 			maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
 			'3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error', 'Image I/O Error']
@@ -116,16 +116,8 @@ def main():
 				p.terminate()
 				break
 		else:
+			rc = 0
 			break
-
-	if rc == 0:
-		print('passed')
-		stage_report[0]['status'] = 'OK'
-		stage_report[1]['log'].append('subprocess PASSED')
-	else:
-		print('failed')
-		stage_report[0]['status'] = 'TERMINATED'
-		stage_report[1]['log'].append('subprocess FAILED and was TERMINATED')
 
 	with open(os.path.join(args.output, args.stage_report), 'w') as file:
 		json.dump(stage_report, file, indent=' ')
