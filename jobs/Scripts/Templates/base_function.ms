@@ -34,7 +34,7 @@ function rpr_render image_format test_case script_info = (
     json_line = "  \"tool\": \"" + ver_max[ver_max.count] +  "\",\n"
     format "%" json_line to:a
 
-    json_line = "  \"render_device\": \"" + "{render_mode}" + "\",\n"
+    json_line = "  \"render_device\": \"" + "{render_device}" + "\",\n"
     format "%" json_line to:a
 
     json_line = "  \"pass_limit\": " + (renderers.current.passLimit as string) + ",\n"

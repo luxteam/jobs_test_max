@@ -67,13 +67,20 @@ def main():
 	res_path = args.res_path
 	res_path = res_path.replace("\\", "\\\\")
 
-	max_script_template = base + max_script_template
-	maxScript = max_script_template.format(pass_limit=args.pass_limit,
-										   work_dir=work_dir,
-										   package_name=args.package_name, ren_mode=args.render_mode,
-										   render_mode=args.render_mode, res_path=res_path, scene_list=scene_list, resolution_y = args.resolution_y,
-										   resolution_x = args.resolution_x)
+	render_device = args.render_mode
+	try:
+		s = subprocess.Popen("wmic path win32_VideoController get name", stdout=subprocess.PIPE)
+		stdout = s.communicate()
+		render_device = stdout[0].decode("utf-8").split('\n')[1].replace('\r', '').strip(' ')
+	except:
+		pass
 
+	max_script_template = base + max_script_template
+	maxScript = max_script_template.format(pass_limit=args.pass_limit, work_dir=work_dir,
+										   package_name=args.package_name, ren_mode=args.render_mode,
+										   render_mode=args.render_mode, render_device=render_device,
+										   res_path=res_path, scene_list=scene_list, resolution_y = args.resolution_y,
+										   resolution_x = args.resolution_x)
 	try:
 		os.makedirs(work_dir)
 	except BaseException:
