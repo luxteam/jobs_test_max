@@ -3,6 +3,10 @@ SetQuietMode true
 logsystem.logName "renderTool.log"
 units.SystemType = #Meters
 
+python.ExecuteFile "ms_json.py"
+python.Execute "read_json('{package_name}')"
+
+
 function rpr_render image_format test_case script_info = (
 	
     renderers.current.renderDevice = {ren_mode}
@@ -22,6 +26,30 @@ function rpr_render image_format test_case script_info = (
     ver_max = filterString (getdir #maxroot) "\\"
 
     json_path = "{work_dir}" + test_case + "_RPR.json"
+    
+--     report = Dictionary (#string)
+--     report["test_group"] = "{package_name}" 
+--     report["tool"] = ver_max[ver_max.count]
+--     report["render_device"] = "{render_mode}"
+--     report["pass_limit"] = (renderers.current.passLimit as string)
+--     report["scene_name"] = maxFileName
+--     report["date_time"] = (localtime as String)
+--     report["render_color_path"] = filename
+--     report["file_name"] = filename
+--     report["test_case"] = test_case
+--     report["difference_color"] = "not compare yet"
+--     report["render_time"] = (relapsed as string)
+--     report["render_version"] = "0"
+--     report["core_version"] = "0"
+--     report["test_status"] = "passed"
+--     report["resolution_x"] = (renderWidth as string)
+--     report["resolution_y"] = (renderHeight as string)
+--     report["script_info"] = script_info
+
+--     execute_string = StringStream ""
+--     format "dump_report(\"%\", \"%\")" json_path (report as String) to:execute_string
+--     python.Execute (execute_string as String)
+
     a = (createFile json_path mode:"w")
     format "%" "[\n" to:a
 
@@ -88,4 +116,3 @@ function rpr_render image_format test_case script_info = (
     close a 
 
 )
-

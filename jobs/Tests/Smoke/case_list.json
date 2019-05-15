@@ -1,0 +1,26 @@
+{
+	"test_group": "Smoke",
+	"cases": [
+		{
+			"name": "MAX_SM_003",
+			"scene_name": "default.max",
+			"status": "active",
+			"pass_limit": 0,
+			"script_info": ["Test import FBX"]
+		},
+		{
+			"name": "MAX_SM_004",
+			"scene_name": "default.max",
+			"status": "active",
+			"pass_limit": 0,
+			"script_info": ["Test import OBJ"]
+		},
+		{
+			"name": "MAX_SM_005",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Open RPR Scene", "PassLimit: 50"]
+		}
+	]
+}

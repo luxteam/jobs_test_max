@@ -6,7 +6,11 @@ import psutil
 import json
 import ctypes
 import pyscreenshot
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
+from jobs_launcher.core.config import main_logger
 from shutil import copyfile
+
+case_list = "case_list.json"
 
 
 def get_windows_titles():
@@ -31,6 +35,33 @@ def get_windows_titles():
 	return titles
 
 
+def check_cases(group, work_dir):
+	with open(os.path.join(work_dir, case_list)) as file:
+		data = json.loads(file.read())
+	try:
+		for case in data["cases"]:
+			if case["status"] == "active":
+				return True
+		
+		return False
+	except KeyError as err:
+		main_logger.error(str(err))
+
+
+def get_case_in_progress(group, work_dir):
+	with open(os.path.join(work_dir, case_list), "rw") as file:
+		data = json.loads(file.read())
+
+	for case in data["cases"]:
+		if case["status"] == "progress":
+			case[status] = "stopped"
+
+			data.dump(data, file, indent=4)
+			return case["name"]
+	else:
+		return False
+
+
 def main():
 	stage_report = [{'status': 'INIT'}, {'log': ['simpleRender.py start']}]
 	parser = argparse.ArgumentParser()
@@ -47,8 +78,7 @@ def main():
 	parser.add_argument('--res_path', required=True)
 	parser.add_argument('--scene_list', required=True)
 
-	args = parser.parse_args()
-
+	args = parser.parse_args()	
 	tool = args.tool
 
 	template = args.template
@@ -70,14 +100,19 @@ def main():
 	max_script_template = base + max_script_template
 	maxScript = max_script_template.format(pass_limit=args.pass_limit,
 										   work_dir=work_dir,
-										   package_name=args.package_name, ren_mode=args.render_mode,
-										   render_mode=args.render_mode, res_path=res_path, scene_list=scene_list, resolution_y = args.resolution_y,
+										   package_name=args.package_name,
+										   ren_mode=args.render_mode,
+										   render_mode=args.render_mode,
+										   res_path=res_path,
+										   scene_list=scene_list,
+										   resolution_y = args.resolution_y,
 										   resolution_x = args.resolution_x)
 
 	try:
 		os.makedirs(work_dir)
-	except BaseException:
-		print("")
+	except BaseException as err:
+		main_logger.error(str(err))
+
 
 	maxScriptPath = os.path.join(work_dir, 'script.ms')
 	with open(maxScriptPath, 'w') as f:
@@ -90,34 +125,43 @@ def main():
 	with open(cmdScriptPath, 'w') as f:
 		f.write(cmdRun)
 
+
+	# copy case_list.json for track cases in group
+	copyfile(os.path.join(os.path.dirname(args.scene_list), case_list), os.path.join(work_dir, case_list))
+	
+	# copy ms_json.py for json parsing in MaxScript
+	copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
+
 	os.chdir(work_dir)
-
 	maxScriptPath = maxScriptPath.replace("\\\\", "\\")
-
-	p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	rc = -1
 
-	while True:
-		try:
-			rc = p.communicate(timeout=5)
-		except (subprocess.TimeoutExpired, psutil.TimeoutExpired) as err:
-			fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert',\
-			maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
-			'3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error', 'Image I/O Error']
-			if set(fatal_errors_titles).intersection(get_windows_titles()):
-				rc = -1
-				try:
-					error_screen = pyscreenshot.grab()
-					error_screen.save(os.path.join(args.output, 'error_screenshot.jpg'))
-				except:
-					pass
-				for child in reversed(p.children(recursive=True)):
-					child.terminate()
-				p.terminate()
+
+	while check_cases(args.package_name, work_dir):
+		p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+		
+		while True:
+			try:
+				rc = p.communicate(timeout=5)
+			except (subprocess.TimeoutExpired, psutil.TimeoutExpired) as err:
+				fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert',\
+				maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
+				'3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error', 'Image I/O Error']
+				if set(fatal_errors_titles).intersection(get_windows_titles()):
+					rc = -1
+					try:
+						error_screen = pyscreenshot.grab()
+						error_case = get_case_in_progress(args.package_name, work_dir)
+						error_screen.save(os.path.join(args.output + "\\Color", error_case + '.jpg'))
+					except Exception as err:
+						main_logger.error(str(err))
+					for child in reversed(p.children(recursive=True)):
+						child.terminate()
+					p.terminate()
+					break
+			else:
+				rc = 0
 				break
-		else:
-			rc = 0
-			break
 
 	with open(os.path.join(args.output, args.stage_report), 'w') as file:
 		json.dump(stage_report, file, indent=' ')
