@@ -48,8 +48,8 @@ def check_cases(group, work_dir):
 		main_logger.error(str(err))
 
 
-def get_case_in_progress(group, work_dir):
-	with open(os.path.join(work_dir, case_list), "rw") as file:
+def get_error_case(group, work_dir):
+	with open(os.path.join(work_dir, case_list)) as file:
 		data = json.loads(file.read())
 
 	for case in data["cases"]:
@@ -151,7 +151,7 @@ def main():
 					rc = -1
 					try:
 						error_screen = pyscreenshot.grab()
-						error_case = get_case_in_progress(args.package_name, work_dir)
+						error_case = get_error_case(args.package_name, work_dir)
 						error_screen.save(os.path.join(args.output + "\\Color", error_case + '.jpg'))
 					except Exception as err:
 						main_logger.error(str(err))

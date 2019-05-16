@@ -85,27 +85,62 @@ function switchStatus test_case status = (
 )
 
 
+-- function main = (
+    
+--     for caseToRender in tmp do (
+        
+--         if (findItem filesToRender caseToRender[#scene_name]) == 0  or (caseToRender[#status] != "active") do continue
+
+--         asset_file = "{res_path}\\" + caseToRender[#scene_name]
+--         loadMaxFile asset_file useFileUnits:true quiet:true
+
+--         switchStatus caseToRender[#name] "progress"
+        
+--         if caseToRender[#name] == "MAX_SM_003" do (
+--             import_fbx()
+--         )
+        
+--         if caseToRender[#name] == "MAX_SM_004" do (
+--             import_obj()
+--         )
+
+--         prerender caseToRender[#name] caseToRender[#pass_limit] caseToRender[#script_info]
+
+--         switchStatus caseToRender[#name] "done"
+        
+--         )
+--     )
+
+
 function main = (
     filesToRender = #({scene_list})
+    cases = caseList.get()
+    cases = cases["cases"]
     
-    for caseToRender in tmp do (
+    for i=1 to cases.count do (
+        if (findItem filesToRender cases[i]["scene_name"] == 0) or (cases[i]["status"] != "active") do continue 
         
-        if (findItem filesToRender caseToRender[#scene_name]) == 0  or (caseToRender[#status] != "active") do continue
+        caseList.setCaseStatus i "progress"
 
-        asset_file = "{res_path}\\" + caseToRender[#scene_name]
-        loadMaxFile asset_file useFileUnits:true quiet:true
+        assetFile = "{res_path}\\" + cases[i]["scene_name"]
+        loadMaxFile assetFile useFileUnits:true quiet:true
 
-        switchStatus caseToRender[#name] "progress"
-        
-        if caseToRender[#name] == "MAX_SM_003" do import_fbx()
-        if caseToRender[#name] == "MAX_SM_004" do import_obj()
-
-        prerender caseToRender[#name] caseToRender[#pass_limit] caseToRender[#script_info]
-
-        switchStatus caseToRender[#name] "done"
-        
+        case cases[i]["name"] of (
+            "MAX_SM_003": (
+                import_fbx()
+            )
+            "MAX_SM_004": (
+                import_obj()
+            )
+            default: print "simple test case"
         )
+
+        prerender cases[i]["name"] cases[i]["pass_limit"] cases[i]["script_info"]
+
+        caseList.setCaseStatus i "done"
     )
+
+)
 --     else if (filesToRender[fi] == "rpr_default.max") then (
 
 --             prerender "MAX_SM_005" 50 "[\"Render empty scene with RPR parameters\", \"Pass Limit: 50\"]" 

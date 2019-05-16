@@ -1,52 +1,32 @@
-import MaxPlus
 import json
-import os
+import pymxs
 
-case_list = "case_list.json"
+rt = pymxs.runtime
 
-def dict_py_to_ms(d):
-	""" Return string such as 'Dictionary #(#key1, value1) ... #(#keyN, valueN)' for MS eval """
-	
-	key_value = []
+class Dictionary:
+	def __init__(self, dictionary, filename):
+		self.dictionary = dictionary
+		self.filename = filename
 
-	for k in d:
-		if type(d[k]) in [unicode, list]:
-			if type(d[k]) == list:
-				# unicode issue
-				d[k] = [str(i) for i in d[k]]
-				# backslash issue
-				d[k] = str(d[k]).replace("'", '\\"')
-			
-			key_value += ["#(#'{}', \"{}\")".format(k, str(d[k]))]
+
+	def dump(self):
+		with open(self.filename, "w") as f:
+			json.dump(self.dictionary, f, indent=4)
+		return True
+
+	def get(self):
+		return self.dictionary
+
+
+	def setCaseStatus(self, index, value):
 		
-		else:
-			key_value += ["#(#'{}', {})".format(k, d[k])]
-	
-	return "Dictionary " + " ".join(key_value)
+		self.dictionary["cases"][index - 1]["status"] = value
+		self.dump()
+
+		return True
 
 
-def switch_case_status(case_name, status):
-	""" Change case status during execution tests """
-	
-	with open(case_list) as file:
-		data = json.loads(file.read())
+with open("case_list.json") as file:
+	data = json.loads(file.read())
 
-	try:
-		for case in data["cases"]:
-			if case["name"] == case_name:
-				case["status"] = status
-	except KeyError as err:
-		return False
-
-	with open(case_list, 'w') as file:
-		json.dump(data, file, indent=4)
-
-	return True
-
-
-def read_json(group):
-	""" Read json file """
-	with open("case_list.json") as file:
-		data = json.loads(file.read())
-	cases = [dict_py_to_ms(case) for case in data["cases"]]
-	MaxPlus.Core.EvalMAXScript("tmp = {}".format("#({})".format(", ".join(cases))))
+rt.caseList = Dictionary(data, "case_list.json")

@@ -3,8 +3,8 @@ SetQuietMode true
 logsystem.logName "renderTool.log"
 units.SystemType = #Meters
 
+caseList = undefined
 python.ExecuteFile "ms_json.py"
-python.Execute "read_json('{package_name}')"
 
 
 function rpr_render image_format test_case script_info = (
@@ -46,9 +46,6 @@ function rpr_render image_format test_case script_info = (
 --     report["resolution_y"] = (renderHeight as string)
 --     report["script_info"] = script_info
 
---     execute_string = StringStream ""
---     format "dump_report(\"%\", \"%\")" json_path (report as String) to:execute_string
---     python.Execute (execute_string as String)
 
     a = (createFile json_path mode:"w")
     format "%" "[\n" to:a
