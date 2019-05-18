@@ -85,36 +85,9 @@ function switchStatus test_case status = (
 )
 
 
--- function main = (
-    
---     for caseToRender in tmp do (
-        
---         if (findItem filesToRender caseToRender[#scene_name]) == 0  or (caseToRender[#status] != "active") do continue
-
---         asset_file = "{res_path}\\" + caseToRender[#scene_name]
---         loadMaxFile asset_file useFileUnits:true quiet:true
-
---         switchStatus caseToRender[#name] "progress"
-        
---         if caseToRender[#name] == "MAX_SM_003" do (
---             import_fbx()
---         )
-        
---         if caseToRender[#name] == "MAX_SM_004" do (
---             import_obj()
---         )
-
---         prerender caseToRender[#name] caseToRender[#pass_limit] caseToRender[#script_info]
-
---         switchStatus caseToRender[#name] "done"
-        
---         )
---     )
-
-
 function main = (
     filesToRender = #({scene_list})
-    cases = caseList.get()
+    cases = caseList.get_data()
     cases = cases["cases"]
     
     for i=1 to cases.count do (
