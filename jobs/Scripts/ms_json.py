@@ -4,15 +4,17 @@ import pymxs
 rt = pymxs.runtime
 
 class JSONWrapper:
-	def __init__(self, data, filename):
+	def __init__(self, data, filename, mode=None):
 		self.data = data
 		self.filename = filename
-
+		self.mode = mode
 
 	def dump(self):
 		with open(self.filename, "w") as f:
-			json.dump([self.data], f, indent=4)
-		
+			if self.mode == "report":
+				json.dump([self.data], f, indent=4)
+			else:
+				json.dump(self.data, f, indent=4)
 		return True
 
 
@@ -44,4 +46,4 @@ with open("case_list.json") as file:
 	data = json.loads(file.read())
 
 rt.caseList = JSONWrapper(data, "case_list.json")
-rt.report = JSONWrapper({}, None)
+rt.report = JSONWrapper({}, None, "report")

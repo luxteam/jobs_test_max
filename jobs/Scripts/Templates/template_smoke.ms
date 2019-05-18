@@ -1,16 +1,13 @@
 function prerender test_case pass_limit script_info = (
-    -- change status in case
-    -- python.Execute "read_json('rem.json', 'Smoke')"
-
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = pass_limit
+
     if ({resolution_y} != 0 and {resolution_x} != 0) do (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
     )
 
     rpr_render "jpg" test_case script_info
-
 )
 
 

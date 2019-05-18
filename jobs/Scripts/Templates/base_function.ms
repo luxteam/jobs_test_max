@@ -6,6 +6,24 @@ units.SystemType = #Meters
 caseList = undefined
 report = undefined
 python.ExecuteFile "ms_json.py"
+bi = python.import("__builtin__")
+
+
+function getMaxVersion = (
+    -- return string such as "3ds Max 2019|21.0.0.845" = "<tool>|<release number>.<service pack>.<build number>"
+    maxName = filterString (getdir #maxroot) "\\"
+    maxName =  maxName[maxName.count]
+
+    maxInfo = filterString (getFileVersion "$max/3dsmax.exe") "\t"
+    maxInfo = filterString maxInfo[1] ","
+    version = maxName + "|"
+
+    for i = 1 to (maxInfo.count - 1) do version += maxInfo[i] + "."
+    version += maxInfo[maxInfo.count]
+
+
+    version
+)
 
 
 function rpr_render image_format test_case script_info = (
@@ -23,14 +41,11 @@ function rpr_render image_format test_case script_info = (
     render outputfile:image_path
     rend = timeStamp()
     relapsed = ((rend - rstart) / 1000.0)
-    ver_max = filterString (getdir #maxroot) "\\"
     json_path = "{work_dir}" + test_case + "_RPR.json"
+    maxV = getMaxVersion()
 
-
-    bi = python.import("__builtin__")
     data = bi.dict \
         test_group: "{package_name}" \
-        tool: ver_max[ver_max.count] \
         render_device: "{render_mode}" \
         pass_limit: (renderers.current.passLimit as string) \
         scene_name: maxFileName \
@@ -47,6 +62,7 @@ function rpr_render image_format test_case script_info = (
         script_info: script_info \
 
     data["file_name"] = filename
+    data["tool"] = maxV
     report.set_data(data)
     report.set_filename json_path
     report.dump()

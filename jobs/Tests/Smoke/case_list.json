@@ -5,14 +5,14 @@
 			"name": "MAX_SM_003",
 			"scene_name": "default.max",
 			"status": "active",
-			"pass_limit": 0,
+			"pass_limit": 50,
 			"script_info": ["Test import FBX"]
 		},
 		{
 			"name": "MAX_SM_004",
 			"scene_name": "default.max",
 			"status": "active",
-			"pass_limit": 0,
+			"pass_limit": 50,
 			"script_info": ["Test import OBJ"]
 		},
 		{
