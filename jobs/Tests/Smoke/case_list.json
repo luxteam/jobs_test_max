@@ -5,14 +5,14 @@
 			"name": "MAX_SM_003",
 			"scene_name": "default.max",
 			"status": "active",
-			"pass_limit": 50,
+			"pass_limit": 0,
 			"script_info": ["Test import FBX"]
 		},
 		{
 			"name": "MAX_SM_004",
 			"scene_name": "default.max",
 			"status": "active",
-			"pass_limit": 50,
+			"pass_limit": 0,
 			"script_info": ["Test import OBJ"]
 		},
 		{
@@ -20,7 +20,133 @@
 			"scene_name": "base_scene.max",
 			"status": "active",
 			"pass_limit": 50,
-			"script_info": ["Open RPR Scene", "PassLimit: 50"]
+			"script_info": ["Open RPR Scene"]
+		},
+		{
+			"name": "MAX_SM_006",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["HDR"]
+		},
+		{
+			"name": "MAX_SM_007",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["EXR"]
+		},
+		{
+			"name": "MAX_SM_008",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Test Sun"]
+		},
+		{	
+        	"scene_name": "smoke_ies.max",
+        	"name": "MAX_SM_009",
+        	"status": "active",
+        	"script_info": ["Create IES Light"],
+        	"pass_limit": 50
+        },
+		{
+			"name": "MAX_SM_010",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 1,
+			"script_info": ["Render 1 pass"]
+		},
+		{
+			"name": "MAX_SM_010",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 100,
+			"script_info": ["Render 100 pass"]
+		},
+		{
+			"name": "MAX_SM_012",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 500,
+			"script_info": ["Render 500 pass"]
+		},
+		{
+			"name": "MAX_SM_013",
+			"scene_name": "tone_mapping.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Tone Mapping"]
+		},
+		{
+			"name": "MAX_SM_014",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Render Stamp"]
+		},
+		{
+			"name": "MAX_SM_016",
+			"scene_name": "quality_preset_medium.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Quality Preset - Medium"]
+		},
+		{
+			"name": "MAX_SM_017",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Image Size 1280x720"]
+		},
+		{
+			"name": "MAX_SM_018",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Image Size 1500x1125"]
+		},
+		{
+			"name": "MAX_SM_019",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Save image as .png"]
+		},
+		{
+			"name": "MAX_SM_020",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Save image as .jpg"]
+		},
+		{
+			"name": "MAX_SM_021",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Bilaterl Denoiser"]
+		},
+		{
+			"name": "MAX_SM_022",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Denoiser LWR default"]
+		},
+		{
+			"name": "MAX_SM_023",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Denoiser EAW default"]
+		},
+		{
+			"name": "MAX_SM_024",
+			"scene_name": "base_scene.max",
+			"status": "active",
+			"pass_limit": 50,
+			"script_info": ["Free light - Photometric"]
 		}
 	]
 }

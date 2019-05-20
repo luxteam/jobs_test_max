@@ -1,4 +1,4 @@
-function prerender test_case pass_limit script_info = (
+function prerender test_case pass_limit script_info image_format = (
     renderers.current = Radeon_ProRender()
     renderers.current.passLimit = pass_limit
 
@@ -7,21 +7,8 @@ function prerender test_case pass_limit script_info = (
         renderWidth = {resolution_x}
     )
 
-    rpr_render "jpg" test_case script_info
+    rpr_render image_format test_case script_info
 )
-
-
-function import_fbx = (
-    importfile ("{res_path}" + "\\res\\park_bench1.fbx") #noPrompt using:FBXIMP
-)
-
-
-function import_obj = (
---     select $Default/.../*
-    delete selection
-    importfile ("{res_path}" + "\\res\\example.obj") #noPrompt using:OBJIMP
-)
-
 
 function test_Uber2 = (
     meditMaterials[1] = RPR_Uber_Material()
@@ -30,7 +17,6 @@ function test_Uber2 = (
     if (p0 == undefined) do (p0 = getnodebyname "shader_ball" exact:true)
     p0.material = meditMaterials[1]
 )
-
 
 function test_Sun_Sky = (
     renderers.current.backgroundOverride = True
@@ -47,7 +33,7 @@ function test_IBL_hdr = (
     renderers.current.backgroundOverride = True
     renderers.current.backgroundType = 0
     renderers.current.useBackgroundMap = True
-    hdr_path = "{res_path}" + "\\res\\Hdri\\Tropical_Beach_3k.hdr"
+    hdr_path = "{res_path}" + "\\res\\Hdri\\startup.hdr"
     hdr = bitmaptexture filename:hdr_path
     renderers.current.backgroundMap = hdr
 )
@@ -94,65 +80,100 @@ function main = (
 
         assetFile = "{res_path}\\" + cases[i]["scene_name"]
         loadMaxFile assetFile useFileUnits:true quiet:true
+        image_format = "jpg"
+        
+        -- TODO: MAX_SM_016
+        -- WARNING: MAX_013 & MAX_015 - created scens tope_mapping.max and quality_preset_medium.max
 
+        status = true
         case cases[i]["name"] of (
             "MAX_SM_003": (
-                import_fbx()
+                status = (importfile ("{res_path}\\res\\park_bench1.fbx") #noPrompt using:FBXIMP)
             )
             "MAX_SM_004": (
-                import_obj()
+                status = (importfile ("{res_path}\\res\\example.obj") #noPrompt using:OBJIMP)
             )
+            "MAX_SM_006": (
+                status = test_IBL_hdr()
+            )
+            "MAX_SM_007": (
+                status = test_IBL_exr()
+            )
+            "MAX_SM_008": (
+                status = test_Sun_Sky()
+            )
+            "MAX_SM_009": (
+                light = ies_light()
+                light.Profile = "1.IES"   
+            )
+            "MAX_SM_010": (
+                renderers.current.samplesMax = 1
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+            "MAX_SM_011": (
+                renderers.current.samplesMax = 100
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+            "MAX_SM_012": (
+                renderers.current.samplesMax = 500
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+            "MAX_SM_013": (
+                renderers.current.overrideTonemap = false
+                renderers.current.tonemapOperator = 1
+            )
+            "MAX_SM_014": (
+                renderers.current.enableRenderStamp = true
+            )
+            "MAX_SM_017": (
+                renderWidth = 1280
+                renderHeight = 720
+            )
+            "MAX_SM_018": (
+                renderWidth = 1500
+                renderHeight = 1125
+            )
+            "MAX_SM_019": (
+                image_format = "png"
+            )
+            "MAX_SM_020": (
+                image_format = "jpg"
+            )
+            "MAX_SM_021": (
+                renderers.current.enableDenoiser = true
+                renderers.current.denoiserType = 1
+            )
+            "MAX_SM_022": (
+                renderers.current.enableDenoiser = true
+                renderers.current.denoiserType = 2
+            )
+            "MAX_SM_023": (
+                renderers.current.enableDenoiser = true
+                renderers.current.denoiserType = 3
+            )
+            "MAX_SM_024": (
+                light = Free_Light()
+                light.pos = [500, 1730, 40]
+                light.intensity = 60
+                delete $RPREnv001
+                renderers.current.samplesMax = 500
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+
+
             default: print "simple test case"
         )
 
-        prerender cases[i]["name"] cases[i]["pass_limit"] cases[i]["script_info"]
+        if cases[i]["pass_limit"] == 0 then (
+            withoutRender cases[i]["name"] cases[i]["script_info"] status
+        ) else (
+            prerender cases[i]["name"] cases[i]["pass_limit"] cases[i]["script_info"] image_format
+        )
 
         caseList.setCaseStatus i "done"
     )
 
 )
---     else if (filesToRender[fi] == "rpr_default.max") then (
-
---             prerender "MAX_SM_005" 50 "[\"Render empty scene with RPR parameters\", \"Pass Limit: 50\"]" 
---             import_fbx()
---             prerender "MAX_SM_006" 50 "[\"Import FBX\", \"Pass Limit: 50\"]" 
-
---             import_obj()
---             prerender "MAX_SM_007" 50 "[\"Import OBJ\", \"Pass Limit: 50\"]" 
-
---             test_Uber2()
---             prerender "MAX_SM_010" 50 "[\"Testing Uber material\", \"Pass Limit: 50\"]" 
-
---             test_base_light()
---             prerender "MAX_SM_011" 50 "[\"Testing base light\", \"Pass Limit: 50\"]" 
-
---             test_IES() 
---             prerender "MAX_SM_012" 50 "[\"Testing IES light\", \"Pass Limit: 50\"]" 
-
---             test_Sun_Sky()
---             prerender "MAX_SM_013" 50 "[\"Testing Sun and Sky System\", \"Pass Limit: 50\"]" 
-
---             test_IBL_on()
---             prerender "MAX_SM_014" 50 "[\"Testing IBL\", \"Pass Limit: 50\"]" 
-
---             test_IBL_hdr()
---             prerender "MAX_SM_015" 50 "[\"Testing IBL with hdr\", \"Pass Limit: 50\"]" 
-
---             test_IBL_exr()
---             prerender "MAX_SM_016" 50 "[\"Testing IBL with exr\", \"Pass Limit: 50\"]" 
-
---             prerender "MAX_SM_017" 1 "[\"Iteration test\", \"Pass Limit: 1\"]" 
-
---             prerender "MAX_SM_018" 30 "[\"Iteration test\", \"Pass Limit: 30\"]" 
---             prerender "MAX_SM_019" 100 "[\"Iteration test\", \"Pass Limit: 100\"]" 
---             prerender "MAX_SM_020" 500 "[\"Iteration test\", \"Pass Limit: 500\"]" 
---             prerender "MAX_SM_021" 1000 "[\"Iteration test\", \"Pass Limit: 1000\"]" 
-
-
---         ) 
---     )
--- )
-
 
 main()
 
