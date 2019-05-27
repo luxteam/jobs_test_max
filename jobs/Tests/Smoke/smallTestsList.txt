@@ -2,4 +2,6 @@
 "base_scene.max"
 "tone_mapping.max"
 "quality_preset_medium.max",
-"smoke_ies.max"
+"smoke_ies.max",
+"anit_aliasing.max",
+"mb.max"

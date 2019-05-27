@@ -76,9 +76,6 @@ function withoutRender test_case script_info status = (
 
 
 function rpr_render image_format test_case script_info = (
-    renderers.current.renderDevice = {ren_mode}
-    renderers.current.renderLimit = 1
-
     image_path = "{work_dir}" + "Color\\"
     makeDir image_path
 
