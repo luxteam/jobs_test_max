@@ -1,7 +1,8 @@
-FBX_ASSET_PATH = "{res_path}\\res\\park_bench1.fbx"
-OBJ_ASSET_PATH = "{res_path}\\res\\example.obj"
-HDR_ASSET_PATH = "{res_path}" + "\\res\\Hdri\\startup.hdr"
-EXR_ASSET_PATH = "{res_path}" + "\\res\\Hdri\\over_the_clouds.exr"
+FBX_ASSET_PATH = "{res_path}\\sourceimages\\smoke_03.fbx"
+OBJ_ASSET_PATH = "{res_path}\\sourceimages\\smoke_04.obj"
+HDR_ASSET_PATH = "{res_path}" + "\\sourceimages\\startup.hdr"
+EXR_ASSET_PATH = "{res_path}" + "\\sourceimages\\over_the_clouds.exr"
+MATLIB_PATH = "C:\\ProgramData\\RadeonProRender\\MaterialLibrary\\Max\\RPR_CarPaints.mat"
 
 
 function switchStatus test_case status = (
@@ -113,8 +114,7 @@ function main = (
                 renderers.current.adaptiveNoiseThreshold = 0
             )
             "MAX_SM_026": (
-                p= "C:\\ProgramData\\RadeonProRender\\MaterialLibrary\\Max\\RPR_CarPaints.mat"
-                lib = loadTempMaterialLibrary p
+                lib = loadTempMaterialLibrary MATLIB_PATH
                 cpm = lib.Car_Paint_Metallic____RPR_Uber_Material
                 for obj in Geometry do (
                     if obj.name != "Cove_UntitledFBXASC046013" do (
