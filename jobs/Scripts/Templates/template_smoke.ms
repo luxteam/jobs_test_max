@@ -16,6 +16,18 @@ function main = (
     cases = caseList.get_data()
     cases = cases["cases"]
     
+    -- MAX_SM_001 and MAX_002
+    try (
+        renderers.current = Radeon_ProRender()
+        status_init = true
+    ) catch (
+        getCurrentException()
+        status_init = true
+    )
+
+    withoutRender "MAX_SM_001" "Installing with default settings" true
+    withoutRender "MAX_SM_002" "Change renderer from default to RPR" status_init
+    
     for i=1 to cases.count do (
         if (cases[i]["status"] != "active") do continue 
        
