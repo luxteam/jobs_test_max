@@ -22,7 +22,7 @@ function getMaxVersion = (
     version += maxInfo[maxInfo.count]
 
 
-    version
+    return version
 )
 
 
@@ -32,7 +32,8 @@ function buildReport test_case script_info render_time filename test_status pass
 
     data = bi.dict \
         test_group: "{package_name}" \
-        render_device: "{render_mode}" \
+        render_device: "{render_device}" \
+        render_mode: "{render_mode}" \
         pass_limit: passLimit \
         scene_name: maxFileName \
         date_time: (localtime as string) \
@@ -43,8 +44,8 @@ function buildReport test_case script_info render_time filename test_status pass
         render_version: "0" \
         core_version: "0" \
         test_status: "passed" \                        
-        resolution_x: (renderWidth as string) \
-        resolution_y: (renderHeight as string) \
+        resolution_x: renderWidth \
+        resolution_y: renderHeight \
         script_info: script_info \
 
     data["file_name"] = filename
@@ -87,5 +88,5 @@ function rpr_render image_format test_case script_info = (
     rend = timeStamp()
     relapsed = ((rend - rstart) / 1000.0)
 
-    buildReport test_case script_info relapsed filename "passed" (renderers.current.passLimit as string)
+    buildReport test_case script_info relapsed filename "passed" (renderers.current.passLimit)
 )

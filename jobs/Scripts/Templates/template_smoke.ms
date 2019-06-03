@@ -22,18 +22,20 @@ function main = (
         status_init = true
     ) catch (
         getCurrentException()
-        status_init = true
+        status_init = false
     )
 
-    withoutRender "MAX_SM_001" "['Installing with default settings']" true
-    withoutRender "MAX_SM_002" "['Change renderer from default to RPR']" status_init
+    withoutRender "MAX_SM_001" (bi.List(#("Installing with default settings"))) true
+    withoutRender "MAX_SM_002" (bi.List(#("Change renderer from default to RPR"))) status_init
     
+    if not status_init do return false
+
     for i=1 to cases.count do (
         if (cases[i]["status"] != "active") do continue 
        
         caseList.setCaseStatus i "progress"
 
-        assetFile = "{res_path}\\" + cases[i]["scene_name"]
+         assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
         loadMaxFile assetFile useFileUnits:true quiet:true
         image_format = "jpg"
 
@@ -205,6 +207,8 @@ function main = (
 
         caseList.setCaseStatus i "done"
     )
+
+    return true
 
 )
 
