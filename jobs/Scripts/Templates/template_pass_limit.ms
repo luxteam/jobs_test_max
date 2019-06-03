@@ -23,11 +23,6 @@ function  main = (
         if cases[i]["adaptiveNoiseThreshold"] != undefined do renderers.current.adaptiveNoiseThreshold = cases[i]["adaptiveNoiseThreshold"]
         if cases[i]["timeLimit"] != undefined do renderers.current.timeLimit = cases[i]["timeLimit"]
 
-        print renderers.current.samplesMax
-        print renderers.current.adaptiveNoiseThreshold
-        print renderers.current.timeLimit
-
-
         rpr_render image_format cases[i]["name"] cases[i]["script_info"]
 
         caseList.setCaseStatus i "done"

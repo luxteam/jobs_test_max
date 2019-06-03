@@ -35,7 +35,7 @@ function main = (
        
         caseList.setCaseStatus i "progress"
 
-         assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
+        assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
         loadMaxFile assetFile useFileUnits:true quiet:true
         image_format = "jpg"
 
