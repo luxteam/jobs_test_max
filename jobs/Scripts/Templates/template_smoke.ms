@@ -25,8 +25,8 @@ function main = (
         status_init = true
     )
 
-    withoutRender "MAX_SM_001" "[Installing with default settings]" true
-    withoutRender "MAX_SM_002" "[Change renderer from default to RPR]" status_init
+    withoutRender "MAX_SM_001" "['Installing with default settings']" true
+    withoutRender "MAX_SM_002" "['Change renderer from default to RPR']" status_init
     
     for i=1 to cases.count do (
         if (cases[i]["status"] != "active") do continue 
