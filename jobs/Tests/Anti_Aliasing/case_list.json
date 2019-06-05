@@ -1,0 +1,203 @@
+{
+	"test_group": "Anti_Aliasing",
+	"cases": [
+		{
+			"name": "MAX_RS_AA_001",
+			"script_info": [
+				"Filter Size - 1",
+				"Box"
+			],
+			"type": "Box",
+			"size": 1,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_002",
+			"script_info": [
+				"Filter Size - 5",
+				"Box"
+			],
+			"type": "Box",
+			"size": 5,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_003",
+			"script_info": [
+				"Filter Size - 10",
+				"Box"
+			],
+			"type": "Box",
+			"size": 10,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_004",
+			"script_info": [
+				"Filter Size - 1",
+				"Triangle"
+			],
+			"type": "Triangle",
+			"size": 1,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_005",
+			"script_info": [
+				"Filter Size - 5",
+				"Triangle"
+			],
+			"type": "Triangle",
+			"size": 5,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_006",
+			"script_info": [
+				"Filter Size - 10",
+				"Triangle"
+			],
+			"type": "Triangle",
+			"size": 10,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_007",
+			"script_info": [
+				"Filter Size - 1",
+				"Gaussian"
+			],
+			"type": "Gaussian",
+			"size": 1,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_008",
+			"script_info": [
+				"Filter Size - 5",
+				"Gaussian"
+			],
+			"type": "Gaussian",
+			"size": 5,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_009",
+			"script_info": [
+				"Filter Size - 10",
+				"Gaussian"
+			],
+			"type": "Gaussian",
+			"size": 10,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_010",
+			"script_info": [
+				"Filter Size - 1",
+				"Mitchell"
+			],
+			"type": "Mitchell",
+			"size": 1,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_011",
+			"script_info": [
+				"Filter Size - 5",
+				"Mitchell"
+			],
+			"type": "Mitchell",
+			"size": 5,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_012",
+			"script_info": [
+				"Filter Size - 10",
+				"Mitchell"
+			],
+			"type": "Mitchell",
+			"size": 10,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_013",
+			"script_info": [
+				"Filter Size - 1",
+				"Lanczos"
+			],
+			"type": "Lanczos",
+			"size": 1,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_014",
+			"script_info": [
+				"Filter Size - 5",
+				"Lanczos"
+			],
+			"type": "Lanczos",
+			"size": 5,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_015",
+			"script_info": [
+				"Filter Size - 10",
+				"Lanczos"
+			],
+			"type": "Lanczos",
+			"size": 10,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_016",
+			"script_info": [
+				"Filter Size - 1",
+				"Blackmanharris"
+			],
+			"type": "Blackmanharris",
+			"size": 1,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_017",
+			"script_info": [
+				"Filter Size - 5",
+				"Blackmanharris"
+			],
+			"type": "Blackmanharris",
+			"size": 5,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		},
+		{
+			"name": "MAX_RS_AA_018",
+			"script_info": [
+				"Filter Size - 10",
+				"Blackmanharris"
+			],
+			"type": "Blackmanharris",
+			"size": 10,
+			"status": "active",
+			"scene_name": "Anti_Aliasing.max"
+		}
+	]
+}

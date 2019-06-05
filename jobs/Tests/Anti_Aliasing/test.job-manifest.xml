@@ -12,7 +12,7 @@
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
         <argument>--scene_list "{Root}\Tests\Anti_Aliasing\{TestsFilter}TestsList.txt"</argument>
-        <argument>--package_name "Anti Aliasing"</argument>
+        <argument>--package_name "Anti_Aliasing"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
