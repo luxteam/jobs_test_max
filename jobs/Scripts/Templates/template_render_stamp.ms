@@ -1,33 +1,30 @@
 
-function prerender test_case render_stamp script_info = (
-    
-    renderers.current = Radeon_ProRender()
-    renderers.current.passLimit = {pass_limit}
-    if ({resolution_y} != 0 and {resolution_x} != 0) do (
-        renderHeight = {resolution_y}
-        renderWidth = {resolution_x}
-    )
 
-    renderers.current.enableRenderStamp = True
-    renderers.current.renderStamp = render_stamp
-
-    rpr_render "jpg" test_case script_info
+function setRenderStamp stamp = (
+    renderers.current.renderStamp = stamp
 )
 
 function main = (
+    cases = caseList.get_data()
+    cases = cases["cases"]
     
-    filesToRender = #(
-        {scene_list}
-    )
-    
-    for fi=1 to filesToRender.count do (
-        assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile useFileUnits:true quiet:true
+    for i=1 to cases.count do (
+        if (cases[i]["status"] != "active") do continue
+        
+        caseList.setCaseStatus i "progress"
 
-        prerender "MAX_RS_RS_001" "Radeon ProRender for 3Ds Max %b | %h | Time: %pt | Passes: %pp | Objects: %so | Lights: %sl" "[\"Base stamp\"]"
-        prerender "MAX_RS_RS_002" "Radeon ProRender for 3Ds Max %b | CPU %c | GPU %g | Render mode %r | Render device %h" "[\"CPU&GPU stamp\"]"
-        prerender "MAX_RS_RS_003" "Radeon ProRender for 3Ds Max %b | Computer name %i | Current date %d" "[\"Computer name stamp\"]"
-       
+        assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
+        loadMaxFile assetFile useFileUnits:true quiet:true
+        image_format = "jpg"
+        
+        renderers.current.enableRenderStamp = true
+        case cases[i]["name"] of (
+            "MAX_RS_RS_002": setRenderStamp "Radeon ProRender for 3ds Max 2019 %b | CPU %c | GPU %g | Render mode %r | Render device %h'"
+            "MAX_RS_RS_003": setRenderStamp "Radeon ProRender for 3ds Max 2019 %b | Computer name %i | Current date %d"
+        ) 
+
+        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        caseList.setCaseStatus i "done"
     )
 )
 

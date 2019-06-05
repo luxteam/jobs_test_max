@@ -12,7 +12,7 @@
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
         <argument>--scene_list "{Root}\Tests\Render_Stamp\{TestsFilter}TestsList.txt"</argument>
-        <argument>--package_name "Render Stamp"</argument>
+        <argument>--package_name "Render_Stamp"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
