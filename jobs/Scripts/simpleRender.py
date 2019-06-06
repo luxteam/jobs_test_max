@@ -161,7 +161,6 @@ def main():
 										   scene_list=scene_list,
 										   resolution_y = args.resolution_y,
 										   resolution_x = args.resolution_x)
-
 	try:
 		os.makedirs(work_dir)
 	except BaseException as err:
