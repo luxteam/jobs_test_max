@@ -87,8 +87,8 @@ def dump_reports(work_dir, case_list, render_device, scene_list):
 		# mkdir color
 		try:
 			os.mkdir(os.path.join(work_dir, "Color"))
-		except FileExistsError as err:
-			pass
+		except OSError as err:
+			main_logger.error(str(err))
 
 		if case["status"] == "active":
 			report_body["test_status"] = "error"
@@ -97,13 +97,13 @@ def dump_reports(work_dir, case_list, render_device, scene_list):
 			report_body["test_status"] = "skipped"
 			path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'skipped.jpg')
 
-		path_2_case_img = os.path.join(work_dir, "Color\\\\{test_case}.jpg".format(test_case=case["name"]))
+		path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
 		copyfile(path_2_orig_img, path_2_case_img)
 
-		with open(os.path.join(work_dir, report_name), "w+") as file:
+		with open(os.path.join(work_dir, report_name), "w") as file:
 			json.dump([report_body], file, indent=4)
 
-		main_logger.error(case["name"] + ": Report template created.")
+		main_logger.info(case["name"] + ": Report template created.")
 
 	return 1
 
@@ -163,7 +163,7 @@ def main():
 										   resolution_x = args.resolution_x)
 	try:
 		os.makedirs(work_dir)
-	except BaseException as err:
+	except Exception as err:
 		main_logger.error(str(err))
 
 
@@ -207,7 +207,7 @@ def main():
 					try:
 						error_screen = pyscreenshot.grab()
 						error_case = get_error_case(args.package_name, work_dir)
-						error_screen.save(os.path.join(args.output + "\\Color", error_case + '.jpg'))
+						error_screen.save(os.path.join(args.output, "Color", error_case + '.jpg'))
 					except Exception as err:
 						main_logger.error(str(err))
 					for child in reversed(p.children(recursive=True)):
