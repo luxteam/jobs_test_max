@@ -1,128 +1,215 @@
+FBX_ASSET_PATH = "{res_path}\\sourceimages\\smoke_03.fbx"
+OBJ_ASSET_PATH = "{res_path}\\sourceimages\\smoke_04.obj"
+HDR_ASSET_PATH = "{res_path}" + "\\sourceimages\\startup.hdr"
+EXR_ASSET_PATH = "{res_path}" + "\\sourceimages\\over_the_clouds.exr"
+MATLIB_PATH = "C:\\ProgramData\\RadeonProRender\\MaterialLibrary\\Max\\RPR_CarPaints.mat"
 
-function prerender test_case pass_limit script_info = (
-    
-    renderers.current = Radeon_ProRender()
-    renderers.current.passLimit = pass_limit
-    if ({resolution_y} != 0 and {resolution_x} != 0) do (
-        renderHeight = {resolution_y}
-        renderWidth = {resolution_x}
-    )
 
-    rpr_render "jpg" test_case script_info
-)
-
-function import_fbx = (
-    importfile ("{res_path}" + "\\res\\park_bench1.fbx") #noPrompt using:FBXIMP
-)
-
-function import_obj = (
-    select $Default/.../*
-    delete selection
-    importfile ("{res_path}" + "\\res\\example.obj") #noPrompt using:OBJIMP
-)
-
-function test_Uber2 = (
-    meditMaterials[1] = RPR_Uber_Material()
-    meditMaterials[1].diffuseColor = color 163 178 1
-    p0 = getnodebyname "default" exact:true
-    if (p0 == undefined) do (p0 = getnodebyname "shader_ball" exact:true)
-    p0.material = meditMaterials[1]
-)
-
-function test_Sun_Sky = (
-    renderers.current.backgroundOverride = True
-    renderers.current.backgroundType = 1
-)
-
-function test_IBL_on = (
-    renderers.current.backgroundOverride = True
-    renderers.current.backgroundType = 0
-)
-
-function test_IBL_hdr = (
-    renderers.current.backgroundOverride = True
-    renderers.current.backgroundType = 0
-    renderers.current.useBackgroundMap = True
-    hdr_path = "{res_path}" + "\\res\\Hdri\\Tropical_Beach_3k.hdr"
-    hdr = bitmaptexture filename:hdr_path
-    renderers.current.backgroundMap = hdr
-)
-
-function test_IBL_exr = (
-    renderers.current.backgroundOverride = True
-    renderers.current.backgroundType = 0
-    renderers.current.useBackgroundMap = True
-    exr_path = "{res_path}" + "\\res\\Hdri\\over_the_clouds.exr"
-    exr = bitmaptexture filename:exr_path
-    renderers.current.backgroundMap = exr
-)
-
-function test_base_light = (
-    myLight = Omnilight()
-    myLight.pos = [0,0,10]
-)
-
-function test_IES = (
-    select $Omni001
-    delete selection
-    ies_light = RPRIESLight()
-    ies_light.pos = [0,0,10]
-    ies_light.profile = "2.ies"
+function switchStatus test_case status = (
+    execute_string = StringStream ""
+    format "switch_case_status(\"%\", \"%\")" test_case status to:execute_string
+    python.Execute (execute_string as String)
 )
 
 
 function main = (
+    cases = caseList.get_data()
+    cases = cases["cases"]
     
-    filesToRender = #(
-        {scene_list}
+    -- MAX_SM_001 and MAX_002
+    try (
+        renderers.current = Radeon_ProRender()
+        status_init = true
+    ) catch (
+        getCurrentException()
+        status_init = false
     )
+
+    withoutRender "MAX_SM_001" (bi.List(#("Installing with default settings"))) true
+    withoutRender "MAX_SM_002" (bi.List(#("Change renderer from default to RPR"))) status_init
     
-    for fi=1 to filesToRender.count do (
-        assetsFile = "{res_path}" + "\\" + filesToRender[fi]
-        loadMaxFile assetsFile useFileUnits:true quiet:true
+    if not status_init do return false
 
-        if (filesToRender[fi] == "default.max") then (
-            prerender "MAX_SM_003" 50 "[\"Render empty scene\", \"Pass Limit: 50\"]" 
-        ) else if (filesToRender[fi] == "rpr_default.max") then (
+    for i=1 to cases.count do (
+        if (cases[i]["status"] != "active") do continue 
+       
+        caseList.setCaseStatus i "progress"
 
-            prerender "MAX_SM_005" 50 "[\"Render empty scene with RPR parameters\", \"Pass Limit: 50\"]" 
+        assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
+        loadMaxFile assetFile useFileUnits:true quiet:true
+        image_format = "jpg"
 
-            import_fbx()
-            prerender "MAX_SM_006" 50 "[\"Import FBX\", \"Pass Limit: 50\"]" 
-
-            import_obj()
-            prerender "MAX_SM_007" 50 "[\"Import OBJ\", \"Pass Limit: 50\"]" 
-
-            test_Uber2()
-            prerender "MAX_SM_010" 50 "[\"Testing Uber material\", \"Pass Limit: 50\"]" 
-
-            test_base_light()
-            prerender "MAX_SM_011" 50 "[\"Testing base light\", \"Pass Limit: 50\"]" 
-
-            --test_IES() 
-            --prerender "MAX_SM_012" 50 "[\"Testing IES light\", \"Pass Limit: 50\"]" 
-
-            test_Sun_Sky()
-            prerender "MAX_SM_013" 50 "[\"Testing Sun and Sky System\", \"Pass Limit: 50\"]" 
-
-            test_IBL_on()
-            prerender "MAX_SM_014" 50 "[\"Testing IBL\", \"Pass Limit: 50\"]" 
-
-            test_IBL_hdr()
-            prerender "MAX_SM_015" 50 "[\"Testing IBL with hdr\", \"Pass Limit: 50\"]" 
-
-            test_IBL_exr()
-            prerender "MAX_SM_016" 50 "[\"Testing IBL with exr\", \"Pass Limit: 50\"]" 
-
-            --prerender "MAX_SM_017" 1 "[\"Iteration test\", \"Pass Limit: 1\"]" 
-            prerender "MAX_SM_018" 30 "[\"Iteration test\", \"Pass Limit: 30\"]" 
-            prerender "MAX_SM_019" 100 "[\"Iteration test\", \"Pass Limit: 100\"]" 
-            prerender "MAX_SM_020" 500 "[\"Iteration test\", \"Pass Limit: 500\"]" 
-            prerender "MAX_SM_021" 1000 "[\"Iteration test\", \"Pass Limit: 1000\"]" 
-
-
+        if ({resolution_y} != 0 and {resolution_x} != 0) do (
+            renderHeight = {resolution_y}
+            renderWidth = {resolution_x}
         )
+
+
+
+        case cases[i]["name"] of (
+            "MAX_SM_003": (
+                renderers.current = Radeon_ProRender()
+                status = (importfile (FBX_ASSET_PATH) #noPrompt using:FBXIMP)
+            )
+            "MAX_SM_004": (
+                renderers.current = Radeon_ProRender()
+                status = (importfile (OBJ_ASSET_PATH) #noPrompt using:OBJIMP)
+            )
+            "MAX_SM_006": (
+                hdr = bitmaptexture filename:HDR_ASSET_PATH
+                renderers.current.backgroundMap = hdr
+            )
+            "MAX_SM_007": (
+                exr = bitmaptexture filename:EXR_ASSET_PATH
+                renderers.current.backgroundMap = exr
+            )
+            "MAX_SM_008": (
+                renderers.current.backgroundOverride = True
+                renderers.current.backgroundType = 1
+            )
+            "MAX_SM_009": (
+                light = ies_light()
+                light.Profile = "1.IES"  
+            )
+            "MAX_SM_010": (
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+            "MAX_SM_011": (
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+            "MAX_SM_012": (
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+            "MAX_SM_013": (
+                renderers.current.overrideTonemap = false
+                renderers.current.tonemapOperator = 1
+            )
+            "MAX_SM_014": (
+                renderers.current.enableRenderStamp = true
+            )
+            "MAX_SM_017": (
+                renderWidth = 1280
+                renderHeight = 720
+            )
+            "MAX_SM_018": (
+                renderWidth = 1500
+                renderHeight = 1125
+            )
+            "MAX_SM_019": (
+                image_format = "png"
+            )
+            "MAX_SM_020": (
+                image_format = "jpg"
+            )
+            "MAX_SM_021": (
+                renderers.current.enableDenoiser = true
+                renderers.current.denoiserType = 1
+            )
+            "MAX_SM_022": (
+                renderers.current.enableDenoiser = true
+                renderers.current.denoiserType = 2
+            )
+            "MAX_SM_023": (
+                renderers.current.enableDenoiser = true
+                renderers.current.denoiserType = 3
+            )
+            "MAX_SM_024": (
+                l = Free_Light()
+                l.pos = [500, -1730, 40]
+                l.intensity = 60
+                delete $RPREnv001
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+            "MAX_SM_025": (
+                l = Physical_Light()
+                l.pos = [500, -1730, 40]
+                l.UnitsType = 1
+                delete $RPREnv001
+                renderers.current.adaptiveNoiseThreshold = 0
+            )
+            "MAX_SM_026": (
+                lib = loadTempMaterialLibrary MATLIB_PATH
+                cpm = lib.Car_Paint_Metallic____RPR_Uber_Material
+                for obj in Geometry do (
+                    if obj.name != "Cove_UntitledFBXASC046013" do (
+                        obj.material = cpm
+                    )
+                )
+            )
+            "MAX_SM_027": (
+                for obj in Geometry do (
+                    if obj.name != "Cove_UntitledFBXASC046013" do (
+                        obj.material = RPR_PBR_Material()
+                        obj.material.BaseColor = [26, 67, 128]
+                        obj.material.MetalnessMul = 0.1
+                    )
+                )
+            )
+            "MAX_SM_028": (
+                for obj in Geometry do (
+                    if obj.name != "Cove_UntitledFBXASC046013" do (
+                        obj.material = RPR_Uber_Material()
+                        obj.material.DiffuseColor = [255, 128, 128]
+                        obj.material.ReflectionEnable = true
+                    )
+                )
+            )
+            -- MAX_SM_29 -> instances.max
+            "MAX_SM_030": (
+                l1 = Physical_Light()
+                l1.pos = [500, -1780, 80]
+                l1.UnitsType = 1
+
+                l2 = Physical_Light()
+                l2.pos = [500, -1730, 40]
+                l2.UnitsType = 1
+
+                l3 = Physical_Light()
+                l3.pos = [500, -1710, 10]
+                l3.UnitsType = 1
+
+                delete $RPREnv001
+            )
+
+            "MAX_SM_031": (
+                obj = $Cove_UntitledFBXASC046013
+                obj.material = RPR_Shadow_Catcher_Material()
+            )
+            "MAX_SM_032": (
+                for obj in Geometry do (
+                    if obj.name != "Cove_UntitledFBXASC046013" do (
+                        obj.material = RPR_Uber_Material()
+                        obj.material.DiffuseColor = [255, 128, 128]
+                        obj.material.SssEnable = true
+                    )
+                )
+            )
+            -- MAX_SM_34 -> anti-aliasing.max
+            "MAX_SM_035": (
+                sliderTime = 1f
+            )
+
+            default: print "simple test case"
+        )
+        
+        -- -1 = take maxSamples in scene
+        --  0 = case without rendering 
+        --  N = with rendering
+
+        if cases[i]["pass_limit"] == 0 then (
+            withoutRender cases[i]["name"] cases[i]["script_info"] status
+        ) else if cases[i]["pass_limit"] == -1 then (
+            rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        ) else (
+            renderers.current.samplesMax = cases[i]["pass_limit"]
+            rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        )
+
+        caseList.setCaseStatus i "done"
     )
+
+    return true
+
 )
 
 main()

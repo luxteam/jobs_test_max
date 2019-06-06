@@ -1,0 +1,275 @@
+{
+	"test_group": "Pass_Limit",
+	"cases": [
+		{
+			"name": "MAX_RS_PS_001",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Max Samples - 1",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 1, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0, 
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_002",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Max Samples - 100",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 100, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0, 
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_003",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Max Samples - 500",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 500, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0, 
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_004",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Max Samples - 1000",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 1000, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0, 
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_005",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Max Samples - 5000",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 5000, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_006",
+			"scene_name": "Normal_Scene\\Normal_Scene.max",
+			"script_info": [
+				"Max Samples - 1",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 1, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_007",
+			"scene_name": "Normal_Scene\\Normal_Scene.max",
+			"script_info": [
+				"Max Samples - 100",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 100, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_008",
+			"scene_name": "Normal_Scene\\Normal_Scene.max",
+			"script_info": [
+				"Max Samples - 500",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 500, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_009",
+			"scene_name": "Normal_Scene\\Normal_Scene.max",
+			"script_info": [
+				"Max Samples - 1000",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 1000, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_010",
+			"scene_name": "Normal_Scene\\Normal_Scene.max",
+			"script_info": [
+				"Max Samples - 5000",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 5000, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_011",
+			"scene_name": "Complex_Scene\\Complex_Scene.max",
+			"script_info": [
+				"Max Samples - 1",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 1, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_012",
+			"scene_name": "Complex_Scene\\Complex_Scene.max",
+			"script_info": [
+				"Max Samples - 100",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 100, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_013",
+			"scene_name": "Complex_Scene\\Complex_Scene.max",
+			"script_info": [
+				"Max Samples - 500",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 500, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_014",
+			"scene_name": "Complex_Scene\\Complex_Scene.max",
+			"script_info": [
+				"Max Samples - 1000",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 1000, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_015",
+			"scene_name": "Complex_Scene\\Complex_Scene.max",
+			"script_info": [
+				"Max Samples - 5000",
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 0"
+			],
+			"samplesMax": 5000, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 0,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_016",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 1"
+			],
+			"samplesMax": null, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 1, 
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_017",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Noise Threshold - 0",
+				"Time Limit Seconds - 59"
+			],
+			"samplesMax": null, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 59, 
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_018",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Noise Threshold - 0",
+				"Time Limit Minutes - 1"
+			],
+			"samplesMax": null, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 60, 
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_019",
+			"scene_name": "Easy_Scene\\Easy_Scene.max",
+			"script_info": [
+				"Noise Threshold - 0",
+				"Time Limit Minutes - 1",
+				"Time Limit Seconds - 59"
+			],
+			"samplesMax": null, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 119, 
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_020",
+			"scene_name": "Normal_Scene\\Normal_Scene.max",
+			"script_info": [
+				"Noise Threshold - 0",
+				"Time Limit Minutes - 1",
+				"Time Limit Seconds - 1"
+			],
+			"samplesMax": null, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 61,
+			"status": "active"
+		},
+		{
+			"name": "MAX_RS_PS_021",
+			"scene_name": "Normal_Scene\\Normal_Scene.max",
+			"script_info": [
+				"Noise Threshold - 0",
+				"Time Limit Minutes - 1",
+				"Time Limit Seconds - 59"
+			],
+			"samplesMax": null, 
+			"adaptiveNoiseThreshold": 0, 
+			"timeLimit": 119,
+			"status": "active"
+		}
+	]
+}

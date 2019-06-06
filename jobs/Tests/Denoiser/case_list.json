@@ -1,0 +1,239 @@
+{
+	"test_group": "Denoiser",
+	"cases": [
+		{
+			"name": "MAX_RS_DEN_001",
+			"script_info": [
+				"Bilateral type",
+				"Radius - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_002",
+			"script_info": [
+				"Bilateral type",
+				"Radius - 5"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_003",
+			"script_info": [
+				"Bilateral type",
+				"Radius - 10"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_004",
+			"script_info": [
+				"LWR type"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_005",
+			"script_info": [
+				"LWR type",
+				"Samples - 2"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_006",
+			"script_info": [
+				"LWR type",
+				"Samples - 10"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_007",
+			"script_info": [
+				"LWR type",
+				"Filter Radius - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_008",
+			"script_info": [
+				"LWR type",
+				"Filter Radius - 10"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_009",
+			"script_info": [
+				"LWR type",
+				"Bandwidth - 0.1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_010",
+			"script_info": [
+				"LWR type",
+				"Bandwidth - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_011",
+			"script_info": [
+				"LWR type",
+				"Samples - 2",
+				"Filter Radius - 1",
+				"Bandwidth - 0.1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_012",
+			"script_info": [
+				"LWR type",
+				"Samples - 5",
+				"Filter Radius - 5",
+				"Bandwidth - 0.5"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_013",
+			"script_info": [
+				"LWR type",
+				"Samples - 10",
+				"Filter Radius - 10",
+				"Bandwidth - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_014",
+			"script_info": [
+				"EAW type"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_015",
+			"script_info": [
+				"EAW type",
+				"Color - 0.1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_016",
+			"script_info": [
+				"EAW type",
+				"Color - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_017",
+			"script_info": [
+				"EAW type",
+				"Depth - 0.1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_018",
+			"script_info": [
+				"EAW type",
+				"Depth - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_019",
+			"script_info": [
+				"EAW type",
+				"Normal - 0.1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_020",
+			"script_info": [
+				"EAW type",
+				"Normal - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_021",
+			"script_info": [
+				"EAW type",
+				"ObjectID - 0.1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_022",
+			"script_info": [
+				"EAW type",
+				"ObjectID - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_023",
+			"script_info": [
+				"EAW type",
+				"Color - 0.1",
+				"Depth - 0.1",
+				"Normal - 0.1",
+				"ObjectID - 0.1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_024",
+			"script_info": [
+				"EAW type",
+				"Color - 1",
+				"Depth - 1",
+				"Normal - 1",
+				"ObjectID - 1"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_025",
+			"script_info": [
+				"Machine Learning"
+			],
+			"status": "active",
+			"scene_name": "Denoiser.max"
+		}
+	]
+}
