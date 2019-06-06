@@ -7,8 +7,9 @@ import json
 import ctypes
 import pyscreenshot
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
-from jobs_launcher.core.config import main_logger
+from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE
 from shutil import copyfile
+from datetime import datetime
 
 case_list = "case_list.json"
 
@@ -54,12 +55,57 @@ def get_error_case(group, work_dir):
 
 	for case in data["cases"]:
 		if case["status"] == "progress":
-			case[status] = "stopped"
-
-			data.dump(data, file, indent=4)
+			case[status] = "error"
+			
+			with open(os.path.join(work_dir, case_list), "w") as file:
+				data.dump(data, file, indent=4)
+			
 			return case["name"]
 	else:
 		return False
+
+
+def dump_reports(work_dir, case_list, render_device, scene_list):
+	
+	with open(os.path.join(work_dir, case_list)) as file:
+		data = json.loads(file.read())
+		test_group = data["test_group"] 
+		cases = data["cases"]
+
+	for case in cases:
+		report_name = case["name"] + "_RPR.json"
+		report_body = RENDER_REPORT_BASE
+
+		report_body["test_case"] = case["name"]
+		report_body["script_info"] = case["script_info"]
+		report_body["render_device"] = render_device
+		report_body["render_color_path"] = "Color/{0}.jpg".format(case["name"])
+		report_body["file_name"] = case["name"] + ".jpg"
+		report_body["scene_name"] = case["scene_name"]
+		report_body["test_group"] = test_group
+
+		# mkdir color
+		try:
+			os.mkdir(os.path.join(work_dir, "Color"))
+		except FileExistsError as err:
+			pass
+
+		if case["status"] == "active":
+			report_body["test_status"] = "error"
+			path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'failed.jpg')
+		else:
+			report_body["test_status"] = "skipped"
+			path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'skipped.jpg')
+
+		path_2_case_img = os.path.join(work_dir, "Color\\\\{test_case}.jpg".format(test_case=case["name"]))
+		copyfile(path_2_orig_img, path_2_case_img)
+
+		with open(os.path.join(work_dir, report_name), "w+") as file:
+			json.dump([report_body], file, indent=4)
+
+		main_logger.error(case["name"] + ": Report template created.")
+
+	return 1
 
 
 def main():
@@ -139,6 +185,8 @@ def main():
 	
 	# copy ms_json.py for json parsing in MaxScript
 	copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
+
+	dump_reports(work_dir, case_list, render_device, args.scene_list)
 
 	os.chdir(work_dir)
 	maxScriptPath = maxScriptPath.replace("\\\\", "\\")
