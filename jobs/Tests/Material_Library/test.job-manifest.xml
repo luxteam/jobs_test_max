@@ -12,7 +12,7 @@
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
         <argument>--scene_list "{Root}\Tests\Material_Library\{TestsFilter}TestsList.txt"</argument>
-        <argument>--package_name "Material Library"</argument>
+        <argument>--package_name "Material_Library"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
