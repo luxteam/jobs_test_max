@@ -1,7 +1,7 @@
-FBX_ASSET_PATH = "{res_path}\\sourceimages\\smoke_03.fbx"
-OBJ_ASSET_PATH = "{res_path}\\sourceimages\\smoke_04.obj"
-HDR_ASSET_PATH = "{res_path}" + "\\sourceimages\\startup.hdr"
-EXR_ASSET_PATH = "{res_path}" + "\\sourceimages\\over_the_clouds.exr"
+FBX_ASSET_PATH = "{res_path}\\{package_name}\\sourceimages\\smoke_03.fbx"
+OBJ_ASSET_PATH = "{res_path}\\{package_name}\\sourceimages\\smoke_04.obj"
+HDR_ASSET_PATH = "{res_path}\\{package_name}\\sourceimages\\startup.hdr"
+EXR_ASSET_PATH = "{res_path}\\{package_name}\\sourceimages\\over_the_clouds.exr"
 MATLIB_PATH = "C:\\ProgramData\\RadeonProRender\\MaterialLibrary\\Max\\RPR_CarPaints.mat"
 
 
