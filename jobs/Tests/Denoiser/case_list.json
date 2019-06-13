@@ -7,7 +7,7 @@
 				"Bilateral type",
 				"Radius - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -16,7 +16,7 @@
 				"Bilateral type",
 				"Radius - 5"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -25,7 +25,7 @@
 				"Bilateral type",
 				"Radius - 10"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -33,7 +33,7 @@
 			"script_info": [
 				"LWR type"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -42,7 +42,7 @@
 				"LWR type",
 				"Samples - 2"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -51,7 +51,7 @@
 				"LWR type",
 				"Samples - 10"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -60,7 +60,7 @@
 				"LWR type",
 				"Filter Radius - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -69,7 +69,7 @@
 				"LWR type",
 				"Filter Radius - 10"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -78,7 +78,7 @@
 				"LWR type",
 				"Bandwidth - 0.1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -87,7 +87,7 @@
 				"LWR type",
 				"Bandwidth - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -98,7 +98,7 @@
 				"Filter Radius - 1",
 				"Bandwidth - 0.1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -109,7 +109,7 @@
 				"Filter Radius - 5",
 				"Bandwidth - 0.5"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -120,7 +120,7 @@
 				"Filter Radius - 10",
 				"Bandwidth - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -128,7 +128,7 @@
 			"script_info": [
 				"EAW type"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -137,7 +137,7 @@
 				"EAW type",
 				"Color - 0.1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -146,7 +146,7 @@
 				"EAW type",
 				"Color - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -155,7 +155,7 @@
 				"EAW type",
 				"Depth - 0.1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -164,7 +164,7 @@
 				"EAW type",
 				"Depth - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -173,7 +173,7 @@
 				"EAW type",
 				"Normal - 0.1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -182,7 +182,7 @@
 				"EAW type",
 				"Normal - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -191,7 +191,7 @@
 				"EAW type",
 				"ObjectID - 0.1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -200,7 +200,7 @@
 				"EAW type",
 				"ObjectID - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -212,7 +212,7 @@
 				"Normal - 0.1",
 				"ObjectID - 0.1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
@@ -224,7 +224,7 @@
 				"Normal - 1",
 				"ObjectID - 1"
 			],
-			"status": "active",
+			"status": "noactive",
 			"scene_name": "Denoiser.max"
 		},
 		{
