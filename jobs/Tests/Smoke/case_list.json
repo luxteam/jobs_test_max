@@ -62,7 +62,7 @@
                 "Create IES Light"
             ],
             "pass_limit": 400,
-            "status": "active"
+            "status": "noactive"
         },
         {
             "name": "MAX_SM_010",
