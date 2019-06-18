@@ -62,7 +62,7 @@
                 "Create IES Light"
             ],
             "pass_limit": 400,
-            "status": "noactive"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_010",
@@ -116,7 +116,7 @@
                 "Render mode=UV"
             ],
             "pass_limit": 400,
-            "status": "noactive"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_016",
@@ -260,7 +260,7 @@
                 "AOV-SC"
             ],
             "pass_limit": 400,
-            "status": "noactive"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_032",
