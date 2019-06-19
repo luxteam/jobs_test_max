@@ -1,0 +1,104 @@
+{
+    "test_group": "Animation",
+    "cases": [
+        {
+			"name": "MAX_RS_AN_001",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 0"
+			],
+			"frame_number": 0,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_002",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 1"
+			],
+			"frame_number": 1,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_003",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 2"
+			],
+			"frame_number": 2,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_004",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 3"
+			],
+			"frame_number": 3,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_005",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 4"
+			],
+			"frame_number": 4,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_006",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 5"
+			],
+			"frame_number": 5,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_007",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 6"
+			],
+			"frame_number": 6,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_008",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 7"
+			],
+			"frame_number": 7,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_009",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 8"
+			],
+			"frame_number": 8,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_010",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 9"
+			],
+			"frame_number": 9,
+			"status": "active"
+        },
+        {
+			"name": "MAX_RS_AN_001",
+			"scene_name": "Animation.max",
+			"script_info": [
+				"Frame - 0"
+			],
+			"frame_number": 0,
+			"status": "active"
+		}
+    ]
+}
