@@ -12,7 +12,7 @@
 	<argument>--resolution_x {rx}</argument>
 	<argument>--resolution_y {ry}</argument>
         <argument>--scene_list "{Root}\Tests\Image_Formats\{TestsFilter}TestsList.txt"</argument>
-        <argument>--package_name "Image Formats"</argument>
+        <argument>--package_name "Image_Formats"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>

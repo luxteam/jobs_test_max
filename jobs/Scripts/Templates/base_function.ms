@@ -8,6 +8,7 @@ report = undefined
 python.ExecuteFile "ms_json.py"
 bi = python.import("__builtin__")
 
+
 function getMaxVersion = (
     -- return string such as "3ds Max 2019|21.0.0.845" = "<tool>|<release number>.<service pack>.<build number>"
     maxName = filterString (getdir #maxroot) "\\"
@@ -19,7 +20,6 @@ function getMaxVersion = (
 
     for i = 1 to (maxInfo.count - 1) do version += maxInfo[i] + "."
     version += maxInfo[maxInfo.count]
-
 
     return version
 )
