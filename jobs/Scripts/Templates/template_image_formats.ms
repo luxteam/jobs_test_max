@@ -23,9 +23,6 @@ function main = (
             -- check extention to saving
             if cases[i]["format"] != "jpg"  then (
 
-                -- delete file with badass extention
-                deleteFile path_case_img
-
                 -- delete <test_case>.jpg like filed
                 path_case_img = "{work_dir}Color\\" + cases[i]["name"] + ".jpg"
                 deleteFile path_case_img

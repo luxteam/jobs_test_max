@@ -87,7 +87,7 @@ function rpr_render image_format test_case script_info = (
     rend = timeStamp()
     relapsed = ((rend - rstart) / 1000.0)
 
-    buildReport test_case script_info relapsed filename "passed" (renderers.current.passLimit)
+    buildReport test_case script_info relapsed (test_case + ".jpg") "passed" (renderers.current.passLimit)
 )
 
 

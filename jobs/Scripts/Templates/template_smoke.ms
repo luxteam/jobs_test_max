@@ -205,6 +205,20 @@ function main = (
             rpr_render image_format cases[i]["name"] cases[i]["script_info"]
         )
 
+        -- png ext.
+        if image_format == "png" do (
+            if (existFile ("{work_dir}Color\\" + cases[i]["name"] + ".png")) do (
+                -- delete <test_case>.jpg like filed
+                path_case_img = "{work_dir}Color\\" + cases[i]["name"] + ".jpg"
+                deleteFile path_case_img
+                
+                -- save <test_case>.jpg like passed
+                path_passed_img = "{work_dir}..\\..\\..\\..\\jobs\\Tests\\pass.jpg"
+                copyFile path_passed_img path_case_img
+            )
+
+        )
+
         caseList.setCaseStatus i "done"
     )
 
