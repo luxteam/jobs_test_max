@@ -5,20 +5,41 @@ function main = (
     cases = cases["cases"]
 
     for i=1 to cases.count do (
+        -- continue if status not equal active   
         if (cases[i]["status"] != "active") do continue
         
+        -- set status progress        
         caseList.setCaseStatus i "progress"
         
+        -- upload scene         
         assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
         loadMaxFile assetFile useFileUnits:true quiet:true
+        
         -- render settings
         rpr_render cases[i]["format"] cases[i]["name"] cases[i]["script_info"]
+        path_case_img = "{work_dir}Color\\" + cases[i]["name"] + "." + cases[i]["format"]
+        -- check existFile
+        if (existFile path_case_img) do (
+            -- check extention to saving
+            if cases[i]["format"] != "jpg"  then (
 
-        if cases[i]["format"] != "jpg" do (
-            path = "{work_dir}" + "Color\\" + cases[i]["name"] + ".jpg"
-            deleteFile path
+                -- delete file with badass extention
+                deleteFile path_case_img
+
+                -- delete <test_case>.jpg like filed
+                path_case_img = "{work_dir}Color\\" + cases[i]["name"] + ".jpg"
+                deleteFile path_case_img
+                
+                -- save <test_case>.jpg like passed
+                path_passed_img = "{work_dir}..\\..\\..\\..\\jobs\\Tests\\pass.jpg"
+                copyFile path_passed_img path_case_img
+
+            )
+            -- if extention equal 'jpg' then it just render image
         )
+        -- if file not exist simpleRender.py alredy save fail.png for this test case
 
+        -- set status done
         caseList.setCaseStatus i "done"
     )
 )

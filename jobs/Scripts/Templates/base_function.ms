@@ -89,3 +89,6 @@ function rpr_render image_format test_case script_info = (
 
     buildReport test_case script_info relapsed filename "passed" (renderers.current.passLimit)
 )
+
+
+function existFile fname = (getfiles fname).count != 0
