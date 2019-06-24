@@ -3,10 +3,36 @@ SetQuietMode true
 logsystem.logName "renderTool.log"
 units.SystemType = #Meters
 
+-- Initial case list with python wrapper
 caseList = undefined
 report = undefined
 python.ExecuteFile "ms_json.py"
 bi = python.import("__builtin__")
+
+
+-- Render Elements Map
+REs = Dictionary(#string)
+REs["RprOpacity"] = RprOpacity
+REs["RprWorldCoordinate"] = RprWorldCoordinate
+REs["RprUV"] = RprUV
+REs["RprMaterialIdx"] = RprMaterialIdx
+REs["RprGeometricNormal"] = RprGeometricNormal
+REs["RprShadingNormal"] = RprShadingNormal
+REs["RprDepth"] = RprDepth
+REs["RprObjectId"] = RprObjectId
+REs["RprObjectGroupId"] = RprObjectGroupId
+REs["RprBackground"] = RprBackground
+REs["RprEmission"] = RprEmission
+REs["RprVelocity"] = RprVelocity
+REs["RprDirectIllumination"] = RprDirectIllumination
+REs["RprIndirectIllumination"] = RprIndirectIllumination
+REs["RprAO"] = RprAO
+REs["RprDirectDiffuse"] = RprDirectDiffuse
+REs["RprDirectReflect"] = RprDirectReflect
+REs["RprIndirectDiffuse"] = RprIndirectDiffuse
+REs["RprIndirectReflect"] = RprIndirectReflect
+REs["RprRefract"] = RprRefract
+REs["RprVolume"] = RprVolume
 
 
 function getMaxVersion = (
@@ -83,11 +109,12 @@ function rpr_render image_format test_case script_info = (
     image_path = image_path + filename
 
     rstart = timeStamp()
-    render outputfile:image_path
+    render renderElementBitmaps:&reb outputfile:image_path
     rend = timeStamp()
     relapsed = ((rend - rstart) / 1000.0)
 
     buildReport test_case script_info relapsed (test_case + ".jpg") "passed" (renderers.current.passLimit)
+    return reb
 )
 
 
