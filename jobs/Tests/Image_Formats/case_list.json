@@ -133,7 +133,7 @@
             ],
             "name": "MAX_RS_IF_015",
             "scene_name": "Image_Formats.max",
-            "status": "active",
+            "status": "skipped",
             "format": "dds"
         }
     ]
