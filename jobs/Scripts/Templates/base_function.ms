@@ -3,10 +3,37 @@ SetQuietMode true
 logsystem.logName "renderTool.log"
 units.SystemType = #Meters
 
+-- Initial case list with python wrapper
 caseList = undefined
 report = undefined
 python.ExecuteFile "ms_json.py"
 bi = python.import("__builtin__")
+
+
+-- Render Elements Map
+REs = Dictionary(#string)
+REs["RprOpacity"] = RprOpacity
+REs["RprWorldCoordinate"] = RprWorldCoordinate
+REs["RprUV"] = RprUV
+REs["RprMaterialIdx"] = RprMaterialIdx
+REs["RprGeometricNormal"] = RprGeometricNormal
+REs["RprShadingNormal"] = RprShadingNormal
+REs["RprDepth"] = RprDepth
+REs["RprObjectId"] = RprObjectId
+REs["RprObjectGroupId"] = RprObjectGroupId
+REs["RprBackground"] = RprBackground
+REs["RprEmission"] = RprEmission
+REs["RprVelocity"] = RprVelocity
+REs["RprDirectIllumination"] = RprDirectIllumination
+REs["RprIndirectIllumination"] = RprIndirectIllumination
+REs["RprAO"] = RprAO
+REs["RprDirectDiffuse"] = RprDirectDiffuse
+REs["RprDirectReflect"] = RprDirectReflect
+REs["RprIndirectDiffuse"] = RprIndirectDiffuse
+REs["RprIndirectReflect"] = RprIndirectReflect
+REs["RprRefract"] = RprRefract
+REs["RprVolume"] = RprVolume
+
 
 function getMaxVersion = (
     -- return string such as "3ds Max 2019|21.0.0.845" = "<tool>|<release number>.<service pack>.<build number>"
@@ -19,7 +46,6 @@ function getMaxVersion = (
 
     for i = 1 to (maxInfo.count - 1) do version += maxInfo[i] + "."
     version += maxInfo[maxInfo.count]
-
 
     return version
 )
@@ -83,9 +109,13 @@ function rpr_render image_format test_case script_info = (
     image_path = image_path + filename
 
     rstart = timeStamp()
-    render outputfile:image_path
+    render renderElementBitmaps:&reb outputfile:image_path
     rend = timeStamp()
     relapsed = ((rend - rstart) / 1000.0)
 
-    buildReport test_case script_info relapsed filename "passed" (renderers.current.passLimit)
+    buildReport test_case script_info relapsed (test_case + ".jpg") "passed" (renderers.current.passLimit)
+    return reb
 )
+
+
+function existFile fname = (getfiles fname).count != 0

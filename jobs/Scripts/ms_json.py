@@ -45,5 +45,6 @@ class JSONWrapper:
 with open("case_list.json") as file:
 	data = json.loads(file.read())
 
+
 rt.caseList = JSONWrapper(data, "case_list.json")
 rt.report = JSONWrapper({}, None, "report")

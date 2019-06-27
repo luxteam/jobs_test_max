@@ -1,7 +1,11 @@
 Anti_Aliasing
+Adaptive_Sampling
+Animation
+AOV
 Denoiser
 IBL
 Image_Size
+Image_Formats
 Pass_Limit
 Render_Stamp
 Smoke

@@ -232,7 +232,7 @@
 			"script_info": [
 				"Machine Learning"
 			],
-			"status": "noactive",
+			"status": "active",
 			"scene_name": "Denoiser.max"
 		}
 	]

@@ -64,7 +64,7 @@
 			"samplesMax": 5000, 
 			"adaptiveNoiseThreshold": 0, 
 			"timeLimit": 0,
-			"status": "noactive"
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_PS_006",
@@ -129,7 +129,7 @@
 			"samplesMax": 5000, 
 			"adaptiveNoiseThreshold": 0, 
 			"timeLimit": 0,
-			"status": "noactive"
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_PS_011",
@@ -194,7 +194,7 @@
 			"samplesMax": 5000, 
 			"adaptiveNoiseThreshold": 0, 
 			"timeLimit": 0,
-			"status": "noactive"
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_PS_016",
