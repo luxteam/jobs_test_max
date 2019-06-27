@@ -1,13 +1,11 @@
 Anti_Aliasing
+Adaptive_Sampling
+Animation
 AOV
-Camera
 Denoiser
 IBL
 Image_Size
-Material_Library
+Image_Formats
 Pass_Limit
-Quality
-Render_Mode
 Render_Stamp
 Smoke
-Sun_Sky
