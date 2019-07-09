@@ -71,7 +71,7 @@
                 "Render 1 pass"
             ],
             "pass_limit": 1,
-            "status": "active"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_011",
