@@ -18,6 +18,8 @@ function main = (
         for j=1 to params.count do (
         	val = cases[i]["parameters"][params[j]]
             pColor = findString params[j] "Color"
+            if params[j] == "DiffuseSeparateBackScatteringColor" do pColor = undefined
+            
             pTextmap = findString params[j] "Texmap"
             pRadius = findString params[j] "Radius"
 
@@ -31,19 +33,11 @@ function main = (
         	)
 
             -- check radius
-            if (pRadius != undefined) do (
+            if (pRadius != undefined) and (pTextmap == undefined) do (
                 val = Point3 val[0] val[1] val[2]
             )
 
-            -- check normal
-            if params[j] == "normal" do (
-                n = RPR_Normal()
-                n.Map = Bitmaptexture fileName:val["map"]
-                sceneMaterials[PBR_MAT_NAME].BaseColorTexmap = n
-                continue
-            )
-
-        	setProperty sceneMaterials[PBR_MAT_NAME] params[j] val
+        	setProperty rootScene[#SME][#View1][#RPRUberMaterial1____RPR_Uber_Material].Properties.reference params[j] val
         )
 
         rpr_render image_format cases[i]["name"] cases[i]["script_info"]

@@ -20,7 +20,7 @@ function main = (
         	
         	if params[j] == "color" do val = getColor val["r"] val["g"] val["b"]
         	if params[j] == "colorTexmap" do (
-        		path_bm = "C:\\TestResources\\MaxAssets\\Volume\\" + val -- val = path
+        		path_bm = "{res_path}\\{package_name}\\" + val -- val = path
         		bm = openBitMap path_bm
         		val = Bitmaptexture Bitmap:bm
         	)

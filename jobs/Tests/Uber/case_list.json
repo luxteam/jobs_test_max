@@ -1,0 +1,1589 @@
+{
+    "test_group": "Uber",
+    "cases": [
+        {
+            "name": "MAX_MAT_UBER_001",
+            "status": "active",
+            "script_info": [
+                "diffuse_color.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseColorTexmap": "sourceimages/diffuse_color.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_002",
+            "status": "active",
+            "script_info": [
+                "diffuse_color.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseColorTexmap": "sourceimages/diffuse_color.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_003",
+            "status": "active",
+            "script_info": [
+                "Diffuse Color",
+                "RGB color as R - 40, G - 129, B - 228"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_004",
+            "status": "active",
+            "script_info": [
+                "diffuse_weight.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseWeightTexmap": "sourceimages/diffuse_weight.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_005",
+            "status": "active",
+            "script_info": [
+                "diffuse_weight.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseWeightTexmap": "sourceimages/diffuse_weight.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_006",
+            "status": "active",
+            "script_info": [
+                "Diffuse Color",
+                "RGB color as R - 40, G - 129, B - 228",
+                "Diffuse Weight - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                },
+                "DiffuseWeight": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_007",
+            "status": "active",
+            "script_info": [
+                "diffuse_roughness.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseRoughnessTexmap": "sourceimages/diffuse_roughness.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_008",
+            "status": "active",
+            "script_info": [
+                "diffuse_roughness.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseRoughnessTexmap": "sourceimages/diffuse_roughness.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_009",
+            "status": "active",
+            "script_info": [
+                "Diffuse Color",
+                "HSV color as H - 150, S - 210, V - 228",
+                "Diffuse Roughness - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                },
+                "DiffuseRoughness": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_010",
+            "status": "active",
+            "script_info": [
+                "Diffuse Color",
+                "HSV color as H - 150, S - 210, V - 228",
+                "Diffuse Roughness - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                },
+                "DiffuseRoughness": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_011",
+            "status": "active",
+            "script_info": [
+                "diffuse_normal.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseNormalTexmap": "sourceimages/diffuse_normal.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_012",
+            "status": "active",
+            "script_info": [
+                "diffuse_normal.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseNormalTexmap": "sourceimages/diffuse_normal.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_013",
+            "status": "active",
+            "script_info": [
+                "diffuse_backscatteringweight.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseBackscatteringWeightTexmap": "sourceimages/diffuse_backscatteringweight.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_014",
+            "status": "active",
+            "script_info": [
+                "diffuse_backscatteringweight.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseBackscatteringWeightTexmap": "sourceimages/diffuse_backscatteringweight.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_015",
+            "status": "active",
+            "script_info": [
+                "Diffuse Color",
+                "HSV color as H - 150, S - 210, V - 228",
+                "Backscattering Weight - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                },
+                "DiffuseBackscatteringWeight": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_016",
+            "status": "active",
+            "script_info": [
+                "diffuse_backscatteringcolor.png",
+                "Activate Separate Backscatter Color"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseBackScatteringColorTexmap": "sourceimages/diffuse_backscatteringcolor.png",
+                "DiffuseSeparateBackScatteringColor": true
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_017",
+            "status": "active",
+            "script_info": [
+                "diffuse_backscatteringcolor.tga",
+                "Activate Separate Backscatter Color"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseBackScatteringColorTexmap": "sourceimages/diffuse_backscatteringcolor.tga",
+                "DiffuseSeparateBackScatteringColor": true
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_018",
+            "status": "active",
+            "script_info": [
+                "Diffuse Color",
+                "HSV color as H - 150, S - 210, V - 228",
+                "Activate Separate Backscatter Color",
+                "Backscattering color",
+                "HSV color as H - 0, S - 165, V - 255"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "DiffuseColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                },
+                "DiffuseSeparateBackScatteringColor": true,
+                "DiffuseBackScatteringColor": {
+                    "r": 255,
+                    "g": 90,
+                    "b": 90
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_019",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "reflection_color.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionColorTexmap": "sourceimages/reflection_color.png"
+
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_020",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "reflection_color.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionColorTexmap": "sourceimages/reflection_color.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_021",
+            "status": "active",
+            "script_info": [
+                "Reflection Color",
+                "HSV color as H - 150, S - 210, V - 228"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_022",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "reflection_weight.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionColorTexmap": "sourceimages/reflection_weight.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_023",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "reflection_weight.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionColorTexmap": "sourceimages/reflection_weight.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_024",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Weight - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionWeight": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_025",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Weight - 0.5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionWeight": 0.5
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_026",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "reflection_roughness.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionRoughnessTexmap": "sourceimages/reflection_roughness.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_027",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "reflection_roughness.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionRoughnessTexmap": "sourceimages/reflection_roughness.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_028",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Roughness - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionRoughness": 0 
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_029",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Roughness - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionRoughness": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_030",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Anisotropy - -1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionAnisotropy": -1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_031",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Anisotropy - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionAnisotropy": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_032",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Anisotropy Rotation - -1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionAnisotropyRotation": -1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_033",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Anisotropy Rotation - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionAnisotropyRotation": -1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_034",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection IOR - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionIor": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_035",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection IOR - 3"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionIor": 3
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_036",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Mode - Metalness",
+                "reflection_metalness.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionMode": 2,
+                "ReflectionMetalnessTexmap": "sourceimages/reflection_metalness.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_037",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Mode - Metalness",
+                "reflection_metalness.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionMode": 2,
+                "ReflectionMetalnessTexmap": "sourceimages/reflection_metalness.tga"
+
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_038",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Mode - Metalness",
+                "Metalness - 0.5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionMode": 2,
+                "ReflectionMetalness": 0.5
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_039",
+            "status": "active",
+            "script_info": [
+                "Reflection",
+                "Reflection Mode - Metalness",
+                "Metalness - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionEnable": true,
+                "ReflectionMode": 2,
+                "ReflectionMetalness": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_040",
+            "status": "active",
+            "script_info": [
+                "reflection_normal.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionNormalTexmap": "sourceimages/reflection_normal.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_041",
+            "status": "active",
+            "script_info": [
+                "reflection_normal.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "ReflectionNormalTexmap": "sourceimages/reflection_normal.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_042",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_color.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionColorTexmap": "sourceimages/refraction_color.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_043",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_color.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionColorTexmap": "sourceimages/refraction_color.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_044",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Reflection Color",
+                "HSV color as H - 150, S - 210, V - 228"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_045",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_weight.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionWeightTexmap": "sourceimages/refraction_weight.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_046",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_weight.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionWeightTexmap": "sourceimages/refraction_weight.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_047",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction Weight - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionWeight": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_048",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction Weight - 0.5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionWeight": 0.5
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_049",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_roughness.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionRoughnessTexmap": "sourceimages/refraction_roughness.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_050",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_roughness.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionRoughnessTexmap": "sourceimages/refraction_roughness.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_051",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction Roughness - 0.5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionRoughness": 0.5
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_052",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction Roughness - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionRoughness": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_053",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction IOR - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionIor": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_054",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction IOR - 3"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionIor": 3
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_055",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Thin Surface"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionThinSurface": true
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_056",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_absorptiondistance.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionAbsorptionDistanceTexmap": "sourceimages/refraction_absorptiondistance.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_057",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_absorptiondistance.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionAbsorptionDistanceTexmap": "sourceimages/refraction_absorptiondistance.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_058",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction Absorption Distance - 10"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionAbsorptionDistance": 10
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_059",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction Absorption Distance - 50"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionAbsorptionDistance": 50
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_060",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_absorptioncolor.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionAbsorptionColorTexmap": "sourceimages/refraction_absorptioncolor.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_061",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_absorptioncolor.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionAbsorptionColorTexmap": "sourceimages/refraction_absorptioncolor.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_062",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Refraction Absorption Color",
+                "HSV color as H - 150, S - 210, V - 228"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionAbsorptionColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_063",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "Allow Caustics"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionAllowCaustics": true
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_064",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_normal.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionNormalTexmap": "sourceimages/refraction_normal.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_065",
+            "status": "active",
+            "script_info": [
+                "Refraction",
+                "refraction_normal.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "RefractionEnable": true,
+                "RefractionNormalTexmap": "sourceimages/refraction_normal.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_066",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_color.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingColorTexmap": "sourceimages/coating_color.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_067",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_color.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingColorTexmap": "sourceimages/coating_color.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_068",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Color",
+                "HSV color as H - 150, S - 210, V - 228"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingColor": {
+                    "r": 40,
+                    "g": 129,
+                    "b": 228
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_069",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_weight.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingWeightTexmap": "sourceimages/coating_weight.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_070",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_weight.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingWeightTexmap": "sourceimages/coating_weight.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_071",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Weight - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingWeight": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_072",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Weight - 0.5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingWeight": 0.5
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_073",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_roughness.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingRoughnessTexmap": "sourceimages/coating_roughness.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_074",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_roughness.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingRoughnessTexmap": "sourceimages/coating_roughness.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_075",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Roughness - 0.5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingRoughness": 0.5
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_076",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Roughness - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingRoughness": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_077",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating IOR - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingIor": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_078",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Roughness - 3"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingRoughness": 3
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_079",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_normal.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingNormalTexmap": "sourceimages/coating_normal.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_080",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_normal.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingNormalTexmap": "sourceimages/coating_normal.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_081",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_thickness.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingNormalTexmap": "sourceimages/CoatingThicknessTexmap.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_082",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_thickness.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingNormalTexmap": "sourceimages/CoatingThicknessTexmap.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_083",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Thickness - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingThickness": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_084",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Thickness - 10"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingThickness": 10
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_085",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_transmissioncolor.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingTransmissionColorTexmap": "sourceimages/coating_transmissioncolor.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_086",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "coating_transmissioncolor.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingTransmissionColorTexmap": "sourceimages/coating_transmissioncolor.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_087",
+            "status": "active",
+            "script_info": [
+                "Coating",
+                "Coating Transmission Color",
+                "HSV color as H - 0, S - 165, V - 255"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "CoatingEnable": true,
+                "CoatingTransmissionColor": {
+                    "r": 255,
+                    "g": 90,
+                    "b": 90
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_088",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "emissive_color.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveColorTexmap": "sourceimages/emissive_color.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_089",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "emissive_color.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveColorTexmap": "sourceimages/emissive_color.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_090",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "Emissive Color",
+                "HSV color as H - 0, S - 165, V - 255"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveColor": {
+                    "r": 255,
+                    "g": 90,
+                    "b": 90
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_091",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "emissive_weight.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveWeightTexmap": "sourceimages/emissive_weight.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_092",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "emissive_weight.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveWeightTexmap": "sourceimages/emissive_weight.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_093",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "Emissive Weight - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveWeight": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_094",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "Emissive Weight - 0.5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveWeight": 0.5
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_095",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "Emissive Intensity - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveIntensity": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_096",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "Emissive Intensity - 10"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveIntensity": 10
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_097",
+            "status": "active",
+            "script_info": [
+                "Emissive",
+                "Emissive Double Sided"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "EmissiveEnable": true,
+                "EmissiveDoubleSided": true
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_098",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "subsurfacescattering_weight.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssWeightTexmap": "sourceimages/subsurfacescattering_weight.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_099",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "subsurfacescattering_weight.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssWeightTexmap": "sourceimages/subsurfacescattering_weight.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_100",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "Subsurface Weight - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssWeight": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_101",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "Subsurface Weight - 0.5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssWeight": 0.5
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_102",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "subsurfacescattering_color.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssWeightTexmap": "sourceimages/subsurfacescattering_color.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_103",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "subsurfacescattering_color.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssWeightTexmap": "sourceimages/subsurfacescattering_color.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_104",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "Subsurface Scattering Color",
+                "HSV color as H - 0, S - 165, V - 255"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssWeightTexmap": {
+                    "r": 255,
+                    "g": 90,
+                    "b": 90
+                }
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_105",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "subsurfacescattering_radius.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssRadiusTexmap": "sourceimages/subsurfacescattering_radius.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_106",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "subsurfacescattering_radius.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssRadiusTexmap": "sourceimages/subsurfacescattering_radius.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_107",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "Subsurface Radius - 0, 0, 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssRadius": [0, 0, 0]
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_108",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "Subsurface Radius - 5, 5, 5"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssRadius": [5, 5, 5]
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_109",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "Subsurface Direction - -1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssDirection": -1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_110",
+            "status": "active",
+            "script_info": [
+                "Subsurface Scattering",
+                "Subsurface Direction - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "SssEnable": true,
+                "SssDirection": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_111",
+            "status": "active",
+            "script_info": [
+                "Enable Normal",
+                "normal.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "NormalEnable": true,
+                "NormalTexmap": "sourceimages/normal.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_112",
+            "status": "active",
+            "script_info": [
+                "Enable Normal",
+                "normal.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "NormalEnable": true,
+                "NormalTexmap": "sourceimages/normal.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_113",
+            "status": "active",
+            "script_info": [
+                "Transparency",
+                "transparency.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "TransparencyEnable": true,
+                "TransparencyTexmap": "sourceimages/transparency.png"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_114",
+            "status": "active",
+            "script_info": [
+                "Transparency",
+                "transparency.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "TransparencyEnable": true,
+                "TransparencyTexmap": "sourceimages/transparency.tga"
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_115",
+            "status": "active",
+            "script_info": [
+                "Transparency",
+                "Transparency - 0"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "TransparencyEnable": true,
+                "Transparency": 0
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_116",
+            "status": "active",
+            "script_info": [
+                "Transparency",
+                "Transparency - 1"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {
+                "TransparencyEnable": true,
+                "Transparency": 1
+            }
+        },
+        {
+            "name": "MAX_MAT_UBER_117",
+            "status": "skipped",
+            "script_info": [
+                "Displacement",
+                "RPR Displacement node and connect",
+                "displacement.png"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {}
+        },
+        {
+            "name": "MAX_MAT_UBER_118",
+            "status": "skipped",
+            "script_info": [
+                "Displacement",
+                "Add RPR Displacement node and connect",
+                "displacement.tga"
+            ],
+            "scene_name": "Uber.max",
+            "parameters": {}
+        }
+    ]
+}
