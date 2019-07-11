@@ -37,7 +37,7 @@ REs["RprVolume"] = RprVolume
 
 -- Name Volume Material
 VOL_MAT_NAME = "RPRVolumeMaterial1"
-
+PBR_MAT_NAME = "RPRPbrMaterial1"
 
 function getMaxVersion = (
     -- return string such as "3ds Max 2019|21.0.0.845" = "<tool>|<release number>.<service pack>.<build number>"
