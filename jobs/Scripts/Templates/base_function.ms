@@ -35,6 +35,10 @@ REs["RprRefract"] = RprRefract
 REs["RprVolume"] = RprVolume
 
 
+-- Name Volume Material
+VOL_MAT_NAME = "RPRVolumeMaterial1"
+PBR_MAT_NAME = "RPRPbrMaterial1"
+
 function getMaxVersion = (
     -- return string such as "3ds Max 2019|21.0.0.845" = "<tool>|<release number>.<service pack>.<build number>"
     maxName = filterString (getdir #maxroot) "\\"
@@ -119,3 +123,17 @@ function rpr_render image_format test_case script_info = (
 
 
 function existFile fname = (getfiles fname).count != 0
+
+
+function getMaterialFromName n = (
+    for mat in sceneMaterials do (
+        if mat.name == n do return mat
+    )
+
+    return undefined
+)
+
+
+function getColor r g b = (
+    return (color r g b)
+)

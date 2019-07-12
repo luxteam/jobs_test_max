@@ -210,6 +210,7 @@ def main():
 						error_screen.save(os.path.join(args.output, "Color", error_case + '.jpg'))
 					except Exception as err:
 						main_logger.error(str(err))
+					
 					for child in reversed(p.children(recursive=True)):
 						child.terminate()
 					p.terminate()

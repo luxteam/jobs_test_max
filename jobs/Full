@@ -8,4 +8,11 @@ Image_Size
 Image_Formats
 Pass_Limit
 Render_Stamp
+Render_Layer
+Render_Mode
 Smoke
+Material_Library
+RPR_Nodes
+PBR
+Volume
+Uber

@@ -1,0 +1,148 @@
+{
+    "test_group": "RPR_Nodes",
+    "cases": [
+        {
+            "name": "MAX_MAT_NODE_001",
+            "status": "active",
+            "script_info": [
+                "ShadowCatcher"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "ShadowCatcher"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_002",
+            "status": "active",
+            "script_info": [
+                "DiffRefractMat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "DiffRefrractMat"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_003",
+            "status": "active",
+            "script_info": [
+                "DiffuseMat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "DiffuseMat"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_004",
+            "status": "active",
+            "script_info": [
+                "EmissiveMat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "EmissiveMat"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_005",
+            "status": "active",
+            "script_info": [
+                "Microfacetmat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "Microfacetmat"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_006",
+            "status": "active",
+            "script_info": [
+                "Microfacetrefr"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "Microfacetrefr"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_007",
+            "status": "active",
+            "script_info": [
+                "Oren-nayarMat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "Oren-nayarMat"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_008",
+            "status": "active",
+            "script_info": [
+                "RefMat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "RefMat"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_009",
+            "status": "active",
+            "script_info": [
+                "RefrMat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "RefrMat"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_010",
+            "status": "active",
+            "script_info": [
+                "RPRMat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "RPRMat"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_011",
+            "status": "active",
+            "script_info": [
+                "RPRPBR"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "RPRPBR"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_012",
+            "status": "active",
+            "script_info": [
+                "Transparent"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "Transparent"
+            }
+        },
+        {
+            "name": "MAX_MAT_NODE_013",
+            "status": "active",
+            "script_info": [
+                "WardMat"
+            ],
+            "scene_name": "RPR_Nodes.max",
+            "parameters": {
+                "layer": "WardMat"
+            }
+        }
+    ]
+}
