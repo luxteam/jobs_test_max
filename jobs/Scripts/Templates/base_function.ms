@@ -147,3 +147,14 @@ function getLightFromName n = (
     
     return undefined
 )
+
+
+function getObjectFromName n = (
+    for o in objects do (
+        if o.name == n do (
+            return o
+        )
+    )
+
+    return undefined
+)
