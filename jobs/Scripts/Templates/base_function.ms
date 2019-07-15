@@ -38,6 +38,7 @@ REs["RprVolume"] = RprVolume
 -- Name Volume Material
 VOL_MAT_NAME = "RPRVolumeMaterial1"
 PBR_MAT_NAME = "RPRPbrMaterial1"
+RPR_Physical_Light_NAME = "RPRPhysicalLight001"
 
 function getMaxVersion = (
     -- return string such as "3ds Max 2019|21.0.0.845" = "<tool>|<release number>.<service pack>.<build number>"
@@ -136,4 +137,13 @@ function getMaterialFromName n = (
 
 function getColor r g b = (
     return (color r g b)
+)
+
+
+function getLightFromName n = (
+    for obj in objects do (
+        if obj.name == n do return obj
+    )
+    
+    return undefined
 )
