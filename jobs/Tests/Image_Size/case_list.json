@@ -170,7 +170,7 @@
 				"4000x4000"
 			],
 			"preset": "4000x4000",
-			"status": "active"
+			"status": "deactive"
 		},
 		{
 			"name": "MAX_RS_IS_020",
@@ -179,7 +179,7 @@
 				"5000x5000"
 			],
 			"preset": "5000x5000",
-			"status": "active"
+			"status": "deactive"
 		},
 		{
 			"name": "MAX_RS_IS_021",
@@ -188,7 +188,7 @@
 				"6000x6000"
 			],
 			"preset": "6000x6000",
-			"status": "active"
+			"status": "deactive"
 		}
 	]
 }
