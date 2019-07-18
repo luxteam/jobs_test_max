@@ -171,6 +171,7 @@
 			],
 			"preset": "4000x4000",
 			"status": "skipped"
+
 		},
 		{
 			"name": "MAX_RS_IS_020",
@@ -180,6 +181,7 @@
 			],
 			"preset": "5000x5000",
 			"status": "skipped"
+
 		},
 		{
 			"name": "MAX_RS_IS_021",
@@ -189,6 +191,7 @@
 			],
 			"preset": "6000x6000",
 			"status": "skipped"
+
 		}
 	]
 }
