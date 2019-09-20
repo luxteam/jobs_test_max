@@ -1,3 +1,5 @@
+
+
 FBX_ASSET_PATH = "{res_path}\\{package_name}\\sourceimages\\smoke_03.fbx"
 OBJ_ASSET_PATH = "{res_path}\\{package_name}\\sourceimages\\smoke_04.obj"
 HDR_ASSET_PATH = "{res_path}\\{package_name}\\sourceimages\\startup.hdr"
