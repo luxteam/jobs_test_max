@@ -3,7 +3,7 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1">
+    <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1" timeout="6000">
         <argument>--stage_report stage1.json</argument>
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_image_size.ms"</argument>
