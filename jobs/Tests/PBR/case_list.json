@@ -46,6 +46,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "MetalnessMul": 1.0,
                 "MetalnessTexmap": "sourceimages/metalness.png"
             }
         },
@@ -57,6 +58,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "MetalnessMul": 1.0,
                 "MetalnessTexmap": "sourceimages/metalness.tga"
             }
         },
@@ -90,6 +92,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "SpecularMul": 1.0,
                 "SpecularTexmap": "sourceimages/specular.png"
             }
         },
@@ -101,6 +104,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "SpecularMul": 1.0,
                 "SpecularTexmap": "sourceimages/specular.tga"
             }
         },
@@ -134,6 +138,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "RoughnessMul": 1.0,
                 "RoughnessTexmap": "sourceimages/roughness.png"
             }
         },
@@ -145,6 +150,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "RoughnessMul": 1.0,
                 "RoughnessTexmap": "sourceimages/roughness.tga"
             }
         },
@@ -206,6 +212,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "GlassMul": 1.0,
                 "GlassTexmap": "sourceimages/glass.png"
             }
         },
@@ -217,6 +224,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "GlassMul": 1.0,
                 "GlassTexmap": "sourceimages/glass.tga"
             }
         },
@@ -228,7 +236,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
-                "GlassMul": 0            
+                "GlassMul": 0
             }
         },
         {
@@ -272,6 +280,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "EmissiveWeightMul": 1.0,
                 "EmissiveColorTexmap": "sourceimages/emissive.png"
             }
         },
@@ -283,6 +292,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "EmissiveWeightMul": 1.0,
                 "EmissiveColorTexmap": "sourceimages/emissive.tga"
             }
         },
@@ -306,7 +316,6 @@
         {
             "name": "MAX_MAT_PBR_027",
             "status": "active",
-            "status": "active",
             "script_info": [
                 "Emissive Color RGB: 0,0,0",
                 "Emissive Width: 1"
@@ -329,6 +338,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "EmissiveWeightMul": 1.0,
                 "EmissiveWeightTexmap": "sourceimages/emissiveWidth.png"
             }
         },
@@ -340,6 +350,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "EmissiveWeightMul": 1.0,
                 "EmissiveWeightTexmap": "sourceimages/emissiveWidth.tga"
             }
         },
@@ -351,6 +362,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "SSSWeightMul": 1.0,
                 "SSSWeightTexmap": "sourceimages/subsurface_weight.png"
             }
         },
@@ -362,6 +374,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "SSSWeightMul": 1.0,
                 "SSSWeightTexmap": "sourceimages/subsurface_weight.tga"
             }
         },
@@ -373,6 +386,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "SSSWeightMul": 1.0,
                 "SSSColorTexmap": "sourceimages/subsurface_color.png"
             }
         },
@@ -384,6 +398,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "SSSWeightMul": 1.0,
                 "SSSColorTexmap": "sourceimages/subsurface_color.tga"
             }
         },
@@ -395,6 +410,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "SSSWeightMul": 1.0,
                 "SSSRadius": [1, 1, 1]
             }
         },
@@ -406,6 +422,7 @@
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "SSSWeightMul": 1.0,
                 "SSSRadius": [5, 5, 5]
             }
         }
