@@ -208,6 +208,7 @@
             "name": "MAX_MAT_PBR_018",
             "status": "active",
             "script_info": [
+                "Glass = 1",
                 "Glass PNG"
             ],
             "scene_name": "PBR.max",
@@ -220,6 +221,7 @@
             "name": "MAX_MAT_PBR_019",
             "status": "active",
             "script_info": [
+                "Glass = 1",
                 "Glass TGA"
             ],
             "scene_name": "PBR.max",
@@ -254,10 +256,12 @@
             "name": "MAX_MAT_PBR_022",
             "status": "active",
             "script_info": [
+                "Glass = 1",
                 "GlassIOR = 0"
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "GlassMul": 1.0,
                 "GlassIORMul": 0
             }
         },
@@ -265,10 +269,12 @@
             "name": "MAX_MAT_PBR_023",
             "status": "active",
             "script_info": [
+                "Glass = 1",
                 "GlassIOR = 1"
             ],
             "scene_name": "PBR.max",
             "parameters": {
+                "GlassMul": 1.0,
                 "GlassIORMul": 1
             }
         },
@@ -339,7 +345,7 @@
             "scene_name": "PBR.max",
             "parameters": {
                 "EmissiveWeightMul": 1.0,
-                "EmissiveWeightTexmap": "sourceimages/emissiveWidth.png"
+                "EmissiveWeightTexmap": "sourceimages/emissive_weight.png"
             }
         },
         {
@@ -351,7 +357,7 @@
             "scene_name": "PBR.max",
             "parameters": {
                 "EmissiveWeightMul": 1.0,
-                "EmissiveWeightTexmap": "sourceimages/emissiveWidth.tga"
+                "EmissiveWeightTexmap": "sourceimages/emissive_weight.tga"
             }
         },
         {
