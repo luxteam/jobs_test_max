@@ -55,7 +55,7 @@ def get_error_case(group, work_dir):
 
 	for case in data["cases"]:
 		if case["status"] == "progress":
-			case[status] = "error"
+			case["status"] = "error"
 			
 			with open(os.path.join(work_dir, case_list), "w") as file:
 				data.dump(data, file, indent=4)
@@ -83,6 +83,7 @@ def dump_reports(work_dir, case_list, render_device, scene_list):
 		report_body["file_name"] = case["name"] + ".jpg"
 		report_body["scene_name"] = case["scene_name"]
 		report_body["test_group"] = test_group
+		report_body["date_time"] = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
 
 		# mkdir color
 		try:
