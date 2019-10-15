@@ -212,12 +212,19 @@ def main():
 						main_logger.error(str(err))
 					
 					for child in reversed(p.children(recursive=True)):
-						child.terminate()
-					p.terminate()
+						child.kill()
+					p.kill()
 					break
 			else:
 				rc = 0
 				break
+			finally:
+				if p.is_running():
+					main_logger.error("Max process still is running. Kill()")
+					for child in reversed(p.children(recursive=True)):
+						child.kill()
+					p.kill()
+					break
 
 	with open(os.path.join(args.output, args.stage_report), 'w') as file:
 		json.dump(stage_report, file, indent=' ')
