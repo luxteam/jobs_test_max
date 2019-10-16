@@ -156,7 +156,7 @@ def main():
                                            resolution_y=args.resolution_y,
                                            resolution_x=args.resolution_x)
     try:
-        os.makedirs(work_dir)
+        os.makedirs(os.path.join(work_dir, 'Color'))
     except Exception as err:
         main_logger.error(str(err))
 
