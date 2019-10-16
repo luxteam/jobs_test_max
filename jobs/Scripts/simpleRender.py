@@ -211,13 +211,14 @@ def main():
                 break
 
         if p.is_running():
-            main_logger.error("Max process still is running. Kill: {}".format(p.name()))
-            try:
-                for child in reversed(p.children(recursive=True)):
-                    child.kill()
-                p.kill()
-            except psutil.NoSuchProcess as err:
-                main_logger.error(str(err))
+            main_logger.error("Max process still is running: {}".format(p.name()))
+        try:
+            main_logger.info("Try to kill Max")
+            for child in reversed(p.children(recursive=True)):
+                child.kill()
+            p.kill()
+        except psutil.NoSuchProcess as err:
+            main_logger.error(str(err))
 
     with open(os.path.join(args.output, args.stage_report), 'w') as file:
         json.dump(stage_report, file, indent=' ')
