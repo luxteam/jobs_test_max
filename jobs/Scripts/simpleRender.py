@@ -191,13 +191,12 @@ def main():
 	maxScriptPath = maxScriptPath.replace("\\\\", "\\")
 	rc = -1
 
-
 	while check_cases(args.package_name, work_dir):
 		p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 		
 		while True:
 			try:
-				rc = p.communicate(timeout=5)
+				p.communicate(timeout=10)
 			except (subprocess.TimeoutExpired, psutil.TimeoutExpired) as err:
 				fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert',\
 				maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
@@ -218,13 +217,15 @@ def main():
 			else:
 				rc = 0
 				break
-			finally:
-				if p.is_running():
-					main_logger.error("Max process still is running. Kill()")
-					for child in reversed(p.children(recursive=True)):
-						child.kill()
-					p.kill()
-					break
+                
+        if p.is_running():
+            main_logger.error("Max process still is running. Kill()")
+            try:
+                for child in reversed(p.children(recursive=True)):
+                    child.kill()
+                p.kill()
+            except NoSuchProcess as err:
+                main_logger.error(str(err))
 
 	with open(os.path.join(args.output, args.stage_report), 'w') as file:
 		json.dump(stage_report, file, indent=' ')
