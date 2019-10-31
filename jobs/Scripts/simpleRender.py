@@ -276,7 +276,7 @@ def main():
     for proc in psutil.process_iter():
         main_proc = psutil.Process(proc.pid)
         # Get process name & pid from process object.
-        if proc.name() in ('3dsmax.exe', 'acwebbrowser.exe'):
+        if proc.name() in ('3dsmax.exe', 'acwebbrowser.exe', 'AdSSO.exe'):
             main_logger.warning("UNTERMINATED PROCESS")
             try:
                 main_proc.terminate()
