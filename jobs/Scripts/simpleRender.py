@@ -242,6 +242,21 @@ def main():
         if p.is_running():
             main_logger.error("Max process still is running: {}".format(p.name()))
 
+        main_logger.warning("Kill max anyway")
+
+        child_processes = p.children()
+        main_logger.info("Child processes: {}".format(child_processes))
+        for ch in child_processes:
+            try:
+                ch.terminate()
+                time.sleep(10)
+                ch.kill()
+                time.sleep(10)
+                status = ch.status()
+                main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+            except psutil.NoSuchProcess:
+                main_logger.info("Process is killed: {}".format(ch))
+
         try:
             p.terminate()
             time.sleep(10)
