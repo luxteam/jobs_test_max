@@ -197,6 +197,7 @@ def main():
                                        '3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error',
                                        'Image I/O Error']
                 window_titles = get_windows_titles()
+                main_logger.info(window_titles)
                 error_window = set(fatal_errors_titles).intersection(window_titles)
                 if error_window:
                     main_logger.info("Error window found: {}".format(error_window))
@@ -228,7 +229,7 @@ def main():
                         p.kill()
                         time.sleep(10)
                         status = p.status()
-                        main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+                        main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
                     except psutil.NoSuchProcess:
                         main_logger.info("Process is killed: {}".format(ch))
 
@@ -240,6 +241,16 @@ def main():
         main_logger.info("Checking is Max alive...")
         if p.is_running():
             main_logger.error("Max process still is running: {}".format(p.name()))
+
+        try:
+            p.terminate()
+            time.sleep(10)
+            p.kill()
+            time.sleep(10)
+            status = p.status()
+            main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
+        except psutil.NoSuchProcess:
+            main_logger.info("Process is killed: {}".format(ch))
 
     return rc
 
