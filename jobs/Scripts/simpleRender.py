@@ -188,12 +188,17 @@ def main():
 
         while True:
             try:
-                p.communicate(timeout=10)
+                p.communicate(timeout=30)
             except (subprocess.TimeoutExpired, psutil.TimeoutExpired) as err:
-                fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert', \
-                                       maxScriptPath + ' - MAXScript', '3ds Max', 'Microsoft Visual C++ Runtime Library', \
-                                       '3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error', 'Image I/O Error']
-                if set(fatal_errors_titles).intersection(get_windows_titles()):
+                fatal_errors_titles = ['Radeon ProRender', 'AMD Radeon ProRender debug assert', '3ds Max',
+                                       maxScriptPath + ' - MAXScript', 'Microsoft Visual C++ Runtime Library',
+                                       '3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error',
+                                       'Image I/O Error']
+                window_titles = get_windows_titles()
+                error_window = set(fatal_errors_titles).intersection(window_titles)
+                if error_window:
+                    main_logger.info("Error window found: {}".format(error_window))
+                    main_logger.info("Found windows: {}".format(window_titles))
                     rc = -1
                     try:
                         error_screen = pyscreenshot.grab()
@@ -202,9 +207,29 @@ def main():
                     except Exception as err:
                         main_logger.error(str(err))
 
-                    for child in reversed(p.children(recursive=True)):
-                        child.kill()
-                    p.kill()
+                    child_processes = p.children()
+                    main_logger.info("Child processes: {}".format(child_processes))
+                    for ch in child_processes:
+                        try:
+                            ch.terminate()
+                            time.sleep(10)
+                            ch.kill()
+                            time.sleep(10)
+                            status = ch.status()
+                            main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+                        except psutil.NoSuchProcess:
+                            main_logger.info("Process is killed: {}".format(ch))
+
+                    try:
+                        p.terminate()
+                        time.sleep(10)
+                        p.kill()
+                        time.sleep(10)
+                        status = p.status()
+                        main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+                    except psutil.NoSuchProcess:
+                        main_logger.info("Process is killed: {}".format(ch))
+
                     break
             else:
                 rc = 0
@@ -212,16 +237,6 @@ def main():
 
         if p.is_running():
             main_logger.error("Max process still is running: {}".format(p.name()))
-        try:
-            main_logger.info("Try to kill Max")
-            for child in reversed(p.children(recursive=True)):
-                child.kill()
-            p.kill()
-        except psutil.NoSuchProcess as err:
-            main_logger.error(str(err))
-
-    with open(os.path.join(args.output, args.stage_report), 'w') as file:
-        json.dump(stage_report, file, indent=' ')
 
     return rc
 
