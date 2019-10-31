@@ -231,7 +231,7 @@ def main():
                         status = p.status()
                         main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
                     except psutil.NoSuchProcess:
-                        main_logger.info("Process is killed: {}".format(ch))
+                        main_logger.info("Process is killed: {}".format(p))
 
                     break
             else:
@@ -250,8 +250,10 @@ def main():
             status = p.status()
             main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
         except psutil.NoSuchProcess:
-            main_logger.info("Process is killed: {}".format(ch))
+            main_logger.info("Process is killed: {}".format(p))
 
+    main_logger.info("--end--")
+    main_logger.info(get_windows_titles())
     return rc
 
 
