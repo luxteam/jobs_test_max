@@ -196,8 +196,9 @@ def main():
                                        maxScriptPath + ' - MAXScript', 'Microsoft Visual C++ Runtime Library',
                                        '3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error',
                                        'Image I/O Error']
+                non_direct_compare_titles = ['Emissive_Light.max - Autodesk 3ds Max 2019 - Student Version']
                 window_titles = get_windows_titles()
-                main_logger.info(window_titles)
+                main_logger.info(str(window_titles))
                 error_window = set(fatal_errors_titles).intersection(window_titles)
                 if error_window:
                     main_logger.info("Error window found: {}".format(error_window))
@@ -242,30 +243,50 @@ def main():
         if p.is_running():
             main_logger.error("Max process still is running: {}".format(p.name()))
 
-        main_logger.warning("Kill max anyway")
+        # main_logger.warning("Kill max anyway")
+        #
+        # try:
+        #     child_processes = p.children()
+        #     main_logger.info("Child processes: {}".format(child_processes))
+        #
+        #     for ch in child_processes:
+        #         try:
+        #             ch.terminate()
+        #             time.sleep(10)
+        #             ch.kill()
+        #             time.sleep(10)
+        #             status = ch.status()
+        #             main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+        #         except psutil.NoSuchProcess:
+        #             main_logger.info("Process is killed: {}".format(ch))
+        #
+        #     try:
+        #         p.terminate()
+        #         time.sleep(10)
+        #         p.kill()
+        #         time.sleep(10)
+        #         status = p.status()
+        #         main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
+        #     except psutil.NoSuchProcess:
+        #         main_logger.info("Process is killed: {}".format(p))
+        # except:
+        #     pass
 
-        child_processes = p.children()
-        main_logger.info("Child processes: {}".format(child_processes))
-        for ch in child_processes:
-            try:
-                ch.terminate()
-                time.sleep(10)
-                ch.kill()
-                time.sleep(10)
-                status = ch.status()
-                main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
-            except psutil.NoSuchProcess:
-                main_logger.info("Process is killed: {}".format(ch))
-
+    main_logger.info("search trash")
+    for proc in psutil.process_iter():
         try:
-            p.terminate()
-            time.sleep(10)
-            p.kill()
-            time.sleep(10)
-            status = p.status()
-            main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
+            # Get process name & pid from process object.
+            if proc.name() in ('3dsmax.exe', 'acwebbrowser.exe'):
+                main_logger.warning("UNTERMINATED PROCESS")
+                main_proc = psutil.Process(proc.pid)
+                main_proc.terminate()
+                time.sleep(10)
+                main_proc.kill()
+                time.sleep(10)
+                status = main_proc.status()
+                main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(main_proc, main_proc.name(), status))
         except psutil.NoSuchProcess:
-            main_logger.info("Process is killed: {}".format(p))
+            main_logger.info("Maya is killed: {}".format(main_proc))
 
     main_logger.info("--end--")
     main_logger.info(get_windows_titles())
