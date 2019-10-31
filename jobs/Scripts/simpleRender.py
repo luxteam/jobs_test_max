@@ -10,6 +10,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.
 from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE
 from shutil import copyfile
 from datetime import datetime
+import time
 
 case_list = "case_list.json"
 
@@ -183,6 +184,7 @@ def main():
     maxScriptPath = maxScriptPath.replace("\\\\", "\\")
     rc = -1
 
+    main_logger.info("Start check cases")
     while check_cases(args.package_name, work_dir):
         p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -235,6 +237,7 @@ def main():
                 rc = 0
                 break
 
+        main_logger.info("Checking is Max alive...")
         if p.is_running():
             main_logger.error("Max process still is running: {}".format(p.name()))
 
