@@ -6,11 +6,10 @@ import psutil
 import json
 import ctypes
 import pyscreenshot
+from shutil import copyfile
+import time
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
 from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE
-from shutil import copyfile
-from datetime import datetime
-import time
 
 case_list = "case_list.json"
 
@@ -104,10 +103,9 @@ def dump_reports(work_dir, case_list, render_device, scene_list):
 
 
 def main():
-    stage_report = [{'status': 'INIT'}, {'log': ['simpleRender.py start']}]
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--stage_report', required=True)
+    parser.add_argument('--stage_report', required=False)
     parser.add_argument('--tool', required=True, metavar="<path>")
     parser.add_argument('--pass_limit', required=True, type=int)
     parser.add_argument('--resolution_x', required=True, type=int)
@@ -196,7 +194,6 @@ def main():
                                        maxScriptPath + ' - MAXScript', 'Microsoft Visual C++ Runtime Library',
                                        '3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error',
                                        'Image I/O Error']
-                non_direct_compare_titles = ['Emissive_Light.max - Autodesk 3ds Max 2019 - Student Version']
                 window_titles = get_windows_titles()
                 main_logger.info(str(window_titles))
                 error_window = set(fatal_errors_titles).intersection(window_titles)
@@ -239,40 +236,7 @@ def main():
                 rc = 0
                 break
 
-        main_logger.info("Checking is Max alive...")
-        if p.is_running():
-            main_logger.error("Max process still is running: {}".format(p.name()))
-
-        # main_logger.warning("Kill max anyway")
-        #
-        # try:
-        #     child_processes = p.children()
-        #     main_logger.info("Child processes: {}".format(child_processes))
-        #
-        #     for ch in child_processes:
-        #         try:
-        #             ch.terminate()
-        #             time.sleep(10)
-        #             ch.kill()
-        #             time.sleep(10)
-        #             status = ch.status()
-        #             main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
-        #         except psutil.NoSuchProcess:
-        #             main_logger.info("Process is killed: {}".format(ch))
-        #
-        #     try:
-        #         p.terminate()
-        #         time.sleep(10)
-        #         p.kill()
-        #         time.sleep(10)
-        #         status = p.status()
-        #         main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
-        #     except psutil.NoSuchProcess:
-        #         main_logger.info("Process is killed: {}".format(p))
-        # except:
-        #     pass
-
-    main_logger.info("search trash")
+    main_logger.info("Search hanged processes...")
     for proc in psutil.process_iter():
         main_proc = psutil.Process(proc.pid)
         # Get process name & pid from process object.
@@ -288,8 +252,6 @@ def main():
             except psutil.NoSuchProcess:
                 main_logger.info("Process is killed: {}".format(main_proc))
 
-    main_logger.info("--end--")
-    main_logger.info(get_windows_titles())
     return rc
 
 
