@@ -3,31 +3,29 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{ResourcesDir}\simpleRender.py"' stage="stage1" timeout="6000">
-        <argument>--stage_report stage1.json</argument>
+    <execute command='python "{ResourcesDir}\simpleRender.py"' timeout="6000">
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_quality.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit {PassLimit}</argument>
-	<argument>--resolution_x {rx}</argument>
-	<argument>--resolution_y {ry}</argument>
+        <argument>--resolution_x {rx}</argument>
+        <argument>--resolution_y {ry}</argument>
         <argument>--scene_list "{Root}\Tests\Quality\{TestsFilter}TestsList.txt"</argument>
         <argument>--package_name "Quality Preset"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
-    <execute command='python "{CWD}/Scripts/make_report_json.py"' stage="stage2">
-        <argument>--stage_report stage2.json</argument>
+    <execute command='python "{CWD}/Scripts/make_report_json.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"' stage="stage3">
+    <execute command='python "{CommonDir}\scripts\ImageComparator\compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
     </execute>
 
-    <execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"' stage="stage4">
+    <execute command='python "{CommonDir}\scripts\HtmlTemplate\htmlBuilder.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
     </execute>
 

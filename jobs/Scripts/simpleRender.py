@@ -105,7 +105,6 @@ def dump_reports(work_dir, case_list, render_device, scene_list):
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--stage_report', required=False)
     parser.add_argument('--tool', required=True, metavar="<path>")
     parser.add_argument('--pass_limit', required=True, type=int)
     parser.add_argument('--resolution_x', required=True, type=int)
