@@ -163,7 +163,7 @@ def main():
         f.write(cmdRun)
 
     # copy case_list.json for track cases in group
-    copyfile(os.path.join(os.path.dirname(args.scene_list), case_list), os.path.join(work_dir, case_list))
+    copyfile(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list), os.path.join(work_dir, case_list))
 
     # copy ms_json.py for json parsing in MaxScript
     copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
