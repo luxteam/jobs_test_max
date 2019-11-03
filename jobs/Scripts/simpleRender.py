@@ -8,8 +8,10 @@ import ctypes
 import pyscreenshot
 from shutil import copyfile
 import time
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir)))
-from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE
+# ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
+# sys.path.append(ROOT_DIR)
+from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
+from jobs_launcher.core.system_info import get_gpu
 
 case_list = "case_list.json"
 
@@ -65,7 +67,7 @@ def get_error_case(group, work_dir):
         return False
 
 
-def dump_reports(work_dir, case_list, render_device, scene_list):
+def dump_reports(work_dir, case_list, render_device):
 
     with open(os.path.join(work_dir, case_list)) as file:
         data = json.loads(file.read())
@@ -84,12 +86,15 @@ def dump_reports(work_dir, case_list, render_device, scene_list):
         report_body["scene_name"] = case["scene_name"]
         report_body["test_group"] = test_group
 
+        root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
         if case["status"] == "active":
-            report_body["test_status"] = "error"
-            path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'failed.jpg')
+            report_body["test_status"] = TEST_CRASH_STATUS
+            path_2_orig_img = os.path.join(root_dir, 'common', 'img', 'error.jpg')
+            # path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'failed.jpg')
         else:
-            report_body["test_status"] = "skipped"
-            path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'skipped.jpg')
+            report_body["test_status"] = TEST_IGNORE_STATUS
+            path_2_orig_img = os.path.join(root_dir, 'common', 'img', 'skipped.jpg')
+            # path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'skipped.jpg')
 
         path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
         copyfile(path_2_orig_img, path_2_case_img)
@@ -114,7 +119,6 @@ def main():
     parser.add_argument('--template', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--res_path', required=True)
-    parser.add_argument('--scene_list', required=True)
 
     args = parser.parse_args()
     tool = args.tool
@@ -125,9 +129,6 @@ def main():
     with open(os.path.join(os.path.dirname(sys.argv[0]), "Templates", "base_function.ms")) as f:
         base = f.read()
 
-    with open(os.path.join(os.path.dirname(sys.argv[0]), args.scene_list)) as f:
-        scene_list = f.read()
-
     global work_dir
 
     work_dir = args.output
@@ -135,13 +136,7 @@ def main():
     res_path = args.res_path
     res_path = res_path.replace("\\", "\\\\")
 
-    render_device = args.render_mode
-    try:
-        s = subprocess.Popen("wmic path win32_VideoController get name", stdout=subprocess.PIPE)
-        stdout = s.communicate()
-        render_device = stdout[0].decode("utf-8").split('\n')[1].replace('\r', '').strip(' ')
-    except:
-        pass
+    render_device = get_gpu()
 
     max_script_template = base + max_script_template
     maxScript = max_script_template.format(pass_limit=args.pass_limit,
@@ -150,7 +145,6 @@ def main():
                                            render_device=render_device,
                                            render_mode=args.render_mode,
                                            res_path=res_path,
-                                           scene_list=scene_list,
                                            resolution_y=args.resolution_y,
                                            resolution_x=args.resolution_x)
     try:
@@ -175,7 +169,7 @@ def main():
     # copy ms_json.py for json parsing in MaxScript
     copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
 
-    dump_reports(work_dir, case_list, render_device, args.scene_list)
+    dump_reports(work_dir, case_list, render_device)
 
     os.chdir(work_dir)
     maxScriptPath = maxScriptPath.replace("\\\\", "\\")

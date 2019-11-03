@@ -10,7 +10,6 @@
         <argument>--pass_limit {PassLimit}</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
-        <argument>--scene_list "{Root}\Tests\Image_Size\{TestsFilter}TestsList.txt"</argument>
         <argument>--package_name "Image_Size"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>

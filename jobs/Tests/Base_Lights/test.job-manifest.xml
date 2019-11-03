@@ -10,7 +10,6 @@
         <argument>--pass_limit {PassLimit}</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
-        <argument>--scene_list "{Root}\Tests\Base_Lights\{TestsFilter}TestsList.txt"</argument>
         <argument>--package_name "Base_Lights"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
