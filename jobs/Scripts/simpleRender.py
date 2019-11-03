@@ -8,8 +8,8 @@ import ctypes
 import pyscreenshot
 from shutil import copyfile
 import time
-# ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
-# sys.path.append(ROOT_DIR)
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
+sys.path.append(ROOT_DIR)
 from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
 from jobs_launcher.core.system_info import get_gpu
 
@@ -86,14 +86,13 @@ def dump_reports(work_dir, case_list, render_device):
         report_body["scene_name"] = case["scene_name"]
         report_body["test_group"] = test_group
 
-        root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
         if case["status"] == "active":
             report_body["test_status"] = TEST_CRASH_STATUS
-            path_2_orig_img = os.path.join(root_dir, 'common', 'img', 'error.jpg')
+            path_2_orig_img = os.path.join(ROOT_DIR, 'common', 'img', 'error.jpg')
             # path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'failed.jpg')
         else:
             report_body["test_status"] = TEST_IGNORE_STATUS
-            path_2_orig_img = os.path.join(root_dir, 'common', 'img', 'skipped.jpg')
+            path_2_orig_img = os.path.join(ROOT_DIR, 'common', 'img', 'skipped.jpg')
             # path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'skipped.jpg')
 
         path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
