@@ -88,11 +88,11 @@ def dump_reports(work_dir, case_list, render_device):
 
         if case["status"] == "active":
             report_body["test_status"] = TEST_CRASH_STATUS
-            path_2_orig_img = os.path.join(ROOT_DIR, 'common', 'img', 'error.jpg')
+            path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'error.jpg')
             # path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'failed.jpg')
         else:
             report_body["test_status"] = TEST_IGNORE_STATUS
-            path_2_orig_img = os.path.join(ROOT_DIR, 'common', 'img', 'skipped.jpg')
+            path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'skipped.jpg')
             # path_2_orig_img = os.path.join(os.path.dirname(scene_list), '..', 'skipped.jpg')
 
         path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
