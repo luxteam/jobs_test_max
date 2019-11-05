@@ -1,3 +1,0 @@
-"base_scene.max",
-"ironman.max",
-"default.max"
