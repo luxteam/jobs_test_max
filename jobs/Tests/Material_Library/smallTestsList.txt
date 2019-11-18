@@ -1,3 +1,0 @@
-LibEntry "RPR_CarPaints.mat" "SpeedShape",
-LibEntry "RPR_Composites.mat"
-
