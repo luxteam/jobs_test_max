@@ -234,6 +234,442 @@
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
+		},
+		{
+			"name": "MAX_RS_DEN_026",
+			"script_info": [
+				"Machine Learning Type",
+				"Color only mode"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_027",
+			"script_info": [
+				"Machine Learning Type",
+				"Color+AOV mode"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_028",
+			"script_info": [
+				"Machine Learning Type",
+				"Color mode",
+				"TileRendering"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_029",
+			"script_info": [
+				"Machine Learning Type",
+				"Color+AOV mode",
+				"TileRendering"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_030",
+			"script_info": [
+				"Bilateral type",
+				"Radius - 1"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_031",
+			"script_info": [
+				"Bilateral type",
+				"Radius - 5"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_032",
+			"script_info": [
+				"Bilateral type",
+				"Radius - 10"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_033",
+			"script_info": [
+				"Bilateral type",
+				"Radius - 1",
+				"TileRender"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_034",
+			"script_info": [
+				"LWR Type",
+				"Samples - 5"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_035",
+			"script_info": [
+				"LWR Type",
+				"Samples - 10"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_036",
+			"script_info": [
+				"LWR Type",
+				"Filter Radius - 5"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_037",
+			"script_info": [
+				"LWR Type",
+				"Filter Radius - 10"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_038",
+			"script_info": [
+				"LWR Type",
+				"Bandwidth - 0.1"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_039",
+			"script_info": [
+				"EAW type",
+				"Color - 0.1",
+				"Depth - 0.1",
+				"Normal - 0.1",
+				"Object ID - 0.1"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_040",
+			"script_info": [
+				"EAW type",
+				"Color - 0.5",
+				"Depth - 0.5",
+				"Normal - 0.5",
+				"Object ID - 0.5"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMetal.max"
+		},
+		{
+			"name": "MAX_RS_DEN_041",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 0",
+				"IES Light",
+				"Intesity 3",
+				"enable ML denoiser",
+				"Color mode"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_042",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 0",
+				"IES Light",
+				"Intesity 3",
+				"enable ML denoiser",
+				"Color+AOV mode"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_043",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 3",
+				"IES Light",
+				"Intesity 3",
+				"enable ML denoiser",
+				"Color mode"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_044",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 3",
+				"IES Light",
+				"Intesity 3",
+				"enable ML denoiser",
+				"Color+AOV mode"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_045",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 0",
+				"IES Light",
+				"Intesity 3",
+				"enable EWA"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_046",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 3",
+				"IES Light",
+				"Intesity 3",
+				"enable EWA"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_047",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 0",
+				"IES Light",
+				"Intesity 3",
+				"enable Bilateral"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_048",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 3",
+				"IES Light",
+				"Intesity 3",
+				"enable Bilateral"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_049",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 0",
+				"IES Light",
+				"Intesity 3",
+				"enable LWR"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_050",
+			"script_info": [
+				"PhysicalLight2",
+				"instensity 0",
+				"IES Light",
+				"Intesity 3",
+				"enable LWR"
+			],
+			"status": "skipped",
+			"scene_name": "DenoiserLight.max"
+		},
+		{
+			"name": "MAX_RS_DEN_051",
+			"script_info": [
+				"Machine Learning Denoiser",
+				"Color mode"
+			],
+			"status": "active",
+			"scene_name": "DenoiserDOF.max"
+		},
+		{
+			"name": "MAX_RS_DEN_052",
+			"script_info": [
+				"Machine Learning Denoiser",
+				"Color+AOV mode"
+			],
+			"status": "active",
+			"scene_name": "DenoiserDOF.max"
+		},
+		{
+			"name": "MAX_RS_DEN_053",
+			"script_info": [
+				"EAW"
+			],
+			"status": "active",
+			"scene_name": "DenoiserDOF.max"
+		},
+		{
+			"name": "MAX_RS_DEN_054",
+			"script_info": [
+				"LWR"
+			],
+			"status": "active",
+			"scene_name": "DenoiserDOF.max"
+		},
+		{
+			"name": "MAX_RS_DEN_055",
+			"script_info": [
+				"Bilateral"
+			],
+			"status": "active",
+			"scene_name": "DenoiserDOF.max"
+		},
+		{
+			"name": "MAX_RS_DEN_056",
+			"script_info": [
+				"Machine Learning Denoiser",
+				"Color mode"
+			],
+			"status": "active",
+			"scene_name": "DenoiserIBL.max"
+		},
+		{
+			"name": "MAX_RS_DEN_057",
+			"script_info": [
+				"Machine Learning Denoiser",
+				"Color+AOV mode"
+			],
+			"status": "active",
+			"scene_name": "DenoiserIBL.max"
+		},
+		{
+			"name": "MAX_RS_DEN_058",
+			"script_info": [
+				"EAW"
+			],
+			"status": "active",
+			"scene_name": "DenoiserIBL.max"
+		},
+		{
+			"name": "MAX_RS_DEN_059",
+			"script_info": [
+				"LWR"
+			],
+			"status": "active",
+			"scene_name": "DenoiserIBL.max"
+		},
+		{
+			"name": "MAX_RS_DEN_060",
+			"script_info": [
+				"Bilateral"
+			],
+			"status": "active",
+			"scene_name": "DenoiserIBL.max"
+		},
+		{
+			"name": "MAX_RS_DEN_061",
+			"script_info": [
+				"Machine Learning Denoiser",
+				"Color mode"
+			],
+			"status": "active",
+			"scene_name": "DenoiserComplexLighting.max"
+		},
+		{
+			"name": "MAX_RS_DEN_062",
+			"script_info": [
+				"Machine Learning Denoiser",
+				"Color+AOV mode"
+			],
+			"status": "active",
+			"scene_name": "DenoiserComplexLighting.max"
+		},
+		{
+			"name": "MAX_RS_DEN_063",
+			"script_info": [
+				"EAW"
+			],
+			"status": "active",
+			"scene_name": "DenoiserComplexLighting.max"
+		},
+		{
+			"name": "MAX_RS_DEN_064",
+			"script_info": [
+				"LWR"
+			],
+			"status": "active",
+			"scene_name": "DenoiserComplexLighting.max"
+		},
+		{
+			"name": "MAX_RS_DEN_065",
+			"script_info": [
+				"Bilateral"
+			],
+			"status": "active",
+			"scene_name": "DenoiserComplexLighting.max"
+		},
+		{
+			"name": "MAX_RS_DEN_066",
+			"script_info": [
+				"Machine Learning Denoiser",
+				"Color mode"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMaterials.max"
+		},
+		{
+			"name": "MAX_RS_DEN_067",
+			"script_info": [
+				"Machine Learning Denoiser",
+				"Color+AOV mode"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMaterials.max"
+		},
+		{
+			"name": "MAX_RS_DEN_068",
+			"script_info": [
+				"EAW"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMaterials.max"
+		},
+		{
+			"name": "MAX_RS_DEN_069",
+			"script_info": [
+				"LWR"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMaterials.max"
+		},
+		{
+			"name": "MAX_RS_DEN_070",
+			"script_info": [
+				"Bilateral"
+			],
+			"status": "active",
+			"scene_name": "DenoiserMaterials.max"
 		}
 	]
 }
