@@ -230,9 +230,10 @@
 		{
 			"name": "MAX_RS_DEN_025",
 			"script_info": [
-				"Machine Learning"
+				"Machine Learning",
+				"//ML doesn't work on all Max"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "Denoiser.max"
 		},
 		{
