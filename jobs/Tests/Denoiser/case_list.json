@@ -510,7 +510,7 @@
 				"Machine Learning Denoiser",
 				"Color mode"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserDOF.max"
 		},
 		{
@@ -519,7 +519,7 @@
 				"Machine Learning Denoiser",
 				"Color+AOV mode"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserDOF.max"
 		},
 		{
@@ -552,7 +552,7 @@
 				"Machine Learning Denoiser",
 				"Color mode"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserIBL.max"
 		},
 		{
@@ -561,7 +561,7 @@
 				"Machine Learning Denoiser",
 				"Color+AOV mode"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserIBL.max"
 		},
 		{
@@ -594,7 +594,7 @@
 				"Machine Learning Denoiser",
 				"Color mode"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserComplexLighting.max"
 		},
 		{
@@ -603,7 +603,7 @@
 				"Machine Learning Denoiser",
 				"Color+AOV mode"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserComplexLighting.max"
 		},
 		{
@@ -636,7 +636,7 @@
 				"Machine Learning Denoiser",
 				"Color mode"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserMaterials.max"
 		},
 		{
@@ -645,7 +645,7 @@
 				"Machine Learning Denoiser",
 				"Color+AOV mode"
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserMaterials.max"
 		},
 		{
