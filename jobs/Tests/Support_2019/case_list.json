@@ -1,0 +1,24 @@
+{
+    "test_group": "Smoke",
+    "cases": [
+        {
+            "name": "MAX_SP19_001",
+            "scene_name": "denoiser.max",
+            "script_info": [
+                "Max 2019"
+            ],
+            "pass_limit": 400,
+            "status": "active"
+        },
+        {
+            "name": "MAX_SP19_002",
+            "scene_name": "denoiser.max",
+            "script_info": [
+                "Enable Denoiser",
+                "Max 2019"
+            ],
+            "pass_limit": 400,
+            "status": "active"
+        }
+    ]
+}

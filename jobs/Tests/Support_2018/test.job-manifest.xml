@@ -3,15 +3,14 @@
 
     <outpath value="{OutputDir}"/>
 
-
     <execute command='python "{ResourcesDir}\simpleRender.py"' timeout="6000">
-        <argument>--tool "{Tool}"</argument>
-        <argument>--template "{ResourcesDir}\Templates\template_smoke.ms"</argument>
+        <argument>--tool "C:\Program Files\Autodesk\3ds Max 2018\3dsmax.exe"</argument>
+        <argument>--template "{ResourcesDir}\Templates\template_support_2018.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit {PassLimit}</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
-        <argument>--package_name "Smoke"</argument>
+        <argument>--package_name "Support_2019"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>

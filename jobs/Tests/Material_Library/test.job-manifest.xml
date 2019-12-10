@@ -12,6 +12,7 @@
         <argument>--resolution_y {ry}</argument>
         <argument>--package_name "Material_Library"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
+        <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
     </execute>
 
