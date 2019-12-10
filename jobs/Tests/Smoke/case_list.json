@@ -297,6 +297,16 @@
             ],
             "pass_limit": 400,
             "status": "active"
+        },
+        {
+            "name": "MAX_SM_036",
+            "scene_name": "base_scene.max",
+            "script_info": [
+                "Machine Learning Denoiser",
+                "*doesn't work for Max"
+            ],
+            "pass_limit": 400,
+            "status": "skipped"
         }
     ]
 }

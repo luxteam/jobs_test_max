@@ -95,7 +95,7 @@ function withoutRender test_case script_info status = (
 
     -- TODO: remove hard code paths
     if status then (
-        status_path = "{work_dir}" + "..\\..\\..\\..\\jobs_launcher\\common\\img\\pass.jpg"
+        status_path = "{work_dir}" + "..\\..\\..\\..\\jobs_launcher\\common\\img\\passed.jpg"
     ) else (
         status_path = "{work_dir}" + "..\\..\\..\\..\\jobs_launcher\\common\\img\\error.jpg"
     )
