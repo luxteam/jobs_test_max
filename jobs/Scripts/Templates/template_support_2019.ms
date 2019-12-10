@@ -11,7 +11,6 @@ function main = (
         image_format = "jpg"
 
         renderers.current = Radeon_ProRender()
-        renderers.current.enableDenoiser = true
 
         case cases[i]["name"] of (
             "MAX_RS_DEN_002": (renderers.current.enableDenoiser = true)
