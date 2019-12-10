@@ -162,7 +162,7 @@ def main():
         f.write(cmdRun)
 
     # prepare case_list.json
-    if args.testCases:
+    if args.testCases != 'None':
         # open original case_list
         with open(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list)) as file:
             cases = json.loads(file.read())
