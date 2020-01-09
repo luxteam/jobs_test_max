@@ -178,14 +178,8 @@ def main():
         }
 
         # collect cases
-        try:
-            for case in cases['cases']:
-                if case['name'] in case_names or case_names == "all":
-                    filter_cases['cases'] += [case]
-        except Exception as error:
-            filter_cases['cases'] = cases['cases']
-            main_logger.error(str(error) + " | Select all cases")
-            
+        filter_cases['cases'] = [case for case in cases['cases'] if case['name'] in case_names or case_names == "all"]
+
         # dump new custom case list
         with open(os.path.join(work_dir, case_list), 'w') as file:
             json.dump(filter_cases, file, indent=4)
@@ -276,4 +270,4 @@ def main():
 
 if __name__ == "__main__":
     rc = main()
-    # exit(rc)
+    exit(rc)
