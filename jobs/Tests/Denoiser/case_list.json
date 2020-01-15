@@ -7,6 +7,13 @@
 				"Bilateral type",
 				"Radius - 1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": 1
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -15,6 +22,13 @@
 			"script_info": [
 				"Bilateral type",
 				"Radius - 5"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": 5
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -25,6 +39,13 @@
 				"Bilateral type",
 				"Radius - 10"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": 10
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -32,6 +53,15 @@
 			"name": "MAX_RS_DEN_004",
 			"script_info": [
 				"LWR type"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -42,6 +72,15 @@
 				"LWR type",
 				"Samples - 2"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": 2,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -50,6 +89,15 @@
 			"script_info": [
 				"LWR type",
 				"Samples - 10"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": 10,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -60,6 +108,15 @@
 				"LWR type",
 				"Filter Radius - 1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": 1,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -68,6 +125,15 @@
 			"script_info": [
 				"LWR type",
 				"Filter Radius - 10"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": 10,
+					"bandwidth": false 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -78,6 +144,15 @@
 				"LWR type",
 				"Bandwidth - 0.1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": false,
+					"bandwidth": 0.1 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -86,6 +161,15 @@
 			"script_info": [
 				"LWR type",
 				"Bandwidth - 1"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": false,
+					"bandwidth": 1 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -98,6 +182,15 @@
 				"Filter Radius - 1",
 				"Bandwidth - 0.1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": 2,
+					"filter_radius": 1,
+					"bandwidth": 0.1 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -108,6 +201,15 @@
 				"Samples - 5",
 				"Filter Radius - 5",
 				"Bandwidth - 0.5"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": 5,
+					"filter_radius": 5,
+					"bandwidth": 0.5 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -120,6 +222,15 @@
 				"Filter Radius - 10",
 				"Bandwidth - 1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": 10,
+					"filter_radius": 10,
+					"bandwidth": 1 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -127,6 +238,16 @@
 			"name": "MAX_RS_DEN_014",
 			"script_info": [
 				"EAW type"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": false,
+					"objectID": false 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -137,6 +258,16 @@
 				"EAW type",
 				"Color - 0.1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": 0.1,
+					"normal": false,
+					"depth": false,
+					"objectID": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -145,6 +276,16 @@
 			"script_info": [
 				"EAW type",
 				"Color - 1"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": 1,
+					"normal": false,
+					"depth": false,
+					"objectID": false 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -155,6 +296,16 @@
 				"EAW type",
 				"Depth - 0.1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": 0.1,
+					"objectID": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -163,6 +314,16 @@
 			"script_info": [
 				"EAW type",
 				"Depth - 1"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": 0.1,
+					"objectID": false 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -173,6 +334,16 @@
 				"EAW type",
 				"Normal - 0.1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": 0.1,
+					"depth": false,
+					"objectID": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -181,6 +352,16 @@
 			"script_info": [
 				"EAW type",
 				"Normal - 1"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": 1,
+					"depth": false,
+					"objectID": false 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -191,6 +372,16 @@
 				"EAW type",
 				"ObjectID - 0.1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": false,
+					"objectID": 0.1 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -199,6 +390,16 @@
 			"script_info": [
 				"EAW type",
 				"ObjectID - 1"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": false,
+					"objectID": 1
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -212,6 +413,16 @@
 				"Normal - 0.1",
 				"ObjectID - 0.1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": 0.1,
+					"normal": 0.1,
+					"depth": 0.1,
+					"objectID": 0.1 
+				}
+			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
 		},
@@ -223,6 +434,16 @@
 				"Depth - 1",
 				"Normal - 1",
 				"ObjectID - 1"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": 1,
+					"normal": 1,
+					"depth": 1,
+					"objectID": 1 
+				}
 			],
 			"status": "active",
 			"scene_name": "Denoiser.max"
@@ -280,6 +501,13 @@
 				"Bilateral type",
 				"Radius - 1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": 1
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
 		},
@@ -289,6 +517,13 @@
 				"Bilateral type",
 				"Radius - 5"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": 5
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
 		},
@@ -297,6 +532,13 @@
 			"script_info": [
 				"Bilateral type",
 				"Radius - 10"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": 10
+				}
 			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
@@ -317,6 +559,15 @@
 				"LWR Type",
 				"Samples - 5"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": 5,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
 		},
@@ -325,6 +576,15 @@
 			"script_info": [
 				"LWR Type",
 				"Samples - 10"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": 10,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
 			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
@@ -335,6 +595,15 @@
 				"LWR Type",
 				"Filter Radius - 5"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": 5,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
 		},
@@ -344,6 +613,15 @@
 				"LWR Type",
 				"Filter Radius - 10"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": 10,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
 		},
@@ -352,6 +630,15 @@
 			"script_info": [
 				"LWR Type",
 				"Bandwidth - 0.1"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": false,
+					"bandwidth": 0.1 
+				}
 			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
@@ -365,6 +652,16 @@
 				"Normal - 0.1",
 				"Object ID - 0.1"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": 0.1,
+					"normal": 0.1,
+					"depth": 0.1,
+					"objectID": 0.1 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
 		},
@@ -376,6 +673,16 @@
 				"Depth - 0.5",
 				"Normal - 0.5",
 				"Object ID - 0.5"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": 0.5,
+					"normal": 0.5,
+					"depth": 0.5,
+					"objectID": 0.5
+				}
 			],
 			"status": "active",
 			"scene_name": "DenoiserMetal.max"
@@ -527,6 +834,16 @@
 			"script_info": [
 				"EAW"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": false,
+					"objectID": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserDOF.max"
 		},
@@ -535,6 +852,15 @@
 			"script_info": [
 				"LWR"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserDOF.max"
 		},
@@ -542,6 +868,13 @@
 			"name": "MAX_RS_DEN_055",
 			"script_info": [
 				"Bilateral"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": false
+				}
 			],
 			"status": "active",
 			"scene_name": "DenoiserDOF.max"
@@ -569,6 +902,16 @@
 			"script_info": [
 				"EAW"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": false,
+					"objectID": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserIBL.max"
 		},
@@ -577,6 +920,15 @@
 			"script_info": [
 				"LWR"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserIBL.max"
 		},
@@ -584,6 +936,13 @@
 			"name": "MAX_RS_DEN_060",
 			"script_info": [
 				"Bilateral"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": false
+				}
 			],
 			"status": "active",
 			"scene_name": "DenoiserIBL.max"
@@ -611,6 +970,16 @@
 			"script_info": [
 				"EAW"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": false,
+					"objectID": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserComplexLighting.max"
 		},
@@ -619,6 +988,15 @@
 			"script_info": [
 				"LWR"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserComplexLighting.max"
 		},
@@ -626,6 +1004,13 @@
 			"name": "MAX_RS_DEN_065",
 			"script_info": [
 				"Bilateral"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": false
+				}
 			],
 			"status": "active",
 			"scene_name": "DenoiserComplexLighting.max"
@@ -653,6 +1038,16 @@
 			"script_info": [
 				"EAW"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "EWR",
+					"color": false,
+					"normal": false,
+					"depth": false,
+					"objectID": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserMaterials.max"
 		},
@@ -661,6 +1056,15 @@
 			"script_info": [
 				"LWR"
 			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "LWR",
+					"samples": false,
+					"filter_radius": false,
+					"bandwidth": false 
+				}
+			],
 			"status": "active",
 			"scene_name": "DenoiserMaterials.max"
 		},
@@ -668,6 +1072,13 @@
 			"name": "MAX_RS_DEN_070",
 			"script_info": [
 				"Bilateral"
+			],
+			"parameters": [
+				{
+					"class": "Denoiser",
+					"type": "bilateral",
+					"radius": false
+				}
 			],
 			"status": "active",
 			"scene_name": "DenoiserMaterials.max"
