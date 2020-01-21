@@ -1,4 +1,6 @@
 function bilateral r = (
+    if r == false do r = 3
+
     renderers.current.denoiserType = 1
     renderers.current.bilateralRadius = r
 )
@@ -42,33 +44,32 @@ function main = (
         renderers.current = Radeon_ProRender()
         renderers.current.enableDenoiser = true
 
-        case cases[i]["name"] of (
-            "MAX_RS_DEN_001": bilateral 1
-            "MAX_RS_DEN_002": bilateral 5
-            "MAX_RS_DEN_003": bilateral 10
-            "MAX_RS_DEN_004": LWR false false false  
-            "MAX_RS_DEN_005": LWR 2 false false
-            "MAX_RS_DEN_006": LWR 10 false false
-            "MAX_RS_DEN_007": LWR false false 1
-            "MAX_RS_DEN_008": LWR false false 10
-            "MAX_RS_DEN_009": LWR false 0.1 false
-            "MAX_RS_DEN_010": LWR false 1 false
-            "MAX_RS_DEN_011": LWR 2 0.1 1
-            "MAX_RS_DEN_012": LWR 5 0.5 5
-            "MAX_RS_DEN_013": LWR 10 0.1 10
-            "MAX_RS_DEN_014": EAW false false false false
-            "MAX_RS_DEN_015": EAW 0.1 false false false
-            "MAX_RS_DEN_016": EAW 1 false false false
-            "MAX_RS_DEN_017": EAW false false 0.1 false
-            "MAX_RS_DEN_018": EAW false false 1 false
-            "MAX_RS_DEN_019": EAW false 0.1 false false
-            "MAX_RS_DEN_020": EAW false 1 false false
-            "MAX_RS_DEN_021": EAW false false false 0.1
-            "MAX_RS_DEN_022": EAW false false false 1
-            "MAX_RS_DEN_023": EAW 0.1 0.1 0.1 0.1
-            "MAX_RS_DEN_024": EAW 1 1 1 1
-            "MAX_RS_DEN_025": renderers.current.denoiserType = 4
-        ) 
+
+
+        for p=1 to cases[i]["parameters"].count do (
+            case cases[i]["parameters"][p]["class"] of (
+                "Denoiser": case cases[i]["parameters"][p]["type"] of (
+                    "bilateral": (
+                        radius = cases[i]["parameters"][p]["radius"]
+                        bilateral radius
+                    )
+                    "LWR": (
+                        samples = cases[i]["parameters"][p]["samples"]
+                        filterRadius = cases[i]["parameters"][p]["filter_radius"]
+                        bandwidth = cases[i]["parameters"][p]["bandwidth"]
+                        LWR samples bandwidth filterRadius
+                    )
+                    "EWR": (
+                        clr = cases[i]["parameters"][p]["color"]
+                        depth = cases[i]["parameters"][p]["depth"]
+                        normal = cases[i]["parameters"][p]["normal"]
+                        objectID = cases[i]["parameters"][p]["objectID"]
+                        EAW clr normal depth objectID
+                    )
+                    default: print "Undefined Denoiser type"
+                )
+            )
+        )
 
         rpr_render image_format cases[i]["name"] cases[i]["script_info"]
         caseList.setCaseStatus i "done"

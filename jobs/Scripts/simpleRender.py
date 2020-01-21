@@ -116,6 +116,7 @@ def main():
     parser.add_argument('--template', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--res_path', required=True)
+    parser.add_argument('--testCases', required=True)
 
     args = parser.parse_args()
     tool = args.tool
@@ -160,8 +161,30 @@ def main():
     with open(cmdScriptPath, 'w') as f:
         f.write(cmdRun)
 
-    # copy case_list.json for track cases in group
-    copyfile(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list), os.path.join(work_dir, case_list))
+    # prepare case_list.json
+    if args.testCases != 'None':
+        # open original case_list
+        with open(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list)) as file:
+            cases = json.loads(file.read())
+
+        # open custom json group
+        with open(args.testCases) as file:
+            case_names = json.loads(file.read())[str(args.package_name)]
+        
+        # prepare template for custom json
+        filter_cases = {
+            'test_group': args.package_name,
+            'cases': []
+        }
+
+        # collect cases
+        filter_cases['cases'] = [case for case in cases['cases'] if case['name'] in case_names or case_names == "all"]
+
+        # dump new custom case list
+        with open(os.path.join(work_dir, case_list), 'w') as file:
+            json.dump(filter_cases, file, indent=4)
+    else:
+        copyfile(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list), os.path.join(work_dir, case_list))
 
     # copy ms_json.py for json parsing in MaxScript
     copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))

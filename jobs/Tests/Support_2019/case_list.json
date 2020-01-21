@@ -1,0 +1,30 @@
+{
+    "test_group": "Support_2019",
+    "cases": [
+        {
+            "name": "MAX_SM_038",
+            "scene_name": "denoiser.max",
+            "script_info": [
+                "Max 2019"
+            ],
+            "parameters": [],
+            "pass_limit": 400,
+            "status": "active"
+        },
+        {
+            "name": "MAX_SM_040",
+            "scene_name": "denoiser.max",
+            "script_info": [
+                "Enable Denoiser",
+                "Max 2019"
+            ],
+            "parameters": [
+				{
+                    "class": "Denoiser"
+				}
+			],
+            "pass_limit": 400,
+            "status": "active"
+        }
+    ]
+}
