@@ -2,7 +2,7 @@
     "test_group": "Support_2019",
     "cases": [
         {
-            "name": "MAX_SM_038",
+            "name": "MAX_RS_2019_001",
             "scene_name": "denoiser.max",
             "script_info": [
                 "Max 2019"
@@ -12,7 +12,7 @@
             "status": "active"
         },
         {
-            "name": "MAX_SM_040",
+            "name": "MAX_RS_2019_002",
             "scene_name": "denoiser.max",
             "script_info": [
                 "Enable Denoiser",
