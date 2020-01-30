@@ -7,9 +7,9 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_denoiser.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
-        <argument>--pass_limit {PassLimit}</argument>
-        <argument>--resolution_x {rx}</argument>
-        <argument>--resolution_y {ry}</argument>
+        <argument>--pass_limit 25</argument>
+        <argument>--resolution_x 800</argument>
+        <argument>--resolution_y 450</argument>
         <argument>--package_name "Denoiser"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
