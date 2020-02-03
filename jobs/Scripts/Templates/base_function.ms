@@ -65,6 +65,8 @@ function buildReport test_case script_info render_time filename test_status pass
         render_device: "{render_device}" \
         render_mode: "{render_mode}" \
         pass_limit: passLimit \
+        SPU: "{SPU}" \
+        threshold: "{threshold}" \
         scene_name: maxFileName \
         date_time: (localtime as string) \
         render_color_path: ("Color/" + filename) \
@@ -113,7 +115,10 @@ function rpr_render image_format test_case script_info = (
 
     filename = test_case + "." + image_format as string
     image_path = image_path + filename
-
+    renderers.current = Radeon_ProRender()
+    renderers.current.samplesMax = {pass_limit}
+    renderers.current.iterations = {SPU}
+    renderers.current.adaptiveNoiseThreshold = {threshold}
     rstart = timeStamp()
     render renderElementBitmaps:&reb outputfile:image_path
     rend = timeStamp()
