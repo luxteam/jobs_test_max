@@ -15,7 +15,7 @@
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
-        <argument>--SPU 50</argument>
+        <argument>--SPU 25</argument>
         <argument>--threshold {threshold}</argument>
     </execute>
 
