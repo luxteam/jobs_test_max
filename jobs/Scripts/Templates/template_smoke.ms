@@ -27,8 +27,8 @@ function main = (
         status_init = false
     )
 
-    withoutRender "MAX_SM_001" (bi.List(#("Installing with default settings"))) true
-    withoutRender "MAX_SM_002" (bi.List(#("Change renderer from default to RPR"))) status_init
+    withoutRender "MAX_SM_001" (bi.list(#("Installing with default settings"))) true
+    withoutRender "MAX_SM_002" (bi.list(#("Change renderer from default to RPR"))) status_init
     
     if not status_init do return false
 
