@@ -7,14 +7,14 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_material.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
-        <argument>--pass_limit 25</argument>
+        <argument>--pass_limit 30</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
         <argument>--package_name "Material_Library"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
-        <argument>--SPU {SPU}</argument>
+        <argument>--SPU 15</argument>
         <argument>--threshold {threshold}</argument>
     </execute>
 
