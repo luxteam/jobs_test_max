@@ -12,11 +12,6 @@ function main = (
         loadMaxFile assetFile useFileUnits:true quiet:true
         image_format = "jpg"
 
-        if ({resolution_y} != 0 and {resolution_x} != 0) do (
-            renderHeight = {resolution_y}
-            renderWidth = {resolution_x}
-        )
-
         renderers.current = Radeon_ProRender()
         renderers.current.backgroundOverride = true
         renderers.current.useBackgroundMap = true
