@@ -14,11 +14,6 @@ function  main = (
         image_format = "jpg"
         renderers.current = Radeon_ProRender()
 
-        if ({resolution_y} != 0 and {resolution_x} != 0) do (
-            renderHeight = {resolution_y}
-            renderWidth = {resolution_x}
-        )
-
         if cases[i]["samplesMax"] != undefined do renderers.current.samplesMax = cases[i]["samplesMax"]
         if cases[i]["adaptiveNoiseThreshold"] != undefined do renderers.current.adaptiveNoiseThreshold = cases[i]["adaptiveNoiseThreshold"]
         if cases[i]["timeLimit"] != undefined do renderers.current.timeLimit = cases[i]["timeLimit"]

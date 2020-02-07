@@ -110,6 +110,11 @@ function withoutRender test_case script_info status = (
 
 
 function rpr_render image_format test_case script_info = (
+    if ({resolution_y} != 0 and {resolution_x} != 0) do (
+        renderHeight = {resolution_y}
+        renderWidth = {resolution_x}
+    )
+
     image_path = "{work_dir}" + "Color\\"
     makeDir image_path
 
