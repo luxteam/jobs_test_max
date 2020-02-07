@@ -114,13 +114,11 @@ function rpr_render image_format test_case script_info = (
         renderHeight = {resolution_y}
         renderWidth = {resolution_x}
     )
-
+    
     image_path = "{work_dir}" + "Color\\"
     makeDir image_path
-
     filename = test_case + "." + image_format as string
     image_path = image_path + filename
-    renderers.current = Radeon_ProRender()
     renderers.current.samplesMax = {pass_limit}
     renderers.current.iterations = {SPU}
     renderers.current.adaptiveNoiseThreshold = {threshold}
