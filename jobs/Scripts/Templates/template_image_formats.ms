@@ -37,7 +37,7 @@ function main = (
                 deleteFile path_case_img
                 
                 -- save <test_case>.jpg like passed
-                path_passed_img = "{work_dir}..\\..\\..\\..\\jobs\\Tests\\pass.jpg"
+                path_passed_img = "{work_dir}..\\..\\..\\..\\jobs_launcher\\common\\img\\passed.jpg"
                 copyFile path_passed_img path_case_img
 
             )
