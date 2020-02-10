@@ -16,6 +16,13 @@ function main = (
         loadMaxFile assetFile useFileUnits:true quiet:true
         
         -- render settings
+        if ({resolution_y} != 0 and {resolution_x} != 0) do (
+            renderHeight = {resolution_y}
+            renderWidth = {resolution_x}
+        )
+        renderers.current.samplesMax = {pass_limit}
+        renderers.current.iterations = {SPU}
+        renderers.current.adaptiveNoiseThreshold = {threshold}
         rpr_render cases[i]["format"] cases[i]["name"] cases[i]["script_info"]
         path_case_img = "{work_dir}Color\\" + cases[i]["name"] + "." + cases[i]["format"]
         -- check existFile

@@ -109,19 +109,11 @@ function withoutRender test_case script_info status = (
 )
 
 
-function rpr_render image_format test_case script_info = (
-    if ({resolution_y} != 0 and {resolution_x} != 0) do (
-        renderHeight = {resolution_y}
-        renderWidth = {resolution_x}
-    )
-    
+function rpr_render image_format test_case script_info = (    
     image_path = "{work_dir}" + "Color\\"
     makeDir image_path
     filename = test_case + "." + image_format as string
     image_path = image_path + filename
-    renderers.current.samplesMax = {pass_limit}
-    renderers.current.iterations = {SPU}
-    renderers.current.adaptiveNoiseThreshold = {threshold}
     rstart = timeStamp()
     render renderElementBitmaps:&reb outputfile:image_path
     rend = timeStamp()

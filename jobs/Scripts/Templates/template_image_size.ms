@@ -175,6 +175,9 @@ function main = (
         assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
         loadMaxFile assetFile useFileUnits:true quiet:true
         image_format = "jpg"
+        renderers.current.samplesMax = {pass_limit}
+        renderers.current.iterations = {SPU}
+        renderers.current.adaptiveNoiseThreshold = {threshold}
 
         setOutputSize cases[i]["preset"]
         rpr_render image_format cases[i]["name"] cases[i]["script_info"]
