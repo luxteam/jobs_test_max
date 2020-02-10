@@ -15,6 +15,8 @@ function main = (
         assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
         loadMaxFile assetFile useFileUnits:true quiet:true
         
+        renderers.current = Radeon_ProRender()
+
         -- render settings
         rpr_render cases[i]["format"] cases[i]["name"] cases[i]["script_info"]
         path_case_img = "{work_dir}Color\\" + cases[i]["name"] + "." + cases[i]["format"]
