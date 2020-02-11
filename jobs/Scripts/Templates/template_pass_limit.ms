@@ -13,11 +13,13 @@ function  main = (
         loadMaxFile assetFile useFileUnits:true quiet:true
         image_format = "jpg"
         renderers.current = Radeon_ProRender()
-
         if ({resolution_y} != 0 and {resolution_x} != 0) do (
             renderHeight = {resolution_y}
             renderWidth = {resolution_x}
         )
+        renderers.current.samplesMax = {pass_limit}
+        renderers.current.iterations = {SPU}
+        renderers.current.adaptiveNoiseThreshold = {threshold}
 
         if cases[i]["samplesMax"] != undefined do renderers.current.samplesMax = cases[i]["samplesMax"]
         if cases[i]["adaptiveNoiseThreshold"] != undefined do renderers.current.adaptiveNoiseThreshold = cases[i]["adaptiveNoiseThreshold"]

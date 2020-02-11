@@ -27,8 +27,8 @@ function main = (
         status_init = false
     )
 
-    withoutRender "MAX_SM_001" (bi.List(#("Installing with default settings"))) true
-    withoutRender "MAX_SM_002" (bi.List(#("Change renderer from default to RPR"))) status_init
+    withoutRender "MAX_SM_001" (bi.list(#("Installing with default settings"))) true
+    withoutRender "MAX_SM_002" (bi.list(#("Change renderer from default to RPR"))) status_init
     
     if not status_init do return false
 
@@ -40,11 +40,14 @@ function main = (
         assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
         loadMaxFile assetFile useFileUnits:true quiet:true
         image_format = "jpg"
-
+        renderers.current = Radeon_ProRender()
         if ({resolution_y} != 0 and {resolution_x} != 0) do (
             renderHeight = {resolution_y}
             renderWidth = {resolution_x}
         )
+        renderers.current.samplesMax = {pass_limit}
+        renderers.current.iterations = {SPU}
+        renderers.current.adaptiveNoiseThreshold = {threshold}
 
 
 

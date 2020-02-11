@@ -13,6 +13,13 @@ function main = (
         image_format = "jpg"
 
         renderers.current = Radeon_ProRender()
+        if ({resolution_y} != 0 and {resolution_x} != 0) do (
+            renderHeight = {resolution_y}
+            renderWidth = {resolution_x}
+        )
+        renderers.current.samplesMax = {pass_limit}
+        renderers.current.iterations = {SPU}
+        renderers.current.adaptiveNoiseThreshold = {threshold}
         
         params = cases[i]["parameters"].keys()
         for j=1 to params.count do setProperty renderers.current params[j] cases[i]["parameters"][params[j]]

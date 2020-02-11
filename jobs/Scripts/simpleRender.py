@@ -117,6 +117,8 @@ def main():
     parser.add_argument('--output', required=True)
     parser.add_argument('--res_path', required=True)
     parser.add_argument('--testCases', required=True)
+    parser.add_argument('--SPU', required=True)
+    parser.add_argument('--threshold', required=True)
 
     args = parser.parse_args()
     tool = args.tool
@@ -144,7 +146,9 @@ def main():
                                            render_mode=args.render_mode,
                                            res_path=res_path,
                                            resolution_y=args.resolution_y,
-                                           resolution_x=args.resolution_x)
+                                           resolution_x=args.resolution_x,
+                                           SPU=args.SPU,
+                                           threshold=args.threshold)
     try:
         os.makedirs(os.path.join(work_dir, 'Color'))
     except Exception as err:

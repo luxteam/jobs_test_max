@@ -15,7 +15,16 @@ function main = (
         assetFile = "{res_path}\\{package_name}\\" + cases[i]["scene_name"]
         loadMaxFile assetFile useFileUnits:true quiet:true
         
+        renderers.current = Radeon_ProRender()
+
         -- render settings
+        if ({resolution_y} != 0 and {resolution_x} != 0) do (
+            renderHeight = {resolution_y}
+            renderWidth = {resolution_x}
+        )
+        renderers.current.samplesMax = {pass_limit}
+        renderers.current.iterations = {SPU}
+        renderers.current.adaptiveNoiseThreshold = {threshold}
         rpr_render cases[i]["format"] cases[i]["name"] cases[i]["script_info"]
         path_case_img = "{work_dir}Color\\" + cases[i]["name"] + "." + cases[i]["format"]
         -- check existFile
@@ -28,7 +37,7 @@ function main = (
                 deleteFile path_case_img
                 
                 -- save <test_case>.jpg like passed
-                path_passed_img = "{work_dir}..\\..\\..\\..\\jobs\\Tests\\pass.jpg"
+                path_passed_img = "{work_dir}..\\..\\..\\..\\jobs_launcher\\common\\img\\passed.jpg"
                 copyFile path_passed_img path_case_img
 
             )
