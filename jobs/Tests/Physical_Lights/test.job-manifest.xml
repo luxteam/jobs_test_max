@@ -7,14 +7,14 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_physical_lights.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
-        <argument>--pass_limit 14</argument>
+        <argument>--pass_limit 100</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
         <argument>--package_name "Physical_Lights"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
-        <argument>--SPU 70</argument>
+        <argument>--SPU 50</argument>
         <argument>--threshold {threshold}</argument>
     </execute>
 
