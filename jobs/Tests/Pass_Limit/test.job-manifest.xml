@@ -7,14 +7,14 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_pass_limit.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
-        <argument>--pass_limit 100</argument>
-        <argument>--resolution_x 512</argument>
-        <argument>--resolution_y 288</argument>
+        <argument>--pass_limit {PassLimit}</argument>
+        <argument>--resolution_x 800</argument>
+        <argument>--resolution_y 450</argument>
         <argument>--package_name "Pass_Limit"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
-        <argument>--SPU 50</argument>
+        <argument>--SPU {SPU}</argument>
         <argument>--threshold {threshold}</argument>
     </execute>
 

@@ -7,14 +7,14 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_denoiser.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
-        <argument>--pass_limit 140</argument>
-        <argument>--resolution_x 512</argument>
-        <argument>--resolution_y 288</argument>
+        <argument>--pass_limit 250</argument>
+        <argument>--resolution_x 800</argument>
+        <argument>--resolution_y 450</argument>
         <argument>--package_name "Denoiser"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
-        <argument>--SPU 70</argument>
+        <argument>--SPU 125</argument>
         <argument>--threshold {threshold}</argument>
     </execute>
 
