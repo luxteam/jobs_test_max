@@ -34,6 +34,7 @@ function main = (
         renderers.current.samplesMax = {pass_limit}
         renderers.current.iterations = {SPU}
         renderers.current.adaptiveNoiseThreshold = {threshold}
+        renderers.current.timeLimit=0
 
         setImageFilter cases[i]["type"]
         renderers.current.imageFilterSize = cases[i]["size"] 
