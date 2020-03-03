@@ -3,7 +3,7 @@
 
     <outpath value="{OutputDir}"/>
 
-    <execute command='python "{ResourcesDir}\simpleRender.py"' timeout="6000">
+    <execute command='python "{ResourcesDir}\simpleRender.py"' timeout="600">
         <argument>--tool "C:\Program Files\Autodesk\3ds Max 2018\3dsmax.exe"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_support_2018.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
