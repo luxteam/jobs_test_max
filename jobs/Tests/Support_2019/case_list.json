@@ -24,7 +24,7 @@
 				}
 			],
             "pass_limit": 400,
-            "status": "active"
+            "status": "skipped"
         }
     ]
 }
