@@ -7,14 +7,14 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_render_stamp.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
-        <argument>--pass_limit 200</argument>
-        <argument>--resolution_x {rx}</argument>
-        <argument>--resolution_y {ry}</argument>
+        <argument>--pass_limit 100</argument>
+        <argument>--resolution_x 960</argument>
+        <argument>--resolution_y 540</argument>
         <argument>--package_name "Render_Stamp"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
-        <argument>--SPU 50</argument>
+        <argument>--SPU 25</argument>
         <argument>--threshold 0</argument>
     </execute>
 
