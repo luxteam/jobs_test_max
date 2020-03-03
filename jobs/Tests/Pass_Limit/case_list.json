@@ -201,11 +201,11 @@
 			"scene_name": "Easy_Scene\\Easy_Scene.max",
 			"script_info": [
 				"Noise Threshold - 0",
-				"Time Limit Seconds - 1"
+				"Time Limit Seconds - 2"
 			],
 			"samplesMax": null, 
 			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 1, 
+			"timeLimit": 2, 
 			"status": "active"
 		},
 		{
