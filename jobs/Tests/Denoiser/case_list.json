@@ -1065,7 +1065,7 @@
 					"bandwidth": false 
 				}
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserMaterials.max"
 		},
 		{
@@ -1080,7 +1080,7 @@
 					"radius": false
 				}
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "DenoiserMaterials.max"
 		}
 	]
