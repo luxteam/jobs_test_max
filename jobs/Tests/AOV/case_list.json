@@ -133,7 +133,7 @@
 				"AO"
 			],
 			"aov": "RprAO",
-			"status": "skipped",
+			"status": "active",
 			"scene_name": "AOV.max"
 		},
 		{
