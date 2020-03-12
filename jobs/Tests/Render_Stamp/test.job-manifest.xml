@@ -7,7 +7,7 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_render_stamp.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
-        <argument>--pass_limit 100</argument>
+        <argument>--pass_limit 50</argument>
         <argument>--resolution_x 960</argument>
         <argument>--resolution_y 540</argument>
         <argument>--package_name "Render_Stamp"</argument>

@@ -7,14 +7,14 @@
         <argument>--tool "{Tool}"</argument>
         <argument>--template "{ResourcesDir}\Templates\template_uber.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
-        <argument>--pass_limit 150</argument>
+        <argument>--pass_limit 50</argument>
         <argument>--resolution_x {rx}</argument>
         <argument>--resolution_y {ry}</argument>
         <argument>--package_name "Uber"</argument>
         <argument>--render_mode "{RenderDevice}"</argument>
         <argument>--testCases "{TestCases}"</argument>
         <argument>--res_path "{ScenesDir}"</argument>
-        <argument>--SPU 75</argument>
+        <argument>--SPU 25</argument>
         <argument>--threshold {threshold}</argument>
     </execute>
 
