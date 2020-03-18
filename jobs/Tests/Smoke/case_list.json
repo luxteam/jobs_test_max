@@ -278,7 +278,7 @@
                 "Displacement"
             ],
             "pass_limit": 400,
-            "status": "active"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_034",
