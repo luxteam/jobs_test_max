@@ -161,7 +161,7 @@
 				"HDTV (video)"
 			],
 			"preset": "HDTV (video)",
-			"status": "active"
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_IS_019",
