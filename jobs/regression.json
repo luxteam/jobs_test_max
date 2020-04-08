@@ -11,6 +11,7 @@
     "Render_Layer": "MAX_RS_RL_004",
     "Animation": "MAX_RS_AN_010",
     "Adaptive_Sampling": "MAX_RS_AS_034,MAX_RS_AS_039",
+    "IBL":"MAX_RS_IBL_001,MAX_RS_IBL_003,MAX_RS_IBL_009,MAX_RS_IBL_019",
     "Image_Size": "MAX_RS_IS_010,MAX_RS_IS_018",
     "Image_Formats": "MAX_RS_IF_008",
     "Anti-Aliasing": "MAX_RS_AA_005,MAX_RS_AA_008,MAX_RS_AA_011,MAX_RS_AA_014,MAX_RS_AA_017",
