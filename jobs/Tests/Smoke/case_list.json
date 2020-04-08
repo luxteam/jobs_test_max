@@ -17,7 +17,7 @@
                 "Test import OBJ"
             ],
             "pass_limit": 400,
-            "status": "skipped"
+            "status": "active"
         },
         {
             "name": "MAX_SM_005",
