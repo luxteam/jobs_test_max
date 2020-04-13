@@ -7,7 +7,7 @@
 				"Do not compare",
 				"Default stamp"
 			],
-			"status": "skipped",
+			"status": "active",
 			"scene_name": "base_scene.max"
 		},
 		{
@@ -16,7 +16,7 @@
 				"Do not compare",
 				"Radeon ProRender for 3ds Max %b | CPU %c | GPU %g | Render mode %r | Render device %h'"
 			],
-			"status": "skipped",
+			"status": "active",
 			"scene_name": "base_scene.max"
 		},
 		{
@@ -25,7 +25,7 @@
 				"Do not compare",
 				"Radeon ProRender for 3ds Max %b | Computer name %i | Current date %d"
 			],
-			"status": "skipped",
+			"status": "active",
 			"scene_name": "base_scene.max"
 		}
 	]
