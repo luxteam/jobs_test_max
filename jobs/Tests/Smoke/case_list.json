@@ -2,6 +2,20 @@
     "test_group": "Smoke",
     "cases": [
         {
+            "name": "MAX_SM_001",
+            "script_info": [
+                "Installing with default settings"
+            ],
+            "status": "active"
+        },
+        {
+            "name": "MAX_SM_002",
+            "script_info": [
+                "Change renderer from default to RPR"
+            ],
+            "status": "active"
+        },
+        {
             "name": "MAX_SM_003",
             "scene_name": "default.max",
             "script_info": [
