@@ -26,9 +26,6 @@ function main = (
         getCurrentException()
         status_init = false
     )
-
-    withoutRender "MAX_SM_001" (bi.list(#("Installing with default settings"))) true
-    withoutRender "MAX_SM_002" (bi.list(#("Change renderer from default to RPR"))) status_init
     
     if not status_init do return false
 
@@ -49,9 +46,19 @@ function main = (
         renderers.current.iterations = {SPU}
         renderers.current.adaptiveNoiseThreshold = {threshold}
 
-
-
         case cases[i]["name"] of (
+            "MAX_SM_001": (
+                status = true 
+            )
+            "MAX_SM_002": (
+                try (
+                    renderers.current = Radeon_ProRender()
+                    status_init = true
+                ) catch (
+                    getCurrentException()
+                    status_init = false
+                )
+            )
             "MAX_SM_003": (
                 renderers.current = Radeon_ProRender()
                 status = (importfile (FBX_ASSET_PATH) #noPrompt using:FBXIMP)
