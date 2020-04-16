@@ -3,7 +3,7 @@
     "cases": [
         {
             "name": "MAX_SM_001",
-            "scene_name": "none",
+            "scene_name": "default.max",
             "script_info": [
                 "Installing with default settings"
             ],
@@ -12,7 +12,7 @@
         },
         {
             "name": "MAX_SM_002",
-            "scene_name": "none",
+            "scene_name": "default.max",
             "script_info": [
                 "Change renderer from default to RPR"
             ],

@@ -29,7 +29,7 @@ function main = (
     
     if not status_init do return false
 
-    for i=3 to cases.count do (
+    for i=1 to cases.count do (
         if (cases[i]["status"] != "active") do continue 
        
         caseList.setCaseStatus i "progress"
