@@ -53,10 +53,10 @@ function main = (
             "MAX_SM_002": (
                 try (
                     renderers.current = Radeon_ProRender()
-                    status_init = true
+                    status = true
                 ) catch (
                     getCurrentException()
-                    status_init = false
+                    status = false
                 )
             )
             "MAX_SM_003": (
