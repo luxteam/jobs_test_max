@@ -94,7 +94,7 @@ function withoutRender test_case script_info status = (
     image_path = "{work_dir}" + "Color\\"
     makeDir image_path
     filename = test_case + ".jpg"
-
+    image_path = image_path + filename
     -- TODO: remove hard code paths
     if status then (
         status_path = "{work_dir}" + "..\\..\\..\\..\\jobs_launcher\\common\\img\\passed.jpg"
@@ -102,9 +102,9 @@ function withoutRender test_case script_info status = (
         status_path = "{work_dir}" + "..\\..\\..\\..\\jobs_launcher\\common\\img\\error.jpg"
     )
     
-
     
-    copyFile status_path (image_path + filename)
+    deleteFile image_path
+    copyFile status_path image_path
     buildReport test_case script_info 0 filename status "0"
 )
 
