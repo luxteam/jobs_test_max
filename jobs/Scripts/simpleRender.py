@@ -13,7 +13,7 @@ sys.path.append(ROOT_DIR)
 from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
 from jobs_launcher.core.system_info import get_gpu
 
-case_list = "case_list.json"
+case_list = "test_cases.json"
 
 
 def get_windows_titles():
