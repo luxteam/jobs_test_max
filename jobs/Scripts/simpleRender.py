@@ -8,13 +8,13 @@ import ctypes
 import pyscreenshot
 from shutil import copyfile
 import time
-from jobs_launcher.image_service_client import ISClient
-from jobs_launcher.rbs_client import RBS_Client, str2bool
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
 from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
 from jobs_launcher.core.system_info import get_gpu, get_machine_info
+from jobs_launcher.image_service_client import ISClient
+from jobs_launcher.rbs_client import RBS_Client, str2bool
 
 case_list = "case_list.json"
 
