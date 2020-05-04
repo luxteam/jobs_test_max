@@ -8,10 +8,13 @@ import ctypes
 import pyscreenshot
 from shutil import copyfile
 import time
+from jobs_launcher.image_service_client import ISClient
+from jobs_launcher.rbs_client import RBS_Client, str2bool
+
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
 from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
-from jobs_launcher.core.system_info import get_gpu
+from jobs_launcher.core.system_info import get_gpu, get_machine_info
 
 case_list = "case_list.json"
 
@@ -105,6 +108,33 @@ def dump_reports(work_dir, case_list, render_device):
 
 
 def main():
+    is_client = None
+    rbs_client = None
+    rbs_use = None
+
+    try:
+        rbs_use = str2bool(os.getenv('RBS_USE'))
+    except Exception as e:
+        main_logger.warning('Exception when getenv RBS USE: {}'.format(str(e)))
+
+    if rbs_use:
+        try:
+            is_client = ISClient(os.getenv("IMAGE_SERVICE_URL"))
+            main_logger.info("Image Service client created")
+        except Exception as e:
+            main_logger.info("Image Service client creation error: {}".format(str(e)))
+
+        try:
+            rbs_client = RBS_Client(
+                job_id=os.getenv("RBS_JOB_ID"),
+                url=os.getenv("RBS_URL"),
+                build_id=os.getenv("RBS_BUILD_ID"),
+                env_label=os.getenv("RBS_ENV_LABEL"),
+                suite_id=None)
+            main_logger.info("RBS Client created")
+        except Exception as e:
+            main_logger.info(" RBS Client creation error: {}".format(str(e)))
+
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--tool', required=True, metavar="<path>")
@@ -268,6 +298,44 @@ def main():
                 main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(main_proc, main_proc.name(), status))
             except psutil.NoSuchProcess:
                 main_logger.info("Process is killed: {}".format(main_proc))
+
+    if rbs_client:
+        res = []
+        try:
+            main_logger.info('Try to send results to RBS')
+
+            for case in cases:
+                case_info = json.load(open(os.path.realpath(
+                    os.path.join(os.path.abspath(args.output), '{}_RPR.json'.format(case['case'])))))
+                image_id = is_client.send_image(os.path.realpath(
+                    os.path.join(os.path.abspath(args.output), case_info[0]['render_color_path'])))
+                res.append({
+                    'name': case['case'],
+                    'status': case_info[0]['test_status'],
+                    'metrics': {
+                        'render_time': case_info[0]['render_time']
+                    },
+                    "artefacts": {
+                        "rendered_image": {
+                            "id": image_id
+                        }
+                    }
+                })
+
+            rbs_client.get_suite_id_by_name(str(args.testType))
+            print(rbs_client.suite_id)
+            # send machine info to rbs
+            env = {"gpu": get_gpu(), **get_machine_info()}
+            env.pop('os')
+            env.update({'hostname': env.pop('host'), 'cpu_count': int(env['cpu_count'])})
+            main_logger.info(env)
+
+            response = rbs_client.send_test_suite(res=res, env=env)
+            main_logger.info('Test suite results sent with code {}'.format(response.status_code))
+            main_logger.info(response.content)
+
+        except Exception as e:
+            main_logger.info("Test case result creation error: {}".format(str(e)))
 
     return rc
 
