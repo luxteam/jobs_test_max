@@ -24,4 +24,4 @@ IF not EXIST "%CIS_TOOLS%\\..\\TestResources\\rpr_maya" (
 
 python -m pip install -r ..\jobs_launcher\install\requirements.txt
 
-python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Max --cmd_variables Tool "C:\Program Files\Autodesk\3ds Max %TOOL%\3dsmax.exe" RenderDevice %RENDER_DEVICE% ResPath "%CIS_TOOLS%\..\TestResources\rpr_max" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD%
+python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Max --cmd_variables Tool "C:\Program Files\Autodesk\3ds Max %TOOL%\3dsmax.exe" RenderDevice %RENDER_DEVICE% ResPath "%CIS_TOOLS%\..\TestResources\rpr_max_autotests" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD%
