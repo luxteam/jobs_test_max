@@ -327,8 +327,7 @@ def main():
                     }
                 })
 
-            rbs_client.get_suite_id_by_name(str(args.testType))
-            print(rbs_client.suite_id)
+            rbs_client.get_suite_id_by_name(case_info[0]['test_group'])
             # send machine info to rbs
             env = {"gpu": get_gpu(), **get_machine_info()}
             env.pop('os')
