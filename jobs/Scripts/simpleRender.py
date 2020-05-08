@@ -303,6 +303,7 @@ def main():
         res = []
         try:
             main_logger.info('Try to send results to RBS')
+            cases = []
 
             with open(os.path.join(work_dir, case_list)) as file:
                 data = json.loads(file.read())
