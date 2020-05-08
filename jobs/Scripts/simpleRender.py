@@ -111,6 +111,7 @@ def main():
     is_client = None
     rbs_client = None
     rbs_use = None
+    cases = None
 
     try:
         rbs_use = str2bool(os.getenv('RBS_USE'))
