@@ -311,11 +311,11 @@ def main():
 
             for case in cases:
                 case_info = json.load(open(os.path.realpath(
-                    os.path.join(os.path.abspath(args.output), '{}_RPR.json'.format(case['case'])))))
+                    os.path.join(os.path.abspath(args.output), '{}_RPR.json'.format(case['name'])))))
                 image_id = is_client.send_image(os.path.realpath(
                     os.path.join(os.path.abspath(args.output), case_info[0]['render_color_path'])))
                 res.append({
-                    'name': case['case'],
+                    'name': case['name'],
                     'status': case_info[0]['test_status'],
                     'metrics': {
                         'render_time': case_info[0]['render_time']
