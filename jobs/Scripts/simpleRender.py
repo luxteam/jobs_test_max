@@ -111,7 +111,6 @@ def main():
     is_client = None
     rbs_client = None
     rbs_use = None
-    cases = None
 
     try:
         rbs_use = str2bool(os.getenv('RBS_USE'))
@@ -205,7 +204,7 @@ def main():
         # open custom json group
         with open(args.testCases) as file:
             case_names = json.loads(file.read())[str(args.package_name)]
-        
+
         # prepare template for custom json
         filter_cases = {
             'test_group': args.package_name,
@@ -304,6 +303,10 @@ def main():
         res = []
         try:
             main_logger.info('Try to send results to RBS')
+
+            with open(os.path.join(work_dir, case_list)) as file:
+                data = json.loads(file.read())
+                cases = data["cases"]
 
             for case in cases:
                 case_info = json.load(open(os.path.realpath(
