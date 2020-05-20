@@ -283,22 +283,6 @@ def main():
                 rc = 0
                 break
 
-    main_logger.info("Search hanged processes...")
-    for proc in psutil.process_iter():
-        main_proc = psutil.Process(proc.pid)
-        # Get process name & pid from process object.
-        if proc.name() in ('3dsmax.exe', 'acwebbrowser.exe', 'AdSSO.exe'):
-            main_logger.warning("UNTERMINATED PROCESS")
-            try:
-                main_proc.terminate()
-                time.sleep(10)
-                main_proc.kill()
-                time.sleep(10)
-                status = main_proc.status()
-                main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(main_proc, main_proc.name(), status))
-            except psutil.NoSuchProcess:
-                main_logger.info("Process is killed: {}".format(main_proc))
-
     if rbs_client:
         res = []
         try:
@@ -338,6 +322,22 @@ def main():
 
         except Exception as e:
             main_logger.info("Test case result creation error: {}".format(str(e)))
+
+    main_logger.info("Search hanged processes...")
+    for proc in psutil.process_iter():
+        main_proc = psutil.Process(proc.pid)
+        # Get process name & pid from process object.
+        if proc.name() in ('3dsmax.exe', 'acwebbrowser.exe', 'AdSSO.exe'):
+            main_logger.warning("UNTERMINATED PROCESS")
+            try:
+                main_proc.terminate()
+                time.sleep(10)
+                main_proc.kill()
+                time.sleep(10)
+                status = main_proc.status()
+                main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(main_proc, main_proc.name(), status))
+            except psutil.NoSuchProcess:
+                main_logger.info("Process is killed: {}".format(main_proc))
 
     return rc
 
