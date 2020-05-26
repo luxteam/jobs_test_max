@@ -15,7 +15,7 @@ if not defined SPU set SPU=60
 if not defined ITER set ITER=120
 if not defined THRESHOLD set THRESHOLD=0.01
 if not defined TOOL set TOOL=2020
-if not defined CIS_TOOLS set CIS_TOOLS "C:\TestResources"
+if not defined CIS_TOOLS set CIS_TOOLS "C:\JN\cis_tools"
 
 IF not EXIST "%CIS_TOOLS%\\..\\TestResources\\rpr_max_autotests" (
     ECHO "rpr_max_autotests assets don't exists"
