@@ -206,7 +206,8 @@
 			"samplesMax": null,
 			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 10,
-			"status": "skipped"
+			"status": "active",
+			"skip_on": "AMD Radeon (TM) Pro WX 7100 Graphics"
 		},
 		{
 			"name": "MAX_RS_PS_017",
