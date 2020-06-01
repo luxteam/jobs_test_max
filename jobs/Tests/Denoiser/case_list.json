@@ -15,8 +15,8 @@
 				}
 			],
 			"status": "active",
-			"skip_on": "AMD Radeon RX 5700 XT",
-			"scene_name": "Denoiser.max"
+			"scene_name": "Denoiser.max",
+			"skip_on": [["AMD Radeon RX 5700 XT"]]
 		},
 		{
 			"name": "MAX_RS_DEN_002",
@@ -32,8 +32,8 @@
 				}
 			],
 			"status": "active",
-			"skip_on": "AMD Radeon RX 5700 XT",
-			"scene_name": "Denoiser.max"
+			"scene_name": "Denoiser.max",
+			"skip_on": [["AMD Radeon RX 5700 XT"]]
 		},
 		{
 			"name": "MAX_RS_DEN_003",
