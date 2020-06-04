@@ -123,8 +123,8 @@ def main():
     args = parser.parse_args()
     tool = args.tool
 
-    if which(args.tool) is None:
-        main_logger.error('Can\'t find tool ' + args.tool)
+    if which(tool) is None:
+        main_logger.error('Can\'t find tool ' + tool)
         exit(-1)
 
     template = args.template
