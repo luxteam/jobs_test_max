@@ -121,7 +121,7 @@ def main():
     parser.add_argument('--threshold', required=True)
 
     if which(args.tool) is None:
-        core_config.main_logger.error('Can\'t find tool ' + args.tool)
+        main_logger.error('Can\'t find tool ' + args.tool)
         exit(-1)
 
     args = parser.parse_args()
