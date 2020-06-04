@@ -6,7 +6,7 @@ import psutil
 import json
 import ctypes
 import pyscreenshot
-from shutil import copyfile
+from shutil import copyfile, which
 import time
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
@@ -119,6 +119,10 @@ def main():
     parser.add_argument('--testCases', required=True)
     parser.add_argument('--SPU', required=True)
     parser.add_argument('--threshold', required=True)
+
+    if which(args.tool) is None:
+        core_config.main_logger.error('Can\'t find tool ' + args.tool)
+        exit(-1)
 
     args = parser.parse_args()
     tool = args.tool
