@@ -7,7 +7,7 @@ units.SystemType = #Meters
 caseList = undefined
 report = undefined
 python.ExecuteFile "ms_json.py"
-bi = python.import("__builtin__")
+bi = python.import("builtins")
 
 
 -- Render Elements Map
