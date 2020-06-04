@@ -7,7 +7,6 @@ units.SystemType = #Meters
 caseList = undefined
 report = undefined
 python.ExecuteFile "ms_json.py"
-x = python.import("pymxs")
 
 sys_module = python.import("sys")
 py_version = sys_module.version
