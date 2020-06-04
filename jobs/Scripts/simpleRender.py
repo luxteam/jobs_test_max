@@ -120,12 +120,12 @@ def main():
     parser.add_argument('--SPU', required=True)
     parser.add_argument('--threshold', required=True)
 
+    args = parser.parse_args()
+    tool = args.tool
+
     if which(args.tool) is None:
         main_logger.error('Can\'t find tool ' + args.tool)
         exit(-1)
-
-    args = parser.parse_args()
-    tool = args.tool
 
     template = args.template
     with open(os.path.join(os.path.dirname(sys.argv[0]), template)) as f:
