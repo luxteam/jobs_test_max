@@ -10,6 +10,7 @@ python.ExecuteFile "ms_json.py"
 
 sys_module = python.import("sys")
 py_version = sys_module.version
+bi = undefined
 if py_version[1] == "2" then (
     bi = python.import("__builtin__")
 ) else (
