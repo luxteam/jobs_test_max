@@ -33,13 +33,7 @@ if not defined SPU set SPU=60
 if not defined ITER set ITER=120
 if not defined THRESHOLD set THRESHOLD=0.01
 if not defined TOOL set TOOL=2020
-if not defined CIS_TOOLS set CIS_TOOLS "C:\JN\cis_tools"
-
-IF not EXIST "%CIS_TOOLS%\\..\\TestResources\\rpr_max_autotests" (
-    ECHO "rpr_max_autotests assets don't exists"
-    Exit 1
-)
 
 python -m pip install -r ..\jobs_launcher\install\requirements.txt
 
-python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Max --cmd_variables Tool "C:\Program Files\Autodesk\3ds Max %TOOL%\3dsmax.exe" RenderDevice %RENDER_DEVICE% ResPath "%CIS_TOOLS%\..\TestResources\rpr_max_autotests" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD%
+python ..\jobs_launcher\executeTests.py --test_filter %TESTS_FILTER% --file_filter %FILE_FILTER% --tests_root ..\jobs --work_root ..\Work\Results --work_dir Max --cmd_variables Tool "C:\Program Files\Autodesk\3ds Max %TOOL%\3dsmax.exe" RenderDevice %RENDER_DEVICE% ResPath "C:\TestResources\MaxAssets" PassLimit %ITER% rx %RX% ry %RY% SPU %SPU% threshold %THRESHOLD%

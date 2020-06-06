@@ -9,9 +9,9 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 1, 
-			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 0, 
+			"samplesMax": 1,
+			"adaptiveNoiseThreshold": 0,
+			"timeLimit": 0,
 			"status": "skipped"
 		},
 		{
@@ -22,9 +22,9 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 100, 
-			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 0, 
+			"samplesMax": 100,
+			"adaptiveNoiseThreshold": 0,
+			"timeLimit": 0,
 			"status": "active"
 		},
 		{
@@ -35,9 +35,9 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 500, 
-			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 0, 
+			"samplesMax": 500,
+			"adaptiveNoiseThreshold": 0,
+			"timeLimit": 0,
 			"status": "active"
 		},
 		{
@@ -48,9 +48,9 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 1000, 
-			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 0, 
+			"samplesMax": 1000,
+			"adaptiveNoiseThreshold": 0,
+			"timeLimit": 0,
 			"status": "active"
 		},
 		{
@@ -61,8 +61,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 5000, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 5000,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "skipped"
 		},
@@ -74,8 +74,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 1, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 1,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "skipped"
 		},
@@ -87,8 +87,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 100, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 100,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "active"
 		},
@@ -100,8 +100,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 500, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 500,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "active"
 		},
@@ -113,8 +113,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 1000, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 1000,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "active"
 		},
@@ -126,8 +126,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 5000, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 5000,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "skipped"
 		},
@@ -139,8 +139,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 1, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 1,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "skipped"
 		},
@@ -152,8 +152,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 100, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 100,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "active"
 		},
@@ -165,8 +165,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 500, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 500,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "active"
 		},
@@ -178,8 +178,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 1000, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 1000,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "active"
 		},
@@ -191,8 +191,8 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 0"
 			],
-			"samplesMax": 5000, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": 5000,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
 			"status": "skipped"
 		},
@@ -203,10 +203,10 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 10"
 			],
-			"samplesMax": null, 
-			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 10, 
-			"status": "active"
+			"samplesMax": null,
+			"adaptiveNoiseThreshold": 0,
+			"timeLimit": 10,
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_PS_017",
@@ -215,9 +215,9 @@
 				"Noise Threshold - 0",
 				"Time Limit Seconds - 59"
 			],
-			"samplesMax": null, 
-			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 59, 
+			"samplesMax": null,
+			"adaptiveNoiseThreshold": 0,
+			"timeLimit": 59,
 			"status": "active"
 		},
 		{
@@ -227,9 +227,9 @@
 				"Noise Threshold - 0",
 				"Time Limit Minutes - 1"
 			],
-			"samplesMax": null, 
-			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 60, 
+			"samplesMax": null,
+			"adaptiveNoiseThreshold": 0,
+			"timeLimit": 60,
 			"status": "active"
 		},
 		{
@@ -240,9 +240,9 @@
 				"Time Limit Minutes - 1",
 				"Time Limit Seconds - 59"
 			],
-			"samplesMax": null, 
-			"adaptiveNoiseThreshold": 0, 
-			"timeLimit": 119, 
+			"samplesMax": null,
+			"adaptiveNoiseThreshold": 0,
+			"timeLimit": 119,
 			"status": "active"
 		},
 		{
@@ -253,8 +253,8 @@
 				"Time Limit Minutes - 1",
 				"Time Limit Seconds - 1"
 			],
-			"samplesMax": null, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": null,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 61,
 			"status": "active"
 		},
@@ -266,8 +266,8 @@
 				"Time Limit Minutes - 1",
 				"Time Limit Seconds - 59"
 			],
-			"samplesMax": null, 
-			"adaptiveNoiseThreshold": 0, 
+			"samplesMax": null,
+			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 119,
 			"status": "active"
 		}
