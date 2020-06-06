@@ -8,7 +8,6 @@ import ctypes
 import pyscreenshot
 from shutil import copyfile
 import time
-
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
 from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
@@ -253,7 +252,6 @@ def main():
             else:
                 rc = 0
                 break
-
 
     main_logger.info("Search hanged processes...")
     for proc in psutil.process_iter():
