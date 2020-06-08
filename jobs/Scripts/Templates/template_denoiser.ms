@@ -33,7 +33,7 @@ function main = (
     cases = caseList.get_data()
     cases = cases["cases"]
     
-    for i=1 to cases.count do (
+    for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue
         caseList.setCaseStatus i "progress"
 
@@ -52,8 +52,7 @@ function main = (
         renderers.current.enableDenoiser = true
 
 
-
-        for p=1 to cases[i]["parameters"].count do (
+        for p=1 to bi.len(cases[i]["parameters"]) do (
             case cases[i]["parameters"][p]["class"] of (
                 "Denoiser": case cases[i]["parameters"][p]["type"] of (
                     "bilateral": (

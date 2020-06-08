@@ -4,7 +4,7 @@ function main = (
     cases = caseList.get_data()
     cases = cases["cases"]
 
-    for i=1 to cases.count do (
+    for i=1 to bi.len(cases) do (
         -- continue if status not equal active   
         if (cases[i]["status"] != "active") do continue
         
