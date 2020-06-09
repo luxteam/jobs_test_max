@@ -4,7 +4,7 @@ function main = (
     cases = caseList.get_data()
     cases = cases["cases"]
     
-    for i=1 to cases.count do (
+    for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue
         caseList.setCaseStatus i "progress"
         
@@ -20,14 +20,14 @@ function main = (
         renderers.current.samplesMax = {pass_limit}
         renderers.current.iterations = {SPU}
         renderers.current.adaptiveNoiseThreshold = {threshold}
-        params = cases[i]["parameters"].keys()
+        params = bi.list(cases[i]["parameters"].keys())
 
         
 
         l = getObjectFromName cases[i]["parameters"]["unhide"]
         unhide l
 
-        for j=1 to params.count do (
+        for j=1 to bi.len(params) do (
             if params[j] == "unhide" do continue
 
             val = cases[i]["parameters"][params[j]]

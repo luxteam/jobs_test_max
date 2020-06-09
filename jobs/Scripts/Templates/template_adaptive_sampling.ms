@@ -4,7 +4,7 @@ function main = (
     cases = caseList.get_data()
     cases = cases["cases"]
 
-    for i=1 to cases.count do (
+    for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue
         caseList.setCaseStatus i "progress"
 
@@ -21,8 +21,8 @@ function main = (
         renderers.current.iterations = {SPU}
         renderers.current.adaptiveNoiseThreshold = {threshold}
         
-        params = cases[i]["parameters"].keys()
-        for j=1 to params.count do setProperty renderers.current params[j] cases[i]["parameters"][params[j]]
+        params = bi.list(cases[i]["parameters"].keys())
+        for j=1 to bi.len(params) do setProperty renderers.current params[j] cases[i]["parameters"][params[j]]
 
         rpr_render image_format cases[i]["name"] cases[i]["script_info"]
         caseList.setCaseStatus i "done"
