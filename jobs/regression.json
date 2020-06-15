@@ -10,7 +10,7 @@
     "Render_Mode": "MAX_RS_RM_002,MAX_RS_RM_003,MAX_RS_RM_004,MAX_RS_RM_005,MAX_RS_RM_006,MAX_RS_RM_007,MAX_RS_RM_008,MAX_RS_RM_009",
     "Render_Layer": "MAX_RS_RL_004",
     "Animation": "MAX_RS_AN_010",
-    "Adaptive_Sampling": "MAX_RS_AS_034,MAX_RS_AS_039",
+    "Adaptive_Sampling": "MAX_RS_AS_034",
     "IBL":"MAX_RS_IBL_001,MAX_RS_IBL_003,MAX_RS_IBL_009,MAX_RS_IBL_019",
     "Image_Size": "MAX_RS_IS_010,MAX_RS_IS_018",
     "Image_Formats": "MAX_RS_IF_008",
