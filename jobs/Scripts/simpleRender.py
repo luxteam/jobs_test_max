@@ -124,8 +124,11 @@ def main():
     tool = args.tool
 
     if which(tool) is None:
-        main_logger.error('Can\'t find tool ' + tool)
-        exit(-1)
+        if which(r'%userprofile%\documents\3ds Max 2021\3ds Max 2021\3dsmax.exe') is None:
+            main_logger.error('Can\'t find tool ' + tool)
+            exit(-1)
+        else:
+            tool = r'%userprofile%\documents\3ds Max 2021\3ds Max 2021\3dsmax.exe'
 
     template = args.template
     with open(os.path.join(os.path.dirname(sys.argv[0]), template)) as f:
