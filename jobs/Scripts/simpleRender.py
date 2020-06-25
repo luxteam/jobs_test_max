@@ -1,3 +1,5 @@
+from jobs_launcher.core.system_info import get_gpu
+from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
 import argparse
 import sys
 import os
@@ -8,17 +10,17 @@ import ctypes
 import pyscreenshot
 from shutil import copyfile
 import time
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
+ROOT_DIR = os.path.abspath(os.path.join(
+    os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
-from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
-from jobs_launcher.core.system_info import get_gpu
 
 case_list = "case_list.json"
 
 
 def get_windows_titles():
     EnumWindows = ctypes.windll.user32.EnumWindows
-    EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))
+    EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(
+        ctypes.c_int), ctypes.POINTER(ctypes.c_int))
     GetWindowText = ctypes.windll.user32.GetWindowTextW
     GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
     IsWindowVisible = ctypes.windll.user32.IsWindowVisible
@@ -88,12 +90,15 @@ def dump_reports(work_dir, case_list, render_device):
 
         if case["status"] == "active":
             report_body["test_status"] = TEST_CRASH_STATUS
-            path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'error.jpg')
+            path_2_orig_img = os.path.join(
+                ROOT_DIR, 'jobs_launcher', 'common', 'img', 'error.jpg')
         else:
             report_body["test_status"] = TEST_IGNORE_STATUS
-            path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'skipped.jpg')
+            path_2_orig_img = os.path.join(
+                ROOT_DIR, 'jobs_launcher', 'common', 'img', 'skipped.jpg')
 
-        path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
+        path_2_case_img = os.path.join(
+            work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
         copyfile(path_2_orig_img, path_2_case_img)
 
         with open(os.path.join(work_dir, report_name), "w") as file:
@@ -158,6 +163,26 @@ def main():
     with open(maxScriptPath, 'w') as f:
         f.write(maxScript)
 
+
+    # TODO: create symlincs or install max single path
+    # TODO: refactor "maybe" paths
+    maybe = [
+        tool,
+        "C://Users//user//Documents//3ds Max 2021//3ds Max 2021//3dsmax.exe"
+    ]
+
+    for path in maybe:
+        exist = os.path.isfile(path)
+        main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
+            path=path, exist=exist))
+        if exist:
+            tool = path
+            main_logger.info("Selected last path =)")
+            break
+    else:
+        main_logger.error("Tool not found! Will be stopped =(")
+        return -1
+
     cmdRun = '"{tool}" -U MAXScript "{job_script}" -silent' \
         .format(tool=tool, job_script=maxScriptPath)
 
@@ -174,7 +199,7 @@ def main():
         # open custom json group
         with open(args.testCases) as file:
             case_names = json.loads(file.read())[str(args.package_name)]
-        
+
         # prepare template for custom json
         filter_cases = {
             'test_group': args.package_name,
@@ -182,16 +207,19 @@ def main():
         }
 
         # collect cases
-        filter_cases['cases'] = [case for case in cases['cases'] if case['name'] in case_names or case_names == "all"]
+        filter_cases['cases'] = [case for case in cases['cases']
+                                 if case['name'] in case_names or case_names == "all"]
 
         # dump new custom case list
         with open(os.path.join(work_dir, case_list), 'w') as file:
             json.dump(filter_cases, file, indent=4)
     else:
-        copyfile(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list), os.path.join(work_dir, case_list))
+        copyfile(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name,
+                              case_list), os.path.join(work_dir, case_list))
 
     # copy ms_json.py for json parsing in MaxScript
-    copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
+    copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"),
+             os.path.join(work_dir, "ms_json.py"))
 
     dump_reports(work_dir, case_list, render_device)
 
@@ -201,7 +229,8 @@ def main():
 
     main_logger.info("Start check cases")
     while check_cases(args.package_name, work_dir):
-        p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = psutil.Popen(os.path.join(args.output, 'script.bat'),
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         while True:
             try:
@@ -213,20 +242,25 @@ def main():
                                        'Image I/O Error']
                 window_titles = get_windows_titles()
                 main_logger.info(str(window_titles))
-                error_window = set(fatal_errors_titles).intersection(window_titles)
+                error_window = set(
+                    fatal_errors_titles).intersection(window_titles)
                 if error_window:
-                    main_logger.info("Error window found: {}".format(error_window))
+                    main_logger.info(
+                        "Error window found: {}".format(error_window))
                     main_logger.info("Found windows: {}".format(window_titles))
                     rc = -1
                     try:
                         error_screen = pyscreenshot.grab()
-                        error_case = get_error_case(args.package_name, work_dir)
-                        error_screen.save(os.path.join(args.output, "Color", error_case + '.jpg'))
+                        error_case = get_error_case(
+                            args.package_name, work_dir)
+                        error_screen.save(os.path.join(
+                            args.output, "Color", error_case + '.jpg'))
                     except Exception as err:
                         main_logger.error(str(err))
 
                     child_processes = p.children()
-                    main_logger.info("Child processes: {}".format(child_processes))
+                    main_logger.info(
+                        "Child processes: {}".format(child_processes))
                     for ch in child_processes:
                         try:
                             ch.terminate()
@@ -234,9 +268,11 @@ def main():
                             ch.kill()
                             time.sleep(10)
                             status = ch.status()
-                            main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+                            main_logger.error(
+                                "Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
                         except psutil.NoSuchProcess:
-                            main_logger.info("Process is killed: {}".format(ch))
+                            main_logger.info(
+                                "Process is killed: {}".format(ch))
 
                     try:
                         p.terminate()
@@ -244,7 +280,8 @@ def main():
                         p.kill()
                         time.sleep(10)
                         status = p.status()
-                        main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
+                        main_logger.error(
+                            "Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
                     except psutil.NoSuchProcess:
                         main_logger.info("Process is killed: {}".format(p))
 
@@ -265,7 +302,8 @@ def main():
                 main_proc.kill()
                 time.sleep(10)
                 status = main_proc.status()
-                main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(main_proc, main_proc.name(), status))
+                main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(
+                    main_proc, main_proc.name(), status))
             except psutil.NoSuchProcess:
                 main_logger.info("Process is killed: {}".format(main_proc))
 
