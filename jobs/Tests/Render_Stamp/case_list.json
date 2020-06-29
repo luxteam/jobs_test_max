@@ -4,25 +4,28 @@
 		{
 			"name": "MAX_RS_RS_001",
 			"script_info": [
+				"Do not compare",
 				"Default stamp"
 			],
-			"status": "skipped",
+			"status": "active",
 			"scene_name": "base_scene.max"
 		},
 		{
 			"name": "MAX_RS_RS_002",
 			"script_info": [
+				"Do not compare",
 				"Radeon ProRender for 3ds Max %b | CPU %c | GPU %g | Render mode %r | Render device %h'"
 			],
-			"status": "skipped",
+			"status": "active",
 			"scene_name": "base_scene.max"
 		},
 		{
 			"name": "MAX_RS_RS_003",
 			"script_info": [
+				"Do not compare",
 				"Radeon ProRender for 3ds Max %b | Computer name %i | Current date %d"
 			],
-			"status": "skipped",
+			"status": "active",
 			"scene_name": "base_scene.max"
 		}
 	]
