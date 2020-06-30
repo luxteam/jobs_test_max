@@ -4,7 +4,7 @@ function main = (
     cases = caseList.get_data()
     cases = cases["cases"]
     
-    for i=1 to cases.count do (
+    for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue
         caseList.setCaseStatus i "progress"
         
@@ -21,8 +21,8 @@ function main = (
         renderers.current.iterations = {SPU}
         renderers.current.adaptiveNoiseThreshold = {threshold}
 
-        params = cases[i]["parameters"].keys()
-        for j=1 to params.count do (
+        params = bi.list(cases[i]["parameters"].keys())
+        for j=1 to bi.len(params) do (
         	val = cases[i]["parameters"][params[j]]
         	
         	if params[j] == "color" do val = getColor val["r"] val["g"] val["b"]
