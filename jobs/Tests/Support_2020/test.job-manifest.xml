@@ -5,7 +5,7 @@
 
     <execute command='python "{ResourcesDir}\simpleRender.py"' timeout="1000">
         <argument>--tool "C:\Program Files\Autodesk\3ds Max 2020\3dsmax.exe"</argument>
-        <argument>--template "{ResourcesDir}\Templates\template_support_2018.ms"</argument>
+        <argument>--template "{ResourcesDir}\Templates\template_support_2020.ms"</argument>
         <argument>--output "{OutputDir}\\"</argument>
         <argument>--pass_limit {PassLimit}</argument>
         <argument>--resolution_x {rx}</argument>
