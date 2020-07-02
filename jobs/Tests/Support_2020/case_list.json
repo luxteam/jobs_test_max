@@ -1,22 +1,22 @@
 {
-    "test_group": "Support_2018",
+    "test_group": "Support_2020",
     "cases": [
         {
-            "name": "MAX_RS_2018_001",
+            "name": "MAX_RS_2020_001",
             "scene_name": "denoiser.max",
             "script_info": [
-                "Max 2018"
+                "Max 2020"
             ],
             "parameters": [],
             "pass_limit": 400,
             "status": "active"
         },
         {
-            "name": "MAX_RS_2018_002",
+            "name": "MAX_RS_2020_002",
             "scene_name": "denoiser.max",
             "script_info": [
                 "Enable Denoiser",
-                "Max 2018"
+                "Max 2020"
             ],
             "parameters": [
 				{
