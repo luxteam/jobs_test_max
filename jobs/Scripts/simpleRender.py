@@ -145,6 +145,26 @@ def main():
 
     render_device = get_gpu()
 
+    # TODO: create symlincs or install max single path
+    # TODO: refactor "maybe" paths
+    maybe = [
+        tool,
+        "C://Users//user//Documents//3ds Max 2021//3ds Max 2021//3dsmax.exe"
+    ]
+
+    for path in maybe:
+        exist = os.path.isfile(path)
+        main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
+            path=path, exist=exist))
+        if exist:
+            tool = path
+            main_logger.info("Selected last path =)")
+            break
+    else:
+        main_logger.error("Tool not found! Will be stopped =(")
+        return -1
+
+
     max_script_template = base + max_script_template
     maxScript = max_script_template.format(pass_limit=args.pass_limit,
                                            work_dir=work_dir,

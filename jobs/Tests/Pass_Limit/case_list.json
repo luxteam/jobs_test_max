@@ -90,7 +90,7 @@
 			"samplesMax": 100,
 			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
-			"status": "active"
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_PS_008",
@@ -103,7 +103,7 @@
 			"samplesMax": 500,
 			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
-			"status": "active"
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_PS_009",
@@ -116,7 +116,7 @@
 			"samplesMax": 1000,
 			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 0,
-			"status": "active"
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_PS_010",
@@ -256,7 +256,7 @@
 			"samplesMax": null,
 			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 61,
-			"status": "active"
+			"status": "skipped"
 		},
 		{
 			"name": "MAX_RS_PS_021",
@@ -269,7 +269,7 @@
 			"samplesMax": null,
 			"adaptiveNoiseThreshold": 0,
 			"timeLimit": 119,
-			"status": "active"
+			"status": "skipped"
 		}
 	]
 }
