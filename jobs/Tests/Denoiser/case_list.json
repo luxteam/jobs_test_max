@@ -63,7 +63,7 @@
 					"bandwidth": false
 				}
 			],
-			"status": "active",
+			"status": "skipped",
 			"scene_name": "Denoiser.max"
 		},
 		{
