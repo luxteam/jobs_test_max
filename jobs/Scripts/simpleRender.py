@@ -10,10 +10,12 @@ from shutil import copyfile
 import time
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
-from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
+from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS, TIMEOUT
 from jobs_launcher.core.system_info import get_gpu
+import xml.etree.ElementTree as ET
 
 case_list = "case_list.json"
+jobs_manifest = "test.job-manifest.xml "
 
 
 def get_windows_titles():
@@ -67,7 +69,7 @@ def get_error_case(group, work_dir):
         return False
 
 
-def dump_reports(work_dir, case_list, render_device):
+def dump_reports(work_dir, case_list, render_device, group_timeout):
 
     with open(os.path.join(work_dir, case_list)) as file:
         data = json.loads(file.read())
@@ -85,6 +87,7 @@ def dump_reports(work_dir, case_list, render_device):
         report_body["file_name"] = case["name"] + ".jpg"
         report_body["scene_name"] = case["scene_name"]
         report_body["test_group"] = test_group
+        report_body['timeout'] = group_timeout
 
         if case["status"] == "active":
             report_body["test_status"] = TEST_CRASH_STATUS
@@ -157,6 +160,24 @@ def main():
         main_logger.error("Tool not found! Will be stopped =(")
         return -1
 
+    group_timeout = TIMEOUT
+    try:
+        xml_tree = ET.parse(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, jobs_manifest))
+        xml_root = xml_tree.getroot()
+        for child in xml_root:
+            if child.tag == 'execute':
+                target_execute = False
+                for key, value in child.attrib.items():
+                    if key == 'command' and 'simpleRender' in value:
+                        target_execute = True
+                        break
+                if target_execute and child.attrib['timeout']:
+                    group_timeout = child.attrib['timeout']
+                    break
+
+    except Exception as e:
+        main_logger.error("Can't get group timeout")
+        main_logger.error(str(e))
 
     max_script_template = base + max_script_template
     maxScript = max_script_template.format(pass_limit=args.pass_limit,
@@ -168,7 +189,8 @@ def main():
                                            resolution_y=args.resolution_y,
                                            resolution_x=args.resolution_x,
                                            SPU=args.SPU,
-                                           threshold=args.threshold)
+                                           threshold=args.threshold,
+                                           timeout=group_timeout)
     try:
         os.makedirs(os.path.join(work_dir, 'Color'))
     except Exception as err:
@@ -213,7 +235,7 @@ def main():
     # copy ms_json.py for json parsing in MaxScript
     copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
 
-    dump_reports(work_dir, case_list, render_device)
+    dump_reports(work_dir, case_list, render_device, group_timeout)
 
     os.chdir(work_dir)
     maxScriptPath = maxScriptPath.replace("\\\\", "\\")

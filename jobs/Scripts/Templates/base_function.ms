@@ -86,6 +86,8 @@ function buildReport test_case script_info render_time filename test_status pass
         resolution_x: renderWidth \
         resolution_y: renderHeight \
         script_info: script_info \
+        terminated: true \
+        timeout: {timeout} \
 
     data["file_name"] = filename
 
