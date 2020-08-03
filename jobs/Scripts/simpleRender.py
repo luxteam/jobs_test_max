@@ -6,7 +6,7 @@ import psutil
 import json
 import ctypes
 import pyscreenshot
-from shutil import copyfile
+from shutil import copyfile, which
 import time
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
@@ -122,6 +122,13 @@ def main():
 
     args = parser.parse_args()
     tool = args.tool
+
+    if which(tool) is None:
+        if which(r'%userprofile%\documents\3ds Max 2021\3ds Max 2021\3dsmax.exe') is None:
+            main_logger.error('Can\'t find tool ' + tool)
+            exit(-1)
+        else:
+            tool = r'%userprofile%\documents\3ds Max 2021\3ds Max 2021\3dsmax.exe'
 
     template = args.template
     with open(os.path.join(os.path.dirname(sys.argv[0]), template)) as f:
