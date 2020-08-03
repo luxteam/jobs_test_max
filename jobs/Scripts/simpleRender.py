@@ -171,7 +171,7 @@ def main():
                     if key == 'command' and 'simpleRender' in value:
                         target_execute = True
                         break
-                if target_execute and child.attrib['timeout']:
+                if target_execute and 'timeout' in child.attrib:
                     group_timeout = child.attrib['timeout']
                     break
 
