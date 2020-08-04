@@ -87,7 +87,7 @@ def dump_reports(work_dir, case_list, render_device, group_timeout):
         report_body["file_name"] = case["name"] + ".jpg"
         report_body["scene_name"] = case["scene_name"]
         report_body["test_group"] = test_group
-        report_body['timeout'] = group_timeout
+        report_body['group_timeout'] = group_timeout
 
         if case["status"] == "active":
             report_body["test_status"] = TEST_CRASH_STATUS
