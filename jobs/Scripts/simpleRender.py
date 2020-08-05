@@ -310,8 +310,8 @@ def main():
             error_message = "Testcase wasn't finished"
 
         if error_message:
-            core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
-            path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
+            main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['name'], error_message))
+            path_to_file = os.path.join(args.output, case['name'] + '_RPR.json')
 
             with open(path_to_file, 'r') as file:
                 report = json.load(file)
