@@ -207,11 +207,12 @@ def main():
     ]
 
     for path in maybe:
-        exist = os.path.isfile(os.path.expanduser(path))
+        full_path = os.path.expanduser(path)
+        exist = os.path.isfile(full_path)
         main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
-            path=path, exist=exist))
+            path=full_path, exist=exist))
         if exist:
-            tool = path
+            tool = full_path
             main_logger.info("Selected last path =)")
             break
     else:
