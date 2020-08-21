@@ -203,7 +203,7 @@ def main():
     # TODO: refactor "maybe" paths
     maybe = [
         tool,
-        "%userprofile%//Documents//3ds Max 2021//3ds Max 2021//3dsmax.exe"
+        "~//Documents//3ds Max 2021//3ds Max 2021//3dsmax.exe"
     ]
 
     for path in maybe:
