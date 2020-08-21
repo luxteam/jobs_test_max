@@ -203,11 +203,11 @@ def main():
     # TODO: refactor "maybe" paths
     maybe = [
         tool,
-        "C://Users//user//Documents//3ds Max 2021//3ds Max 2021//3dsmax.exe"
+        "%userprofile%//Documents//3ds Max 2021//3ds Max 2021//3dsmax.exe"
     ]
 
     for path in maybe:
-        exist = os.path.isfile(path)
+        exist = os.path.isfile(os.path.expanduser(path))
         main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
             path=path, exist=exist))
         if exist:
