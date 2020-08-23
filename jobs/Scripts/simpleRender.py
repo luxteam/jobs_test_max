@@ -91,6 +91,7 @@ def dump_reports(work_dir, case_list, render_device):
             path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'error.jpg')
         else:
             report_body["test_status"] = TEST_IGNORE_STATUS
+            report_body['group_timeout_exceeded'] = False
             path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'skipped.jpg')
 
         path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
