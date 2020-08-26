@@ -291,7 +291,7 @@ def main():
         error_message = ''
         if case['status'] in ['fail', 'error']:
             error_message = "Testcase wasn't executed successfully"
-        elif case['status'] in ['inprogress']:
+        elif case['status'] in ['progress']:
             error_message = "Testcase wasn't finished"
 
         if error_message:
