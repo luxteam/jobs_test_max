@@ -74,6 +74,16 @@ def dump_reports(work_dir, case_list, render_device):
         test_group = data["test_group"]
         cases = data["cases"]
 
+    baseline_path_tr = os.path.join(
+            'c:/TestResources/rpr_max_autotests_baselines', test_group)
+
+    baseline_path = os.path.join(
+        work_dir, os.path.pardir, os.path.pardir, os.path.pardir, 'Baseline', test_group)
+
+    if not os.path.exists(baseline_path):
+        os.makedirs(baseline_path)
+        os.makedirs(os.path.join(baseline_path, 'Color'))
+
     for case in cases:
         report_name = case["name"] + "_RPR.json"
         report_body = RENDER_REPORT_BASE
@@ -100,16 +110,6 @@ def dump_reports(work_dir, case_list, render_device):
             json.dump([report_body], file, indent=4)
 
         main_logger.info(case["name"] + ": Report template created.")
-        
-        baseline_path_tr = os.path.join(
-                'c:/TestResources/rpr_max_autotests_baselines', test_group)
-
-        baseline_path = os.path.join(
-            work_dir, os.path.pardir, os.path.pardir, os.path.pardir, 'Baseline', test_group)
-
-        if not os.path.exists(baseline_path):
-            os.makedirs(baseline_path)
-            os.makedirs(os.path.join(baseline_path, 'Color'))
 
         try:
             copyfile(os.path.join(baseline_path_tr, case['case'] + CASE_REPORT_SUFFIX),
