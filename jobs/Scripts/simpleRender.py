@@ -154,18 +154,6 @@ def main():
         "C://Users//user//Documents//3ds Max 2021//3ds Max 2021//3dsmax.exe"
     ]
 
-    for path in maybe:
-        exist = os.path.isfile(path)
-        main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
-            path=path, exist=exist))
-        if exist:
-            tool = path
-            main_logger.info("Selected last path =)")
-            break
-    else:
-        main_logger.error("Tool not found! Will be stopped =(")
-        return -1
-
     max_script_template = base + max_script_template
     maxScript = max_script_template.format(pass_limit=args.pass_limit,
                                            work_dir=work_dir,
@@ -222,6 +210,18 @@ def main():
     copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
 
     dump_reports(work_dir, case_list, render_device)
+
+    for path in maybe:
+        exist = os.path.isfile(path)
+        main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
+            path=path, exist=exist))
+        if exist:
+            tool = path
+            main_logger.info("Selected last path =)")
+            break
+    else:
+        main_logger.error("Tool not found! Will be stopped =(")
+        return -1
 
     os.chdir(work_dir)
     maxScriptPath = maxScriptPath.replace("\\\\", "\\")
