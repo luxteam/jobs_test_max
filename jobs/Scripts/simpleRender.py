@@ -220,7 +220,7 @@ def main():
             main_logger.info("Selected last path =)")
             break
     else:
-        main_logger.error("Tool not found! Will be stopped =(")
+        main_logger.error("Tool not found! Test execution will be stopped.")
         return -1
 
     os.chdir(work_dir)
