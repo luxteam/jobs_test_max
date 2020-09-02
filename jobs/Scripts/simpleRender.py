@@ -217,7 +217,7 @@ def main():
             path=path, exist=exist))
         if exist:
             tool = path
-            main_logger.info("Selected last path =)")
+            main_logger.info("Selected last path.")
             break
     else:
         main_logger.error("Tool not found! Test execution will be stopped.")
