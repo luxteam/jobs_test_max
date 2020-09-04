@@ -113,10 +113,10 @@ def dump_reports(work_dir, case_list, render_device):
         main_logger.info(case["name"] + ": Report template created.")
 
         try:
-            copyfile(os.path.join(baseline_path_tr, case['case'] + CASE_REPORT_SUFFIX),
-                     os.path.join(baseline_path, case['case'] + CASE_REPORT_SUFFIX))
+            copyfile(os.path.join(baseline_path_tr, case['name'] + CASE_REPORT_SUFFIX),
+                     os.path.join(baseline_path, case['name'] + CASE_REPORT_SUFFIX))
 
-            with open(os.path.join(baseline_path, case['case'] + CASE_REPORT_SUFFIX)) as baseline:
+            with open(os.path.join(baseline_path, case['name'] + CASE_REPORT_SUFFIX)) as baseline:
                 baseline_json = json.load(baseline)
 
             for thumb in list(set().union([''], THUMBNAIL_PREFIXES)):
@@ -125,7 +125,7 @@ def dump_reports(work_dir, case_list, render_device):
                              os.path.join(baseline_path, baseline_json[thumb + 'render_color_path']))
         except:
             main_logger.error('Failed to copy baseline ' +
-                                          os.path.join(baseline_path_tr, case['case'] + CASE_REPORT_SUFFIX))
+                                          os.path.join(baseline_path_tr, case['name'] + CASE_REPORT_SUFFIX))
 
     return 1
 
