@@ -86,6 +86,10 @@ function buildReport test_case script_info render_time filename test_status pass
         resolution_x: renderWidth \
         resolution_y: renderHeight \
         script_info: script_info \
+        group_timeout_exceeded: false \
+        testcase_timeout_exceeded: false \
+        testcase_timeout: 0 \
+        message: (bi.list()) \
 
     data["file_name"] = filename
 

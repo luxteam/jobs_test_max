@@ -101,6 +101,7 @@ def dump_reports(work_dir, case_list, render_device):
             path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'error.jpg')
         else:
             report_body["test_status"] = TEST_IGNORE_STATUS
+            report_body['group_timeout_exceeded'] = False
             path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'skipped.jpg')
 
         path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
@@ -149,11 +150,12 @@ def main():
     tool = args.tool
 
     if which(tool) is None:
-        if which(r'%userprofile%\documents\3ds Max 2021\3ds Max 2021\3dsmax.exe') is None:
+        tool_path = r'{}\documents\3ds Max 2021\3ds Max 2021\3dsmax.exe'.format(os.environ['USERPROFILE'])
+        if which(tool_path) is None:
             main_logger.error('Can\'t find tool ' + tool)
             exit(-1)
         else:
-            tool = r'%userprofile%\documents\3ds Max 2021\3ds Max 2021\3dsmax.exe'
+            tool = tool_path
 
     template = args.template
     with open(os.path.join(os.path.dirname(sys.argv[0]), template)) as f:
@@ -176,19 +178,6 @@ def main():
         tool,
         "C://Users//user//Documents//3ds Max 2021//3ds Max 2021//3dsmax.exe"
     ]
-
-    for path in maybe:
-        exist = os.path.isfile(path)
-        main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
-            path=path, exist=exist))
-        if exist:
-            tool = path
-            main_logger.info("Selected last path =)")
-            break
-    else:
-        main_logger.error("Tool not found! Will be stopped =(")
-        return -1
-
 
     max_script_template = base + max_script_template
     maxScript = max_script_template.format(pass_limit=args.pass_limit,
@@ -247,9 +236,23 @@ def main():
 
     dump_reports(work_dir, case_list, render_device)
 
+    for path in maybe:
+        exist = os.path.isfile(path)
+        main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
+            path=path, exist=exist))
+        if exist:
+            tool = path
+            main_logger.info("Selected last path.")
+            break
+    else:
+        main_logger.error("Tool not found! Test execution will be stopped.")
+        return -1
+
     os.chdir(work_dir)
     maxScriptPath = maxScriptPath.replace("\\\\", "\\")
     rc = -1
+
+    error_windows = set()
 
     main_logger.info("Start check cases")
     while check_cases(args.package_name, work_dir):
@@ -269,6 +272,7 @@ def main():
                 if error_window:
                     main_logger.info("Error window found: {}".format(error_window))
                     main_logger.info("Found windows: {}".format(window_titles))
+                    error_windows.update(error_window)
                     rc = -1
                     try:
                         error_screen = pyscreenshot.grab()
@@ -304,6 +308,32 @@ def main():
             else:
                 rc = 0
                 break
+
+    with open(os.path.join(work_dir, case_list)) as file:
+        data = json.loads(file.read())
+        cases = data["cases"]
+
+    for case in cases:
+        error_message = ''
+        if case['status'] in ['fail', 'error']:
+            error_message = "Testcase wasn't executed successfully"
+        elif case['status'] in ['progress']:
+            error_message = "Testcase wasn't finished"
+
+        if error_message:
+            main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['name'], error_message))
+            path_to_file = os.path.join(args.output, case['name'] + '_RPR.json')
+
+            with open(path_to_file, 'r') as file:
+                report = json.load(file)
+
+            report[0]['group_timeout_exceeded'] = False
+            report[0]['message'].append(error_message)
+            if len(error_windows) != 0:
+                report[0]['message'].append("Error windows {}".format(error_windows))
+
+            with open(path_to_file, 'w') as file:
+                json.dump(report, file, indent=4)
 
     main_logger.info("Search hanged processes...")
     for proc in psutil.process_iter():
