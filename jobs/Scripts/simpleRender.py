@@ -119,7 +119,7 @@ def dump_reports(work_dir, case_list, render_device):
             with open(os.path.join(baseline_path, case['name'] + CASE_REPORT_SUFFIX)) as baseline:
                 baseline_json = json.load(baseline)
 
-            for thumb in list(set().union([''], THUMBNAIL_PREFIXES)):
+            for thumb in [''] + core_config.THUMBNAIL_PREFIXES:
                 if thumb + 'render_color_path' and os.path.exists(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path'])):
                     copyfile(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path']),
                              os.path.join(baseline_path, baseline_json[thumb + 'render_color_path']))
