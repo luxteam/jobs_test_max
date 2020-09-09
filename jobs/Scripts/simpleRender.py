@@ -76,7 +76,7 @@ def dump_reports(work_dir, case_list, render_device):
 
     for case in cases:
         report_name = case["name"] + "_RPR.json"
-        report_body = RENDER_REPORT_BASE
+        report_body = RENDER_REPORT_BASE.copy()
 
         report_body["test_case"] = case["name"]
         report_body["script_info"] = case["script_info"]
