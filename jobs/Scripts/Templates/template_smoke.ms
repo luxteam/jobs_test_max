@@ -17,20 +17,6 @@ function switchStatus test_case status = (
 function main = (
     cases = caseList.get_data()
     cases = cases["cases"]
-    
-    -- MAX_SM_001 and MAX_002
-    try (
-        renderers.current = Radeon_ProRender()
-        status_init = true
-    ) catch (
-        getCurrentException()
-        status_init = false
-    )
-
-    withoutRender "MAX_SM_001" (bi.list(#("Installing with default settings"))) true
-    withoutRender "MAX_SM_002" (bi.list(#("Change renderer from default to RPR"))) status_init
-    
-    if not status_init do return false
 
     for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue 
