@@ -10,7 +10,7 @@ from shutil import copyfile, which
 import time
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
-from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS
+from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS, CASE_REPORT_SUFFIX, THUMBNAIL_PREFIXES
 from jobs_launcher.core.system_info import get_gpu
 
 case_list = "case_list.json"
@@ -74,6 +74,16 @@ def dump_reports(work_dir, case_list, render_device):
         test_group = data["test_group"]
         cases = data["cases"]
 
+    baseline_path_tr = os.path.join(
+            'c:/TestResources/rpr_max_autotests_baselines', test_group)
+
+    baseline_path = os.path.join(
+        work_dir, os.path.pardir, os.path.pardir, os.path.pardir, 'Baseline', test_group)
+
+    if not os.path.exists(baseline_path):
+        os.makedirs(baseline_path)
+        os.makedirs(os.path.join(baseline_path, 'Color'))
+
     for case in cases:
         report_name = case["name"] + "_RPR.json"
         report_body = RENDER_REPORT_BASE.copy()
@@ -101,6 +111,21 @@ def dump_reports(work_dir, case_list, render_device):
             json.dump([report_body], file, indent=4)
 
         main_logger.info(case["name"] + ": Report template created.")
+
+        try:
+            copyfile(os.path.join(baseline_path_tr, case['name'] + CASE_REPORT_SUFFIX),
+                     os.path.join(baseline_path, case['name'] + CASE_REPORT_SUFFIX))
+
+            with open(os.path.join(baseline_path, case['name'] + CASE_REPORT_SUFFIX)) as baseline:
+                baseline_json = json.load(baseline)
+
+            for thumb in [''] + THUMBNAIL_PREFIXES:
+                if thumb + 'render_color_path' and os.path.exists(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path'])):
+                    copyfile(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path']),
+                             os.path.join(baseline_path, baseline_json[thumb + 'render_color_path']))
+        except:
+            main_logger.error('Failed to copy baseline ' +
+                                          os.path.join(baseline_path_tr, case['name'] + CASE_REPORT_SUFFIX))
 
     return 1
 
