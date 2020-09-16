@@ -207,27 +207,28 @@ def main():
         f.write(cmdRun)
 
     # prepare case_list.json
-    if args.testCases != 'None':
-        # open original case_list
-        with open(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list)) as file:
-            cases = json.loads(file.read())
-
+    if os.path.exists(args.testCases) and args.testCases:
         # open custom json group
-        with open(args.testCases) as file:
-            case_names = json.loads(file.read())[str(args.package_name)]
-        
-        # prepare template for custom json
-        filter_cases = {
-            'test_group': args.package_name,
-            'cases': []
-        }
+        with open(args.testCases) as f:
+            case_names = json.load(f)['groups'][str(args.package_name)]
 
-        # collect cases
-        filter_cases['cases'] = [case for case in cases['cases'] if case['name'] in case_names or case_names == "all"]
+        if case_names:
+            # open original case_list
+            with open(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list)) as file:
+                cases = json.loads(file.read())
+            
+            # prepare template for custom json
+            filter_cases = {
+                'test_group': args.package_name,
+                'cases': []
+            }
 
-        # dump new custom case list
-        with open(os.path.join(work_dir, case_list), 'w') as file:
-            json.dump(filter_cases, file, indent=4)
+            # collect cases
+            filter_cases['cases'] = [case for case in cases['cases'] if case['name'] in case_names or case_names == "all"]
+
+            # dump new custom case list
+            with open(os.path.join(work_dir, case_list), 'w') as file:
+                json.dump(filter_cases, file, indent=4)
     else:
         copyfile(os.path.join(ROOT_DIR, 'jobs', 'Tests', args.package_name, case_list), os.path.join(work_dir, case_list))
 

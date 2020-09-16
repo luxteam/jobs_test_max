@@ -1,0 +1,7 @@
+{
+    "split":true,
+    "groups":{
+        "Smoke":"",
+        "IBL":""
+    }
+}
