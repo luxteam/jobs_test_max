@@ -17,6 +17,7 @@
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--SPU {SPU}</argument>
         <argument>--threshold {threshold}</argument>
+        <argument>--update_refs "{UpdateRefs}"</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"'>
