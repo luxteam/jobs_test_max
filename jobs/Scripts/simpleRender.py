@@ -67,7 +67,7 @@ def get_error_case(group, work_dir):
         return False
 
 
-def dump_reports(work_dir, case_list, render_device):
+def dump_reports(work_dir, case_list, render_device, update_refs):
 
     with open(os.path.join(work_dir, case_list)) as file:
         data = json.loads(file.read())
@@ -112,7 +112,7 @@ def dump_reports(work_dir, case_list, render_device):
 
         main_logger.info(case["name"] + ": Report template created.")
 
-        if 'Update' not in args.update_refs:
+        if 'Update' not in update_refs:
             try:
                 copyfile(os.path.join(baseline_path_tr, case['name'] + CASE_REPORT_SUFFIX),
                          os.path.join(baseline_path, case['name'] + CASE_REPORT_SUFFIX))
@@ -237,7 +237,7 @@ def main():
     # copy ms_json.py for json parsing in MaxScript
     copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
 
-    dump_reports(work_dir, case_list, render_device)
+    dump_reports(work_dir, case_list, render_device, args.update_refs)
 
     for path in maybe:
         exist = os.path.isfile(path)
