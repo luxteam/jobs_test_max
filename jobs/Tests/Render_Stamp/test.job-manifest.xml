@@ -16,6 +16,7 @@
         <argument>--res_path "{ScenesDir}"</argument>
         <argument>--SPU 25</argument>
         <argument>--threshold 0</argument>
+        <argument>--update_refs "{UpdateRefs}"</argument>
     </execute>
 
     <execute command='python "{CWD}/Scripts/make_report_json.py"'>
@@ -25,6 +26,7 @@
     <execute command='python "{CommonDir}\scripts\compareByJSON.py"'>
         <argument>--work_dir "{OutputDir}"</argument>
         <argument>--base_dir "{BaselineDir}"</argument>
+        <argument>--update_refs "{UpdateRefs}"</argument>
     </execute>
 
 </job-manifest>
