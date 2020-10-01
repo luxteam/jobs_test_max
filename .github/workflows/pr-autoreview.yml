@@ -4,7 +4,7 @@ on:
   pull_request:
    paths:
    - '!**'
-   - 'jobs/Tests/**/*.json'
+   - 'jobs/**/*.json'
 
 jobs:
   automate-pullrequest-review:
