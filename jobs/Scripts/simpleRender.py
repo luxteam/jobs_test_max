@@ -60,7 +60,7 @@ def get_error_case(group, work_dir):
             case["status"] = "error"
 
             with open(os.path.join(work_dir, case_list), "w") as file:
-                data.dump(data, file, indent=4)
+                json.dump(data, file, indent=4)
 
             return case["name"]
     else:
