@@ -26,7 +26,7 @@
                 "Open RPR Scene"
             ],
             "pass_limit": 400,
-            "status": "active"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_006",
@@ -35,7 +35,7 @@
                 "HDR"
             ],
             "pass_limit": 400,
-            "status": "active"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_007",
@@ -179,7 +179,7 @@
                 "Denoiser LWR default"
             ],
             "pass_limit": 400,
-            "status": "active"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_023",
