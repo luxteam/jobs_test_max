@@ -44,7 +44,7 @@
                 "EXR"
             ],
             "pass_limit": 400,
-            "status": "active"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_008",
@@ -53,7 +53,7 @@
                 "Test Sun"
             ],
             "pass_limit": 400,
-            "status": "active"
+            "status": "skipped"
         },
         {
             "name": "MAX_SM_009",
