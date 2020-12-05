@@ -2,7 +2,7 @@
 	"test_group": "Image_Size",
 	"cases": [
 		{
-			"name": "MAX_RS_IS_001",
+			"case": "MAX_RS_IS_001",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"35mm 1.316:1 Full Aperture (cine)"
@@ -11,7 +11,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_002",
+			"case": "MAX_RS_IS_002",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"35mm 1.37:1 Academy (cine)"
@@ -20,7 +20,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_003",
+			"case": "MAX_RS_IS_003",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"35mm 1.66:1 (cine)"
@@ -29,7 +29,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_004",
+			"case": "MAX_RS_IS_004",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"35mm 1.75 (cine)"
@@ -38,7 +38,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_005",
+			"case": "MAX_RS_IS_005",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"35mm 1.85 (cine)"
@@ -47,7 +47,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_006",
+			"case": "MAX_RS_IS_006",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"35mm Anamorphic (2.35:1)"
@@ -56,7 +56,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_007",
+			"case": "MAX_RS_IS_007",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"35mm Anamorphic (2.35:1) (Squeezed)"
@@ -65,7 +65,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_008",
+			"case": "MAX_RS_IS_008",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"70mm Panavision (cine)"
@@ -74,7 +74,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_009",
+			"case": "MAX_RS_IS_009",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"70mm IMAX (cine)"
@@ -83,7 +83,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_010",
+			"case": "MAX_RS_IS_010",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"VistaVision"
@@ -92,7 +92,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_011",
+			"case": "MAX_RS_IS_011",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"35mm ( 24mm X 36mm) (slide)"
@@ -101,7 +101,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_012",
+			"case": "MAX_RS_IS_012",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"6cm X 6cm (2 1/4 X 2 1/4) (slide)"
@@ -110,7 +110,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_013",
+			"case": "MAX_RS_IS_013",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"4 X 5 or 8 X 10 (slide)"
@@ -119,7 +119,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_014",
+			"case": "MAX_RS_IS_014",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"NTSC D-1 (video)"
@@ -128,7 +128,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_015",
+			"case": "MAX_RS_IS_015",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"NTSC DV (video)"
@@ -137,7 +137,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_016",
+			"case": "MAX_RS_IS_016",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"PAL (video)"
@@ -146,7 +146,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_017",
+			"case": "MAX_RS_IS_017",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"PAL D-1 (video)"
@@ -155,7 +155,7 @@
 			"status": "active"
 		},
 		{
-			"name": "MAX_RS_IS_018",
+			"case": "MAX_RS_IS_018",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"HDTV (video)"
@@ -164,7 +164,7 @@
 			"status": "skipped"
 		},
 		{
-			"name": "MAX_RS_IS_019",
+			"case": "MAX_RS_IS_019",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"4000x4000"
@@ -174,7 +174,7 @@
 
 		},
 		{
-			"name": "MAX_RS_IS_020",
+			"case": "MAX_RS_IS_020",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"5000x5000"
@@ -184,7 +184,7 @@
 
 		},
 		{
-			"name": "MAX_RS_IS_021",
+			"case": "MAX_RS_IS_021",
 			"scene_name": "Image_Size.max",
 			"script_info": [
 				"6000x6000"

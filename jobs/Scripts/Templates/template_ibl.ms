@@ -31,7 +31,7 @@ function main = (
 
         renderers.current.backgroundIntensity = cases[i]["intensity"]
 
-        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        rpr_render image_format cases[i]["case"] cases[i]["script_info"]
 
         caseList.setCaseStatus i "done"
     )

@@ -33,15 +33,15 @@ function main = (
         re = maxOps.GetCurRenderElementMgr()
         re.removeallrenderelements()
         re.addrenderelement (REs[cases[i]["aov"]] elementname:(REs[cases[i]["aov"]] as string))
-        reb = rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        reb = rpr_render image_format cases[i]["case"] cases[i]["script_info"]
 
-        path2image = "{work_dir}Color\\" + cases[i]["name"] + ".jpg"
+        path2image = "{work_dir}Color\\" + cases[i]["case"] + ".jpg"
         deleteFile path2image
 
         reb[1].filename = path2image
         save reb[1]
 
-        -- BmpPath = image_path = "{work_dir}Color\\" + cases[i]["name"] + "_" + (REs[cases[i]["aov"]] as string) + ".jpg"
+        -- BmpPath = image_path = "{work_dir}Color\\" + cases[i]["case"] + "_" + (REs[cases[i]["aov"]] as string) + ".jpg"
         -- deleteFile BmpPath 
 
 

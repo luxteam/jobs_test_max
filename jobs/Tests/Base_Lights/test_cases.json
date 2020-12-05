@@ -1,0 +1,643 @@
+{
+    "test_group": "Base_Lights",
+    "cases": [
+        {
+            "case": "MAX_L_BL_001",
+            "status": "active",
+            "script_info": [
+                "1. Free Spot",
+                "Multiplier - 1"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeSpot",
+                "multiplier": 1.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_002",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeSpot",
+                "multiplier": 3.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_003",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 1",
+                "Fallof/Field - 45"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeSpot",
+                "multiplier": 1.0,
+                "falloff": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_004",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 0,1",
+                "Hotspot/Beam - 0,5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeSpot",
+                "multiplier": 0.1,
+                "hotspot": 0.5
+            }
+        },
+        {
+            "case": "MAX_L_BL_005",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3",
+                "Light Cone - Rectangle"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeSpot",
+                "multiplier": 3.0,
+                "coneShape": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_006",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 5",
+                "Hotspot/Beam - 0,5",
+                "Fallof/Field - 179,5",
+                "Light Cone - Rectangle"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeSpot",
+                "multiplier": 5.0,
+                "hotspot": 0.5,
+                "falloff": 179.5,
+                "coneShape": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_007",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 1",
+                "Decay Type - Inverse"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeSpot",
+                "multiplier": 1.0,
+                "attenDecay": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_008",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 1",
+                "Decay Type - Inverse Square"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeSpot",
+                "multiplier": 1.0,
+                "attenDecay": 3
+            }
+        },
+        {
+            "case": "MAX_L_BL_009",
+            "status": "active",
+            "script_info": [
+                "2. Target Spot",
+                "Multiplier - 1"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetSpot",
+                "multiplier": 1.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_010",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetSpot",
+                "multiplier": 3.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_011",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3",
+                "Fallof/Field - 179,5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetSpot",
+                "multiplier": 3.0,
+                "falloff": 179.5
+            }
+        },
+        {
+            "case": "MAX_L_BL_012",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3",
+                "Hotspot/Beam - 0,5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetSpot",
+                "multiplier": 3.0,
+                "hotspot": 0.5
+            }
+        },
+        {
+            "case": "MAX_L_BL_013",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 0,1",
+                "Hotspot/Beam - 45"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetSpot",
+                "multiplier": 0.1,
+                "hotspot": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_014",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 5",
+                "Hotspot/Beam - 0,5",
+                "Fallof/Field - 179,5",
+                "Decay Type - Inverse"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetSpot",
+                "multiplier": 5.0,
+                "hotspot": 0.5,
+                "falloff": 179.5,
+                "attenDecay": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_015",
+            "status": "active",
+            "script_info": [
+                "Decay Type - Inverse Square"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetSpot",
+                "attenDecay": 3
+            }
+        },
+        {
+            "case": "MAX_L_BL_016",
+            "status": "active",
+            "script_info": [
+                "Light Cone - Rectangle"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetSpot",
+                "coneShape": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_017",
+            "status": "active",
+            "script_info": [
+                "3. Free Directional Light",
+                "Multiplier - 0,5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "multiplier": 0.5
+            }
+        },
+        {
+            "case": "MAX_L_BL_018",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "multiplier": 3.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_019",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "multiplier": 5.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_020",
+            "status": "active",
+            "script_info": [
+                "Decay Type - Inverse"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "attenDecay": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_021",
+            "status": "active",
+            "script_info": [
+                "Decay Type - Inverse Square"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "attenDecay": 3
+            }
+        },
+        {
+            "case": "MAX_L_BL_022",
+            "status": "active",
+            "script_info": [
+                "Fallof/Field - 45"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "falloff": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_023",
+            "status": "active",
+            "script_info": [
+                "Hotspot/Beam - 0,5",
+                "Fallof/Field - 179,5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "hotspot": 0.5,
+                "falloff": 179.5
+            }
+        },
+        {
+            "case": "MAX_L_BL_024",
+            "status": "active",
+            "script_info": [
+                "Hotspot/Beam - 45",
+                "Light Cone - Rectangle"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "hotspot": 45.0,
+                "coneShape": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_025",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 5",
+                "Hotspot/Beam - 0,5",
+                "Fallof/Field - 179,5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "freeDirect",
+                "multiplier": 5.0,
+                "hotspot": 0.5,
+                "falloff": 179.5
+            }
+        },
+        {
+            "case": "MAX_L_BL_026",
+            "status": "active",
+            "script_info": [
+                "4. Target Directional Light",
+                "Multiplier - 0,1"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetDirect",
+                "multiplier": 0.1
+            }
+        },
+        {
+            "case": "MAX_L_BL_027",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetDirect",
+                "multiplier": 3.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_028",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetDirect",
+                "multiplier": 5.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_029",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3",
+                "Light Cone - Rectangle"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetDirect",
+                "multiplier": 3.0,
+                "coneShape": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_030",
+            "status": "active",
+            "script_info": [
+                "Hotspot/Beam - 20",
+                "Fallof/Field - 50"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetDirect",
+                "hotspot": 20.0,
+                "falloff": 50.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_031",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 5",
+                "Light Cone - Rectangle",
+                "Hotspot/Beam - 0,5",
+                "Fallof/Field - 45"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetDirect",
+                "multiplier": 5.0,
+                "coneShape": 2,
+                "hotspot": 0.5,
+                "falloff": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_032",
+            "status": "active",
+            "script_info": [
+                "Decay Type - Inverse"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetDirect",
+                "attenDecay": 2
+            }
+        },
+        {
+            "case": "MAX_L_BL_033",
+            "status": "active",
+            "script_info": [
+                "Decay Type - Inverse Square"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "targetDirect",
+                "attenDecay": 3
+            }
+        },
+        {
+            "case": "MAX_L_BL_034",
+            "status": "active",
+            "script_info": [
+                "5. Omni Light",
+                "Multiplier - 0,1"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "omni",
+                "multiplier": 0.1
+            }
+        },
+        {
+            "case": "MAX_L_BL_035",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 3"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "omni",
+                "multiplier": 3.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_036",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Spot001",
+                "type": "omni",
+                "multiplier": 5.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_037",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 1"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001",
+                "multiplier": 1.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_038",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 0.1"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001",
+                "multiplier": 0.1
+            }
+        },
+        {
+            "case": "MAX_L_BL_039",
+            "status": "active",
+            "script_info": [
+                "Multiplier - 0.5"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001",
+                "multiplier": 0.5
+            }
+        },
+        {
+            "case": "MAX_L_BL_040",
+            "status": "active",
+            "script_info": [
+                "Sky Color - Default"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001"
+            }
+        },
+        {
+            "case": "MAX_L_BL_041",
+            "status": "active",
+            "script_info": [
+                "Sky Color - HSV: 0, 0, 255"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001",
+                "color": {
+                    "r": 255, 
+                    "g": 255, 
+                    "b": 255
+                }
+            }
+        },
+        {
+            "case": "MAX_L_BL_042",
+            "status": "active",
+            "script_info": [
+                "Sky Color - HSV: 0, 0, 0"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001",
+               "color": {
+                    "r": 0, 
+                    "g": 0, 
+                    "b": 0
+                }
+            }
+        },
+        {
+            "case": "MAX_L_BL_043",
+            "status": "active",
+            "script_info": [
+                "Cast Shadows - Activate"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001",
+                "castShadows": true
+            }
+        },
+        {
+            "case": "MAX_L_BL_044",
+            "status": "active",
+            "script_info": [
+                "Ray per Sample - 64",
+                "Ray Bias - 0,0"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001",
+                "rays_per_sample": 64,
+                "ray_Bias": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_BL_045",
+            "status": "active",
+            "script_info": [
+                "Ray per Sample - 30",
+                "Ray Bias - 100,0"
+            ],
+            "scene_name": "Base_Lights.max",
+            "parameters": {
+                "unhide": "Sky001",
+                "rays_per_sample": 30,
+                "ray_Bias": 100.0
+            }
+        }
+    ]
+}
