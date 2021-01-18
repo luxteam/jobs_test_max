@@ -5,11 +5,12 @@ import subprocess
 import psutil
 import json
 import ctypes
-import pyscreenshot
 from shutil import copyfile, which
 import time
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
+import jobs_launcher.common.scripts.utils as utils
+import local_config
 from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS, CASE_REPORT_SUFFIX, THUMBNAIL_PREFIXES
 from jobs_launcher.core.system_info import get_gpu
 
@@ -49,22 +50,6 @@ def check_cases(group, work_dir):
         return False
     except KeyError as err:
         main_logger.error(str(err))
-
-
-def get_error_case(group, work_dir):
-    with open(os.path.join(work_dir, case_list)) as file:
-        data = json.loads(file.read())
-
-    for case in data["cases"]:
-        if case["status"] == "progress":
-            case["status"] = "error"
-
-            with open(os.path.join(work_dir, case_list), "w") as file:
-                json.dump(data, file, indent=4)
-
-            return case["name"]
-    else:
-        return False
 
 
 def dump_reports(work_dir, case_list, render_device, update_refs):
@@ -278,11 +263,29 @@ def main():
                     error_windows.update(error_window)
                     rc = -1
                     try:
-                        error_screen = pyscreenshot.grab()
-                        error_case = get_error_case(args.package_name, work_dir)
-                        error_screen.save(os.path.join(args.output, "Color", error_case + '.jpg'))
-                    except Exception as err:
-                        main_logger.error(str(err))
+                        test_cases_path = os.path.join(work_dir, core_config.TEST_CASES_JSON_NAME[local_config.tool_name])
+                        error_case = utils.get_error_case(test_cases_path)
+                        if error_case:
+                            with open(test_cases_path) as file:
+                                data = json.load(file)
+
+                            for case in data["cases"]:
+                                if case["status"] == "progress":
+                                    case["status"] = "error"
+
+                                    with open(os.path.join(work_dir, case_list), "w") as file:
+                                        json.dump(data, file, indent=4)
+
+                                    break
+
+                            error_case_path = os.path.join(work_dir, error_case + core_config.CASE_REPORT_SUFFIX)
+                            relative_screen_path = os.path.join('Color', error_case + core_config.ERROR_SCREEN_SUFFIX + '.jpg')
+                            absolute_screen_path = os.path.join(args.output, relative_screen_path)
+                            utils.make_error_screen(error_case_path, absolute_screen_path, relative_screen_path)
+                        else:
+                            core_config.main_logger.error('Error case wasn\'t found. Can\'t save error screen')
+                    except Exception as e:
+                        core_config.main_logger.error('Failed to make error screen: {}'.format(str(e)))
 
                     child_processes = p.children()
                     main_logger.info("Child processes: {}".format(child_processes))
