@@ -32,7 +32,7 @@ function main = (
         $Probe02.material = m
 
         -- start production render
-        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        rpr_render image_format cases[i]["case"] cases[i]["script_info"]
 
         caseList.setCaseStatus i "done"
     )

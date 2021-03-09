@@ -24,7 +24,7 @@ function main = (
         layer = LayerManager.getLayerFromName cases[i]["parameters"]["layer"]
         layer.on = true
 
-        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        rpr_render image_format cases[i]["case"] cases[i]["script_info"]
 
         caseList.setCaseStatus i "done"
     )

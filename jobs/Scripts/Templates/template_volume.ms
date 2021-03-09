@@ -35,7 +35,7 @@ function main = (
         	setProperty sceneMaterials[VOL_MAT_NAME] params[j] val
         )
 
-        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        rpr_render image_format cases[i]["case"] cases[i]["script_info"]
 
         caseList.setCaseStatus i "done"
     )
