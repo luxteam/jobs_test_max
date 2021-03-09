@@ -5,16 +5,15 @@ import subprocess
 import psutil
 import json
 import ctypes
+import pyscreenshot
 from shutil import copyfile, which
 import time
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir))
 sys.path.append(ROOT_DIR)
-import jobs_launcher.common.scripts.utils as utils
-import local_config
-import jobs_launcher.core.config as core_config
+from jobs_launcher.core.config import main_logger, RENDER_REPORT_BASE, TEST_CRASH_STATUS, TEST_IGNORE_STATUS, CASE_REPORT_SUFFIX, THUMBNAIL_PREFIXES
 from jobs_launcher.core.system_info import get_gpu
 
-case_list = "case_list.json"
+case_list = "test_cases.json"
 
 
 def get_windows_titles():
@@ -49,7 +48,23 @@ def check_cases(group, work_dir):
 
         return False
     except KeyError as err:
-        core_config.main_logger.error(str(err))
+        main_logger.error(str(err))
+
+
+def get_error_case(group, work_dir):
+    with open(os.path.join(work_dir, case_list)) as file:
+        data = json.loads(file.read())
+
+    for case in data["cases"]:
+        if case["status"] == "progress":
+            case["status"] = "error"
+
+            with open(os.path.join(work_dir, case_list), "w") as file:
+                json.dump(data, file, indent=4)
+
+            return case["case"]
+    else:
+        return False
 
 
 def dump_reports(work_dir, case_list, render_device, update_refs):
@@ -70,48 +85,48 @@ def dump_reports(work_dir, case_list, render_device, update_refs):
         os.makedirs(os.path.join(baseline_path, 'Color'))
 
     for case in cases:
-        report_name = case["name"] + "_RPR.json"
-        report_body = core_config.RENDER_REPORT_BASE.copy()
+        report_name = case["case"] + "_RPR.json"
+        report_body = RENDER_REPORT_BASE.copy()
 
-        report_body["test_case"] = case["name"]
+        report_body["test_case"] = case["case"]
         report_body["script_info"] = case["script_info"]
         report_body["render_device"] = render_device
-        report_body["render_color_path"] = "Color/{0}.jpg".format(case["name"])
-        report_body["file_name"] = case["name"] + ".jpg"
+        report_body["render_color_path"] = "Color/{0}.jpg".format(case["case"])
+        report_body["file_name"] = case["case"] + ".jpg"
         report_body["scene_name"] = case["scene_name"]
         report_body["test_group"] = test_group
 
         if case["status"] == "active":
-            report_body["test_status"] = core_config.TEST_CRASH_STATUS
+            report_body["test_status"] = TEST_CRASH_STATUS
             path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'error.jpg')
         else:
-            report_body["test_status"] = core_config.TEST_IGNORE_STATUS
+            report_body["test_status"] = TEST_IGNORE_STATUS
             report_body['group_timeout_exceeded'] = False
             path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'skipped.jpg')
 
-        path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
+        path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["case"]))
         copyfile(path_2_orig_img, path_2_case_img)
 
         with open(os.path.join(work_dir, report_name), "w") as file:
             json.dump([report_body], file, indent=4)
 
-        core_config.main_logger.info(case["name"] + ": Report template created.")
+        main_logger.info(case["case"] + ": Report template created.")
 
         if 'Update' not in update_refs:
             try:
-                copyfile(os.path.join(baseline_path_tr, case['name'] + core_config.CASE_REPORT_SUFFIX),
-                         os.path.join(baseline_path, case['name'] + core_config.CASE_REPORT_SUFFIX))
+                copyfile(os.path.join(baseline_path_tr, case['case'] + CASE_REPORT_SUFFIX),
+                         os.path.join(baseline_path, case['case'] + CASE_REPORT_SUFFIX))
 
-                with open(os.path.join(baseline_path, case['name'] + core_config.CASE_REPORT_SUFFIX)) as baseline:
+                with open(os.path.join(baseline_path, case['case'] + CASE_REPORT_SUFFIX)) as baseline:
                     baseline_json = json.load(baseline)
 
-                for thumb in [''] + core_config.THUMBNAIL_PREFIXES:
+                for thumb in [''] + THUMBNAIL_PREFIXES:
                     if thumb + 'render_color_path' and os.path.exists(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path'])):
                         copyfile(os.path.join(baseline_path_tr, baseline_json[thumb + 'render_color_path']),
                                  os.path.join(baseline_path, baseline_json[thumb + 'render_color_path']))
             except:
-                core_config.main_logger.error('Failed to copy baseline ' +
-                                              os.path.join(baseline_path_tr, case['name'] + core_config.CASE_REPORT_SUFFIX))
+                main_logger.error('Failed to copy baseline ' +
+                                              os.path.join(baseline_path_tr, case['case'] + CASE_REPORT_SUFFIX))
 
     return 1
 
@@ -139,7 +154,7 @@ def main():
     if which(tool) is None:
         tool_path = r'{}\documents\3ds Max 2021\3ds Max 2021\3dsmax.exe'.format(os.environ['USERPROFILE'])
         if which(tool_path) is None:
-            core_config.main_logger.error('Can\'t find tool ' + tool)
+            main_logger.error('Can\'t find tool ' + tool)
             exit(-1)
         else:
             tool = tool_path
@@ -180,7 +195,7 @@ def main():
     try:
         os.makedirs(os.path.join(work_dir, 'Color'))
     except Exception as err:
-        core_config.main_logger.error(str(err))
+        main_logger.error(str(err))
 
     maxScriptPath = os.path.join(work_dir, 'script.ms')
     with open(maxScriptPath, 'w') as f:
@@ -193,7 +208,7 @@ def main():
     with open(cmdScriptPath, 'w') as f:
         f.write(cmdRun)
 
-    # prepare case_list.json
+    # prepare test_cases.json
     if os.path.exists(args.testCases) and args.testCases:
         # open custom json group
         with open(args.testCases) as f:
@@ -211,7 +226,7 @@ def main():
             }
 
             # collect cases
-            filter_cases['cases'] = [case for case in cases['cases'] if case['name'] in case_names or case_names == "all"]
+            filter_cases['cases'] = [case for case in cases['cases'] if case['case'] in case_names or case_names == "all"]
 
             # dump new custom case list
             with open(os.path.join(work_dir, case_list), 'w') as file:
@@ -226,14 +241,14 @@ def main():
 
     for path in maybe:
         exist = os.path.isfile(path)
-        core_config.main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
+        main_logger.info("TOOL PATH: {path} | Existed: {exist}".format(
             path=path, exist=exist))
         if exist:
             tool = path
-            core_config.main_logger.info("Selected last path.")
+            main_logger.info("Selected last path.")
             break
     else:
-        core_config.main_logger.error("Tool not found! Test execution will be stopped.")
+        main_logger.error("Tool not found! Test execution will be stopped.")
         return -1
 
     os.chdir(work_dir)
@@ -242,7 +257,7 @@ def main():
 
     error_windows = set()
 
-    core_config.main_logger.info("Start check cases")
+    main_logger.info("Start check cases")
     while check_cases(args.package_name, work_dir):
         p = psutil.Popen(os.path.join(args.output, 'script.bat'), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -255,40 +270,22 @@ def main():
                                        '3ds Max Error Report', '3ds Max application', 'Radeon ProRender Error',
                                        'Image I/O Error']
                 window_titles = get_windows_titles()
-                core_config.main_logger.info(str(window_titles))
+                main_logger.info(str(window_titles))
                 error_window = set(fatal_errors_titles).intersection(window_titles)
                 if error_window:
-                    core_config.main_logger.info("Error window found: {}".format(error_window))
-                    core_config.main_logger.info("Found windows: {}".format(window_titles))
+                    main_logger.info("Error window found: {}".format(error_window))
+                    main_logger.info("Found windows: {}".format(window_titles))
                     error_windows.update(error_window)
                     rc = -1
                     try:
-                        test_cases_path = os.path.join(work_dir, core_config.TEST_CASES_JSON_NAME[local_config.tool_name])
-                        error_case = utils.get_error_case(test_cases_path)
-                        if error_case:
-                            with open(test_cases_path) as file:
-                                data = json.load(file)
-
-                            for case in data["cases"]:
-                                if case["status"] == "progress":
-                                    case["status"] = "error"
-
-                                    with open(os.path.join(work_dir, case_list), "w") as file:
-                                        json.dump(data, file, indent=4)
-
-                                    break
-
-                            error_case_path = os.path.join(work_dir, error_case + core_config.CASE_REPORT_SUFFIX)
-                            relative_screen_path = os.path.join('Color', error_case + core_config.ERROR_SCREEN_SUFFIX + '.jpg')
-                            absolute_screen_path = os.path.join(args.output, relative_screen_path)
-                            utils.make_error_screen(error_case_path, absolute_screen_path, relative_screen_path)
-                        else:
-                            core_config.main_logger.error('Error case wasn\'t found. Can\'t save error screen')
-                    except Exception as e:
-                        core_config.main_logger.error('Failed to make error screen: {}'.format(str(e)))
+                        error_screen = pyscreenshot.grab()
+                        error_case = get_error_case(args.package_name, work_dir)
+                        error_screen.save(os.path.join(args.output, "Color", error_case + '.jpg'))
+                    except Exception as err:
+                        main_logger.error(str(err))
 
                     child_processes = p.children()
-                    core_config.main_logger.info("Child processes: {}".format(child_processes))
+                    main_logger.info("Child processes: {}".format(child_processes))
                     for ch in child_processes:
                         try:
                             ch.terminate()
@@ -296,9 +293,9 @@ def main():
                             ch.kill()
                             time.sleep(10)
                             status = ch.status()
-                            core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
+                            main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(ch, ch.name(), status))
                         except psutil.NoSuchProcess:
-                            core_config.main_logger.info("Process is killed: {}".format(ch))
+                            main_logger.info("Process is killed: {}".format(ch))
 
                     try:
                         p.terminate()
@@ -306,9 +303,9 @@ def main():
                         p.kill()
                         time.sleep(10)
                         status = p.status()
-                        core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
+                        main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(p, p.name(), status))
                     except psutil.NoSuchProcess:
-                        core_config.main_logger.info("Process is killed: {}".format(p))
+                        main_logger.info("Process is killed: {}".format(p))
 
                     break
             else:
@@ -327,8 +324,8 @@ def main():
             error_message = "Testcase wasn't finished"
 
         if error_message:
-            core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['name'], error_message))
-            path_to_file = os.path.join(args.output, case['name'] + '_RPR.json')
+            main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
+            path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
 
             with open(path_to_file, 'r') as file:
                 report = json.load(file)
@@ -341,21 +338,21 @@ def main():
             with open(path_to_file, 'w') as file:
                 json.dump(report, file, indent=4)
 
-    core_config.main_logger.info("Search hanged processes...")
+    main_logger.info("Search hanged processes...")
     for proc in psutil.process_iter():
         main_proc = psutil.Process(proc.pid)
         # Get process name & pid from process object.
         if proc.name() in ('3dsmax.exe', 'acwebbrowser.exe', 'AdSSO.exe'):
-            core_config.main_logger.warning("UNTERMINATED PROCESS")
+            main_logger.warning("UNTERMINATED PROCESS")
             try:
                 main_proc.terminate()
                 time.sleep(10)
                 main_proc.kill()
                 time.sleep(10)
                 status = main_proc.status()
-                core_config.main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(main_proc, main_proc.name(), status))
+                main_logger.error("Process is alive: {}. Name: {}. Status: {}".format(main_proc, main_proc.name(), status))
             except psutil.NoSuchProcess:
-                core_config.main_logger.info("Process is killed: {}".format(main_proc))
+                main_logger.info("Process is killed: {}".format(main_proc))
 
     return rc
 

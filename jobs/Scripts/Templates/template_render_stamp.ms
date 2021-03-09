@@ -25,12 +25,12 @@ function main = (
         renderers.current.adaptiveNoiseThreshold = {threshold}
         
         renderers.current.enableRenderStamp = true
-        case cases[i]["name"] of (
+        case cases[i]["case"] of (
             "MAX_RS_RS_002": setRenderStamp "Radeon ProRender for 3ds Max 2019 %b | CPU %c | GPU %g | Render mode %r | Render device %h'"
             "MAX_RS_RS_003": setRenderStamp "Radeon ProRender for 3ds Max 2019 %b | Computer name %i | Current date %d"
         ) 
 
-        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        rpr_render image_format cases[i]["case"] cases[i]["script_info"]
         caseList.setCaseStatus i "done"
     )
 )

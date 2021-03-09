@@ -90,7 +90,6 @@ function buildReport test_case script_info render_time filename test_status pass
         testcase_timeout_exceeded: false \
         testcase_timeout: 0 \
         message: (bi.list()) \
-        number_of_tries: 0 \
 
     data["file_name"] = filename
 
