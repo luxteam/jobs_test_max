@@ -1,0 +1,1014 @@
+{
+    "test_group": "Physical_Lights",
+    "cases": [
+        {
+            "case": "MAX_L_PL_001",
+            "status": "active",
+            "script_info": [
+                "Type - Area Light",
+                "Intensity Units - Radiance",
+                "Light Shape - Rectangle",
+                "Area Width - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "UnitsType": 2,
+                "AreaShape": 3,
+                "AreaWidths": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_002",
+            "status": "active",
+            "script_info": [
+                "Type - Area Light",
+                "Intensity Units - Radiance",
+                "Light Shape - Mesh"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "UnitsType": 2,
+                "AreaShape": 4
+            }
+        },
+        {
+            "case": "MAX_L_PL_003",
+            "status": "active",
+            "script_info": [
+                "Type - Area Light",
+                "Light Intensity - 100",
+                "Intensity Units - Radiance",
+                "Luminous Efficacy - 100",
+                "Light Shape - Sphere",
+                "Diameter - 1"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "LightIntensity": 100.0,
+                "UnitsType": 2,
+                "LuminousEfficacy": 100.0,
+                "AreaShape": 2,
+                "AreaWidths": 1.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_004",
+            "status": "active",
+            "script_info": [
+                "Type - Area Light",
+                "Light Intensity - 100",
+                "Intensity Units - Watts",
+                "Luminous Efficacy - 17",
+                "Light Shape - Cylinder",
+                "Diameter - 1",
+                "Lenght - 0",
+                "Check Box Visible - Activate"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "LightIntensity": 100.0,
+                "UnitsType": 1,
+                "LuminousEfficacy": 17.0,
+                "AreaShape": 1,
+                "AreaWidths": 1.0,
+                "AreaLength": 0.0,
+                "isVisible": true
+            }
+        },
+        {
+            "case": "MAX_L_PL_005",
+            "status": "active",
+            "script_info": [
+                "Type - Area Light",
+                "Intensity Units - Luminance",
+                "Light Shape - Mesh",
+                "Diameter - 10"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "UnitsType": 0,
+                "AreaShape": 4,
+                "AreaWidths": 10.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_006",
+            "status": "active",
+            "script_info": [
+                "Type - Area Light",
+                "Light Intensity - 100",
+                "Intensity Units - Watts",
+                "Luminous Efficacy - 0.1",
+                "Color Mode - Temperature",
+                "Light Shape - Disc",
+                "Diameter - 10"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "LightIntensity": 100.0,
+                "UnitsType": 1,
+                "LuminousEfficacy": 0.1,
+                "ColourMode": 1,
+                "AreaShape": 0,
+                "AreaWidths": 10.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_007",
+            "status": "active",
+            "script_info": [
+                "Type - Area Light",
+                "Light Intensity - 100",
+                "Intensity Units - Lumen",
+                "Color Mode - Temperature",
+                "Light Shape - Sphere"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "LightIntensity": 100.0,
+                "UnitsType": 3,
+                "ColourMode": 1,
+                "AreaShape": 2
+            }
+        },
+        {
+            "case": "MAX_L_PL_008",
+            "status": "skipped",
+            "script_info": [
+                "Type - Area Light",
+                "Intensity Units - Luminance",
+                "Luminous Efficacy - 0.1",
+                "Color Mode - Temperature",
+                "Temperature - 40000",
+                "Light Shape - Rectangle",
+                "Lenght - 0",
+                "Check Box Visible - Activate"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "UnitsType": 0,
+                "LuminousEfficacy": 0.1,
+                "ColourMode": 1,
+                "temperature": 40000.0,
+                "AreaShape": 3,
+                "AreaLength": 0.0,
+                "isVisible": true
+            }
+        },
+        {
+            "case": "MAX_L_PL_009",
+            "status": "active",
+            "script_info": [
+                "Type - Area Light",
+                "Color Mode - Temperature",
+                "Light Shape - Disc",
+                "Diameter - 1",
+                "Check Box Visible - Deactivate"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "ColourMode": 1,
+                "AreaShape": 0,
+                "AreaWidths": 1.0,
+                "isVisible": false
+            }
+        },
+        {
+            "case": "MAX_L_PL_010",
+            "status": "skipped",
+            "script_info": [
+                "Type - Area Light",
+                "Light Intensity - 1",
+                "Intensity Units - Lumen",
+                "Color Mode - Temperature",
+                "Temperature - 40000",
+                "Light Shape - Cylinder",
+                "Check Box Visible - Deactivate"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 0,
+                "LightIntensity": 1.0,
+                "UnitsType": 3,
+                "ColourMode": 1,
+                "temperature": 40000.0,
+                "AreaShape": 1,
+                "isVisible": false
+            }
+        },
+        {
+            "case": "MAX_L_PL_011",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 0",
+                "Intensity Units - Watts",
+                "Luminous Efficacy - 0.1",
+                "Color Mode - Temperature",
+                "Hotspot/Beam - 0",
+                "Fallof/Field - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 0.0,
+                "UnitsType": 1,
+                "LuminousEfficacy": 0.1,
+                "ColourMode": 1,
+                "InnerConeAngle": 0.0,
+                "OuterConeFalloff": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_012",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_013",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 0",
+                "Fallof/Field - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 0.0,
+                "OuterConeFalloff": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_014",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 1",
+                "Hotspot/Beam - 0",
+                "Fallof/Field - 45"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 1.0,
+                "InnerConeAngle": 0.0,
+                "OuterConeFalloff": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_015",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 1",
+                "Hotspot/Beam - 45",
+                "Fallof/Field - 179"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 1.0,
+                "InnerConeAngle": 45.0,
+                "OuterConeFalloff": 179.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_016",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 1",
+                "Luminous Efficacy - 17",
+                "Color Mode - Temperature"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 1.0,
+                "LuminousEfficacy": 17.0,
+                "ColourMode": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_017",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 100",
+                "Fallof/Field - 179"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 100.0,
+                "OuterConeFalloff": 179.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_018",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 100",
+                "Color Mode - Temperature"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 100.0,
+                "ColourMode": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_019",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 100",
+                "Intensity Units - Watts",
+                "Luminous Efficacy - 100",
+                "Hotspot/Beam - 0",
+                "Fallof/Field - 179"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 100.0,
+                "UnitsType": 1,
+                "LuminousEfficacy": 100.0,
+                "InnerConeAngle": 0.0,
+                "OuterConeFalloff": 179.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_020",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Light Intensity - 100",
+                "Intensity Units - Lumen",
+                "Hotspot/Beam - 45"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "LightIntensity": 100.0,
+                "UnitsType": 3,
+                "InnerConeAngle": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_021",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Intensity Units - Watts",
+                "Fallof/Field - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "UnitsType": 1,
+                "OuterConeFalloff": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_022",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Intensity Units - Lumen",
+                "Color Mode - Temperature",
+                "Fallof/Field - 45"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "UnitsType": 3,
+                "ColourMode": 1,
+                "OuterConeFalloff": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_023",
+            "status": "skipped",
+            "script_info": [
+                "Type - Spot Light",
+                "Intensity Units - Lumen",
+                "Color Mode - Temperature",
+                "Temperature - 40000",
+                "Fallof/Field - 179"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "UnitsType": 3,
+                "ColourMode": 1,
+                "temperature": 40000.0,
+                "OuterConeFalloff": 179.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_024",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Color Mode - Temperature"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "ColourMode": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_025",
+            "status": "skipped",
+            "script_info": [
+                "Type - Spot Light",
+                "Intensity Units - Watts",
+                "Color Mode - Temperature",
+                "Temperature - 40000",
+                "Hotspot/Beam - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "UnitsType": 1,
+                "ColourMode": 1,
+                "temperature": 40000.0,
+                "InnerConeAngle": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_026",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Intensity Units - Lumen",
+                "Hotspot/Beam - 45"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "UnitsType": 3,
+                "InnerConeAngle": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_027",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Hotspot/Beam - 179",
+                "Fallof/Field - 45"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "InnerConeAngle": 179.0,
+                "OuterConeFalloff": 45.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_028",
+            "status": "active",
+            "script_info": [
+                "Type - Spot Light",
+                "Intensity Units - Watts",
+                "Fallof/Field - 179"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "UnitsType": 1,
+                "OuterConeFalloff": 179.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_029",
+            "status": "skipped",
+            "script_info": [
+                "Type - Spot Light",
+                "Color Mode - Temperature",
+                "Temperature - 40000",
+                "Hotspot/Beam - 45",
+                "Fallof/Field - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 1,
+                "ColourMode": 1,
+                "temperature": 40000.0,
+                "InnerConeAngle": 45.0,
+                "OuterConeFalloff": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_030",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 0",
+                "Intensity Units - Watts",
+                "Luminous Efficacy - 0.1"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 0.0,
+                "UnitsType": 1,
+                "LuminousEfficacy": 0.1
+            }
+        },
+        {
+            "case": "MAX_L_PL_031",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_032",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 1"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 1.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_033",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 3"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 3.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_034",
+            "status": "skipped",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 1",
+                "Intensity Units - Watts",
+                "Luminous Efficacy - 17",
+                "Color Mode - Temperature",
+                "Temperature - 40000"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 1.0,
+                "UnitsType": 1,
+                "LuminousEfficacy": 17.0,
+                "ColourMode": 1,
+                "temperature": 40000.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_035",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 100"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 100.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_036",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 100",
+                "Color Mode - Temperature"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 100.0,
+                "ColourMode": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_037",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 100",
+                "Intensity Units - Watts",
+                "Luminous Efficacy - 100"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 100.0,
+                "UnitsType": 1,
+                "LuminousEfficacy": 100.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_038",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Light Intensity - 100",
+                "Intensity Units - Lumen"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "LightIntensity": 100.0,
+                "UnitsType": 3
+            }
+        },
+        {
+            "case": "MAX_L_PL_039",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Intensity Units - Watts"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "UnitsType": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_040",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Intensity Units - Lumen",
+                "Color Mode - Temperature"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "UnitsType": 3,
+                "ColourMode": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_041",
+            "status": "skipped",
+            "script_info": [
+                "Type - Point Light",
+                "Color Mode - Temperature",
+                "Temperature - 40000"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "ColourMode": 1,
+                "temperature": 40000.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_042",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Color Mode - Temperature"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "ColourMode": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_043",
+            "status": "skipped",
+            "script_info": [
+                "Type - Point Light",
+                "Intensity Units - Watts",
+                "Color Mode - Temperature",
+                "Temperature - 40000"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "UnitsType": 1,
+                "ColourMode": 1,
+                "temperature": 40000.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_044",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Intensity Units - Lumen"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "UnitsType": 3
+            }
+        },
+        {
+            "case": "MAX_L_PL_045",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2
+            }
+        },
+        {
+            "case": "MAX_L_PL_046",
+            "status": "active",
+            "script_info": [
+                "Type - Point Light",
+                "Intensity Units - Watts"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "UnitsType": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_047",
+            "status": "skipped",
+            "script_info": [
+                "Type - Point Light",
+                "Color Mode - Temperature",
+                "Temperature - 40000"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 2,
+                "ColourMode": 1,
+                "temperature": 40000.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_048",
+            "status": "skipped",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 0",
+                "Intensity Units - Radiance",
+                "Luminous Efficacy - 0.1",
+                "Color Mode - Temperature",
+                "Temperature - 40000"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 0.0,
+                "UnitsType": 2,
+                "LuminousEfficacy": 0.1,
+                "ColourMode": 1,
+                "temperature": 40000.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_049",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_050",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 1"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 1.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_053",
+            "status": "skipped",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 1",
+                "Intensity Units - Radiance",
+                "Luminous Efficacy - 17",
+                "Color Mode - Temperature",
+                "Temperature - 40000"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 1.0,
+                "UnitsType": 2,
+                "LuminousEfficacy": 17.0,
+                "ColourMode": 1,
+                "temperature": 40000.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_054",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 100"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 100.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_055",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 100",
+                "Color Mode - Temperature"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 100.0,
+                "ColourMode": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_056",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 100",
+                "Intensity Units - Radiance",
+                "Luminous Efficacy - 100"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 100.0,
+                "UnitsType": 2,
+                "LuminousEfficacy": 100.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_057",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 100",
+                "Intensity Units - Luminance"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 100.0,
+                "UnitsType": 0
+            }
+        },
+        {
+            "case": "MAX_L_PL_058",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 50",
+                "Intensity Units - Luminance",
+                "Color Mode - Temperature"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 50.0,
+                "UnitsType": 0,
+                "ColourMode": 1
+            }
+        },
+        {
+            "case": "MAX_L_PL_059",
+            "status": "skipped",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 50",
+                "Color Mode - Temperature",
+                "Temperature - 40000"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 50.0,
+                "ColourMode": 1,
+                "temperature": 40000.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_060",
+            "status": "skipped",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 50",
+                "Color Mode - Temperature",
+                "Temperature - 0"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 50.0,
+                "ColourMode": 1,
+                "temperature": 0.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_061",
+            "status": "skipped",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 50",
+                "Intensity Units - Radiance",
+                "Color Mode - Temperature",
+                "Temperature - 40000"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 50.0,
+                "UnitsType": 2,
+                "ColourMode": 1,
+                "temperature": 40000.0
+            }
+        },
+        {
+            "case": "MAX_L_PL_062",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 50",
+                "Intensity Units - Luminance"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 50.0,
+                "UnitsType": 0
+            }
+        },
+        {
+            "case": "MAX_L_PL_063",
+            "status": "active",
+            "script_info": [
+                "Type - Directional Light",
+                "Light Intensity - 50"
+            ],
+            "scene_name": "Physical_Lights.max",
+            "parameters": {
+                "lightType": 3,
+                "LightIntensity": 50.0
+            }
+        }
+    ]
+}
