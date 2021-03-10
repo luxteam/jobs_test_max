@@ -1,1085 +1,1082 @@
-{
-    "test_group": "Adaptive_Sampling",
-    "cases": [
-        {
-            "case": "MAX_RS_AS_001",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_002",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 1",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 1.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_003",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 10",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 10.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_004",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 50",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 50.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_005",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 100",
-                "Max Samples - 100",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 100.0,
-                "samplesMax": 100.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_006",
-            "status": "skipped",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 1",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 1.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_007",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 100",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 100.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_008",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 500",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 500.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_009",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 1000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 1000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_010",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 5000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 5000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_011",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_012",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.0,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_013",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0.05",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.05,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_014",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_015",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 1",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 1.0,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_016",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_017",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 10",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 10
-            }
-        },
-        {
-            "case": "MAX_RS_AS_018",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_019",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 10",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 10
-            }
-        },
-        {
-            "case": "MAX_RS_AS_020",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 1, 59",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 119
-            }
-        },
-        {
-            "case": "MAX_RS_AS_021",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_022",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 1",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 1.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_023",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 10",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 10.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_024",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 50",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 50.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_025",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 100",
-                "Max Samples - 100",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 100.0,
-                "samplesMax": 100.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_026",
-            "status": "skipped",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 1",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 1.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_027",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 100",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 100.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_028",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 500",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 500.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_029",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 1000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 1000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_030",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 5000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 5000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_031",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_032",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.0,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_033",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0.05",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.05,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_034",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_035",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 1",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 1.0,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_036",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_037",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 10",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 10
-            }
-        },
-        {
-            "case": "MAX_RS_AS_038",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_039",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 10",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 10
-            }
-        },
-        {
-            "case": "MAX_RS_AS_040",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 1, 59",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 119
-            }
-        },
-        {
-            "case": "MAX_RS_AS_041",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_042",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 1",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 1.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_043",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 10",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 10.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_044",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 50",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 50.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_045",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 100",
-                "Max Samples - 100",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 100.0,
-                "samplesMax": 100.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_046",
-            "status": "skipped",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 1",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 1.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_047",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 100",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 100.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_048",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 500",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 500.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_049",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 1000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 1000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_050",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 5000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 5000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_051",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_052",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.0,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_053",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0.05",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.05,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_054",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_055",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64",
-                "Noise Threshold - 1",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 1.0,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_056",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_057",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 10",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 10
-            }
-        },
-        {
-            "case": "MAX_RS_AS_058",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 0",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 0
-            }
-        },
-        {
-            "case": "MAX_RS_AS_059",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 64 ",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 0, 10",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 64.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 10
-            }
-        },
-        {
-            "case": "MAX_RS_AS_060",
-            "status": "active",
-            "script_info": [
-                "Min Samples - 16",
-                "Max Samples - 10000",
-                "Noise Threshold - 0.5",
-                "Time Limit - 0, 1, 59",
-                "Samples per Iterations - 1"
-            ],
-            "scene_name": "Adaptive_Sampling.max",
-            "parameters": {
-                "samplesMin": 16.0,
-                "samplesMax": 10000.0,
-                "adaptiveNoiseThreshold": 0.5,
-                "timeLimit": 119
-            }
+[
+    {
+        "case": "MAX_RS_AS_001",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
         }
-    ]
-}
+    },
+    {
+        "case": "MAX_RS_AS_002",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 1",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 1.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_003",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 10",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 10.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_004",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 50",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 50.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_005",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 100",
+            "Max Samples - 100",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 100.0,
+            "samplesMax": 100.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_006",
+        "status": "skipped",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 1",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 1.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_007",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 100",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 100.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_008",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 500",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 500.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_009",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 1000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 1000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_010",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 5000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 5000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_011",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_012",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.0,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_013",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0.05",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.05,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_014",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_015",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 1",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 1.0,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_016",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_017",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 10",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 10
+        }
+    },
+    {
+        "case": "MAX_RS_AS_018",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_019",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 10",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 10
+        }
+    },
+    {
+        "case": "MAX_RS_AS_020",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 1, 59",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 119
+        }
+    },
+    {
+        "case": "MAX_RS_AS_021",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_022",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 1",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 1.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_023",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 10",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 10.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_024",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 50",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 50.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_025",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 100",
+            "Max Samples - 100",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 100.0,
+            "samplesMax": 100.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_026",
+        "status": "skipped",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 1",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 1.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_027",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 100",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 100.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_028",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 500",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 500.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_029",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 1000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 1000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_030",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 5000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 5000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_031",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_032",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.0,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_033",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0.05",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.05,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_034",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_035",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 1",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 1.0,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_036",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_037",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 10",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 10
+        }
+    },
+    {
+        "case": "MAX_RS_AS_038",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_039",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 10",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 10
+        }
+    },
+    {
+        "case": "MAX_RS_AS_040",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 1, 59",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 119
+        }
+    },
+    {
+        "case": "MAX_RS_AS_041",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_042",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 1",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 1.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_043",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 10",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 10.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_044",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 50",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 50.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_045",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 100",
+            "Max Samples - 100",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 100.0,
+            "samplesMax": 100.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_046",
+        "status": "skipped",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 1",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 1.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_047",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 100",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 100.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_048",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 500",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 500.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_049",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 1000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 1000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_050",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 5000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 5000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_051",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_052",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.0,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_053",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0.05",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.05,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_054",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_055",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64",
+            "Noise Threshold - 1",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 1.0,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_056",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_057",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 10",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 10
+        }
+    },
+    {
+        "case": "MAX_RS_AS_058",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 0",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 0
+        }
+    },
+    {
+        "case": "MAX_RS_AS_059",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 64 ",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 0, 10",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 64.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 10
+        }
+    },
+    {
+        "case": "MAX_RS_AS_060",
+        "status": "active",
+        "script_info": [
+            "Min Samples - 16",
+            "Max Samples - 10000",
+            "Noise Threshold - 0.5",
+            "Time Limit - 0, 1, 59",
+            "Samples per Iterations - 1"
+        ],
+        "scene_name": "Adaptive_Sampling.max",
+        "parameters": {
+            "samplesMin": 16.0,
+            "samplesMax": 10000.0,
+            "adaptiveNoiseThreshold": 0.5,
+            "timeLimit": 119
+        }
+    }
+]

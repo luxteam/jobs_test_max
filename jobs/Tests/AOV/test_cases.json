@@ -1,194 +1,192 @@
-{
-	"test_group": "AOV",
-	"cases": [
-		{
-			"case": "MAX_RS_AOV_001",
-			"script_info": [
-				"Opacity"
-			],
-			"aov": "RprOpacity",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_002",
-			"script_info": [
-				"WorldCoordinate"
-			],
-			"aov": "RprWorldCoordinate",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_003",
-			"script_info": [
-				"UV"
-			],
-			"aov": "RprUV",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_004",
-			"script_info": [
-				"Material Idx"
-			],
-			"aov": "RprMaterialIdx",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_005",
-			"script_info": [
-				"Geometric Normal"
-			],
-			"aov": "RprGeometricNormal",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_006",
-			"script_info": [
-				"Shading Normal"
-			],
-			"aov": "RprShadingNormal",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_007",
-			"script_info": [
-				"Depth"
-			],
-			"aov": "RprDepth",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_008",
-			"script_info": [
-				"Object Id"
-			],
-			"aov": "RprObjectId",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_009",
-			"script_info": [
-				"Object Group Id"
-			],
-			"aov": "RprObjectGroupId",
-			"status": "skipped",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_010",
-			"script_info": [
-				"Background"
-			],
-			"aov": "RprBackground",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_011",
-			"script_info": [
-				"Emission"
-			],
-			"aov": "RprEmission",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_012",
-			"script_info": [
-				"Velocity"
-			],
-			"aov": "RprVelocity",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_013",
-			"script_info": [
-				"Direct Illumination"
-			],
-			"aov": "RprDirectIllumination",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_014",
-			"script_info": [
-				"Indirect Illumination"
-			],
-			"aov": "RprIndirectIllumination",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_015",
-			"script_info": [
-				"AO"
-			],
-			"aov": "RprAO",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_016",
-			"script_info": [
-				"Direct Diffuse"
-			],
-			"aov": "RprDirectDiffuse",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_017",
-			"script_info": [
-				"Direct Reflect"
-			],
-			"aov": "RprDirectReflect",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_018",
-			"script_info": [
-				"Indirect Diffuse"
-			],
-			"aov": "RprIndirectDiffuse",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_019",
-			"script_info": [
-				"Indirect Reflect"
-			],
-			"aov": "RprIndirectReflect",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_020",
-			"script_info": [
-				"Refract"
-			],
-			"aov": "RprRefract",
-			"status": "active",
-			"scene_name": "AOV.max"
-		},
-		{
-			"case": "MAX_RS_AOV_021",
-			"script_info": [
-				"Volume"
-			],
-			"aov": "RprVolume",
-			"status": "active",
-			"scene_name": "AOV.max"
-		}
-	]
-}
+[
+	{
+		"case": "MAX_RS_AOV_001",
+		"script_info": [
+			"Opacity"
+		],
+		"aov": "RprOpacity",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_002",
+		"script_info": [
+			"WorldCoordinate"
+		],
+		"aov": "RprWorldCoordinate",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_003",
+		"script_info": [
+			"UV"
+		],
+		"aov": "RprUV",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_004",
+		"script_info": [
+			"Material Idx"
+		],
+		"aov": "RprMaterialIdx",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_005",
+		"script_info": [
+			"Geometric Normal"
+		],
+		"aov": "RprGeometricNormal",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_006",
+		"script_info": [
+			"Shading Normal"
+		],
+		"aov": "RprShadingNormal",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_007",
+		"script_info": [
+			"Depth"
+		],
+		"aov": "RprDepth",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_008",
+		"script_info": [
+			"Object Id"
+		],
+		"aov": "RprObjectId",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_009",
+		"script_info": [
+			"Object Group Id"
+		],
+		"aov": "RprObjectGroupId",
+		"status": "skipped",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_010",
+		"script_info": [
+			"Background"
+		],
+		"aov": "RprBackground",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_011",
+		"script_info": [
+			"Emission"
+		],
+		"aov": "RprEmission",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_012",
+		"script_info": [
+			"Velocity"
+		],
+		"aov": "RprVelocity",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_013",
+		"script_info": [
+			"Direct Illumination"
+		],
+		"aov": "RprDirectIllumination",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_014",
+		"script_info": [
+			"Indirect Illumination"
+		],
+		"aov": "RprIndirectIllumination",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_015",
+		"script_info": [
+			"AO"
+		],
+		"aov": "RprAO",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_016",
+		"script_info": [
+			"Direct Diffuse"
+		],
+		"aov": "RprDirectDiffuse",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_017",
+		"script_info": [
+			"Direct Reflect"
+		],
+		"aov": "RprDirectReflect",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_018",
+		"script_info": [
+			"Indirect Diffuse"
+		],
+		"aov": "RprIndirectDiffuse",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_019",
+		"script_info": [
+			"Indirect Reflect"
+		],
+		"aov": "RprIndirectReflect",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_020",
+		"script_info": [
+			"Refract"
+		],
+		"aov": "RprRefract",
+		"status": "active",
+		"scene_name": "AOV.max"
+	},
+	{
+		"case": "MAX_RS_AOV_021",
+		"script_info": [
+			"Volume"
+		],
+		"aov": "RprVolume",
+		"status": "active",
+		"scene_name": "AOV.max"
+	}
+]
+

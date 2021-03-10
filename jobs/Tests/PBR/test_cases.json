@@ -1,413 +1,410 @@
-{
-    "test_group": "PBR",
-    "cases": [
-        {
-            "case": "MAX_MAT_PBR_001",
-            "status": "active",
-            "script_info": [
-                "Texmap base_color.png"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "BaseColorTexmap": "sourceimages/base_color.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_002",
-            "status": "active",
-            "script_info": [
-                "Texmap base_color.tga"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "BaseColorTexmap": "sourceimages/base_color.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_003",
-            "status": "active",
-            "script_info": [
-                "RGB color: 40, 75, 166"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "BaseColor": {
-                    "r": 40,
-                    "g": 75,
-                    "b": 166
-                }
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_004",
-            "status": "active",
-            "script_info": [
-                "Texmap metalness.png"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "MetalnessTexmap": "sourceimages/metalness.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_005",
-            "status": "active",
-            "script_info": [
-                "Texmap metalness.tga"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "MetalnessTexmap": "sourceimages/metalness.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_006",
-            "status": "active",
-            "script_info": [
-                "Metalness - 0.5"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "MetalnessMul": 0.5
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_007",
-            "status": "active",
-            "script_info": [
-                "Metalness - 1"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "MetalnessMul": 1
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_008",
-            "status": "active",
-            "script_info": [
-                "SpecularTexmap PNG"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SpecularTexmap": "sourceimages/specular.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_009",
-            "status": "active",
-            "script_info": [
-                "SpecularTexmap TGA"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SpecularTexmap": "sourceimages/specular.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_010",
-            "status": "active",
-            "script_info": [
-                "Specular - 0.5"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SpecularMul": 0.5
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_011",
-            "status": "active",
-            "script_info": [
-                "Specular - 1"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SpecularMul": 1
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_012",
-            "status": "active",
-            "script_info": [
-                "Roughness PNG"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "RoughnessTexmap": "sourceimages/roughness.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_013",
-            "status": "active",
-            "script_info": [
-                "Roughness TGA"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "RoughnessTexmap": "sourceimages/roughness.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_014",
-            "status": "active",
-            "script_info": [
-                "Roughness - 0"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "RoughnessMul": 0
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_015",
-            "status": "active",
-            "script_info": [
-                "Roughness - 1"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "RoughnessMul": 1
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_016",
-            "status": "active",
-            "script_info": [
-                "Normal Map PNG"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "normal": {
-                    "chanel": "BaseColorTexmap",
-                    "map": "sourceimages/normal.png"
-                }
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_017",
-            "status": "active",
-            "script_info": [
-                "Normal Map TGA"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "normal": {
-                    "chanel": "BaseColorTexmap",
-                    "map": "sourceimages/normal.tga"
-                }
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_018",
-            "status": "active",
-            "script_info": [
-                "Glass PNG"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "GlassTexmap": "sourceimages/glass.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_019",
-            "status": "active",
-            "script_info": [
-                "Glass TGA"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "GlassTexmap": "sourceimages/glass.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_020",
-            "status": "active",
-            "script_info": [
-                "Glass = 0"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "GlassMul": 0            
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_021",
-            "status": "active",
-            "script_info": [
-                "Glass = 1"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "GlassMul": 1
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_022",
-            "status": "active",
-            "script_info": [
-                "GlassIOR = 0"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "GlassIORMul": 0
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_023",
-            "status": "active",
-            "script_info": [
-                "GlassIOR = 1"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "GlassIORMul": 1
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_024",
-            "status": "active",
-            "script_info": [
-                "Emissive Color Texmap PNG"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "EmissiveColorTexmap": "sourceimages/emissive.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_025",
-            "status": "active",
-            "script_info": [
-                "Emissive Color Texmap TGA"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "EmissiveColorTexmap": "sourceimages/emissive.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_026",
-            "status": "active",
-            "script_info": [
-                "Emissive Color RGB: 0,0,0",
-                "Emissive Width: 0.5"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "EmissiveWeightMul": 0.5,
-                "EmissiveColor": {
-                    "r": 0,
-                    "g": 0,
-                    "b": 0
-                }
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_027",
-            "status": "active",
-            "status": "active",
-            "script_info": [
-                "Emissive Color RGB: 0,0,0",
-                "Emissive Width: 1"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "EmissiveWeightMul": 1,
-                "EmissiveColor": {
-                    "r": 0,
-                    "g": 0,
-                    "b": 0
-                }
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_028",
-            "status": "active",
-            "script_info": [
-                "Emissive Weight Texmap PNG"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "EmissiveWeightTexmap": "sourceimages/emissiveWidth.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_029",
-            "status": "active",
-            "script_info": [
-                "Emissive Weight Texmap TGA"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "EmissiveWeightTexmap": "sourceimages/emissiveWidth.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_030",
-            "status": "active",
-            "script_info": [
-                "SSS Weight Texmap PNG"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SSSWeightTexmap": "sourceimages/subsurface_weight.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_031",
-            "status": "active",
-            "script_info": [
-                "SSS Weight Texmap TGA"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SSSWeightTexmap": "sourceimages/subsurface_weight.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_032",
-            "status": "active",
-            "script_info": [
-                "SSS Color Texmap PNG"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SSSColorTexmap": "sourceimages/subsurface_color.png"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_033",
-            "status": "active",
-            "script_info": [
-                "SSS Color Texmap TGA"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SSSColorTexmap": "sourceimages/subsurface_color.tga"
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_034",
-            "status": "active",
-            "script_info": [
-                "SSS Radius - 1,1,1"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SSSRadius": [1, 1, 1]
-            }
-        },
-        {
-            "case": "MAX_MAT_PBR_035",
-            "status": "active",
-            "script_info": [
-                "SSS Radius - 5,5,5"
-            ],
-            "scene_name": "PBR.max",
-            "parameters": {
-                "SSSRadius": [5, 5, 5]
+[
+    {
+        "case": "MAX_MAT_PBR_001",
+        "status": "active",
+        "script_info": [
+            "Texmap base_color.png"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "BaseColorTexmap": "sourceimages/base_color.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_002",
+        "status": "active",
+        "script_info": [
+            "Texmap base_color.tga"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "BaseColorTexmap": "sourceimages/base_color.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_003",
+        "status": "active",
+        "script_info": [
+            "RGB color: 40, 75, 166"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "BaseColor": {
+                "r": 40,
+                "g": 75,
+                "b": 166
             }
         }
-    ]
-}
+    },
+    {
+        "case": "MAX_MAT_PBR_004",
+        "status": "active",
+        "script_info": [
+            "Texmap metalness.png"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "MetalnessTexmap": "sourceimages/metalness.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_005",
+        "status": "active",
+        "script_info": [
+            "Texmap metalness.tga"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "MetalnessTexmap": "sourceimages/metalness.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_006",
+        "status": "active",
+        "script_info": [
+            "Metalness - 0.5"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "MetalnessMul": 0.5
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_007",
+        "status": "active",
+        "script_info": [
+            "Metalness - 1"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "MetalnessMul": 1
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_008",
+        "status": "active",
+        "script_info": [
+            "SpecularTexmap PNG"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SpecularTexmap": "sourceimages/specular.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_009",
+        "status": "active",
+        "script_info": [
+            "SpecularTexmap TGA"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SpecularTexmap": "sourceimages/specular.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_010",
+        "status": "active",
+        "script_info": [
+            "Specular - 0.5"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SpecularMul": 0.5
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_011",
+        "status": "active",
+        "script_info": [
+            "Specular - 1"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SpecularMul": 1
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_012",
+        "status": "active",
+        "script_info": [
+            "Roughness PNG"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "RoughnessTexmap": "sourceimages/roughness.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_013",
+        "status": "active",
+        "script_info": [
+            "Roughness TGA"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "RoughnessTexmap": "sourceimages/roughness.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_014",
+        "status": "active",
+        "script_info": [
+            "Roughness - 0"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "RoughnessMul": 0
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_015",
+        "status": "active",
+        "script_info": [
+            "Roughness - 1"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "RoughnessMul": 1
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_016",
+        "status": "active",
+        "script_info": [
+            "Normal Map PNG"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "normal": {
+                "chanel": "BaseColorTexmap",
+                "map": "sourceimages/normal.png"
+            }
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_017",
+        "status": "active",
+        "script_info": [
+            "Normal Map TGA"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "normal": {
+                "chanel": "BaseColorTexmap",
+                "map": "sourceimages/normal.tga"
+            }
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_018",
+        "status": "active",
+        "script_info": [
+            "Glass PNG"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "GlassTexmap": "sourceimages/glass.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_019",
+        "status": "active",
+        "script_info": [
+            "Glass TGA"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "GlassTexmap": "sourceimages/glass.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_020",
+        "status": "active",
+        "script_info": [
+            "Glass = 0"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "GlassMul": 0            
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_021",
+        "status": "active",
+        "script_info": [
+            "Glass = 1"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "GlassMul": 1
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_022",
+        "status": "active",
+        "script_info": [
+            "GlassIOR = 0"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "GlassIORMul": 0
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_023",
+        "status": "active",
+        "script_info": [
+            "GlassIOR = 1"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "GlassIORMul": 1
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_024",
+        "status": "active",
+        "script_info": [
+            "Emissive Color Texmap PNG"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "EmissiveColorTexmap": "sourceimages/emissive.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_025",
+        "status": "active",
+        "script_info": [
+            "Emissive Color Texmap TGA"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "EmissiveColorTexmap": "sourceimages/emissive.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_026",
+        "status": "active",
+        "script_info": [
+            "Emissive Color RGB: 0,0,0",
+            "Emissive Width: 0.5"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "EmissiveWeightMul": 0.5,
+            "EmissiveColor": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            }
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_027",
+        "status": "active",
+        "status": "active",
+        "script_info": [
+            "Emissive Color RGB: 0,0,0",
+            "Emissive Width: 1"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "EmissiveWeightMul": 1,
+            "EmissiveColor": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            }
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_028",
+        "status": "active",
+        "script_info": [
+            "Emissive Weight Texmap PNG"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "EmissiveWeightTexmap": "sourceimages/emissiveWidth.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_029",
+        "status": "active",
+        "script_info": [
+            "Emissive Weight Texmap TGA"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "EmissiveWeightTexmap": "sourceimages/emissiveWidth.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_030",
+        "status": "active",
+        "script_info": [
+            "SSS Weight Texmap PNG"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SSSWeightTexmap": "sourceimages/subsurface_weight.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_031",
+        "status": "active",
+        "script_info": [
+            "SSS Weight Texmap TGA"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SSSWeightTexmap": "sourceimages/subsurface_weight.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_032",
+        "status": "active",
+        "script_info": [
+            "SSS Color Texmap PNG"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SSSColorTexmap": "sourceimages/subsurface_color.png"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_033",
+        "status": "active",
+        "script_info": [
+            "SSS Color Texmap TGA"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SSSColorTexmap": "sourceimages/subsurface_color.tga"
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_034",
+        "status": "active",
+        "script_info": [
+            "SSS Radius - 1,1,1"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SSSRadius": [1, 1, 1]
+        }
+    },
+    {
+        "case": "MAX_MAT_PBR_035",
+        "status": "active",
+        "script_info": [
+            "SSS Radius - 5,5,5"
+        ],
+        "scene_name": "PBR.max",
+        "parameters": {
+            "SSSRadius": [5, 5, 5]
+        }
+    }
+]
