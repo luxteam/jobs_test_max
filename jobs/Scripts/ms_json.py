@@ -37,7 +37,7 @@ class JSONWrapper:
 
 
 	def setCaseStatus(self, index, value):
-		self.data["cases"][index - 1]["status"] = value
+		self.data[index - 1]["status"] = value
 		self.dump()
 		return True
 

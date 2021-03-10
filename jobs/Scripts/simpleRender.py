@@ -41,9 +41,9 @@ def get_windows_titles():
 
 def check_cases(group, work_dir):
     with open(os.path.join(work_dir, case_list)) as file:
-        data = json.loads(file.read())
+        cases = json.loads(file.read())
     try:
-        for case in data["cases"]:
+        for case in cases:
             if case["status"] == "active":
                 return True
 
@@ -52,12 +52,10 @@ def check_cases(group, work_dir):
         core_config.main_logger.error(str(err))
 
 
-def dump_reports(work_dir, case_list, render_device, update_refs):
+def dump_reports(work_dir, case_list, test_group, render_device, update_refs):
 
     with open(os.path.join(work_dir, case_list)) as file:
-        data = json.loads(file.read())
-        test_group = data["test_group"]
-        cases = data["cases"]
+        cases = json.loads(file.read())
 
     baseline_path_tr = os.path.join(
             'c:/TestResources/rpr_max_autotests_baselines', test_group)
@@ -205,13 +203,10 @@ def main():
                 cases = json.loads(file.read())
             
             # prepare template for custom json
-            filter_cases = {
-                'test_group': args.package_name,
-                'cases': []
-            }
+            filter_cases = []
 
             # collect cases
-            filter_cases['cases'] = [case for case in cases['cases'] if case['case'] in case_names or case_names == "all"]
+            filter_cases = [case for case in cases if case['case'] in case_names or case_names == "all"]
 
             # dump new custom case list
             with open(os.path.join(work_dir, case_list), 'w') as file:
@@ -222,7 +217,7 @@ def main():
     # copy ms_json.py for json parsing in MaxScript
     copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
 
-    dump_reports(work_dir, case_list, render_device, args.update_refs)
+    dump_reports(work_dir, case_list, args.package_name, render_device, args.update_refs)
 
     for path in maybe:
         exist = os.path.isfile(path)
@@ -267,9 +262,9 @@ def main():
                         error_case = utils.get_error_case(test_cases_path)
                         if error_case:
                             with open(test_cases_path) as file:
-                                data = json.load(file)
+                                cases = json.load(file)
 
-                            for case in data["cases"]:
+                            for case in cases:
                                 if case["status"] == "progress":
                                     case["status"] = "error"
 
@@ -316,8 +311,7 @@ def main():
                 break
 
     with open(os.path.join(work_dir, case_list)) as file:
-        data = json.loads(file.read())
-        cases = data["cases"]
+        cases = json.loads(file.read())
 
     for case in cases:
         error_message = ''
