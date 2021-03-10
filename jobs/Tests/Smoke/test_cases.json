@@ -1,312 +1,310 @@
-{
-    "test_group": "Smoke",
-    "cases": [
-        {
-            "case": "MAX_SM_003",
-            "scene_name": "default.max",
-            "script_info": [
-                "Test import FBX"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_004",
-            "scene_name": "default.max",
-            "script_info": [
-                "Test import OBJ"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_005",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Open RPR Scene"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_006",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "HDR"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_007",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "EXR"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_008",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Test Sun"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_009",
-            "scene_name": "smoke_ies.max",
-            "script_info": [
-                "Create IES Light"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_010",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Render 1 pass"
-            ],
-            "pass_limit": 1,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_011",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Render 100 passes"
-            ],
-            "pass_limit": 100,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_012",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Render 500 passes"
-            ],
-            "pass_limit": 500,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_013",
-            "scene_name": "tone_mapping.max",
-            "script_info": [
-                "Tone Mapping"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_014",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Render Stamp"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_015",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Render mode=UV"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_016",
-            "scene_name": "quality_preset_medium.max",
-            "script_info": [
-                "Quality Preset - Medium"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_017",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Image Size 1280x720"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_018",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Image Size 1500x1125"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_019",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Save image as .png"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_020",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Save image as .jpg"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_021",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Bilateral Denoiser"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_022",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Denoiser LWR default"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_023",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Denoiser EAW default"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_024",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Free light - Photometric"
-            ],
-            "pass_limit": 500,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_025",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Physical light"
-            ],
-            "pass_limit": 500,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_026",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Assign material from Mat.Library"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_027",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Assign Pbr to object"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_028",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Assign Uber to object"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_029",
-            "scene_name": "instances.max",
-            "script_info": [
-                "Instances"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_030",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "4-5 lights in one scene"
-            ],
-            "pass_limit": 500,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_031",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "AOV-SC"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_032",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "SSS"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_033",
-            "scene_name": "displacement.max",
-            "script_info": [
-                "Displacement"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        },
-        {
-            "case": "MAX_SM_034",
-            "scene_name": "anti_aliasing.max",
-            "script_info": [
-                "Anit-Aliasing"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_035",
-            "scene_name": "motion_blur.max",
-            "script_info": [
-                "Motion Blur"
-            ],
-            "pass_limit": 400,
-            "status": "active"
-        },
-        {
-            "case": "MAX_SM_036",
-            "scene_name": "base_scene.max",
-            "script_info": [
-                "Machine Learning Denoiser",
-                "*doesn't work for Max"
-            ],
-            "pass_limit": 400,
-            "status": "skipped"
-        }
-    ]
-}
+[
+    {
+        "case": "MAX_SM_003",
+        "scene_name": "default.max",
+        "script_info": [
+            "Test import FBX"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_004",
+        "scene_name": "default.max",
+        "script_info": [
+            "Test import OBJ"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_005",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Open RPR Scene"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_006",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "HDR"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_007",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "EXR"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_008",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Test Sun"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_009",
+        "scene_name": "smoke_ies.max",
+        "script_info": [
+            "Create IES Light"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_010",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Render 1 pass"
+        ],
+        "pass_limit": 1,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_011",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Render 100 passes"
+        ],
+        "pass_limit": 100,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_012",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Render 500 passes"
+        ],
+        "pass_limit": 500,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_013",
+        "scene_name": "tone_mapping.max",
+        "script_info": [
+            "Tone Mapping"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_014",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Render Stamp"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_015",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Render mode=UV"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_016",
+        "scene_name": "quality_preset_medium.max",
+        "script_info": [
+            "Quality Preset - Medium"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_017",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Image Size 1280x720"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_018",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Image Size 1500x1125"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_019",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Save image as .png"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_020",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Save image as .jpg"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_021",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Bilateral Denoiser"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_022",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Denoiser LWR default"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_023",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Denoiser EAW default"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_024",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Free light - Photometric"
+        ],
+        "pass_limit": 500,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_025",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Physical light"
+        ],
+        "pass_limit": 500,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_026",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Assign material from Mat.Library"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_027",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Assign Pbr to object"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_028",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Assign Uber to object"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_029",
+        "scene_name": "instances.max",
+        "script_info": [
+            "Instances"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_030",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "4-5 lights in one scene"
+        ],
+        "pass_limit": 500,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_031",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "AOV-SC"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_032",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "SSS"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_033",
+        "scene_name": "displacement.max",
+        "script_info": [
+            "Displacement"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    },
+    {
+        "case": "MAX_SM_034",
+        "scene_name": "anti_aliasing.max",
+        "script_info": [
+            "Anit-Aliasing"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_035",
+        "scene_name": "motion_blur.max",
+        "script_info": [
+            "Motion Blur"
+        ],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_SM_036",
+        "scene_name": "base_scene.max",
+        "script_info": [
+            "Machine Learning Denoiser",
+            "*doesn't work for Max"
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    }
+]
+
