@@ -168,7 +168,7 @@ function setOutputSize preset = (
 function main = (
     renderers.current = Radeon_ProRender()
     cases = caseList.get_data()
-    cases = cases["cases"]
+    
     for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue
         caseList.setCaseStatus i "progress"

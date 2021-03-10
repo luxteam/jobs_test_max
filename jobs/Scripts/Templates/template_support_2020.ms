@@ -1,6 +1,6 @@
 function main = (
     cases = caseList.get_data()
-    cases = cases["cases"]
+    
 
     for i=1 to cases.count do (
         if (cases[i]["status"] != "active") do continue

@@ -33,7 +33,7 @@ function setRenderMode rM iC mRD = (
 
 function main = (
     cases = caseList.get_data()
-    cases = cases["cases"]
+    
     
     for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue
