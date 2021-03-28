@@ -258,7 +258,7 @@ def main():
                     error_windows.update(error_window)
                     rc = -1
                     try:
-                        test_cases_path = os.path.join(work_dir, core_config.TEST_CASES_JSON_NAME[local_config.tool_name])
+                        test_cases_path = os.path.join(work_dir, 'test_cases.json')
                         error_case = utils.get_error_case(test_cases_path)
                         if error_case:
                             with open(test_cases_path) as file:
