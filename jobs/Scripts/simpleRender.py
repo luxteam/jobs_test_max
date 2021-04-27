@@ -14,7 +14,7 @@ import local_config
 import jobs_launcher.core.config as core_config
 from jobs_launcher.core.system_info import get_gpu
 
-case_list = "case_list.json"
+case_list = "test_cases.json"
 
 
 def get_windows_titles():
@@ -41,9 +41,9 @@ def get_windows_titles():
 
 def check_cases(group, work_dir):
     with open(os.path.join(work_dir, case_list)) as file:
-        data = json.loads(file.read())
+        cases = json.loads(file.read())
     try:
-        for case in data["cases"]:
+        for case in cases:
             if case["status"] == "active":
                 return True
 
@@ -52,12 +52,10 @@ def check_cases(group, work_dir):
         core_config.main_logger.error(str(err))
 
 
-def dump_reports(work_dir, case_list, render_device, update_refs):
+def dump_reports(work_dir, case_list, test_group, render_device, update_refs):
 
     with open(os.path.join(work_dir, case_list)) as file:
-        data = json.loads(file.read())
-        test_group = data["test_group"]
-        cases = data["cases"]
+        cases = json.loads(file.read())
 
     baseline_path_tr = os.path.join(
             'c:/TestResources/rpr_max_autotests_baselines', test_group)
@@ -70,14 +68,14 @@ def dump_reports(work_dir, case_list, render_device, update_refs):
         os.makedirs(os.path.join(baseline_path, 'Color'))
 
     for case in cases:
-        report_name = case["name"] + "_RPR.json"
+        report_name = case["case"] + "_RPR.json"
         report_body = core_config.RENDER_REPORT_BASE.copy()
 
-        report_body["test_case"] = case["name"]
+        report_body["test_case"] = case["case"]
         report_body["script_info"] = case["script_info"]
         report_body["render_device"] = render_device
-        report_body["render_color_path"] = "Color/{0}.jpg".format(case["name"])
-        report_body["file_name"] = case["name"] + ".jpg"
+        report_body["render_color_path"] = "Color/{0}.jpg".format(case["case"])
+        report_body["file_name"] = case["case"] + ".jpg"
         report_body["scene_name"] = case["scene_name"]
         report_body["test_group"] = test_group
 
@@ -89,20 +87,20 @@ def dump_reports(work_dir, case_list, render_device, update_refs):
             report_body['group_timeout_exceeded'] = False
             path_2_orig_img = os.path.join(ROOT_DIR, 'jobs_launcher', 'common', 'img', 'skipped.jpg')
 
-        path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["name"]))
+        path_2_case_img = os.path.join(work_dir, "Color\\{test_case}.jpg".format(test_case=case["case"]))
         copyfile(path_2_orig_img, path_2_case_img)
 
         with open(os.path.join(work_dir, report_name), "w") as file:
             json.dump([report_body], file, indent=4)
 
-        core_config.main_logger.info(case["name"] + ": Report template created.")
+        core_config.main_logger.info(case["case"] + ": Report template created.")
 
         if 'Update' not in update_refs:
             try:
-                copyfile(os.path.join(baseline_path_tr, case['name'] + core_config.CASE_REPORT_SUFFIX),
-                         os.path.join(baseline_path, case['name'] + core_config.CASE_REPORT_SUFFIX))
+                copyfile(os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX),
+                         os.path.join(baseline_path, case['case'] + core_config.CASE_REPORT_SUFFIX))
 
-                with open(os.path.join(baseline_path, case['name'] + core_config.CASE_REPORT_SUFFIX)) as baseline:
+                with open(os.path.join(baseline_path, case['case'] + core_config.CASE_REPORT_SUFFIX)) as baseline:
                     baseline_json = json.load(baseline)
 
                 for thumb in [''] + core_config.THUMBNAIL_PREFIXES:
@@ -111,7 +109,7 @@ def dump_reports(work_dir, case_list, render_device, update_refs):
                                  os.path.join(baseline_path, baseline_json[thumb + 'render_color_path']))
             except:
                 core_config.main_logger.error('Failed to copy baseline ' +
-                                              os.path.join(baseline_path_tr, case['name'] + core_config.CASE_REPORT_SUFFIX))
+                                              os.path.join(baseline_path_tr, case['case'] + core_config.CASE_REPORT_SUFFIX))
 
     return 1
 
@@ -193,7 +191,7 @@ def main():
     with open(cmdScriptPath, 'w') as f:
         f.write(cmdRun)
 
-    # prepare case_list.json
+    # prepare test_cases.json
     if os.path.exists(args.testCases) and args.testCases:
         # open custom json group
         with open(args.testCases) as f:
@@ -205,13 +203,10 @@ def main():
                 cases = json.loads(file.read())
             
             # prepare template for custom json
-            filter_cases = {
-                'test_group': args.package_name,
-                'cases': []
-            }
+            filter_cases = []
 
             # collect cases
-            filter_cases['cases'] = [case for case in cases['cases'] if case['name'] in case_names or case_names == "all"]
+            filter_cases = [case for case in cases if case['case'] in case_names or case_names == "all"]
 
             # dump new custom case list
             with open(os.path.join(work_dir, case_list), 'w') as file:
@@ -222,7 +217,7 @@ def main():
     # copy ms_json.py for json parsing in MaxScript
     copyfile(os.path.join(os.path.dirname(__file__), "ms_json.py"), os.path.join(work_dir, "ms_json.py"))
 
-    dump_reports(work_dir, case_list, render_device, args.update_refs)
+    dump_reports(work_dir, case_list, args.package_name, render_device, args.update_refs)
 
     for path in maybe:
         exist = os.path.isfile(path)
@@ -263,13 +258,13 @@ def main():
                     error_windows.update(error_window)
                     rc = -1
                     try:
-                        test_cases_path = os.path.join(work_dir, core_config.TEST_CASES_JSON_NAME[local_config.tool_name])
+                        test_cases_path = os.path.join(work_dir, 'test_cases.json')
                         error_case = utils.get_error_case(test_cases_path)
                         if error_case:
                             with open(test_cases_path) as file:
-                                data = json.load(file)
+                                cases = json.load(file)
 
-                            for case in data["cases"]:
+                            for case in cases:
                                 if case["status"] == "progress":
                                     case["status"] = "error"
 
@@ -316,8 +311,7 @@ def main():
                 break
 
     with open(os.path.join(work_dir, case_list)) as file:
-        data = json.loads(file.read())
-        cases = data["cases"]
+        cases = json.loads(file.read())
 
     for case in cases:
         error_message = ''
@@ -327,8 +321,8 @@ def main():
             error_message = "Testcase wasn't finished"
 
         if error_message:
-            core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['name'], error_message))
-            path_to_file = os.path.join(args.output, case['name'] + '_RPR.json')
+            core_config.main_logger.info("Testcase {} wasn't finished successfully: {}".format(case['case'], error_message))
+            path_to_file = os.path.join(args.output, case['case'] + '_RPR.json')
 
             with open(path_to_file, 'r') as file:
                 report = json.load(file)

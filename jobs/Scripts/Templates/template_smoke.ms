@@ -16,7 +16,7 @@ function switchStatus test_case status = (
 
 function main = (
     cases = caseList.get_data()
-    cases = cases["cases"]
+    
 
     for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue 
@@ -37,7 +37,7 @@ function main = (
 
 
 
-        case cases[i]["name"] of (
+        case cases[i]["case"] of (
             "MAX_SM_003": (
                 renderers.current = Radeon_ProRender()
                 status = (importfile (FBX_ASSET_PATH) #noPrompt using:FBXIMP)
@@ -188,19 +188,19 @@ function main = (
         --  N = with rendering
 
         if cases[i]["pass_limit"] == 0 then (
-            withoutRender cases[i]["name"] cases[i]["script_info"] status
+            withoutRender cases[i]["case"] cases[i]["script_info"] status
         ) else if cases[i]["pass_limit"] == -1 then (
-            rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+            rpr_render image_format cases[i]["case"] cases[i]["script_info"]
         ) else (
             renderers.current.samplesMax = cases[i]["pass_limit"]
-            rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+            rpr_render image_format cases[i]["case"] cases[i]["script_info"]
         )
 
         -- png ext.
         if image_format == "png" do (
-            if (existFile ("{work_dir}Color\\" + cases[i]["name"] + ".png")) do (
+            if (existFile ("{work_dir}Color\\" + cases[i]["case"] + ".png")) do (
                 -- delete <test_case>.jpg like filed
-                path_case_img = "{work_dir}Color\\" + cases[i]["name"] + ".jpg"
+                path_case_img = "{work_dir}Color\\" + cases[i]["case"] + ".jpg"
                 deleteFile path_case_img
                 
                 -- save <test_case>.jpg like passed

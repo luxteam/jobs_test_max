@@ -1,0 +1,28 @@
+[
+    {
+        "case": "MAX_RS_2019_001",
+        "scene_name": "denoiser.max",
+        "script_info": [
+            "Max 2019"
+        ],
+        "parameters": [],
+        "pass_limit": 400,
+        "status": "active"
+    },
+    {
+        "case": "MAX_RS_2019_002",
+        "scene_name": "denoiser.max",
+        "script_info": [
+            "Enable Denoiser",
+            "Max 2019"
+        ],
+        "parameters": [
+            {
+                "class": "Denoiser"
+            }
+        ],
+        "pass_limit": 400,
+        "status": "skipped"
+    }
+]
+

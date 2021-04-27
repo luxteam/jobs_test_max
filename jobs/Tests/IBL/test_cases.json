@@ -1,0 +1,212 @@
+[
+	{
+		"case": "MAX_RS_IBL_001",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 0 Color / Without Map"
+		],
+		"intensity": 0,
+		"asset": null,
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_002",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 1 Color / Without Map"
+		],
+		"intensity": 1,
+		"asset": null,
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_003",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 2 Color / Without Map"
+		],
+		"intensity": 2,
+		"asset": null,
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_004",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 3 Color / Without Map"
+		],
+		"intensity": 3,
+		"asset": null,
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_005",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 5 Color / Without Map"
+		],
+		"intensity": 5,
+		"asset": null,
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_006",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 7 Color / Without Map"
+		],
+		"intensity": 7,
+		"asset": null,
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_007",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 10 Color / Without Map"
+		],
+		"intensity": 10,
+		"asset": null,
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_008",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 0 IBL Map HDR"
+		],
+		"intensity": 0,
+		"asset": "bell_park_pier_8k.hdr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_009",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 1 IBL Map HDR"
+		],
+		"intensity": 1,
+		"asset": "bell_park_pier_8k.hdr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_010",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 2 IBL Map HDR"
+		],
+		"intensity": 2,
+		"asset": "bell_park_pier_8k.hdr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_011",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 3 IBL Map HDR"
+		],
+		"intensity": 3,
+		"asset": "bell_park_pier_8k.hdr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_012",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 5 IBL Map HDR"
+		],
+		"intensity": 5,
+		"asset": "bell_park_pier_8k.hdr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_013",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 7 IBL Map HDR"
+		],
+		"intensity": 7,
+		"asset": "bell_park_pier_8k.hdr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_014",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 10 IBL Map HDR"
+		],
+		"intensity": 10,
+		"asset": "bell_park_pier_8k.hdr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_015",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 0 IBL Map EXR"
+		],
+		"intensity": 0,
+		"asset": "over_the_clouds.exr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_016",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 1 IBL Map EXR"
+		],
+		"intensity": 1,
+		"asset": "over_the_clouds.exr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_017",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 2 IBL Map EXR"
+		],
+		"intensity": 2,
+		"asset": "over_the_clouds.exr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_018",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 3 IBL Map EXR"
+		],
+		"intensity": 3,
+		"asset": "over_the_clouds.exr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_019",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 5 IBL Map EXR"
+		],
+		"intensity": 5,
+		"asset": "over_the_clouds.exr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_020",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 7 IBL Map EXR"
+		],
+		"intensity": 7,
+		"asset": "over_the_clouds.exr",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IBL_021",
+		"scene_name": "IBL.max",
+		"script_info": [
+			"Intencity - 10 IBL Map EXR"
+		],
+		"intensity": 10,
+		"asset": "over_the_clouds.exr",
+		"status": "active"
+	}
+]

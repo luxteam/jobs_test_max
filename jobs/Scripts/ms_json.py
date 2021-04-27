@@ -37,14 +37,14 @@ class JSONWrapper:
 
 
 	def setCaseStatus(self, index, value):
-		self.data["cases"][index - 1]["status"] = value
+		self.data[index - 1]["status"] = value
 		self.dump()
 		return True
 
 
-with open("case_list.json") as file:
+with open("test_cases.json") as file:
 	data = json.loads(file.read())
 
 
-rt.caseList = JSONWrapper(data, "case_list.json")
+rt.caseList = JSONWrapper(data, "test_cases.json")
 rt.report = JSONWrapper({}, None, "report")

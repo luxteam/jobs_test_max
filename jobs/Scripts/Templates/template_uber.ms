@@ -2,7 +2,7 @@
 
 function main = (
     cases = caseList.get_data()
-    cases = cases["cases"]
+    
     
     for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue
@@ -47,7 +47,7 @@ function main = (
         	setProperty rootScene[#SME][#View1][#RPRUberMaterial1____RPR_Uber_Material].Properties.reference params[j] val
         )
 
-        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        rpr_render image_format cases[i]["case"] cases[i]["script_info"]
 
         caseList.setCaseStatus i "done"
     )

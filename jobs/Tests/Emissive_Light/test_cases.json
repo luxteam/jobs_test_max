@@ -1,0 +1,11 @@
+[
+    {
+        "script_info": [
+            "RPRMaterial with Emissive"
+        ],
+        "case": "MAX_L_EM_001",
+        "scene_name": "Emissive_Light.max",
+        "status": "active"
+    }
+]
+

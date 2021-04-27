@@ -1,0 +1,195 @@
+[
+	{
+		"case": "MAX_RS_IS_001",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"35mm 1.316:1 Full Aperture (cine)"
+		],
+		"preset": "35mm 1.316:1 Full Aperture (cine)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_002",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"35mm 1.37:1 Academy (cine)"
+		],
+		"preset": "35mm 1.37:1 Academy (cine)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_003",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"35mm 1.66:1 (cine)"
+		],
+		"preset": "35mm 1.66:1 (cine)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_004",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"35mm 1.75 (cine)"
+		],
+		"preset": "35mm 1.75 (cine)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_005",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"35mm 1.85 (cine)"
+		],
+		"preset": "35mm 1.85 (cine)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_006",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"35mm Anamorphic (2.35:1)"
+		],
+		"preset": "35mm Anamorphic (2.35:1)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_007",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"35mm Anamorphic (2.35:1) (Squeezed)"
+		],
+		"preset": "35mm Anamorphic (2.35:1) (Squeezed)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_008",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"70mm Panavision (cine)"
+		],
+		"preset": "70mm Panavision (cine)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_009",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"70mm IMAX (cine)"
+		],
+		"preset": "70mm IMAX (cine)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_010",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"VistaVision"
+		],
+		"preset": "VistaVision",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_011",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"35mm ( 24mm X 36mm) (slide)"
+		],
+		"preset": "35mm ( 24mm X 36mm) (slide)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_012",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"6cm X 6cm (2 1/4 X 2 1/4) (slide)"
+		],
+		"preset": "6cm X 6cm (2 1/4 X 2 1/4) (slide)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_013",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"4 X 5 or 8 X 10 (slide)"
+		],
+		"preset": "4 X 5 or 8 X 10 (slide)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_014",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"NTSC D-1 (video)"
+		],
+		"preset": "NTSC D-1 (video)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_015",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"NTSC DV (video)"
+		],
+		"preset": "NTSC DV (video)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_016",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"PAL (video)"
+		],
+		"preset": "PAL (video)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_017",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"PAL D-1 (video)"
+		],
+		"preset": "PAL D-1 (video)",
+		"status": "active"
+	},
+	{
+		"case": "MAX_RS_IS_018",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"HDTV (video)"
+		],
+		"preset": "HDTV (video)",
+		"status": "skipped"
+	},
+	{
+		"case": "MAX_RS_IS_019",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"4000x4000"
+		],
+		"preset": "4000x4000",
+		"status": "skipped"
+
+	},
+	{
+		"case": "MAX_RS_IS_020",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"5000x5000"
+		],
+		"preset": "5000x5000",
+		"status": "skipped"
+
+	},
+	{
+		"case": "MAX_RS_IS_021",
+		"scene_name": "Image_Size.max",
+		"script_info": [
+			"6000x6000"
+		],
+		"preset": "6000x6000",
+		"status": "skipped"
+
+	}
+]
+

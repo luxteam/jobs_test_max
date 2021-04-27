@@ -1,0 +1,371 @@
+[
+    {
+        "case": "MAX_RS_RM_001",
+        "status": "active",
+        "script_info": [
+            "GI"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "GI"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_002",
+        "status": "active",
+        "script_info": [
+            "Direct"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Direct"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_003",
+        "status": "active",
+        "script_info": [
+            "Direct No Shadow"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "DirectNoShadow"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_004",
+        "status": "active",
+        "script_info": [
+            "Wireframe"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Wireframe"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_005",
+        "status": "active",
+        "script_info": [
+            "Material Idx"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "MaterialIdx"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_006",
+        "status": "active",
+        "script_info": [
+            "Position"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Position"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_007",
+        "status": "active",
+        "script_info": [
+            "Normal"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Normal"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_008",
+        "status": "active",
+        "script_info": [
+            "Tex Coords"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "TexCoords"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_009",
+        "status": "active",
+        "script_info": [
+            "Ambient Occlusion"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "AmbientOcclusion"
+        }
+    },
+    {
+        "case": "MAX_RS_RM_010",
+        "status": "active",
+        "script_info": [
+            "GI",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "GI",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_011",
+        "status": "active",
+        "script_info": [
+            "Direct",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Direct",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_012",
+        "status": "active",
+        "script_info": [
+            "DirectNoShadow",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "DirectNoShadow",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_013",
+        "status": "active",
+        "script_info": [
+            "Wireframe",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Wireframe",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_014",
+        "status": "active",
+        "script_info": [
+            "MaterialIdx",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "MaterialIdx",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_015",
+        "status": "active",
+        "script_info": [
+            "Position",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Position",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_016",
+        "status": "active",
+        "script_info": [
+            "Normal",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Normal",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_017",
+        "status": "active",
+        "script_info": [
+            "TexCoords",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "TexCoords",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_018",
+        "status": "active",
+        "script_info": [
+            "AmbientOcclusion",
+            "Clamp Irradiance Value - 50",
+            "Max Ray Depth - 25"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "AmbientOcclusion",
+            "irradianceClamp": 50.0,
+            "maxRayDepth": 25.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_019",
+        "status": "active",
+        "script_info": [
+            "GI",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "GI",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_020",
+        "status": "active",
+        "script_info": [
+            "Direct",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Direct",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_021",
+        "status": "active",
+        "script_info": [
+            "DirectNoShadow",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "DirectNoShadow",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_022",
+        "status": "active",
+        "script_info": [
+            "Wireframe",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Wireframe",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_023",
+        "status": "active",
+        "script_info": [
+            "MaterialIdx",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "MaterialIdx",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_024",
+        "status": "active",
+        "script_info": [
+            "Position",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Position",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_025",
+        "status": "active",
+        "script_info": [
+            "Normal",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "Normal",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_026",
+        "status": "active",
+        "script_info": [
+            "TexCoords",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "TexCoords",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    },
+    {
+        "case": "MAX_RS_RM_027",
+        "status": "active",
+        "script_info": [
+            "AmbientOcclusion",
+            "Clamp Irradiance Value - 100",
+            "Max Ray Depth - 50"
+        ],
+        "scene_name": "Render_Mode.max",
+        "parameters": {
+            "renderMode": "AmbientOcclusion",
+            "irradianceClamp": 100.0,
+            "maxRayDepth": 50.0
+        }
+    }
+]

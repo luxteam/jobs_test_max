@@ -2,7 +2,7 @@
 
 function main = (
     cases = caseList.get_data()
-    cases = cases["cases"]
+    
     
     for i=1 to bi.len(cases) do (
         if (cases[i]["status"] != "active") do continue
@@ -24,7 +24,7 @@ function main = (
         layer = LayerManager.getLayerFromName cases[i]["parameters"]["layer"]
         layer.on = true
 
-        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        rpr_render image_format cases[i]["case"] cases[i]["script_info"]
 
         caseList.setCaseStatus i "done"
     )

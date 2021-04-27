@@ -1,6 +1,6 @@
 function main = (
     cases = caseList.get_data()
-    cases = cases["cases"]
+    
 
     for i=1 to cases.count do (
         if (cases[i]["status"] != "active") do continue
@@ -25,7 +25,7 @@ function main = (
             )
         )
 
-        rpr_render image_format cases[i]["name"] cases[i]["script_info"]
+        rpr_render image_format cases[i]["case"] cases[i]["script_info"]
         caseList.setCaseStatus i "done"
     )
 )
